@@ -38,7 +38,7 @@ import SimpleOres.core.api.HandlerLoot;
 import SimpleOres.core.api.SimpleOre;
 import SimpleOres.core.api.SimpleTab;
 
-@Mod(modid = "classicalalchemy", name = "Classical Alchemy", version = "1.0.0", dependencies = "required-after:simpleores ; required-after:simpleoresfusion ; after:SimpleArsenic")
+@Mod(modid = "classicalalchemy", name = "Classical Alchemy", version = "1.0.1", dependencies = "required-after:simpleores ; required-after:simpleoresfusion ; after:SimpleArsenic")
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
 
 public class ClassicalAlchemyCore
@@ -254,7 +254,7 @@ public class ClassicalAlchemyCore
         /**
          * Creating the custom tabs using the API class "SimpleTab" and setting their icon.
          */
-        tabAkkamaddiClassicalAlchemy.setIcon(new ItemStack(ClassicalAlchemyCore.blockStannum));
+        tabAkkamaddiClassicalAlchemy.setIcon(new ItemStack(ClassicalAlchemyCore.blockPyropusBronze));
     }
 
     @EventHandler // used in 1.6.2
@@ -650,7 +650,7 @@ public class ClassicalAlchemyCore
         setTabIcons();
         
         // recipes
-        ClassicalAlchemyRecipes.doStannumRecipes();
+        ClassicalAlchemyRecipes.doCARecipes();
         
 		
     }
@@ -667,6 +667,9 @@ public class ClassicalAlchemyCore
         
 		//Armor Renderers
         rendererStannum = proxy.addArmor("stannum");
+        rendererCuprum = proxy.addArmor("cuprum");
+        rendererPyropusBronze = proxy.addArmor("pyropusBronze");
+        rendererTombBronze = proxy.addArmor("tombBronze");
         
 		// name stuff
         LanguageRegistry.addName(stannumIngot, "Stannum Ingot");

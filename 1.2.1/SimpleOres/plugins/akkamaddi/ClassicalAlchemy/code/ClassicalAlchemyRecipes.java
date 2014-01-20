@@ -15,7 +15,7 @@ public class ClassicalAlchemyRecipes
 {
 	public static final SimpleArsenicContents SA = new SimpleArsenicContents();
 	
-    public static void doStannumRecipes()
+    public static void doCARecipes()
     {
         
     	// Ore Dictionary
