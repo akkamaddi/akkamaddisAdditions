@@ -22,7 +22,7 @@ public class HandlerJoinWorld
     public void EntityJoinWorldEvent(EntityJoinWorldEvent event)
     {
         rand = Math.random();
-        range = random.nextInt(1, 57);
+        range = random.nextInt(1, 89);
 
         if ((rand <= 0.02D) && ((event.entity instanceof EntityLiving)) && ((event.entity instanceof EntitySkeleton | event.entity instanceof EntityZombie)))
         {
@@ -376,6 +376,206 @@ public class HandlerJoinWorld
                 living.setCurrentItemOrArmor(2, new ItemStack(SimpleTungstenCore.tungstenLegs));
                 living.setCurrentItemOrArmor(1, new ItemStack(SimpleTungstenCore.tungstenBoots));
                 living.setCurrentItemOrArmor(0, new ItemStack(SimpleTungstenCore.valframSword));
+            }
+			
+            if (range == 58)
+            {
+                living.setCurrentItemOrArmor(4, new ItemStack(SimpleTungstenCore.tungstenSteelHelm));
+                living.setCurrentItemOrArmor(3, new ItemStack(SimpleTungstenCore.tungstenSteelChest));
+                living.setCurrentItemOrArmor(2, new ItemStack(SimpleTungstenCore.tungstenSteelLegs));
+                living.setCurrentItemOrArmor(1, new ItemStack(SimpleTungstenCore.tungstenSteelBoots));
+                living.setCurrentItemOrArmor(0, new ItemStack(SimpleTungstenCore.tungstenSteelSword));
+            }
+
+            if (range == 59)
+            {
+                living.setCurrentItemOrArmor(4, new ItemStack(SimpleTungstenCore.tungstenSteelHelm));
+            }
+
+            if (range == 60)
+            {
+                living.setCurrentItemOrArmor(3, new ItemStack(SimpleTungstenCore.tungstenSteelChest));
+            }
+
+            if (range == 61)
+            {
+                living.setCurrentItemOrArmor(2, new ItemStack(SimpleTungstenCore.tungstenSteelLegs));
+            }
+
+            if (range == 62)
+            {
+                living.setCurrentItemOrArmor(1, new ItemStack(SimpleTungstenCore.tungstenSteelBoots));
+            }
+
+            if (range == 63)
+            {
+                living.setCurrentItemOrArmor(0, new ItemStack(SimpleTungstenCore.tungstenSteelSword));
+            }
+
+            if (range == 64)
+            {
+                living.setCurrentItemOrArmor(0, new ItemStack(SimpleTungstenCore.tungstenSteelShovel));
+            }
+
+            if (range == 65)
+            {
+                living.setCurrentItemOrArmor(0, new ItemStack(SimpleTungstenCore.tungstenSteelAxe));
+            }
+
+            if (range == 66)
+            {
+                living.setCurrentItemOrArmor(0, new ItemStack(SimpleTungstenCore.tungstenSteelPickaxe));
+            }
+
+            if (range == 67)
+            {
+                living.setCurrentItemOrArmor(0, new ItemStack(SimpleTungstenCore.tungstenSteelHoe));
+            }
+
+            if (range == 68)
+            {
+                living.setCurrentItemOrArmor(4, new ItemStack(SimpleTungstenCore.prasinosHelm));
+                living.setCurrentItemOrArmor(3, new ItemStack(SimpleTungstenCore.prasinosChest));
+                living.setCurrentItemOrArmor(2, new ItemStack(SimpleTungstenCore.prasinosLegs));
+                living.setCurrentItemOrArmor(1, new ItemStack(SimpleTungstenCore.prasinosBoots));
+                living.setCurrentItemOrArmor(0, new ItemStack(SimpleTungstenCore.prasinosSword));
+            }
+
+            if (range == 69)
+            {
+                living.setCurrentItemOrArmor(4, new ItemStack(SimpleTungstenCore.prasinosHelm));
+            }
+
+            if (range == 70)
+            {
+                living.setCurrentItemOrArmor(3, new ItemStack(SimpleTungstenCore.prasinosChest));
+            }
+
+            if (range == 71)
+            {
+                living.setCurrentItemOrArmor(2, new ItemStack(SimpleTungstenCore.prasinosLegs));
+            }
+
+            if (range == 72)
+            {
+                living.setCurrentItemOrArmor(1, new ItemStack(SimpleTungstenCore.prasinosBoots));
+            }
+
+            if (range == 73)
+            {
+                living.setCurrentItemOrArmor(0, new ItemStack(SimpleTungstenCore.prasinosSword));
+            }
+
+            if (range == 74)
+            {
+                living.setCurrentItemOrArmor(0, new ItemStack(SimpleTungstenCore.prasinosShovel));
+            }
+
+            if (range == 75)
+            {
+                living.setCurrentItemOrArmor(0, new ItemStack(SimpleTungstenCore.prasinosAxe));
+            }
+
+            if (range == 76)
+            {
+                living.setCurrentItemOrArmor(0, new ItemStack(SimpleTungstenCore.prasinosPickaxe));
+            }
+
+            if (range == 77)
+            {
+                living.setCurrentItemOrArmor(0, new ItemStack(SimpleTungstenCore.prasinosHoe));
+            }
+            
+			if (range == 78)
+            {
+                living.setCurrentItemOrArmor(4, new ItemStack(SimpleTungstenCore.tungstenSteelHelm));
+                living.setCurrentItemOrArmor(3, new ItemStack(SimpleTungstenCore.tungstenSteelChest));
+                living.setCurrentItemOrArmor(2, new ItemStack(SimpleTungstenCore.tungstenSteelLegs));
+                living.setCurrentItemOrArmor(1, new ItemStack(SimpleTungstenCore.tungstenSteelBoots));
+                living.setCurrentItemOrArmor(0, new ItemStack(SimpleTungstenCore.tungstenSteelSword));
+            }
+			
+			if (range == 79)
+            {
+                living.setCurrentItemOrArmor(4, new ItemStack(SimpleTungstenCore.tungstenSteelHelm));
+                living.setCurrentItemOrArmor(1, new ItemStack(SimpleTungstenCore.tungstenSteelBoots));
+                living.setCurrentItemOrArmor(0, new ItemStack(SimpleTungstenCore.tungstenSteelPickaxe));
+            }
+
+			if (range == 80)
+            {
+                living.setCurrentItemOrArmor(4, new ItemStack(SimpleTungstenCore.tungstenSteelHelm));
+                living.setCurrentItemOrArmor(3, new ItemStack(SimpleTungstenCore.tungstenSteelChest));
+                living.setCurrentItemOrArmor(0, new ItemStack(SimpleTungstenCore.tungstenSteelAxe));
+            }
+
+			if (range == 81)
+            {
+                living.setCurrentItemOrArmor(2, new ItemStack(SimpleTungstenCore.tungstenSteelLegs));
+                living.setCurrentItemOrArmor(1, new ItemStack(SimpleTungstenCore.tungstenSteelBoots));
+                living.setCurrentItemOrArmor(0, new ItemStack(SimpleTungstenCore.tungstenSteelShovel));
+            }
+
+			if (range == 82)
+            {
+                living.setCurrentItemOrArmor(4, new ItemStack(SimpleTungstenCore.tungstenSteelHelm));
+                living.setCurrentItemOrArmor(1, new ItemStack(SimpleTungstenCore.tungstenSteelBoots));
+                living.setCurrentItemOrArmor(0, new ItemStack(SimpleTungstenCore.tungstenSteelHoe));
+            }
+
+			if (range == 83)
+            {
+                living.setCurrentItemOrArmor(4, new ItemStack(SimpleTungstenCore.prasinosHelm));
+                living.setCurrentItemOrArmor(3, new ItemStack(SimpleTungstenCore.prasinosChest));
+                living.setCurrentItemOrArmor(2, new ItemStack(SimpleTungstenCore.prasinosLegs));
+                living.setCurrentItemOrArmor(1, new ItemStack(SimpleTungstenCore.prasinosBoots));
+                living.setCurrentItemOrArmor(0, new ItemStack(SimpleTungstenCore.prasinosSword));
+            }
+			
+			if (range == 84)
+            {
+                living.setCurrentItemOrArmor(4, new ItemStack(SimpleTungstenCore.prasinosHelm));
+                living.setCurrentItemOrArmor(1, new ItemStack(SimpleTungstenCore.prasinosBoots));
+                living.setCurrentItemOrArmor(0, new ItemStack(SimpleTungstenCore.prasinosPickaxe));
+            }
+
+			if (range == 85)
+            {
+                living.setCurrentItemOrArmor(4, new ItemStack(SimpleTungstenCore.prasinosHelm));
+                living.setCurrentItemOrArmor(3, new ItemStack(SimpleTungstenCore.prasinosChest));
+                living.setCurrentItemOrArmor(0, new ItemStack(SimpleTungstenCore.prasinosAxe));
+            }
+
+			if (range == 86)
+            {
+                living.setCurrentItemOrArmor(2, new ItemStack(SimpleTungstenCore.prasinosLegs));
+                living.setCurrentItemOrArmor(1, new ItemStack(SimpleTungstenCore.prasinosBoots));
+                living.setCurrentItemOrArmor(0, new ItemStack(SimpleTungstenCore.prasinosShovel));
+            }
+
+			if (range == 87)
+            {
+                living.setCurrentItemOrArmor(4, new ItemStack(SimpleTungstenCore.prasinosHelm));
+                living.setCurrentItemOrArmor(1, new ItemStack(SimpleTungstenCore.prasinosBoots));
+                living.setCurrentItemOrArmor(0, new ItemStack(SimpleTungstenCore.prasinosHoe));
+            }
+						
+			if (range == 88)
+            {
+                living.setCurrentItemOrArmor(4, new ItemStack(SimpleTungstenCore.tungstenHelm));
+                living.setCurrentItemOrArmor(3, new ItemStack(SimpleTungstenCore.tungstenChest));
+                living.setCurrentItemOrArmor(2, new ItemStack(SimpleTungstenCore.tungstenLegs));
+                living.setCurrentItemOrArmor(1, new ItemStack(SimpleTungstenCore.tungstenBoots));
+                living.setCurrentItemOrArmor(0, new ItemStack(SimpleTungstenCore.tungstenSteelSword));
+            }
+			
+			if (range == 89)
+            {
+                living.setCurrentItemOrArmor(4, new ItemStack(SimpleTungstenCore.tungstenHelm));
+                living.setCurrentItemOrArmor(3, new ItemStack(SimpleTungstenCore.tungstenChest));
+                living.setCurrentItemOrArmor(2, new ItemStack(SimpleTungstenCore.tungstenLegs));
+                living.setCurrentItemOrArmor(1, new ItemStack(SimpleTungstenCore.tungstenBoots));
+                living.setCurrentItemOrArmor(0, new ItemStack(SimpleTungstenCore.prasinosSword));
             }
 			
         }

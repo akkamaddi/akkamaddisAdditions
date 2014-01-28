@@ -434,13 +434,13 @@ public class SimpleCobaltCore
 
         blueCeladonHoe = new SimpleHoe(blueCeladonHoeID, toolBlueCeladon, "simplecobalt", SimpleCobaltCore.tabAkkamaddiCobalt).setUnlocalizedName("blueCeladonHoe");
 
-        blueCeladonHelm = new SimpleArmor(blueCeladonHelmID, armorBlueCeladon, rendererCobalt, 0, "blueceladon", "simplecobalt", SimpleCobaltCore.tabAkkamaddiCobalt).setUnlocalizedName("blueCeladonHelm");
+        blueCeladonHelm = new SimpleArmor(blueCeladonHelmID, armorBlueCeladon, rendererBlueCeladon, 0, "blueceladon", "simplecobalt", SimpleCobaltCore.tabAkkamaddiCobalt).setUnlocalizedName("blueCeladonHelm");
 
-        blueCeladonChest = new SimpleArmor(blueCeladonChestID, armorBlueCeladon, rendererCobalt, 1, "blueceladon", "simplecobalt", SimpleCobaltCore.tabAkkamaddiCobalt).setUnlocalizedName("blueCeladonChest");
+        blueCeladonChest = new SimpleArmor(blueCeladonChestID, armorBlueCeladon, rendererBlueCeladon, 1, "blueceladon", "simplecobalt", SimpleCobaltCore.tabAkkamaddiCobalt).setUnlocalizedName("blueCeladonChest");
 
-        blueCeladonLegs = new SimpleArmor(blueCeladonLegsID, armorBlueCeladon, rendererCobalt, 2, "blueceladon", "simplecobalt", SimpleCobaltCore.tabAkkamaddiCobalt).setUnlocalizedName("blueCeladonLegs");
+        blueCeladonLegs = new SimpleArmor(blueCeladonLegsID, armorBlueCeladon, rendererBlueCeladon, 2, "blueceladon", "simplecobalt", SimpleCobaltCore.tabAkkamaddiCobalt).setUnlocalizedName("blueCeladonLegs");
 
-        blueCeladonBoots = new SimpleArmor(blueCeladonBootsID, armorBlueCeladon, rendererCobalt, 3, "blueceladon", "simplecobalt", SimpleCobaltCore.tabAkkamaddiCobalt).setUnlocalizedName("blueCeladonBoots");
+        blueCeladonBoots = new SimpleArmor(blueCeladonBootsID, armorBlueCeladon, rendererBlueCeladon, 3, "blueceladon", "simplecobalt", SimpleCobaltCore.tabAkkamaddiCobalt).setUnlocalizedName("blueCeladonBoots");
 
         // Green Celadon
         greenCeladonIngot = new SimpleIngot(greenCeladonIngotID, "simplecobalt", SimpleCobaltCore.tabAkkamaddiCobalt).setUnlocalizedName("greenCeladonIngot");
@@ -461,13 +461,13 @@ public class SimpleCobaltCore
 
         greenCeladonHoe = new SimpleHoe(greenCeladonHoeID, toolGreenCeladon, "simplecobalt", SimpleCobaltCore.tabAkkamaddiCobalt).setUnlocalizedName("greenCeladonHoe");
 
-        greenCeladonHelm = new SimpleArmor(greenCeladonHelmID, armorGreenCeladon, rendererCobalt, 0, "greenceladon", "simplecobalt", SimpleCobaltCore.tabAkkamaddiCobalt).setUnlocalizedName("greenCeladonHelm");
+        greenCeladonHelm = new SimpleArmor(greenCeladonHelmID, armorGreenCeladon, rendererGreenCeladon, 0, "greenceladon", "simplecobalt", SimpleCobaltCore.tabAkkamaddiCobalt).setUnlocalizedName("greenCeladonHelm");
 
-        greenCeladonChest = new SimpleArmor(greenCeladonChestID, armorGreenCeladon, rendererCobalt, 1, "greenceladon", "simplecobalt", SimpleCobaltCore.tabAkkamaddiCobalt).setUnlocalizedName("greenCeladonChest");
+        greenCeladonChest = new SimpleArmor(greenCeladonChestID, armorGreenCeladon, rendererGreenCeladon, 1, "greenceladon", "simplecobalt", SimpleCobaltCore.tabAkkamaddiCobalt).setUnlocalizedName("greenCeladonChest");
 
-        greenCeladonLegs = new SimpleArmor(greenCeladonLegsID, armorGreenCeladon, rendererCobalt, 2, "greenceladon", "simplecobalt", SimpleCobaltCore.tabAkkamaddiCobalt).setUnlocalizedName("greenCeladonLegs");
+        greenCeladonLegs = new SimpleArmor(greenCeladonLegsID, armorGreenCeladon, rendererGreenCeladon, 2, "greenceladon", "simplecobalt", SimpleCobaltCore.tabAkkamaddiCobalt).setUnlocalizedName("greenCeladonLegs");
 
-        greenCeladonBoots = new SimpleArmor(greenCeladonBootsID, armorGreenCeladon, rendererCobalt, 3, "greenceladon", "simplecobalt", SimpleCobaltCore.tabAkkamaddiCobalt).setUnlocalizedName("greenCeladonBoots");
+        greenCeladonBoots = new SimpleArmor(greenCeladonBootsID, armorGreenCeladon, rendererGreenCeladon, 3, "greenceladon", "simplecobalt", SimpleCobaltCore.tabAkkamaddiCobalt).setUnlocalizedName("greenCeladonBoots");
 
         // define blocks
         blockCobalt = new SimpleOre(blockCobaltID, Material.iron, "simplecobalt", SimpleCobaltCore.tabAkkamaddiCobalt)
