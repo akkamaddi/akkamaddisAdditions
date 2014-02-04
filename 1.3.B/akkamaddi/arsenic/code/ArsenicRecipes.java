@@ -10,11 +10,11 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.item.crafting.CraftingManager;
 import net.minecraft.block.material.Material;
-import alexndr.SimpleOres.core.Items;
+import alexndr.SimpleOres.api.helpers.CoreHelper;
 
 public class ArsenicRecipes
 {
-    public static alexndr.SimpleOres.core.Items soItems;
+    public static alexndr.SimpleOres.api.helpers.CoreHelper soItems;
 
     public static void doArsenicRecipes()
     {
@@ -306,9 +306,12 @@ public class ArsenicRecipes
         FusionRecipes.smelting().addSmelting(new ItemStack(ArsenicAndLace.realgarItem), new ItemStack(ArsenicAndLace.orpimentItem), new ItemStack(Item.poisonousPotato), new ItemStack(ArsenicAndLace.largeArsenicChunkItem), 20.0F);
         FusionRecipes.smelting().addSmelting(new ItemStack(Item.rottenFlesh), new ItemStack(Item.rottenFlesh), new ItemStack(ArsenicAndLace.oldLaceChest), new ItemStack(ArsenicAndLace.arsenideSaltItem), 10.0F);
         FusionRecipes.smelting().addSmelting(new ItemStack(ArsenicAndLace.realgarItem), new ItemStack(ArsenicAndLace.orpimentItem), new ItemStack(ArsenicAndLace.oldLaceChest), new ItemStack(ArsenicAndLace.largeArsenicChunkItem), 20.0F);
-        FusionRecipes.smelting().addSmelting(new ItemStack(soItems.copperIngot), new ItemStack(ArsenicAndLace.arsenicIngot), new ItemStack(Item.dyePowder, 1, 1), new ItemStack(ArsenicAndLace.smallArsenideBronzeChunkItem), 4.0F);
-        FusionRecipes.smelting().addSmelting(new ItemStack(soItems.copperIngot), new ItemStack(ArsenicAndLace.arsenicIngot), new ItemStack(Item.rottenFlesh), new ItemStack(ArsenicAndLace.mediumArsenideBronzeChunkItem), 6.0F);
-        FusionRecipes.smelting().addSmelting(new ItemStack(soItems.copperIngot), new ItemStack(ArsenicAndLace.arsenicIngot), new ItemStack(Item.redstone), new ItemStack(ArsenicAndLace.largeArsenideBronzeChunkItem), 15.0F);
+        FusionRecipes.smelting().addSmelting(new ItemStack(soItems.coreContent.copperIngot), new ItemStack(ArsenicAndLace.arsenicIngot), new ItemStack(Item.dyePowder, 1, 1), new ItemStack(ArsenicAndLace.smallArsenideBronzeChunkItem), 4.0F);
+        FusionRecipes.smelting().addSmelting(new ItemStack(soItems.coreContent.copperIngot), new ItemStack(ArsenicAndLace.arsenicIngot), new ItemStack(Item.rottenFlesh), new ItemStack(ArsenicAndLace.mediumArsenideBronzeChunkItem), 6.0F);
+        FusionRecipes.smelting().addSmelting(new ItemStack(soItems.coreContent.copperIngot), new ItemStack(ArsenicAndLace.arsenicIngot), new ItemStack(Item.redstone), new ItemStack(ArsenicAndLace.largeArsenideBronzeChunkItem), 15.0F);
+        FusionRecipes.smelting().addSmelting(new ItemStack(Item.ingotGold), new ItemStack(ArsenicAndLace.arsenicIngot), new ItemStack(Item.dyePowder, 1, 1), new ItemStack(ArsenicAndLace.smallArsenideGoldChunkItem), 5.0F);
+        FusionRecipes.smelting().addSmelting(new ItemStack(Item.ingotGold), new ItemStack(ArsenicAndLace.arsenicIngot), new ItemStack(Item.rottenFlesh), new ItemStack(ArsenicAndLace.mediumArsenideGoldChunkItem), 8.0F);
+        FusionRecipes.smelting().addSmelting(new ItemStack(Item.ingotGold), new ItemStack(ArsenicAndLace.arsenicIngot), new ItemStack(Item.redstone), new ItemStack(ArsenicAndLace.largeArsenideGoldChunkItem), 20.0F);
         FusionRecipes.smelting().addSmelting(new ItemStack(Block.obsidian), new ItemStack(ArsenicAndLace.arsenideGoldIngot), new ItemStack(Item.rottenFlesh), new ItemStack(ArsenicAndLace.smallTenebriumChunkItem), 10.0F);
         FusionRecipes.smelting().addSmelting(new ItemStack(Block.obsidian), new ItemStack(ArsenicAndLace.arsenideGoldIngot), new ItemStack(Item.goldNugget), new ItemStack(ArsenicAndLace.mediumTenebriumChunkItem), 20.0F);
         FusionRecipes.smelting().addSmelting(new ItemStack(Block.obsidian), new ItemStack(ArsenicAndLace.arsenideGoldIngot), new ItemStack(Item.netherQuartz), new ItemStack(ArsenicAndLace.largeTenebriumChunkItem), 30.0F);

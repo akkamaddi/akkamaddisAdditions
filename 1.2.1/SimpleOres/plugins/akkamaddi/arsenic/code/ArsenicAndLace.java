@@ -33,7 +33,7 @@ import SimpleOres.core.Armor;
 import SimpleOres.core.api.HandlerLoot;
 import SimpleOres.core.api.SimpleTab;
 
-@Mod(modid = "SimpleArsenic", name = "Simple Arsenic, and Old Lace", version = "1.2.4", dependencies = "required-after:simpleoresfusion ; after:MoCreatures")
+@Mod(modid = "SimpleArsenic", name = "Simple Arsenic, and Old Lace", version = "1.2.5", dependencies = "required-after:simpleoresfusion ; after:MoCreatures")
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
 
 public class ArsenicAndLace
