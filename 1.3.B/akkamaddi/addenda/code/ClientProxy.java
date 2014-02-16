@@ -1,4 +1,4 @@
-package akkamaddi.simplefusionrecycle.code;
+package akkamaddi.addenda.code;
 
 import net.minecraftforge.client.MinecraftForgeClient;
 

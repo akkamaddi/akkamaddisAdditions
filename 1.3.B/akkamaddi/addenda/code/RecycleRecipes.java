@@ -1,58 +1,25 @@
-package akkamaddi.simplefusionrecycle.code;
+package akkamaddi.addenda.code;
 
-import cpw.mods.fml.common.Mod;
-import cpw.mods.fml.common.Mod.EventHandler;
-import cpw.mods.fml.common.Mod.Instance;
-import cpw.mods.fml.common.SidedProxy;
-import cpw.mods.fml.common.event.FMLInitializationEvent;
-import cpw.mods.fml.common.event.FMLPostInitializationEvent;
-import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import cpw.mods.fml.common.network.NetworkMod;
-import net.minecraft.creativetab.CreativeTabs;
-import alexndr.SimpleOres.plugins.fusion.Content;
-import alexndr.SimpleOres.plugins.fusion.FusionRecipes;
+import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
-import net.minecraft.block.Block;
+import alexndr.SimpleOres.plugins.fusion.FusionRecipes;
 import net.minecraftforge.oredict.OreDictionary;
-import alexndr.SimpleOres.core.Armor;
-import alexndr.SimpleOres.core.Tools;
-import alexndr.SimpleOres.core.Items;
-import alexndr.SimpleOres.core.Blocks;
+import alexndr.SimpleOres.api.helpers.CoreHelper;
+import alexndr.SimpleOres.plugins.fusion.Content;
 
-@Mod(modid = "FusionRecycle", name = "Simple Fusion Recycle", version = "1.0.2", dependencies = "required-after:simpleoresfusion")
-@NetworkMod(clientSideRequired = true, serverSideRequired = false)
-public class SimpleFusionRecycle
-{
-    // The instance of your mod that Forge uses.
-    @Instance("FusionRecycle")
-    public static SimpleFusionRecycle instance;
-
-    // Says where the client and server 'proxy' code is loaded.
-    @SidedProxy(clientSide = "akkamaddi.simplefusionrecycle.code.ClientProxy", serverSide = "akkamaddi.simplefusionrecycle.code.CommonProxy")
-    public static CommonProxy proxy;
-
-    public static alexndr.SimpleOres.core.Blocks soBlocks;
-    public static alexndr.SimpleOres.core.Tools soTools;
-    public static alexndr.SimpleOres.core.Armor soArmor;
-    public static alexndr.SimpleOres.core.Items soItems;
-    public static alexndr.SimpleOres.plugins.fusion.Content soAlloy;
+public class RecycleRecipes {
+	
 
     // wildcard
     private static final int WILDCARD_VALUE = OreDictionary.WILDCARD_VALUE;
+    
 
-    @EventHandler // used in 1.6.2
-    public void preInit(FMLPreInitializationEvent event)
-    {
-        // Stub Method
-    }
+    public static alexndr.SimpleOres.plugins.fusion.Content soAlloy;
 
-    @EventHandler // used in 1.6.2
-    public void load(FMLInitializationEvent event)
-    {
-        proxy.registerRenderers();
-        // The mass of recipes
+	public static void doRecycleRecipes(){
+		// The mass of recipes
         // Primary: helmet, chest, leggings, boots, sword, shovel, pickaxe, axe, hoe, ?horsearmor?, ?bow?
         // Secondary: Item.alpha, Block.alpha,
         //
@@ -131,88 +98,88 @@ public class SimpleFusionRecycle
         FusionRecipes.smelting().addSmelting(new ItemStack(Block.hopperBlock), new ItemStack(Block.gravel), new ItemStack(Item.coal, 1, WILDCARD_VALUE), new ItemStack(Block.oreIron), 10.0F);
         //
         // recycle your Diamond
-        FusionRecipes.smelting().addSmelting(new ItemStack(ItemArmor.helmetDiamond, 1, WILDCARD_VALUE), new ItemStack(Block.oreCoal), new ItemStack(Item.bucketLava), new ItemStack(Item.diamond), 20.0F);
-        FusionRecipes.smelting().addSmelting(new ItemStack(ItemArmor.plateDiamond, 1, WILDCARD_VALUE), new ItemStack(Block.oreCoal, 2, 0), new ItemStack(Item.bucketLava), new ItemStack(Item.diamond, 2, 0), 40.0F);
-        FusionRecipes.smelting().addSmelting(new ItemStack(ItemArmor.legsDiamond, 1, WILDCARD_VALUE), new ItemStack(Block.oreCoal, 2, 0), new ItemStack(Item.bucketLava), new ItemStack(Item.diamond, 2, 0), 40.0F);
-        FusionRecipes.smelting().addSmelting(new ItemStack(ItemArmor.bootsDiamond, 1, WILDCARD_VALUE), new ItemStack(Block.oreCoal), new ItemStack(Item.bucketLava), new ItemStack(Item.diamond), 20.0F);
-        FusionRecipes.smelting().addSmelting(new ItemStack(Item.swordDiamond, 1, WILDCARD_VALUE), new ItemStack(Block.oreCoal), new ItemStack(Item.bucketLava), new ItemStack(Item.diamond), 20.0F);
-        FusionRecipes.smelting().addSmelting(new ItemStack(Item.shovelDiamond, 1, WILDCARD_VALUE), new ItemStack(Block.oreCoal), new ItemStack(Item.bucketLava), new ItemStack(Item.diamond), 20.0F);
-        FusionRecipes.smelting().addSmelting(new ItemStack(Item.pickaxeDiamond, 1, WILDCARD_VALUE), new ItemStack(Block.oreCoal), new ItemStack(Item.bucketLava), new ItemStack(Item.diamond), 20.0F);
-        FusionRecipes.smelting().addSmelting(new ItemStack(Item.axeDiamond, 1, WILDCARD_VALUE), new ItemStack(Block.oreCoal), new ItemStack(Item.bucketLava), new ItemStack(Item.diamond), 20.0F);
-        FusionRecipes.smelting().addSmelting(new ItemStack(Item.hoeDiamond, 1, WILDCARD_VALUE), new ItemStack(Block.oreCoal), new ItemStack(Item.bucketLava), new ItemStack(Item.diamond), 20.0F);
-        FusionRecipes.smelting().addSmelting(new ItemStack(Item.horseArmorDiamond, 1, WILDCARD_VALUE), new ItemStack(Block.oreCoal, 2, 0), new ItemStack(Item.bucketLava), new ItemStack(Item.diamond, 2, 0), 20.0F);
+        FusionRecipes.smelting().addSmelting(new ItemStack(ItemArmor.helmetDiamond, 1, WILDCARD_VALUE), new ItemStack(Block.oreCoal), new ItemStack(Item.bucketLava), new ItemStack(Block.oreDiamond), 20.0F);
+        FusionRecipes.smelting().addSmelting(new ItemStack(ItemArmor.plateDiamond, 1, WILDCARD_VALUE), new ItemStack(Block.oreCoal, 2, 0), new ItemStack(Item.bucketLava), new ItemStack(Block.oreDiamond, 2, 0), 40.0F);
+        FusionRecipes.smelting().addSmelting(new ItemStack(ItemArmor.legsDiamond, 1, WILDCARD_VALUE), new ItemStack(Block.oreCoal, 2, 0), new ItemStack(Item.bucketLava), new ItemStack(Block.oreDiamond, 2, 0), 40.0F);
+        FusionRecipes.smelting().addSmelting(new ItemStack(ItemArmor.bootsDiamond, 1, WILDCARD_VALUE), new ItemStack(Block.oreCoal), new ItemStack(Item.bucketLava), new ItemStack(Block.oreDiamond), 20.0F);
+        FusionRecipes.smelting().addSmelting(new ItemStack(Item.swordDiamond, 1, WILDCARD_VALUE), new ItemStack(Block.oreCoal), new ItemStack(Item.bucketLava), new ItemStack(Block.oreDiamond), 20.0F);
+        FusionRecipes.smelting().addSmelting(new ItemStack(Item.shovelDiamond, 1, WILDCARD_VALUE), new ItemStack(Block.oreCoal), new ItemStack(Item.bucketLava), new ItemStack(Block.oreDiamond), 20.0F);
+        FusionRecipes.smelting().addSmelting(new ItemStack(Item.pickaxeDiamond, 1, WILDCARD_VALUE), new ItemStack(Block.oreCoal), new ItemStack(Item.bucketLava), new ItemStack(Block.oreDiamond), 20.0F);
+        FusionRecipes.smelting().addSmelting(new ItemStack(Item.axeDiamond, 1, WILDCARD_VALUE), new ItemStack(Block.oreCoal), new ItemStack(Item.bucketLava), new ItemStack(Block.oreDiamond), 20.0F);
+        FusionRecipes.smelting().addSmelting(new ItemStack(Item.hoeDiamond, 1, WILDCARD_VALUE), new ItemStack(Block.oreCoal), new ItemStack(Item.bucketLava), new ItemStack(Block.oreDiamond), 20.0F);
+        FusionRecipes.smelting().addSmelting(new ItemStack(Item.horseArmorDiamond, 1, WILDCARD_VALUE), new ItemStack(Block.oreCoal, 2, 0), new ItemStack(Item.bucketLava), new ItemStack(Block.oreDiamond, 2, 0), 20.0F);
         //
         // recycle your Copper
-        FusionRecipes.smelting().addSmelting(new ItemStack(soArmor.copperHelm, 1, WILDCARD_VALUE), new ItemStack(Block.gravel), new ItemStack(Item.coal, 1, WILDCARD_VALUE), new ItemStack(soBlocks.copperOre), 10.0F);
-        FusionRecipes.smelting().addSmelting(new ItemStack(soArmor.copperChest, 1, WILDCARD_VALUE), new ItemStack(Block.gravel, 2, 0), new ItemStack(Item.coal, 2, WILDCARD_VALUE), new ItemStack(soBlocks.copperOre, 2, 0), 10.0F);
-        FusionRecipes.smelting().addSmelting(new ItemStack(soArmor.copperLegs, 1, WILDCARD_VALUE), new ItemStack(Block.gravel, 2, 0), new ItemStack(Item.coal, 2, WILDCARD_VALUE), new ItemStack(soBlocks.copperOre, 2, 0), 10.0F);
-        FusionRecipes.smelting().addSmelting(new ItemStack(soArmor.copperBoots, 1, WILDCARD_VALUE), new ItemStack(Block.gravel), new ItemStack(Item.coal, 1, WILDCARD_VALUE), new ItemStack(soBlocks.copperOre), 10.0F);
-        FusionRecipes.smelting().addSmelting(new ItemStack(soTools.copperSword, 1, WILDCARD_VALUE), new ItemStack(Block.gravel), new ItemStack(Item.coal, 1, WILDCARD_VALUE), new ItemStack(soBlocks.copperOre), 10.0F);
-        FusionRecipes.smelting().addSmelting(new ItemStack(soTools.copperShovel, 1, WILDCARD_VALUE), new ItemStack(Block.gravel), new ItemStack(Item.coal, 1, WILDCARD_VALUE), new ItemStack(soBlocks.copperOre), 10.0F);
-        FusionRecipes.smelting().addSmelting(new ItemStack(soTools.copperPick, 1, WILDCARD_VALUE), new ItemStack(Block.gravel), new ItemStack(Item.coal, 1, WILDCARD_VALUE), new ItemStack(soBlocks.copperOre), 10.0F);
-        FusionRecipes.smelting().addSmelting(new ItemStack(soTools.copperAxe, 1, WILDCARD_VALUE), new ItemStack(Block.gravel), new ItemStack(Item.coal, 1, WILDCARD_VALUE), new ItemStack(soBlocks.copperOre), 10.0F);
-        FusionRecipes.smelting().addSmelting(new ItemStack(soTools.copperHoe, 1, WILDCARD_VALUE), new ItemStack(Block.gravel), new ItemStack(Item.coal, 1, WILDCARD_VALUE), new ItemStack(soBlocks.copperOre), 10.0F);
+        FusionRecipes.smelting().addSmelting(new ItemStack(CoreHelper.coreContent.copperHelm, 1, WILDCARD_VALUE), new ItemStack(Block.gravel), new ItemStack(Item.coal, 1, WILDCARD_VALUE), new ItemStack(CoreHelper.coreContent.copperOre), 10.0F);
+        FusionRecipes.smelting().addSmelting(new ItemStack(CoreHelper.coreContent.copperChest, 1, WILDCARD_VALUE), new ItemStack(Block.gravel, 2, 0), new ItemStack(Item.coal, 2, WILDCARD_VALUE), new ItemStack(CoreHelper.coreContent.copperOre, 2, 0), 10.0F);
+        FusionRecipes.smelting().addSmelting(new ItemStack(CoreHelper.coreContent.copperLegs, 1, WILDCARD_VALUE), new ItemStack(Block.gravel, 2, 0), new ItemStack(Item.coal, 2, WILDCARD_VALUE), new ItemStack(CoreHelper.coreContent.copperOre, 2, 0), 10.0F);
+        FusionRecipes.smelting().addSmelting(new ItemStack(CoreHelper.coreContent.copperBoots, 1, WILDCARD_VALUE), new ItemStack(Block.gravel), new ItemStack(Item.coal, 1, WILDCARD_VALUE), new ItemStack(CoreHelper.coreContent.copperOre), 10.0F);
+        FusionRecipes.smelting().addSmelting(new ItemStack(CoreHelper.coreContent.copperSword, 1, WILDCARD_VALUE), new ItemStack(Block.gravel), new ItemStack(Item.coal, 1, WILDCARD_VALUE), new ItemStack(CoreHelper.coreContent.copperOre), 10.0F);
+        FusionRecipes.smelting().addSmelting(new ItemStack(CoreHelper.coreContent.copperShovel, 1, WILDCARD_VALUE), new ItemStack(Block.gravel), new ItemStack(Item.coal, 1, WILDCARD_VALUE), new ItemStack(CoreHelper.coreContent.copperOre), 10.0F);
+        FusionRecipes.smelting().addSmelting(new ItemStack(CoreHelper.coreContent.copperPick, 1, WILDCARD_VALUE), new ItemStack(Block.gravel), new ItemStack(Item.coal, 1, WILDCARD_VALUE), new ItemStack(CoreHelper.coreContent.copperOre), 10.0F);
+        FusionRecipes.smelting().addSmelting(new ItemStack(CoreHelper.coreContent.copperAxe, 1, WILDCARD_VALUE), new ItemStack(Block.gravel), new ItemStack(Item.coal, 1, WILDCARD_VALUE), new ItemStack(CoreHelper.coreContent.copperOre), 10.0F);
+        FusionRecipes.smelting().addSmelting(new ItemStack(CoreHelper.coreContent.copperHoe, 1, WILDCARD_VALUE), new ItemStack(Block.gravel), new ItemStack(Item.coal, 1, WILDCARD_VALUE), new ItemStack(CoreHelper.coreContent.copperOre), 10.0F);
         // extra Copper recycling
-        FusionRecipes.smelting().addSmelting(new ItemStack(soItems.copperBucket), new ItemStack(Block.gravel), new ItemStack(Item.coal, 1, WILDCARD_VALUE), new ItemStack(soBlocks.copperOre), 10.0F);
-        FusionRecipes.smelting().addSmelting(new ItemStack(soItems.copperDoorItem), new ItemStack(Block.gravel), new ItemStack(Item.coal, 1, WILDCARD_VALUE), new ItemStack(soBlocks.copperOre), 10.0F);
+        FusionRecipes.smelting().addSmelting(new ItemStack(CoreHelper.coreContent.copperBucket), new ItemStack(Block.gravel), new ItemStack(Item.coal, 1, WILDCARD_VALUE), new ItemStack(CoreHelper.coreContent.copperOre), 10.0F);
+        FusionRecipes.smelting().addSmelting(new ItemStack(CoreHelper.coreContent.copperDoorItem), new ItemStack(Block.gravel), new ItemStack(Item.coal, 1, WILDCARD_VALUE), new ItemStack(CoreHelper.coreContent.copperOre), 10.0F);
         //
         // recycle your Tin
-        FusionRecipes.smelting().addSmelting(new ItemStack(soArmor.tinHelm, 1, WILDCARD_VALUE), new ItemStack(Block.gravel), new ItemStack(Item.coal, 1, WILDCARD_VALUE), new ItemStack(soBlocks.tinOre), 10.0F);
-        FusionRecipes.smelting().addSmelting(new ItemStack(soArmor.tinChest, 1, WILDCARD_VALUE), new ItemStack(Block.gravel, 2, 0), new ItemStack(Item.coal, 2, WILDCARD_VALUE), new ItemStack(soBlocks.tinOre, 2, 0), 20.0F);
-        FusionRecipes.smelting().addSmelting(new ItemStack(soArmor.tinLegs, 1, WILDCARD_VALUE), new ItemStack(Block.gravel, 2, 0), new ItemStack(Item.coal, 2, WILDCARD_VALUE), new ItemStack(soBlocks.tinOre, 2, 0), 20.0F);
-        FusionRecipes.smelting().addSmelting(new ItemStack(soArmor.tinBoots, 1, WILDCARD_VALUE), new ItemStack(Block.gravel), new ItemStack(Item.coal, 1, WILDCARD_VALUE), new ItemStack(soBlocks.tinOre), 10.0F);
-        FusionRecipes.smelting().addSmelting(new ItemStack(soTools.tinSword, 1, WILDCARD_VALUE), new ItemStack(Block.gravel), new ItemStack(Item.coal, 1, WILDCARD_VALUE), new ItemStack(soBlocks.tinOre), 10.0F);
-        FusionRecipes.smelting().addSmelting(new ItemStack(soTools.tinShovel, 1, WILDCARD_VALUE), new ItemStack(Block.gravel), new ItemStack(Item.coal, 1, WILDCARD_VALUE), new ItemStack(soBlocks.tinOre), 10.0F);
-        FusionRecipes.smelting().addSmelting(new ItemStack(soTools.tinPick, 1, WILDCARD_VALUE), new ItemStack(Block.gravel), new ItemStack(Item.coal, 1, WILDCARD_VALUE), new ItemStack(soBlocks.tinOre), 10.0F);
-        FusionRecipes.smelting().addSmelting(new ItemStack(soTools.tinAxe, 1, WILDCARD_VALUE), new ItemStack(Block.gravel), new ItemStack(Item.coal, 1, WILDCARD_VALUE), new ItemStack(soBlocks.tinOre), 10.0F);
-        FusionRecipes.smelting().addSmelting(new ItemStack(soTools.tinHoe, 1, WILDCARD_VALUE), new ItemStack(Block.gravel), new ItemStack(Item.coal, 1, WILDCARD_VALUE), new ItemStack(soBlocks.tinOre), 10.0F);
+        FusionRecipes.smelting().addSmelting(new ItemStack(CoreHelper.coreContent.tinHelm, 1, WILDCARD_VALUE), new ItemStack(Block.gravel), new ItemStack(Item.coal, 1, WILDCARD_VALUE), new ItemStack(CoreHelper.coreContent.tinOre), 10.0F);
+        FusionRecipes.smelting().addSmelting(new ItemStack(CoreHelper.coreContent.tinChest, 1, WILDCARD_VALUE), new ItemStack(Block.gravel, 2, 0), new ItemStack(Item.coal, 2, WILDCARD_VALUE), new ItemStack(CoreHelper.coreContent.tinOre, 2, 0), 20.0F);
+        FusionRecipes.smelting().addSmelting(new ItemStack(CoreHelper.coreContent.tinLegs, 1, WILDCARD_VALUE), new ItemStack(Block.gravel, 2, 0), new ItemStack(Item.coal, 2, WILDCARD_VALUE), new ItemStack(CoreHelper.coreContent.tinOre, 2, 0), 20.0F);
+        FusionRecipes.smelting().addSmelting(new ItemStack(CoreHelper.coreContent.tinBoots, 1, WILDCARD_VALUE), new ItemStack(Block.gravel), new ItemStack(Item.coal, 1, WILDCARD_VALUE), new ItemStack(CoreHelper.coreContent.tinOre), 10.0F);
+        FusionRecipes.smelting().addSmelting(new ItemStack(CoreHelper.coreContent.tinSword, 1, WILDCARD_VALUE), new ItemStack(Block.gravel), new ItemStack(Item.coal, 1, WILDCARD_VALUE), new ItemStack(CoreHelper.coreContent.tinOre), 10.0F);
+        FusionRecipes.smelting().addSmelting(new ItemStack(CoreHelper.coreContent.tinShovel, 1, WILDCARD_VALUE), new ItemStack(Block.gravel), new ItemStack(Item.coal, 1, WILDCARD_VALUE), new ItemStack(CoreHelper.coreContent.tinOre), 10.0F);
+        FusionRecipes.smelting().addSmelting(new ItemStack(CoreHelper.coreContent.tinPick, 1, WILDCARD_VALUE), new ItemStack(Block.gravel), new ItemStack(Item.coal, 1, WILDCARD_VALUE), new ItemStack(CoreHelper.coreContent.tinOre), 10.0F);
+        FusionRecipes.smelting().addSmelting(new ItemStack(CoreHelper.coreContent.tinAxe, 1, WILDCARD_VALUE), new ItemStack(Block.gravel), new ItemStack(Item.coal, 1, WILDCARD_VALUE), new ItemStack(CoreHelper.coreContent.tinOre), 10.0F);
+        FusionRecipes.smelting().addSmelting(new ItemStack(CoreHelper.coreContent.tinHoe, 1, WILDCARD_VALUE), new ItemStack(Block.gravel), new ItemStack(Item.coal, 1, WILDCARD_VALUE), new ItemStack(CoreHelper.coreContent.tinOre), 10.0F);
         // extra Tin recycling
-        FusionRecipes.smelting().addSmelting(new ItemStack(soTools.tinShears, 1, WILDCARD_VALUE), new ItemStack(Block.gravel), new ItemStack(Item.coal, 1, WILDCARD_VALUE), new ItemStack(soBlocks.tinOre), 10.0F);
+        FusionRecipes.smelting().addSmelting(new ItemStack(CoreHelper.coreContent.tinShears, 1, WILDCARD_VALUE), new ItemStack(Block.gravel), new ItemStack(Item.coal, 1, WILDCARD_VALUE), new ItemStack(CoreHelper.coreContent.tinOre), 10.0F);
         //
         // recycle your Mythril
-        FusionRecipes.smelting().addSmelting(new ItemStack(soArmor.mythrilHelm, 1, WILDCARD_VALUE), new ItemStack(Block.gravel),  new ItemStack(Item.coal, 1, WILDCARD_VALUE), new ItemStack(soBlocks.mythrilOre), 15.0F);
-        FusionRecipes.smelting().addSmelting(new ItemStack(soArmor.mythrilChest, 1, WILDCARD_VALUE), new ItemStack(Block.gravel, 2, 0),  new ItemStack(Item.coal, 2, WILDCARD_VALUE), new ItemStack(soBlocks.mythrilOre, 2, 0), 15.0F);
-        FusionRecipes.smelting().addSmelting(new ItemStack(soArmor.mythrilLegs, 1, WILDCARD_VALUE), new ItemStack(Block.gravel, 2, 0),  new ItemStack(Item.coal, 2, WILDCARD_VALUE), new ItemStack(soBlocks.mythrilOre, 2, 0), 15.0F);
-        FusionRecipes.smelting().addSmelting(new ItemStack(soArmor.mythrilBoots, 1, WILDCARD_VALUE), new ItemStack(Block.gravel),  new ItemStack(Item.coal, 1, WILDCARD_VALUE), new ItemStack(soBlocks.mythrilOre), 15.0F);
-        FusionRecipes.smelting().addSmelting(new ItemStack(soTools.mythrilSword, 1, WILDCARD_VALUE), new ItemStack(Block.gravel),  new ItemStack(Item.coal, 1, WILDCARD_VALUE), new ItemStack(soBlocks.mythrilOre), 15.0F);
-        FusionRecipes.smelting().addSmelting(new ItemStack(soTools.mythrilShovel, 1, WILDCARD_VALUE), new ItemStack(Block.gravel),  new ItemStack(Item.coal, 1, WILDCARD_VALUE), new ItemStack(soBlocks.mythrilOre), 15.0F);
-        FusionRecipes.smelting().addSmelting(new ItemStack(soTools.mythrilPick, 1, WILDCARD_VALUE), new ItemStack(Block.gravel),  new ItemStack(Item.coal, 1, WILDCARD_VALUE), new ItemStack(soBlocks.mythrilOre), 15.0F);
-        FusionRecipes.smelting().addSmelting(new ItemStack(soTools.mythrilAxe, 1, WILDCARD_VALUE), new ItemStack(Block.gravel),  new ItemStack(Item.coal, 1, WILDCARD_VALUE), new ItemStack(soBlocks.mythrilOre), 15.0F);
-        FusionRecipes.smelting().addSmelting(new ItemStack(soTools.mythrilHoe, 1, WILDCARD_VALUE), new ItemStack(Block.gravel),  new ItemStack(Item.coal, 1, WILDCARD_VALUE), new ItemStack(soBlocks.mythrilOre), 15.0F);
-        FusionRecipes.smelting().addSmelting(new ItemStack(soTools.mythrilBow, 1, WILDCARD_VALUE), new ItemStack(Block.gravel),  new ItemStack(Item.coal, 1, WILDCARD_VALUE), new ItemStack(soBlocks.mythrilOre), 15.0F);
+        FusionRecipes.smelting().addSmelting(new ItemStack(CoreHelper.coreContent.mythrilHelm, 1, WILDCARD_VALUE), new ItemStack(Block.gravel),  new ItemStack(Item.coal, 1, WILDCARD_VALUE), new ItemStack(CoreHelper.coreContent.mythrilOre), 15.0F);
+        FusionRecipes.smelting().addSmelting(new ItemStack(CoreHelper.coreContent.mythrilChest, 1, WILDCARD_VALUE), new ItemStack(Block.gravel, 2, 0),  new ItemStack(Item.coal, 2, WILDCARD_VALUE), new ItemStack(CoreHelper.coreContent.mythrilOre, 2, 0), 15.0F);
+        FusionRecipes.smelting().addSmelting(new ItemStack(CoreHelper.coreContent.mythrilLegs, 1, WILDCARD_VALUE), new ItemStack(Block.gravel, 2, 0),  new ItemStack(Item.coal, 2, WILDCARD_VALUE), new ItemStack(CoreHelper.coreContent.mythrilOre, 2, 0), 15.0F);
+        FusionRecipes.smelting().addSmelting(new ItemStack(CoreHelper.coreContent.mythrilBoots, 1, WILDCARD_VALUE), new ItemStack(Block.gravel),  new ItemStack(Item.coal, 1, WILDCARD_VALUE), new ItemStack(CoreHelper.coreContent.mythrilOre), 15.0F);
+        FusionRecipes.smelting().addSmelting(new ItemStack(CoreHelper.coreContent.mythrilSword, 1, WILDCARD_VALUE), new ItemStack(Block.gravel),  new ItemStack(Item.coal, 1, WILDCARD_VALUE), new ItemStack(CoreHelper.coreContent.mythrilOre), 15.0F);
+        FusionRecipes.smelting().addSmelting(new ItemStack(CoreHelper.coreContent.mythrilShovel, 1, WILDCARD_VALUE), new ItemStack(Block.gravel),  new ItemStack(Item.coal, 1, WILDCARD_VALUE), new ItemStack(CoreHelper.coreContent.mythrilOre), 15.0F);
+        FusionRecipes.smelting().addSmelting(new ItemStack(CoreHelper.coreContent.mythrilPick, 1, WILDCARD_VALUE), new ItemStack(Block.gravel),  new ItemStack(Item.coal, 1, WILDCARD_VALUE), new ItemStack(CoreHelper.coreContent.mythrilOre), 15.0F);
+        FusionRecipes.smelting().addSmelting(new ItemStack(CoreHelper.coreContent.mythrilAxe, 1, WILDCARD_VALUE), new ItemStack(Block.gravel),  new ItemStack(Item.coal, 1, WILDCARD_VALUE), new ItemStack(CoreHelper.coreContent.mythrilOre), 15.0F);
+        FusionRecipes.smelting().addSmelting(new ItemStack(CoreHelper.coreContent.mythrilHoe, 1, WILDCARD_VALUE), new ItemStack(Block.gravel),  new ItemStack(Item.coal, 1, WILDCARD_VALUE), new ItemStack(CoreHelper.coreContent.mythrilOre), 15.0F);
+        FusionRecipes.smelting().addSmelting(new ItemStack(CoreHelper.coreContent.mythrilBow, 1, WILDCARD_VALUE), new ItemStack(Block.gravel),  new ItemStack(Item.coal, 1, WILDCARD_VALUE), new ItemStack(CoreHelper.coreContent.mythrilOre), 15.0F);
         // extra Mythril recycling
-        FusionRecipes.smelting().addSmelting(new ItemStack(soItems.mythrilRod), new ItemStack(Block.gravel),  new ItemStack(Item.coal, 1, WILDCARD_VALUE), new ItemStack(soBlocks.mythrilOre), 15.0F);
-        FusionRecipes.smelting().addSmelting(new ItemStack(soBlocks.mythrilFurnace), new ItemStack(Block.gravel, 2, 0),  new ItemStack(Item.coal, 2, WILDCARD_VALUE), new ItemStack(soBlocks.mythrilOre, 2, 0), 15.0F);
+        FusionRecipes.smelting().addSmelting(new ItemStack(CoreHelper.coreContent.mythrilRod), new ItemStack(Block.gravel),  new ItemStack(Item.coal, 1, WILDCARD_VALUE), new ItemStack(CoreHelper.coreContent.mythrilOre), 15.0F);
+        FusionRecipes.smelting().addSmelting(new ItemStack(CoreHelper.coreContent.mythrilFurnace), new ItemStack(Block.gravel, 2, 0),  new ItemStack(Item.coal, 2, WILDCARD_VALUE), new ItemStack(CoreHelper.coreContent.mythrilOre, 2, 0), 15.0F);
         //
         // recycle your Adamantium
-        FusionRecipes.smelting().addSmelting(new ItemStack(soArmor.adamantiumHelm, 1, WILDCARD_VALUE), new ItemStack(Block.gravel),  new ItemStack(Item.coal, 1, WILDCARD_VALUE), new ItemStack(soBlocks.adamantiumOre), 15.0F);
-        FusionRecipes.smelting().addSmelting(new ItemStack(soArmor.adamantiumChest, 1, WILDCARD_VALUE), new ItemStack(Block.gravel, 2, 0),  new ItemStack(Item.coal, 2, WILDCARD_VALUE), new ItemStack(soBlocks.adamantiumOre, 2, 0), 30.0F);
-        FusionRecipes.smelting().addSmelting(new ItemStack(soArmor.adamantiumLegs, 1, WILDCARD_VALUE), new ItemStack(Block.gravel, 2, 0),  new ItemStack(Item.coal, 2, WILDCARD_VALUE), new ItemStack(soBlocks.adamantiumOre, 2, 0), 30.0F);
-        FusionRecipes.smelting().addSmelting(new ItemStack(soArmor.adamantiumBoots, 1, WILDCARD_VALUE), new ItemStack(Block.gravel),  new ItemStack(Item.coal, 1, WILDCARD_VALUE), new ItemStack(soBlocks.adamantiumOre), 15.0F);
-        FusionRecipes.smelting().addSmelting(new ItemStack(soTools.adamantiumSword, 1, WILDCARD_VALUE), new ItemStack(Block.gravel),  new ItemStack(Item.coal, 1, WILDCARD_VALUE), new ItemStack(soBlocks.adamantiumOre), 15.0F);
-        FusionRecipes.smelting().addSmelting(new ItemStack(soTools.adamantiumShovel, 1, WILDCARD_VALUE), new ItemStack(Block.gravel),  new ItemStack(Item.coal, 1, WILDCARD_VALUE), new ItemStack(soBlocks.adamantiumOre), 15.0F);
-        FusionRecipes.smelting().addSmelting(new ItemStack(soTools.adamantiumPick, 1, WILDCARD_VALUE), new ItemStack(Block.gravel),  new ItemStack(Item.coal, 1, WILDCARD_VALUE), new ItemStack(soBlocks.adamantiumOre), 15.0F);
-        FusionRecipes.smelting().addSmelting(new ItemStack(soTools.adamantiumAxe, 1, WILDCARD_VALUE), new ItemStack(Block.gravel),  new ItemStack(Item.coal, 1, WILDCARD_VALUE), new ItemStack(soBlocks.adamantiumOre), 15.0F);
-        FusionRecipes.smelting().addSmelting(new ItemStack(soTools.adamantiumHoe, 1, WILDCARD_VALUE), new ItemStack(Block.gravel),  new ItemStack(Item.coal, 1, WILDCARD_VALUE), new ItemStack(soBlocks.adamantiumOre), 15.0F);
+        FusionRecipes.smelting().addSmelting(new ItemStack(CoreHelper.coreContent.adamantiumHelm, 1, WILDCARD_VALUE), new ItemStack(Block.gravel),  new ItemStack(Item.coal, 1, WILDCARD_VALUE), new ItemStack(CoreHelper.coreContent.adamantiumOre), 15.0F);
+        FusionRecipes.smelting().addSmelting(new ItemStack(CoreHelper.coreContent.adamantiumChest, 1, WILDCARD_VALUE), new ItemStack(Block.gravel, 2, 0),  new ItemStack(Item.coal, 2, WILDCARD_VALUE), new ItemStack(CoreHelper.coreContent.adamantiumOre, 2, 0), 30.0F);
+        FusionRecipes.smelting().addSmelting(new ItemStack(CoreHelper.coreContent.adamantiumLegs, 1, WILDCARD_VALUE), new ItemStack(Block.gravel, 2, 0),  new ItemStack(Item.coal, 2, WILDCARD_VALUE), new ItemStack(CoreHelper.coreContent.adamantiumOre, 2, 0), 30.0F);
+        FusionRecipes.smelting().addSmelting(new ItemStack(CoreHelper.coreContent.adamantiumBoots, 1, WILDCARD_VALUE), new ItemStack(Block.gravel),  new ItemStack(Item.coal, 1, WILDCARD_VALUE), new ItemStack(CoreHelper.coreContent.adamantiumOre), 15.0F);
+        FusionRecipes.smelting().addSmelting(new ItemStack(CoreHelper.coreContent.adamantiumSword, 1, WILDCARD_VALUE), new ItemStack(Block.gravel),  new ItemStack(Item.coal, 1, WILDCARD_VALUE), new ItemStack(CoreHelper.coreContent.adamantiumOre), 15.0F);
+        FusionRecipes.smelting().addSmelting(new ItemStack(CoreHelper.coreContent.adamantiumShovel, 1, WILDCARD_VALUE), new ItemStack(Block.gravel),  new ItemStack(Item.coal, 1, WILDCARD_VALUE), new ItemStack(CoreHelper.coreContent.adamantiumOre), 15.0F);
+        FusionRecipes.smelting().addSmelting(new ItemStack(CoreHelper.coreContent.adamantiumPick, 1, WILDCARD_VALUE), new ItemStack(Block.gravel),  new ItemStack(Item.coal, 1, WILDCARD_VALUE), new ItemStack(CoreHelper.coreContent.adamantiumOre), 15.0F);
+        FusionRecipes.smelting().addSmelting(new ItemStack(CoreHelper.coreContent.adamantiumAxe, 1, WILDCARD_VALUE), new ItemStack(Block.gravel),  new ItemStack(Item.coal, 1, WILDCARD_VALUE), new ItemStack(CoreHelper.coreContent.adamantiumOre), 15.0F);
+        FusionRecipes.smelting().addSmelting(new ItemStack(CoreHelper.coreContent.adamantiumHoe, 1, WILDCARD_VALUE), new ItemStack(Block.gravel),  new ItemStack(Item.coal, 1, WILDCARD_VALUE), new ItemStack(CoreHelper.coreContent.adamantiumOre), 15.0F);
         // extra Adamantium recycling
-        FusionRecipes.smelting().addSmelting(new ItemStack(soTools.adamantiumShears, 1, WILDCARD_VALUE), new ItemStack(Block.gravel),  new ItemStack(Item.coal, 1, WILDCARD_VALUE), new ItemStack(soBlocks.adamantiumOre), 15.0F);
+        FusionRecipes.smelting().addSmelting(new ItemStack(CoreHelper.coreContent.adamantiumShears, 1, WILDCARD_VALUE), new ItemStack(Block.gravel),  new ItemStack(Item.coal, 1, WILDCARD_VALUE), new ItemStack(CoreHelper.coreContent.adamantiumOre), 15.0F);
         //
         // recycle your Onyx
-        FusionRecipes.smelting().addSmelting(new ItemStack(soArmor.onyxHelm, 1, WILDCARD_VALUE), new ItemStack(Block.netherrack), new ItemStack(Item.bucketLava), new ItemStack(soItems.onyxGem), 20.0F);
-        FusionRecipes.smelting().addSmelting(new ItemStack(soArmor.onyxChest, 1, WILDCARD_VALUE), new ItemStack(Block.netherrack, 2, 0), new ItemStack(Item.bucketLava), new ItemStack(soItems.onyxGem, 2, 0), 40.0F);
-        FusionRecipes.smelting().addSmelting(new ItemStack(soArmor.onyxLegs, 1, WILDCARD_VALUE), new ItemStack(Block.netherrack, 2, 0), new ItemStack(Item.bucketLava), new ItemStack(soItems.onyxGem, 2, 0), 40.0F);
-        FusionRecipes.smelting().addSmelting(new ItemStack(soArmor.onyxBoots, 1, WILDCARD_VALUE), new ItemStack(Block.netherrack), new ItemStack(Item.bucketLava), new ItemStack(soItems.onyxGem), 20.0F);
-        FusionRecipes.smelting().addSmelting(new ItemStack(soTools.onyxSword, 1, WILDCARD_VALUE), new ItemStack(Block.netherrack), new ItemStack(Item.bucketLava), new ItemStack(soItems.onyxGem), 20.0F);
-        FusionRecipes.smelting().addSmelting(new ItemStack(soTools.onyxShovel, 1, WILDCARD_VALUE), new ItemStack(Block.netherrack), new ItemStack(Item.bucketLava), new ItemStack(soItems.onyxGem), 20.0F);
-        FusionRecipes.smelting().addSmelting(new ItemStack(soTools.onyxPick, 1, WILDCARD_VALUE), new ItemStack(Block.netherrack), new ItemStack(Item.bucketLava), new ItemStack(soItems.onyxGem), 20.0F);
-        FusionRecipes.smelting().addSmelting(new ItemStack(soTools.onyxAxe, 1, WILDCARD_VALUE), new ItemStack(Block.netherrack), new ItemStack(Item.bucketLava), new ItemStack(soItems.onyxGem), 20.0F);
-        FusionRecipes.smelting().addSmelting(new ItemStack(soTools.onyxHoe, 1, WILDCARD_VALUE), new ItemStack(Block.netherrack), new ItemStack(Item.bucketLava), new ItemStack(soItems.onyxGem), 20.0F);
-        FusionRecipes.smelting().addSmelting(new ItemStack(soTools.onyxBow, 1, WILDCARD_VALUE), new ItemStack(Block.netherrack), new ItemStack(Item.bucketLava), new ItemStack(soItems.onyxGem), 20.0F);
+        FusionRecipes.smelting().addSmelting(new ItemStack(CoreHelper.coreContent.onyxHelm, 1, WILDCARD_VALUE), new ItemStack(Block.netherrack), new ItemStack(Item.bucketLava), new ItemStack(CoreHelper.coreContent.onyxOre), 20.0F);
+        FusionRecipes.smelting().addSmelting(new ItemStack(CoreHelper.coreContent.onyxChest, 1, WILDCARD_VALUE), new ItemStack(Block.netherrack, 2, 0), new ItemStack(Item.bucketLava), new ItemStack(CoreHelper.coreContent.onyxOre, 2, 0), 40.0F);
+        FusionRecipes.smelting().addSmelting(new ItemStack(CoreHelper.coreContent.onyxLegs, 1, WILDCARD_VALUE), new ItemStack(Block.netherrack, 2, 0), new ItemStack(Item.bucketLava), new ItemStack(CoreHelper.coreContent.onyxOre, 2, 0), 40.0F);
+        FusionRecipes.smelting().addSmelting(new ItemStack(CoreHelper.coreContent.onyxBoots, 1, WILDCARD_VALUE), new ItemStack(Block.netherrack), new ItemStack(Item.bucketLava), new ItemStack(CoreHelper.coreContent.onyxOre), 20.0F);
+        FusionRecipes.smelting().addSmelting(new ItemStack(CoreHelper.coreContent.onyxSword, 1, WILDCARD_VALUE), new ItemStack(Block.netherrack), new ItemStack(Item.bucketLava), new ItemStack(CoreHelper.coreContent.onyxOre), 20.0F);
+        FusionRecipes.smelting().addSmelting(new ItemStack(CoreHelper.coreContent.onyxShovel, 1, WILDCARD_VALUE), new ItemStack(Block.netherrack), new ItemStack(Item.bucketLava), new ItemStack(CoreHelper.coreContent.onyxOre), 20.0F);
+        FusionRecipes.smelting().addSmelting(new ItemStack(CoreHelper.coreContent.onyxPick, 1, WILDCARD_VALUE), new ItemStack(Block.netherrack), new ItemStack(Item.bucketLava), new ItemStack(CoreHelper.coreContent.onyxOre), 20.0F);
+        FusionRecipes.smelting().addSmelting(new ItemStack(CoreHelper.coreContent.onyxAxe, 1, WILDCARD_VALUE), new ItemStack(Block.netherrack), new ItemStack(Item.bucketLava), new ItemStack(CoreHelper.coreContent.onyxOre), 20.0F);
+        FusionRecipes.smelting().addSmelting(new ItemStack(CoreHelper.coreContent.onyxHoe, 1, WILDCARD_VALUE), new ItemStack(Block.netherrack), new ItemStack(Item.bucketLava), new ItemStack(CoreHelper.coreContent.onyxOre), 20.0F);
+        FusionRecipes.smelting().addSmelting(new ItemStack(CoreHelper.coreContent.onyxBow, 1, WILDCARD_VALUE), new ItemStack(Block.netherrack), new ItemStack(Item.bucketLava), new ItemStack(CoreHelper.coreContent.onyxOre), 20.0F);
         // extra Onyx recycling
-        FusionRecipes.smelting().addSmelting(new ItemStack(soItems.onyxDoorItem), new ItemStack(Block.netherrack), new ItemStack(Item.bucketLava), new ItemStack(soItems.onyxGem), 20.0F);
-        FusionRecipes.smelting().addSmelting(new ItemStack(soItems.onyxRod), new ItemStack(Block.netherrack), new ItemStack(Item.bucketLava), new ItemStack(soItems.onyxGem), 20.0F);
-        FusionRecipes.smelting().addSmelting(new ItemStack(soTools.onyxShears, 1, WILDCARD_VALUE), new ItemStack(Block.netherrack), new ItemStack(Item.bucketLava), new ItemStack(soItems.onyxGem), 20.0F);
-        FusionRecipes.smelting().addSmelting(new ItemStack(soBlocks.onyxFurnace), new ItemStack(Block.netherrack, 2, 0), new ItemStack(Item.bucketLava), new ItemStack(soItems.onyxGem, 2, 0), 40.0F);
+        FusionRecipes.smelting().addSmelting(new ItemStack(CoreHelper.coreContent.onyxDoorItem), new ItemStack(Block.netherrack), new ItemStack(Item.bucketLava), new ItemStack(CoreHelper.coreContent.onyxOre), 20.0F);
+        FusionRecipes.smelting().addSmelting(new ItemStack(CoreHelper.coreContent.onyxRod), new ItemStack(Block.netherrack), new ItemStack(Item.bucketLava), new ItemStack(CoreHelper.coreContent.onyxOre), 20.0F);
+        FusionRecipes.smelting().addSmelting(new ItemStack(CoreHelper.coreContent.onyxShears, 1, WILDCARD_VALUE), new ItemStack(Block.netherrack), new ItemStack(Item.bucketLava), new ItemStack(CoreHelper.coreContent.onyxOre), 20.0F);
+        FusionRecipes.smelting().addSmelting(new ItemStack(CoreHelper.coreContent.onyxFurnace), new ItemStack(Block.netherrack, 2, 0), new ItemStack(Item.bucketLava), new ItemStack(CoreHelper.coreContent.onyxOre, 2, 0), 40.0F);
         //
         // recycle your Bronze
         FusionRecipes.smelting().addSmelting(new ItemStack(soAlloy.bronzeHelm, 1, WILDCARD_VALUE), new ItemStack(Block.gravel),  new ItemStack(Item.coal, 1, WILDCARD_VALUE), new ItemStack(soAlloy.largeBronzeChunk), 10.0F);
@@ -254,11 +221,6 @@ public class SimpleFusionRecycle
         FusionRecipes.smelting().addSmelting(new ItemStack(soAlloy.sinisiteBow, 1, WILDCARD_VALUE), new ItemStack(Block.netherrack), new ItemStack(Item.bucketLava), new ItemStack(soAlloy.largeSinisiteChunk), 20.0F);
         // extra Sinisite recycling
         FusionRecipes.smelting().addSmelting(new ItemStack(soAlloy.sinisiteRod), new ItemStack(Block.netherrack), new ItemStack(Item.bucketLava), new ItemStack(soAlloy.largeSinisiteChunk), 20.0F);
-    }
+	}
 
-    @EventHandler // used in 1.6.2
-    public void postInit(FMLPostInitializationEvent event)
-    {
-        // Stub Method
-    }
 }

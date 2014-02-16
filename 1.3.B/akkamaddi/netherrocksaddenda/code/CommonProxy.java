@@ -1,4 +1,4 @@
-package akkamaddi.simplefusionrecycle.code;
+package akkamaddi.netherrocksaddenda.code;
 
 public class CommonProxy
 {
