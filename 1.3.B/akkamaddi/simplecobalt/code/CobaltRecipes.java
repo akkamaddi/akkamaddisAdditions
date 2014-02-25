@@ -8,7 +8,7 @@ import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import cpw.mods.fml.common.registry.GameRegistry;
 import alexndr.SimpleOres.plugins.fusion.FusionRecipes;
-import alexndr.SimpleOres.core.Items;
+import alexndr.SimpleOres.api.helpers.CoreHelper;
 
 public class CobaltRecipes
 {
@@ -322,14 +322,14 @@ public class CobaltRecipes
         FusionRecipes.smelting().addSmelting(new ItemStack(SimpleCobaltCore.cobaltIngot), new ItemStack(Item.ingotIron), new ItemStack(Item.dyePowder, 1, 4), new ItemStack(SimpleCobaltCore.largeBlueDriftSteelChunkItem), 20.F);
         
         //Blue Celadon
-        FusionRecipes.smelting().addSmelting(new ItemStack(SimpleCobaltCore.cobaltIngot), new ItemStack(Items.mythrilIngot), new ItemStack(Item.redstone), new ItemStack(SimpleCobaltCore.smallBlueCeladonChunkItem), 8.0F);
-        FusionRecipes.smelting().addSmelting(new ItemStack(SimpleCobaltCore.cobaltIngot), new ItemStack(Items.mythrilIngot), new ItemStack(Item.dyePowder, 1, 4), new ItemStack(SimpleCobaltCore.mediumBlueCeladonChunkItem), 10.0F);
-        FusionRecipes.smelting().addSmelting(new ItemStack(SimpleCobaltCore.cobaltIngot), new ItemStack(Items.mythrilIngot), new ItemStack(Item.glowstone), new ItemStack(SimpleCobaltCore.largeBlueCeladonChunkItem), 26.F);
+        FusionRecipes.smelting().addSmelting(new ItemStack(SimpleCobaltCore.cobaltIngot), new ItemStack(CoreHelper.coreContent.mythrilIngot), new ItemStack(Item.redstone), new ItemStack(SimpleCobaltCore.smallBlueCeladonChunkItem), 8.0F);
+        FusionRecipes.smelting().addSmelting(new ItemStack(SimpleCobaltCore.cobaltIngot), new ItemStack(CoreHelper.coreContent.mythrilIngot), new ItemStack(Item.dyePowder, 1, 4), new ItemStack(SimpleCobaltCore.mediumBlueCeladonChunkItem), 10.0F);
+        FusionRecipes.smelting().addSmelting(new ItemStack(SimpleCobaltCore.cobaltIngot), new ItemStack(CoreHelper.coreContent.mythrilIngot), new ItemStack(Item.glowstone), new ItemStack(SimpleCobaltCore.largeBlueCeladonChunkItem), 26.F);
         
         //Green Celadon
-        FusionRecipes.smelting().addSmelting(new ItemStack(SimpleCobaltCore.cobaltIngot), new ItemStack(Items.adamantiumIngot), new ItemStack(Item.dyePowder, 1, 4), new ItemStack(SimpleCobaltCore.smallGreenCeladonChunkItem), 10.0F);
-        FusionRecipes.smelting().addSmelting(new ItemStack(SimpleCobaltCore.cobaltIngot), new ItemStack(Items.adamantiumIngot), new ItemStack(Item.glowstone), new ItemStack(SimpleCobaltCore.mediumGreenCeladonChunkItem), 12.0F);
-        FusionRecipes.smelting().addSmelting(new ItemStack(SimpleCobaltCore.cobaltIngot), new ItemStack(Items.adamantiumIngot), new ItemStack(Item.emerald), new ItemStack(SimpleCobaltCore.largeGreenCeladonChunkItem), 36.F);
+        FusionRecipes.smelting().addSmelting(new ItemStack(SimpleCobaltCore.cobaltIngot), new ItemStack(CoreHelper.coreContent.adamantiumIngot), new ItemStack(Item.dyePowder, 1, 4), new ItemStack(SimpleCobaltCore.smallGreenCeladonChunkItem), 10.0F);
+        FusionRecipes.smelting().addSmelting(new ItemStack(SimpleCobaltCore.cobaltIngot), new ItemStack(CoreHelper.coreContent.adamantiumIngot), new ItemStack(Item.glowstone), new ItemStack(SimpleCobaltCore.mediumGreenCeladonChunkItem), 12.0F);
+        FusionRecipes.smelting().addSmelting(new ItemStack(SimpleCobaltCore.cobaltIngot), new ItemStack(CoreHelper.coreContent.adamantiumIngot), new ItemStack(Item.emerald), new ItemStack(SimpleCobaltCore.largeGreenCeladonChunkItem), 36.F);
         
         if (SimpleCobaltCore.enableRecycling) {
         	

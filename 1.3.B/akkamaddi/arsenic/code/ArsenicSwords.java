@@ -17,7 +17,7 @@ import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
-import alexndr.SimpleOres.api.SimpleSword;
+import alexndr.SimpleOres.api.content.SimpleSword;
 
 public class ArsenicSwords extends SimpleSword
 {

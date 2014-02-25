@@ -25,14 +25,14 @@ import net.minecraftforge.common.EnumHelper;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.Configuration;
 import net.minecraftforge.event.ForgeSubscribe;
-import alexndr.SimpleOres.api.SimpleIngot;
-import alexndr.SimpleOres.api.SimpleSword;
-import alexndr.SimpleOres.api.SimpleShovel;
-import alexndr.SimpleOres.api.SimpleAxe;
-import alexndr.SimpleOres.api.SimplePickaxe;
-import alexndr.SimpleOres.api.SimpleOre;
-import alexndr.SimpleOres.api.HandlerLoot;
-import alexndr.SimpleOres.api.SimpleTab;
+import alexndr.SimpleOres.api.content.SimpleIngot;
+import alexndr.SimpleOres.api.content.SimpleSword;
+import alexndr.SimpleOres.api.content.SimpleShovel;
+import alexndr.SimpleOres.api.content.SimpleAxe;
+import alexndr.SimpleOres.api.content.SimplePickaxe;
+import alexndr.SimpleOres.api.content.SimpleOre;
+import alexndr.SimpleOres.api.helpers.LootHelper;
+import alexndr.SimpleOres.api.content.SimpleTab;
 
 @Mod(modid = "haditecoal", name = "Hadite Coal, nether utility ore", version = "1.1.6", dependencies = "required-after:simpleores; required-after:simpleoresfusion")
 @NetworkMod(clientSideRequired = true)
@@ -225,32 +225,32 @@ public class HaditeCoalCore
         */
         
         // loot
-        HandlerLoot.addLoot("villageBlacksmith", new ItemStack(haditeCoalIngot), 3, 5, 7);
-        HandlerLoot.addLoot("villageBlacksmith", new ItemStack(gestankenzinnIngot), 2, 3, 2);
-        HandlerLoot.addLoot("villageBlacksmith", new ItemStack(haditeSteelIngot), 2, 3, 2);
-        HandlerLoot.addLoot("villageBlacksmith", new ItemStack(gestankenzinnSword), 1, 1, 2);
-        HandlerLoot.addLoot("villageBlacksmith", new ItemStack(haditeSteelSword), 1, 1, 2);
-        HandlerLoot.addLoot("villageBlacksmith", new ItemStack(gestankenzinnPickaxe), 1, 1, 2);
-        HandlerLoot.addLoot("villageBlacksmith", new ItemStack(haditeSteelPickaxe), 1, 1, 2);
-        HandlerLoot.addLoot("villageBlacksmith", new ItemStack(gestankenzinnAxe), 1, 1, 1);
-        HandlerLoot.addLoot("villageBlacksmith", new ItemStack(haditeSteelAxe), 1, 1, 1);
-        HandlerLoot.addLoot("villageBlacksmith", new ItemStack(gestankenzinnShovel), 1, 1, 1);
-        HandlerLoot.addLoot("villageBlacksmith", new ItemStack(haditeSteelShovel), 1, 1, 1);
-        HandlerLoot.addLoot("strongholdCrossing", new ItemStack(haditeCoalIngot), 1, 2, 4);
-        HandlerLoot.addLoot("strongholdCorridor", new ItemStack(haditeCoalIngot), 1, 2, 2);
-        HandlerLoot.addLoot("pyramidDesertyChest", new ItemStack(haditeCoalIngot), 1, 4, 2);
-        HandlerLoot.addLoot("pyramidDesertyChest", new ItemStack(gestankenzinnSword), 1, 2, 1);
-        HandlerLoot.addLoot("pyramidDesertyChest", new ItemStack(haditeSteelSword), 1, 6, 1);
-        HandlerLoot.addLoot("dungeonChest", new ItemStack(gestankenzinnIngot), 1, 3, 5);
-        HandlerLoot.addLoot("dungeonChest", new ItemStack(haditeSteelIngot), 1, 3, 5);
-        HandlerLoot.addLoot("dungeonChest", new ItemStack(gestankenzinnSword), 1, 2, 2);
-        HandlerLoot.addLoot("dungeonChest", new ItemStack(haditeSteelSword), 1, 2, 2);
-        HandlerLoot.addLoot("dungeonChest", new ItemStack(gestankenzinnPickaxe), 1, 2, 2);
-        HandlerLoot.addLoot("dungeonChest", new ItemStack(haditeSteelPickaxe), 1, 2, 2);
-        HandlerLoot.addLoot("mineshaftCorridor", new ItemStack(gestankenzinnPickaxe), 1, 2, 1);
-        HandlerLoot.addLoot("mineshaftCorridor", new ItemStack(haditeSteelPickaxe), 1, 2, 1);
-        HandlerLoot.addLoot("mineshaftCorridor", new ItemStack(gestankenzinnShovel), 1, 2, 1);
-        HandlerLoot.addLoot("mineshaftCorridor", new ItemStack(haditeSteelShovel), 1, 2, 1);
+        LootHelper.addLoot("villageBlacksmith", new ItemStack(haditeCoalIngot), 3, 5, 7);
+        LootHelper.addLoot("villageBlacksmith", new ItemStack(gestankenzinnIngot), 2, 3, 2);
+        LootHelper.addLoot("villageBlacksmith", new ItemStack(haditeSteelIngot), 2, 3, 2);
+        LootHelper.addLoot("villageBlacksmith", new ItemStack(gestankenzinnSword), 1, 1, 2);
+        LootHelper.addLoot("villageBlacksmith", new ItemStack(haditeSteelSword), 1, 1, 2);
+        LootHelper.addLoot("villageBlacksmith", new ItemStack(gestankenzinnPickaxe), 1, 1, 2);
+        LootHelper.addLoot("villageBlacksmith", new ItemStack(haditeSteelPickaxe), 1, 1, 2);
+        LootHelper.addLoot("villageBlacksmith", new ItemStack(gestankenzinnAxe), 1, 1, 1);
+        LootHelper.addLoot("villageBlacksmith", new ItemStack(haditeSteelAxe), 1, 1, 1);
+        LootHelper.addLoot("villageBlacksmith", new ItemStack(gestankenzinnShovel), 1, 1, 1);
+        LootHelper.addLoot("villageBlacksmith", new ItemStack(haditeSteelShovel), 1, 1, 1);
+        LootHelper.addLoot("strongholdCrossing", new ItemStack(haditeCoalIngot), 1, 2, 4);
+        LootHelper.addLoot("strongholdCorridor", new ItemStack(haditeCoalIngot), 1, 2, 2);
+        LootHelper.addLoot("pyramidDesertyChest", new ItemStack(haditeCoalIngot), 1, 4, 2);
+        LootHelper.addLoot("pyramidDesertyChest", new ItemStack(gestankenzinnSword), 1, 2, 1);
+        LootHelper.addLoot("pyramidDesertyChest", new ItemStack(haditeSteelSword), 1, 6, 1);
+        LootHelper.addLoot("dungeonChest", new ItemStack(gestankenzinnIngot), 1, 3, 5);
+        LootHelper.addLoot("dungeonChest", new ItemStack(haditeSteelIngot), 1, 3, 5);
+        LootHelper.addLoot("dungeonChest", new ItemStack(gestankenzinnSword), 1, 2, 2);
+        LootHelper.addLoot("dungeonChest", new ItemStack(haditeSteelSword), 1, 2, 2);
+        LootHelper.addLoot("dungeonChest", new ItemStack(gestankenzinnPickaxe), 1, 2, 2);
+        LootHelper.addLoot("dungeonChest", new ItemStack(haditeSteelPickaxe), 1, 2, 2);
+        LootHelper.addLoot("mineshaftCorridor", new ItemStack(gestankenzinnPickaxe), 1, 2, 1);
+        LootHelper.addLoot("mineshaftCorridor", new ItemStack(haditeSteelPickaxe), 1, 2, 1);
+        LootHelper.addLoot("mineshaftCorridor", new ItemStack(gestankenzinnShovel), 1, 2, 1);
+        LootHelper.addLoot("mineshaftCorridor", new ItemStack(haditeSteelShovel), 1, 2, 1);
         
         // run tab icon call
         setTabIcons();

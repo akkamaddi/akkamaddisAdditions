@@ -2,11 +2,12 @@ package akkamaddi.hadite.code;
 
 import java.util.Random;
 
+import net.minecraft.block.Block;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.feature.WorldGenMinable;
 import cpw.mods.fml.common.IWorldGenerator;
-import alexndr.SimpleOres.core.handlers.GenNetherrack;
+import alexndr.SimpleOres.api.helpers.WorldGenHelper;
 
 public class HaditeGenerator implements IWorldGenerator
 {
@@ -32,7 +33,7 @@ public class HaditeGenerator implements IWorldGenerator
             int randPosX = baseX + rand.nextInt(16);
             int randPosY = rand.nextInt(HaditeCoalCore.haditeSpawnHeight);
             int randPosZ = baseZ + rand.nextInt(16);
-            new GenNetherrack(HaditeCoalCore.blockHaditeCoalOre.blockID, HaditeCoalCore.haditeVeinSize).generate(world, rand, randPosX, randPosY, randPosZ);
+            new WorldGenHelper(HaditeCoalCore.blockHaditeCoalOre.blockID, HaditeCoalCore.haditeVeinSize, Block.netherrack).generate(world, rand, randPosX, randPosY, randPosZ);
         }
     }
 }
