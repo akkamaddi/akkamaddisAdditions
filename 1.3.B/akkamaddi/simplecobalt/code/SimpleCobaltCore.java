@@ -27,16 +27,16 @@ import net.minecraftforge.common.EnumHelper;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.Configuration;
 import net.minecraftforge.event.ForgeSubscribe;
-import alexndr.SimpleOres.api.SimpleIngot;
-import alexndr.SimpleOres.api.SimpleSword;
-import alexndr.SimpleOres.api.SimpleShovel;
-import alexndr.SimpleOres.api.SimpleAxe;
-import alexndr.SimpleOres.api.SimplePickaxe;
-import alexndr.SimpleOres.api.SimpleHoe;
-import alexndr.SimpleOres.api.SimpleArmor;
-import alexndr.SimpleOres.api.HandlerLoot;
-import alexndr.SimpleOres.api.SimpleOre;
-import alexndr.SimpleOres.api.SimpleTab;
+import alexndr.SimpleOres.api.content.SimpleIngot;
+import alexndr.SimpleOres.api.content.SimpleSword;
+import alexndr.SimpleOres.api.content.SimpleShovel;
+import alexndr.SimpleOres.api.content.SimpleAxe;
+import alexndr.SimpleOres.api.content.SimplePickaxe;
+import alexndr.SimpleOres.api.content.SimpleHoe;
+import alexndr.SimpleOres.api.content.SimpleArmor;
+import alexndr.SimpleOres.api.helpers.LootHelper;
+import alexndr.SimpleOres.api.content.SimpleOre;
+import alexndr.SimpleOres.api.content.SimpleTab;
 
 @Mod(modid = "simplecobalt", name = "Simple Cobalt, and Cobalt alloys", version = "1.1.2", dependencies = "required-after:simpleores ; required-after:simpleoresfusion")
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
@@ -558,59 +558,59 @@ public class SimpleCobaltCore
         */
 
         // loot
-        HandlerLoot.addLoot("villageBlacksmith", new ItemStack(cobaltIngot), 2, 4, 6);
-        HandlerLoot.addLoot("villageBlacksmith", new ItemStack(cobaltSword), 2, 3, 1);
-        HandlerLoot.addLoot("villageBlacksmith", new ItemStack(cobaltPickaxe), 2, 3, 1);
-        HandlerLoot.addLoot("villageBlacksmith", new ItemStack(cobaltAxe), 2, 3, 1);
-        HandlerLoot.addLoot("villageBlacksmith", new ItemStack(cobaltShovel), 2, 3, 1);
-        HandlerLoot.addLoot("villageBlacksmith", new ItemStack(blueDriftSteelIngot), 2, 3, 4);
-        HandlerLoot.addLoot("villageBlacksmith", new ItemStack(blueCeladonIngot), 2, 3, 3);
-        HandlerLoot.addLoot("villageBlacksmith", new ItemStack(greenCeladonIngot), 1, 2, 2);
-        HandlerLoot.addLoot("villageBlacksmith", new ItemStack(blueDriftSteelSword), 1, 2, 1);
-        HandlerLoot.addLoot("villageBlacksmith", new ItemStack(blueCeladonSword), 1, 2, 1);
-        HandlerLoot.addLoot("villageBlacksmith", new ItemStack(greenCeladonSword), 1, 1, 1);
+        LootHelper.addLoot("villageBlacksmith", new ItemStack(cobaltIngot), 2, 4, 6);
+        LootHelper.addLoot("villageBlacksmith", new ItemStack(cobaltSword), 2, 3, 1);
+        LootHelper.addLoot("villageBlacksmith", new ItemStack(cobaltPickaxe), 2, 3, 1);
+        LootHelper.addLoot("villageBlacksmith", new ItemStack(cobaltAxe), 2, 3, 1);
+        LootHelper.addLoot("villageBlacksmith", new ItemStack(cobaltShovel), 2, 3, 1);
+        LootHelper.addLoot("villageBlacksmith", new ItemStack(blueDriftSteelIngot), 2, 3, 4);
+        LootHelper.addLoot("villageBlacksmith", new ItemStack(blueCeladonIngot), 2, 3, 3);
+        LootHelper.addLoot("villageBlacksmith", new ItemStack(greenCeladonIngot), 1, 2, 2);
+        LootHelper.addLoot("villageBlacksmith", new ItemStack(blueDriftSteelSword), 1, 2, 1);
+        LootHelper.addLoot("villageBlacksmith", new ItemStack(blueCeladonSword), 1, 2, 1);
+        LootHelper.addLoot("villageBlacksmith", new ItemStack(greenCeladonSword), 1, 1, 1);
 
-        HandlerLoot.addLoot("dungeonChest", new ItemStack(blueDriftSteelSword), 1, 2, 1);
-        HandlerLoot.addLoot("dungeonChest", new ItemStack(blueDriftSteelPickaxe), 1, 2, 1);
-        HandlerLoot.addLoot("dungeonChest", new ItemStack(blueCeladonPickaxe), 1, 2, 1);
-        HandlerLoot.addLoot("dungeonChest", new ItemStack(greenCeladonPickaxe), 1, 1, 1);
-        HandlerLoot.addLoot("dungeonChest", new ItemStack(blueCeladonSword), 1, 2, 1);
-        HandlerLoot.addLoot("dungeonChest", new ItemStack(greenCeladonSword), 1, 1, 1);
+        LootHelper.addLoot("dungeonChest", new ItemStack(blueDriftSteelSword), 1, 2, 1);
+        LootHelper.addLoot("dungeonChest", new ItemStack(blueDriftSteelPickaxe), 1, 2, 1);
+        LootHelper.addLoot("dungeonChest", new ItemStack(blueCeladonPickaxe), 1, 2, 1);
+        LootHelper.addLoot("dungeonChest", new ItemStack(greenCeladonPickaxe), 1, 1, 1);
+        LootHelper.addLoot("dungeonChest", new ItemStack(blueCeladonSword), 1, 2, 1);
+        LootHelper.addLoot("dungeonChest", new ItemStack(greenCeladonSword), 1, 1, 1);
         
 
-        HandlerLoot.addLoot("mineshaftCorridor", new ItemStack(cobaltIngot), 2, 3, 3);
-        HandlerLoot.addLoot("mineshaftCorridor", new ItemStack(cobaltSword), 1, 2, 1);
-        HandlerLoot.addLoot("mineshaftCorridor", new ItemStack(cobaltPickaxe), 2, 3, 2);
-        HandlerLoot.addLoot("mineshaftCorridor", new ItemStack(cobaltShovel), 2, 3, 2);
-        HandlerLoot.addLoot("mineshaftCorridor", new ItemStack(blueDriftSteelPickaxe), 2, 3, 1);
-        HandlerLoot.addLoot("mineshaftCorridor", new ItemStack(blueDriftSteelShovel), 1, 1, 1);
-        HandlerLoot.addLoot("mineshaftCorridor", new ItemStack(blueCeladonPickaxe), 1, 1, 1);
-        HandlerLoot.addLoot("mineshaftCorridor", new ItemStack(blueCeladonShovel), 1, 1, 1);
-        HandlerLoot.addLoot("mineshaftCorridor", new ItemStack(greenCeladonPickaxe), 1, 1, 1);
-        HandlerLoot.addLoot("mineshaftCorridor", new ItemStack(greenCeladonShovel), 1, 1, 1);
+        LootHelper.addLoot("mineshaftCorridor", new ItemStack(cobaltIngot), 2, 3, 3);
+        LootHelper.addLoot("mineshaftCorridor", new ItemStack(cobaltSword), 1, 2, 1);
+        LootHelper.addLoot("mineshaftCorridor", new ItemStack(cobaltPickaxe), 2, 3, 2);
+        LootHelper.addLoot("mineshaftCorridor", new ItemStack(cobaltShovel), 2, 3, 2);
+        LootHelper.addLoot("mineshaftCorridor", new ItemStack(blueDriftSteelPickaxe), 2, 3, 1);
+        LootHelper.addLoot("mineshaftCorridor", new ItemStack(blueDriftSteelShovel), 1, 1, 1);
+        LootHelper.addLoot("mineshaftCorridor", new ItemStack(blueCeladonPickaxe), 1, 1, 1);
+        LootHelper.addLoot("mineshaftCorridor", new ItemStack(blueCeladonShovel), 1, 1, 1);
+        LootHelper.addLoot("mineshaftCorridor", new ItemStack(greenCeladonPickaxe), 1, 1, 1);
+        LootHelper.addLoot("mineshaftCorridor", new ItemStack(greenCeladonShovel), 1, 1, 1);
         
-        HandlerLoot.addLoot("pyramidDesertyChest", new ItemStack(blueDriftSteelIngot), 1, 2, 3);
-        HandlerLoot.addLoot("pyramidDesertyChest", new ItemStack(blueCeladonIngot), 1, 1, 1);
-        HandlerLoot.addLoot("pyramidDesertyChest", new ItemStack(greenCeladonIngot), 1, 1, 1);
-        HandlerLoot.addLoot("pyramidDesertyChest", new ItemStack(blueDriftSteelSword), 2, 4, 1);
-        HandlerLoot.addLoot("pyramidDesertyChest", new ItemStack(blueCeladonSword), 1, 1, 1);
-        HandlerLoot.addLoot("pyramidDesertyChest", new ItemStack(greenCeladonSword), 1, 1, 1);
-        HandlerLoot.addLoot("pyramidDesertyChest", new ItemStack(cobaltSword), 1, 5, 1);
-        HandlerLoot.addLoot("pyramidDesertyChest", new ItemStack(cobaltHelm), 1, 5, 1);
-        HandlerLoot.addLoot("pyramidDesertyChest", new ItemStack(cobaltChest), 1, 5, 1);
-        HandlerLoot.addLoot("pyramidDesertyChest", new ItemStack(cobaltLegs), 1, 5, 1);
-        HandlerLoot.addLoot("pyramidDesertyChest", new ItemStack(cobaltBoots), 1, 5, 1);
+        LootHelper.addLoot("pyramidDesertyChest", new ItemStack(blueDriftSteelIngot), 1, 2, 3);
+        LootHelper.addLoot("pyramidDesertyChest", new ItemStack(blueCeladonIngot), 1, 1, 1);
+        LootHelper.addLoot("pyramidDesertyChest", new ItemStack(greenCeladonIngot), 1, 1, 1);
+        LootHelper.addLoot("pyramidDesertyChest", new ItemStack(blueDriftSteelSword), 2, 4, 1);
+        LootHelper.addLoot("pyramidDesertyChest", new ItemStack(blueCeladonSword), 1, 1, 1);
+        LootHelper.addLoot("pyramidDesertyChest", new ItemStack(greenCeladonSword), 1, 1, 1);
+        LootHelper.addLoot("pyramidDesertyChest", new ItemStack(cobaltSword), 1, 5, 1);
+        LootHelper.addLoot("pyramidDesertyChest", new ItemStack(cobaltHelm), 1, 5, 1);
+        LootHelper.addLoot("pyramidDesertyChest", new ItemStack(cobaltChest), 1, 5, 1);
+        LootHelper.addLoot("pyramidDesertyChest", new ItemStack(cobaltLegs), 1, 5, 1);
+        LootHelper.addLoot("pyramidDesertyChest", new ItemStack(cobaltBoots), 1, 5, 1);
 
-        HandlerLoot.addLoot("pyramidJungleChest", new ItemStack(blueDriftSteelIngot), 1, 1, 1);
-        HandlerLoot.addLoot("pyramidJungleChest", new ItemStack(blueCeladonIngot), 1, 1, 1);
-        HandlerLoot.addLoot("pyramidJungleChest", new ItemStack(greenCeladonIngot), 1, 2, 4);
-        HandlerLoot.addLoot("pyramidJungleChest", new ItemStack(blueDriftSteelSword), 1, 1, 1);
-        HandlerLoot.addLoot("pyramidJungleChest", new ItemStack(blueCeladonSword), 1, 1, 1);
-        HandlerLoot.addLoot("pyramidJungleChest", new ItemStack(greenCeladonSword), 1, 5, 1);
-        HandlerLoot.addLoot("pyramidJungleChest", new ItemStack(greenCeladonHelm), 1, 5, 1);
-        HandlerLoot.addLoot("pyramidJungleChest", new ItemStack(greenCeladonChest), 1, 5, 1);
-        HandlerLoot.addLoot("pyramidJungleChest", new ItemStack(greenCeladonLegs), 1, 5, 1);
-        HandlerLoot.addLoot("pyramidJungleChest", new ItemStack(greenCeladonBoots), 1, 5, 1);
+        LootHelper.addLoot("pyramidJungleChest", new ItemStack(blueDriftSteelIngot), 1, 1, 1);
+        LootHelper.addLoot("pyramidJungleChest", new ItemStack(blueCeladonIngot), 1, 1, 1);
+        LootHelper.addLoot("pyramidJungleChest", new ItemStack(greenCeladonIngot), 1, 2, 4);
+        LootHelper.addLoot("pyramidJungleChest", new ItemStack(blueDriftSteelSword), 1, 1, 1);
+        LootHelper.addLoot("pyramidJungleChest", new ItemStack(blueCeladonSword), 1, 1, 1);
+        LootHelper.addLoot("pyramidJungleChest", new ItemStack(greenCeladonSword), 1, 5, 1);
+        LootHelper.addLoot("pyramidJungleChest", new ItemStack(greenCeladonHelm), 1, 5, 1);
+        LootHelper.addLoot("pyramidJungleChest", new ItemStack(greenCeladonChest), 1, 5, 1);
+        LootHelper.addLoot("pyramidJungleChest", new ItemStack(greenCeladonLegs), 1, 5, 1);
+        LootHelper.addLoot("pyramidJungleChest", new ItemStack(greenCeladonBoots), 1, 5, 1);
 
         
         //recipes

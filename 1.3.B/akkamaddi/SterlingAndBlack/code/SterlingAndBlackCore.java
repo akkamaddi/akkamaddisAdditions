@@ -27,16 +27,16 @@ import net.minecraftforge.common.EnumHelper;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.Configuration;
 import net.minecraftforge.event.ForgeSubscribe;
-import alexndr.SimpleOres.api.SimpleIngot;
-import alexndr.SimpleOres.api.SimpleSword;
-import alexndr.SimpleOres.api.SimpleShovel;
-import alexndr.SimpleOres.api.SimpleAxe;
-import alexndr.SimpleOres.api.SimplePickaxe;
-import alexndr.SimpleOres.api.SimpleHoe;
-import alexndr.SimpleOres.api.SimpleArmor;
+import alexndr.SimpleOres.api.content.SimpleIngot;
+import alexndr.SimpleOres.api.content.SimpleSword;
+import alexndr.SimpleOres.api.content.SimpleShovel;
+import alexndr.SimpleOres.api.content.SimpleAxe;
+import alexndr.SimpleOres.api.content.SimplePickaxe;
+import alexndr.SimpleOres.api.content.SimpleHoe;
+import alexndr.SimpleOres.api.content.SimpleArmor;
 import OnlySilver.code.api.OnlySilverAPI;
-import alexndr.SimpleOres.api.HandlerLoot;
-import alexndr.SimpleOres.api.SimpleTab;
+import alexndr.SimpleOres.api.helpers.LootHelper;
+import alexndr.SimpleOres.api.content.SimpleTab;
 
 @Mod(modid = "sterlingandblack", name = "Sterling & Black", version = "1.2.0", dependencies = "required-after:simpleores ; required-after:simpleoresfusion ; required-after:onlysilver")
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
@@ -273,35 +273,35 @@ public class SterlingAndBlackCore
         */
        
         // loot
-        HandlerLoot.addLoot("villageBlacksmith", new ItemStack(sterlingSteelIngot), 1, 2, 2);
-        HandlerLoot.addLoot("villageBlacksmith", new ItemStack(largeSterlingSteelChunkItem), 1, 2, 3);
-        HandlerLoot.addLoot("villageBlacksmith", new ItemStack(sterlingSteelSword), 1, 2, 1);
-        HandlerLoot.addLoot("villageBlacksmith", new ItemStack(sterlingSteelPickaxe), 2, 3, 1);
-        HandlerLoot.addLoot("villageBlacksmith", new ItemStack(sterlingSteelAxe), 1, 1, 1);
-        HandlerLoot.addLoot("villageBlacksmith", new ItemStack(sterlingSteelShovel), 1, 1, 1);
-        HandlerLoot.addLoot("villageBlacksmith", new ItemStack(sterlingSteelHoe), 1, 1, 1);
-        HandlerLoot.addLoot("villageBlacksmith", new ItemStack(largeBlackSilverChunkItem), 1, 2, 2);
-        HandlerLoot.addLoot("villageBlacksmith", new ItemStack(blackSilverIngot), 1, 2, 2);
-        HandlerLoot.addLoot("villageBlacksmith", new ItemStack(blackSilverSword), 1, 1, 1);
-        HandlerLoot.addLoot("villageBlacksmith", new ItemStack(blackSilverPickaxe), 1, 2, 1);
-        HandlerLoot.addLoot("mineshaftCorridor", new ItemStack(sterlingSteelPickaxe), 2, 3, 1);
-        HandlerLoot.addLoot("mineshaftCorridor", new ItemStack(blackSilverPickaxe), 1, 2, 1);
-        HandlerLoot.addLoot("mineshaftCorridor", new ItemStack(sterlingSteelShovel), 2, 3, 1);
-        HandlerLoot.addLoot("mineshaftCorridor", new ItemStack(blackSilverShovel), 1, 2, 1);
-        HandlerLoot.addLoot("dungeonChest", new ItemStack(sterlingSteelIngot), 1, 2, 2);
-        HandlerLoot.addLoot("dungeonChest", new ItemStack(blackSilverIngot), 1, 2, 2);
-        HandlerLoot.addLoot("dungeonChest", new ItemStack(sterlingSteelSword), 1, 1, 1);
-        HandlerLoot.addLoot("dungeonChest", new ItemStack(blackSilverSword), 1, 1, 1);
-        HandlerLoot.addLoot("dungeonChest", new ItemStack(sterlingSteelAxe), 1, 1, 1);
-        HandlerLoot.addLoot("dungeonChest", new ItemStack(blackSilverAxe), 1, 1, 1);
-        HandlerLoot.addLoot("strongholdLibrary", new ItemStack(sterlingSteelIngot), 1, 2, 2);
-        HandlerLoot.addLoot("strongholdLibrary", new ItemStack(sterlingSteelSword), 2, 4, 1);
-        HandlerLoot.addLoot("strongholdLibrary", new ItemStack(blackSilverChest), 1, 4, 1);
-        HandlerLoot.addLoot("strongholdLibrary", new ItemStack(blackSilverHelm), 1, 4, 1);
-        HandlerLoot.addLoot("strongholdLibrary", new ItemStack(blackSilverLegs), 1, 4, 1);
-        HandlerLoot.addLoot("strongholdLibrary", new ItemStack(blackSilverBoots), 1, 4, 1);
-        HandlerLoot.addLoot("pyramidDesertyChest", new ItemStack(sterlingSteelSword), 1, 1, 1);
-        HandlerLoot.addLoot("pyramidJungleChest", new ItemStack(blackSilverSword), 1, 1, 1);
+        LootHelper.addLoot("villageBlacksmith", new ItemStack(sterlingSteelIngot), 1, 2, 2);
+        LootHelper.addLoot("villageBlacksmith", new ItemStack(largeSterlingSteelChunkItem), 1, 2, 3);
+        LootHelper.addLoot("villageBlacksmith", new ItemStack(sterlingSteelSword), 1, 2, 1);
+        LootHelper.addLoot("villageBlacksmith", new ItemStack(sterlingSteelPickaxe), 2, 3, 1);
+        LootHelper.addLoot("villageBlacksmith", new ItemStack(sterlingSteelAxe), 1, 1, 1);
+        LootHelper.addLoot("villageBlacksmith", new ItemStack(sterlingSteelShovel), 1, 1, 1);
+        LootHelper.addLoot("villageBlacksmith", new ItemStack(sterlingSteelHoe), 1, 1, 1);
+        LootHelper.addLoot("villageBlacksmith", new ItemStack(largeBlackSilverChunkItem), 1, 2, 2);
+        LootHelper.addLoot("villageBlacksmith", new ItemStack(blackSilverIngot), 1, 2, 2);
+        LootHelper.addLoot("villageBlacksmith", new ItemStack(blackSilverSword), 1, 1, 1);
+        LootHelper.addLoot("villageBlacksmith", new ItemStack(blackSilverPickaxe), 1, 2, 1);
+        LootHelper.addLoot("mineshaftCorridor", new ItemStack(sterlingSteelPickaxe), 2, 3, 1);
+        LootHelper.addLoot("mineshaftCorridor", new ItemStack(blackSilverPickaxe), 1, 2, 1);
+        LootHelper.addLoot("mineshaftCorridor", new ItemStack(sterlingSteelShovel), 2, 3, 1);
+        LootHelper.addLoot("mineshaftCorridor", new ItemStack(blackSilverShovel), 1, 2, 1);
+        LootHelper.addLoot("dungeonChest", new ItemStack(sterlingSteelIngot), 1, 2, 2);
+        LootHelper.addLoot("dungeonChest", new ItemStack(blackSilverIngot), 1, 2, 2);
+        LootHelper.addLoot("dungeonChest", new ItemStack(sterlingSteelSword), 1, 1, 1);
+        LootHelper.addLoot("dungeonChest", new ItemStack(blackSilverSword), 1, 1, 1);
+        LootHelper.addLoot("dungeonChest", new ItemStack(sterlingSteelAxe), 1, 1, 1);
+        LootHelper.addLoot("dungeonChest", new ItemStack(blackSilverAxe), 1, 1, 1);
+        LootHelper.addLoot("strongholdLibrary", new ItemStack(sterlingSteelIngot), 1, 2, 2);
+        LootHelper.addLoot("strongholdLibrary", new ItemStack(sterlingSteelSword), 2, 4, 1);
+        LootHelper.addLoot("strongholdLibrary", new ItemStack(blackSilverChest), 1, 4, 1);
+        LootHelper.addLoot("strongholdLibrary", new ItemStack(blackSilverHelm), 1, 4, 1);
+        LootHelper.addLoot("strongholdLibrary", new ItemStack(blackSilverLegs), 1, 4, 1);
+        LootHelper.addLoot("strongholdLibrary", new ItemStack(blackSilverBoots), 1, 4, 1);
+        LootHelper.addLoot("pyramidDesertyChest", new ItemStack(sterlingSteelSword), 1, 1, 1);
+        LootHelper.addLoot("pyramidJungleChest", new ItemStack(blackSilverSword), 1, 1, 1);
 
         //werewolves
         if (SterlingAndBlackCore.werewolfEffectiveness)
