@@ -32,6 +32,7 @@ import alexndr.SimpleOres.api.content.SimpleTab;
 import alexndr.SimpleOres.api.content.SimpleIngot;
 import alexndr.SimpleOres.api.content.SimpleOre;
 import alexndr.SimpleOres.api.helpers.LootHelper;
+import net.minecraft.creativetab.CreativeTabs;
 
 @Mod(modid = "SimpleArsenic", name = "Simple Arsenic, and Old Lace", version = "1.3.0", dependencies = "required-after:simpleoresfusion ; after:MoCreatures")
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
@@ -220,6 +221,7 @@ public class ArsenicAndLace
     public static EnumToolMaterial toolArsenideGold = EnumHelper.addToolMaterial("ARSENIDEGOLD", 1, 56, 12.0F, 2, 20);
     public static EnumToolMaterial toolTenebrium = EnumHelper.addToolMaterial("TENEBRIUM", 4, 3820, 9.0F, 3, 17);
 
+    
     // Tab
     public void setTabIcons()
     {
@@ -295,75 +297,75 @@ public class ArsenicAndLace
         werewolfEffectiveness = config.get(Configuration.CATEGORY_GENERAL, "Works on Mo'Creatures lycanthropes, true or false", true).getBoolean(true);
         enableRecycling = config.get(Configuration.CATEGORY_GENERAL, "Enable arsenide recycling recipes, false or true", false).getBoolean(false);
         config.save();
-        // define items
-        arsenicIngot = new SimpleIngot(arsenicIngotID).modId("arsenic").setCreativeTab(ArsenicAndLace.tabAkkamaddiArsenic).setUnlocalizedName("arsenicIngot");
-        realgarItem = new SimpleIngot(realgarItemID).modId("arsenic").setCreativeTab(ArsenicAndLace.tabAkkamaddiArsenic).setUnlocalizedName("realgarItem");
-        orpimentItem = new SimpleIngot(orpimentItemID).modId("arsenic").setCreativeTab(ArsenicAndLace.tabAkkamaddiArsenic).setUnlocalizedName("orpimentItem");
-        arsenideSaltItem = new SimpleIngot(arsenideSaltItemID).modId("arsenic").setCreativeTab(ArsenicAndLace.tabAkkamaddiArsenic).setUnlocalizedName("arsenideSaltItem");
-        smallArsenicChunkItem = new SimpleIngot(smallArsenicChunkItemID).modId("arsenic").setCreativeTab(ArsenicAndLace.tabAkkamaddiArsenic).setUnlocalizedName("smallArsenicChunkItem");
-        mediumArsenicChunkItem = new SimpleIngot(mediumArsenicChunkItemID).modId("arsenic").setCreativeTab(ArsenicAndLace.tabAkkamaddiArsenic).setUnlocalizedName("mediumArsenicChunkItem");
-        largeArsenicChunkItem = new SimpleIngot(largeArsenicChunkItemID).modId("arsenic").setCreativeTab(ArsenicAndLace.tabAkkamaddiArsenic).setUnlocalizedName("largeArsenicChunkItem");
-        arsenideBronzeIngot = new SimpleIngot(arsenideBronzeIngotID).modId("arsenic").setCreativeTab(ArsenicAndLace.tabAkkamaddiArsenic).setUnlocalizedName("arsenideBronzeIngot");
-        smallArsenideBronzeChunkItem = new SimpleIngot(smallArsenideBronzeChunkItemID).modId("arsenic").setCreativeTab(ArsenicAndLace.tabAkkamaddiArsenic).setUnlocalizedName("smallArsenideBronzeChunkItem");
-        mediumArsenideBronzeChunkItem = new SimpleIngot(mediumArsenideBronzeChunkItemID).modId("arsenic").setCreativeTab(ArsenicAndLace.tabAkkamaddiArsenic).setUnlocalizedName("mediumArsenideBronzeChunkItem");
-        largeArsenideBronzeChunkItem = new SimpleIngot(largeArsenideBronzeChunkItemID).modId("arsenic").setCreativeTab(ArsenicAndLace.tabAkkamaddiArsenic).setUnlocalizedName("largeArsenideBronzeChunkItem");
-        arsenideGoldIngot = new SimpleIngot(arsenideGoldIngotID).modId("arsenic").setCreativeTab(ArsenicAndLace.tabAkkamaddiArsenic).setUnlocalizedName("arsenideGoldIngot");
-        smallArsenideGoldChunkItem = new SimpleIngot(smallArsenideGoldChunkItemID).modId("arsenic").setCreativeTab(ArsenicAndLace.tabAkkamaddiArsenic).setUnlocalizedName("smallArsenideGoldChunkItem");
-        mediumArsenideGoldChunkItem = new SimpleIngot(mediumArsenideGoldChunkItemID).modId("arsenic").setCreativeTab(ArsenicAndLace.tabAkkamaddiArsenic).setUnlocalizedName("mediumArsenideGoldChunkItem");
-        largeArsenideGoldChunkItem = new SimpleIngot(largeArsenideGoldChunkItemID).modId("arsenic").setCreativeTab(ArsenicAndLace.tabAkkamaddiArsenic).setUnlocalizedName("largeArsenideGoldChunkItem");
-        arsenicSword = new ArsenicSwords(ArsenicAndLace.arsenicSwordID, ArsenicAndLace.toolArsenic).modId("arsenic").setCreativeTab(ArsenicAndLace.tabAkkamaddiArsenic).setUnlocalizedName("arsenicSword");
-        arsenicShovel = new SimpleShovel(ArsenicAndLace.arsenicShovelID, ArsenicAndLace.toolArsenic).modId("arsenic").setCreativeTab(ArsenicAndLace.tabAkkamaddiArsenic).setUnlocalizedName("arsenicShovel");
-        arsenicAxe = new SimpleAxe(ArsenicAndLace.arsenicAxeID, ArsenicAndLace.toolArsenic).modId("arsenic").setCreativeTab(ArsenicAndLace.tabAkkamaddiArsenic).setUnlocalizedName("arsenicAxe");
-        arsenicPickaxe = new SimplePickaxe(ArsenicAndLace.arsenicPickaxeID, ArsenicAndLace.toolArsenic).modId("arsenic").setCreativeTab(ArsenicAndLace.tabAkkamaddiArsenic).setUnlocalizedName("arsenicPickaxe");
-        arsenicHoe = new SimpleHoe(ArsenicAndLace.arsenicHoeID, ArsenicAndLace.toolArsenic).modId("arsenic").setCreativeTab(ArsenicAndLace.tabAkkamaddiArsenic).setUnlocalizedName("arsenicHoe");
-        arsenideBronzeSword = new ArsenicSwords(ArsenicAndLace.arsenideBronzeSwordID, ArsenicAndLace.toolArsenideBronze).modId("arsenic").setCreativeTab(ArsenicAndLace.tabAkkamaddiArsenic).setUnlocalizedName("arsenideBronzeSword");
-        arsenideBronzeShovel = new SimpleShovel(ArsenicAndLace.arsenideBronzeShovelID, ArsenicAndLace.toolArsenideBronze).modId("arsenic").setCreativeTab(ArsenicAndLace.tabAkkamaddiArsenic).setUnlocalizedName("arsenideBronzeShovel");
-        arsenideBronzeAxe = new SimpleAxe(ArsenicAndLace.arsenideBronzeAxeID, ArsenicAndLace.toolArsenideBronze).modId("arsenic").setCreativeTab(ArsenicAndLace.tabAkkamaddiArsenic).setUnlocalizedName("arsenideBronzeAxe");
-        arsenideBronzePickaxe = new SimplePickaxe(ArsenicAndLace.arsenideBronzePickaxeID, ArsenicAndLace.toolArsenideBronze).modId("arsenic").setCreativeTab(ArsenicAndLace.tabAkkamaddiArsenic).setUnlocalizedName("arsenideBronzePickaxe");
-        arsenideBronzeHoe = new SimpleHoe(ArsenicAndLace.arsenideBronzeHoeID, ArsenicAndLace.toolArsenideBronze).modId("arsenic").setCreativeTab(ArsenicAndLace.tabAkkamaddiArsenic).setUnlocalizedName("arsenideBronzeHoe");
-        arsenideBronzeHelm = new SimpleArmor(ArsenicAndLace.arsenideBronzeHelmID, ArsenicAndLace.armorArsenideBronze, ArsenicAndLace.rendererArsenideBronze, 0).modId("arsenic").setType("arsenideBronze").setCreativeTab(ArsenicAndLace.tabAkkamaddiArsenic).setUnlocalizedName("arsenideBronzeHelm");
-        arsenideBronzeChest = new SimpleArmor(ArsenicAndLace.arsenideBronzeChestID, ArsenicAndLace.armorArsenideBronze, ArsenicAndLace.rendererArsenideBronze, 1).modId("arsenic").setType("arsenideBronze").setCreativeTab(ArsenicAndLace.tabAkkamaddiArsenic).setUnlocalizedName("arsenideBronzeChest");
-        arsenideBronzeLegs = new SimpleArmor(ArsenicAndLace.arsenideBronzeLegsID, ArsenicAndLace.armorArsenideBronze, ArsenicAndLace.rendererArsenideBronze, 2).modId("arsenic").setType("arsenideBronze").setCreativeTab(ArsenicAndLace.tabAkkamaddiArsenic).setUnlocalizedName("arsenideBronzeLegs");
-        arsenideBronzeBoots = new SimpleArmor(ArsenicAndLace.arsenideBronzeBootsID, ArsenicAndLace.armorArsenideBronze, ArsenicAndLace.rendererArsenideBronze, 3).modId("arsenic").setType("arsenideBronze").setCreativeTab(ArsenicAndLace.tabAkkamaddiArsenic).setUnlocalizedName("arsenideBronzeBoots");
-        arsenideGoldSword = new ArsenicSwords(ArsenicAndLace.arsenideGoldSwordID, ArsenicAndLace.toolArsenideGold).modId("arsenic").setCreativeTab(ArsenicAndLace.tabAkkamaddiArsenic).setUnlocalizedName("arsenideGoldSword");
-        arsenideGoldShovel = new SimpleShovel(ArsenicAndLace.arsenideGoldShovelID, ArsenicAndLace.toolArsenideGold).modId("arsenic").setCreativeTab(ArsenicAndLace.tabAkkamaddiArsenic).setUnlocalizedName("arsenideGoldShovel");
-        arsenideGoldAxe = new SimpleAxe(ArsenicAndLace.arsenideGoldAxeID, ArsenicAndLace.toolArsenideGold).modId("arsenic").setCreativeTab(ArsenicAndLace.tabAkkamaddiArsenic).setUnlocalizedName("arsenideGoldAxe");
-        arsenideGoldPickaxe = new SimplePickaxe(ArsenicAndLace.arsenideGoldPickaxeID, ArsenicAndLace.toolArsenideGold).modId("arsenic").setCreativeTab(ArsenicAndLace.tabAkkamaddiArsenic).setUnlocalizedName("arsenideGoldPickaxe");
-        arsenideGoldHoe = new SimpleHoe(ArsenicAndLace.arsenideGoldHoeID, ArsenicAndLace.toolArsenideGold).modId("arsenic").setCreativeTab(ArsenicAndLace.tabAkkamaddiArsenic).setUnlocalizedName("arsenideGoldHoe");
-        arsenideGoldHelm = new SimpleArmor(ArsenicAndLace.arsenideGoldHelmID, ArsenicAndLace.armorArsenideGold, ArsenicAndLace.rendererArsenideGold, 0).modId("arsenic").setType("arsenideGold").setCreativeTab(ArsenicAndLace.tabAkkamaddiArsenic).setUnlocalizedName("arsenideGoldHelm");
-        arsenideGoldChest = new SimpleArmor(ArsenicAndLace.arsenideGoldChestID, ArsenicAndLace.armorArsenideGold, ArsenicAndLace.rendererArsenideGold, 1).modId("arsenic").setType("arsenideGold").setCreativeTab(ArsenicAndLace.tabAkkamaddiArsenic).setUnlocalizedName("arsenideGoldChest");
-        arsenideGoldLegs = new SimpleArmor(ArsenicAndLace.arsenideGoldLegsID, ArsenicAndLace.armorArsenideGold, ArsenicAndLace.rendererArsenideGold, 2).modId("arsenic").setType("arsenideGold").setCreativeTab(ArsenicAndLace.tabAkkamaddiArsenic).setUnlocalizedName("arsenideGoldLegs");
-        arsenideGoldBoots = new SimpleArmor(ArsenicAndLace.arsenideGoldBootsID, ArsenicAndLace.armorArsenideGold, ArsenicAndLace.rendererArsenideGold, 3).modId("arsenic").setType("arsenideGold").setCreativeTab(ArsenicAndLace.tabAkkamaddiArsenic).setUnlocalizedName("arsenideGoldBoots");
-        oldLaceChest = new SimpleArmor(ArsenicAndLace.oldLaceChestID, ArsenicAndLace.armorOldLace, ArsenicAndLace.rendererOldLace, 1).modId("arsenic").setType("oldLace").setCreativeTab(ArsenicAndLace.tabAkkamaddiArsenic).setUnlocalizedName("oldLaceChest");
-        tenebriumIngot = new SimpleIngot(tenebriumIngotID).modId("arsenic").setCreativeTab(ArsenicAndLace.tabAkkamaddiArsenic).setUnlocalizedName("tenebriumIngot");
-        smallTenebriumChunkItem = new SimpleIngot(smallTenebriumChunkItemID).modId("arsenic").setCreativeTab(ArsenicAndLace.tabAkkamaddiArsenic).setUnlocalizedName("smallTenebriumChunkItem");
-        mediumTenebriumChunkItem = new SimpleIngot(mediumTenebriumChunkItemID).modId("arsenic").setCreativeTab(ArsenicAndLace.tabAkkamaddiArsenic).setUnlocalizedName("mediumTenebriumChunkItem");
-        largeTenebriumChunkItem = new SimpleIngot(largeTenebriumChunkItemID).modId("arsenic").setCreativeTab(ArsenicAndLace.tabAkkamaddiArsenic).setUnlocalizedName("largeTenebriumChunkItem");
-        tenebriumSword = new SimpleSword(ArsenicAndLace.tenebriumSwordID, ArsenicAndLace.toolTenebrium).modId("arsenic").modId("arsenic").setCreativeTab(ArsenicAndLace.tabAkkamaddiArsenic).setUnlocalizedName("tenebriumSword");
-        tenebriumShovel = new SimpleShovel(ArsenicAndLace.tenebriumShovelID, ArsenicAndLace.toolTenebrium).modId("arsenic").setCreativeTab(ArsenicAndLace.tabAkkamaddiArsenic).setUnlocalizedName("tenebriumShovel");
-        tenebriumAxe = new SimpleAxe(ArsenicAndLace.tenebriumAxeID, ArsenicAndLace.toolTenebrium).modId("arsenic").setCreativeTab(ArsenicAndLace.tabAkkamaddiArsenic).setUnlocalizedName("tenebriumAxe");
-        tenebriumPickaxe = new SimplePickaxe(ArsenicAndLace.tenebriumPickaxeID, ArsenicAndLace.toolTenebrium).modId("arsenic").setCreativeTab(ArsenicAndLace.tabAkkamaddiArsenic).setUnlocalizedName("tenebriumPickaxe");
-        tenebriumHoe = new SimpleHoe(ArsenicAndLace.tenebriumHoeID, ArsenicAndLace.toolTenebrium).modId("arsenic").setCreativeTab(ArsenicAndLace.tabAkkamaddiArsenic).setUnlocalizedName("tenebriumHoe");
-        tenebriumHelm = new SimpleArmor(ArsenicAndLace.tenebriumHelmID, ArsenicAndLace.armorTenebrium, ArsenicAndLace.rendererTenebrium, 0).modId("arsenic").setType("tenebrium").setCreativeTab(ArsenicAndLace.tabAkkamaddiArsenic).setUnlocalizedName("tenebriumHelm");
-        tenebriumChest = new SimpleArmor(ArsenicAndLace.tenebriumChestID, ArsenicAndLace.armorTenebrium, ArsenicAndLace.rendererTenebrium, 1).modId("arsenic").setType("tenebrium").setCreativeTab(ArsenicAndLace.tabAkkamaddiArsenic).setUnlocalizedName("tenebriumChest");
-        tenebriumLegs = new SimpleArmor(ArsenicAndLace.tenebriumLegsID, ArsenicAndLace.armorTenebrium, ArsenicAndLace.rendererTenebrium, 2).modId("arsenic").setType("tenebrium").setCreativeTab(ArsenicAndLace.tabAkkamaddiArsenic).setUnlocalizedName("tenebriumLegs");
-        tenebriumBoots = new SimpleArmor(ArsenicAndLace.tenebriumBootsID, ArsenicAndLace.armorTenebrium, ArsenicAndLace.rendererTenebrium, 3).modId("arsenic").setType("tenebrium").setCreativeTab(ArsenicAndLace.tabAkkamaddiArsenic).setUnlocalizedName("tenebriumBoots");
+        // define items .
+        arsenicIngot = new SimpleIngot(arsenicIngotID).modId("arsenic").setUnlocalizedName("arsenicIngot");
+        realgarItem = new SimpleIngot(realgarItemID).modId("arsenic").setUnlocalizedName("realgarItem");
+        orpimentItem = new SimpleIngot(orpimentItemID).modId("arsenic").setUnlocalizedName("orpimentItem");
+        arsenideSaltItem = new SimpleIngot(arsenideSaltItemID).modId("arsenic").setUnlocalizedName("arsenideSaltItem");
+        smallArsenicChunkItem = new SimpleIngot(smallArsenicChunkItemID).modId("arsenic").setUnlocalizedName("smallArsenicChunkItem");
+        mediumArsenicChunkItem = new SimpleIngot(mediumArsenicChunkItemID).modId("arsenic").setUnlocalizedName("mediumArsenicChunkItem");
+        largeArsenicChunkItem = new SimpleIngot(largeArsenicChunkItemID).modId("arsenic").setUnlocalizedName("largeArsenicChunkItem");
+        arsenideBronzeIngot = new SimpleIngot(arsenideBronzeIngotID).modId("arsenic").setUnlocalizedName("arsenideBronzeIngot");
+        smallArsenideBronzeChunkItem = new SimpleIngot(smallArsenideBronzeChunkItemID).modId("arsenic").setUnlocalizedName("smallArsenideBronzeChunkItem");
+        mediumArsenideBronzeChunkItem = new SimpleIngot(mediumArsenideBronzeChunkItemID).modId("arsenic").setUnlocalizedName("mediumArsenideBronzeChunkItem");
+        largeArsenideBronzeChunkItem = new SimpleIngot(largeArsenideBronzeChunkItemID).modId("arsenic").setUnlocalizedName("largeArsenideBronzeChunkItem");
+        arsenideGoldIngot = new SimpleIngot(arsenideGoldIngotID).modId("arsenic").setUnlocalizedName("arsenideGoldIngot");
+        smallArsenideGoldChunkItem = new SimpleIngot(smallArsenideGoldChunkItemID).modId("arsenic").setUnlocalizedName("smallArsenideGoldChunkItem");
+        mediumArsenideGoldChunkItem = new SimpleIngot(mediumArsenideGoldChunkItemID).modId("arsenic").setUnlocalizedName("mediumArsenideGoldChunkItem");
+        largeArsenideGoldChunkItem = new SimpleIngot(largeArsenideGoldChunkItemID).modId("arsenic").setUnlocalizedName("largeArsenideGoldChunkItem");
+        arsenicSword = new ArsenicSwords(ArsenicAndLace.arsenicSwordID, ArsenicAndLace.toolArsenic).modId("arsenic").setUnlocalizedName("arsenicSword");
+        arsenicShovel = new SimpleShovel(ArsenicAndLace.arsenicShovelID, ArsenicAndLace.toolArsenic).modId("arsenic").setUnlocalizedName("arsenicShovel");
+        arsenicAxe = new SimpleAxe(ArsenicAndLace.arsenicAxeID, ArsenicAndLace.toolArsenic).modId("arsenic").setUnlocalizedName("arsenicAxe");
+        arsenicPickaxe = new SimplePickaxe(ArsenicAndLace.arsenicPickaxeID, ArsenicAndLace.toolArsenic).modId("arsenic").setUnlocalizedName("arsenicPickaxe");
+        arsenicHoe = new SimpleHoe(ArsenicAndLace.arsenicHoeID, ArsenicAndLace.toolArsenic).modId("arsenic").setUnlocalizedName("arsenicHoe");
+        arsenideBronzeSword = new ArsenicSwords(ArsenicAndLace.arsenideBronzeSwordID, ArsenicAndLace.toolArsenideBronze).modId("arsenic").setUnlocalizedName("arsenideBronzeSword");
+        arsenideBronzeShovel = new SimpleShovel(ArsenicAndLace.arsenideBronzeShovelID, ArsenicAndLace.toolArsenideBronze).modId("arsenic").setUnlocalizedName("arsenideBronzeShovel");
+        arsenideBronzeAxe = new SimpleAxe(ArsenicAndLace.arsenideBronzeAxeID, ArsenicAndLace.toolArsenideBronze).modId("arsenic").setUnlocalizedName("arsenideBronzeAxe");
+        arsenideBronzePickaxe = new SimplePickaxe(ArsenicAndLace.arsenideBronzePickaxeID, ArsenicAndLace.toolArsenideBronze).modId("arsenic").setUnlocalizedName("arsenideBronzePickaxe");
+        arsenideBronzeHoe = new SimpleHoe(ArsenicAndLace.arsenideBronzeHoeID, ArsenicAndLace.toolArsenideBronze).modId("arsenic").setUnlocalizedName("arsenideBronzeHoe");
+        arsenideBronzeHelm = new SimpleArmor(ArsenicAndLace.arsenideBronzeHelmID, ArsenicAndLace.armorArsenideBronze, ArsenicAndLace.rendererArsenideBronze, 0).modId("arsenic").setType("arsenideBronze").setUnlocalizedName("arsenideBronzeHelm");
+        arsenideBronzeChest = new SimpleArmor(ArsenicAndLace.arsenideBronzeChestID, ArsenicAndLace.armorArsenideBronze, ArsenicAndLace.rendererArsenideBronze, 1).modId("arsenic").setType("arsenideBronze").setUnlocalizedName("arsenideBronzeChest");
+        arsenideBronzeLegs = new SimpleArmor(ArsenicAndLace.arsenideBronzeLegsID, ArsenicAndLace.armorArsenideBronze, ArsenicAndLace.rendererArsenideBronze, 2).modId("arsenic").setType("arsenideBronze").setUnlocalizedName("arsenideBronzeLegs");
+        arsenideBronzeBoots = new SimpleArmor(ArsenicAndLace.arsenideBronzeBootsID, ArsenicAndLace.armorArsenideBronze, ArsenicAndLace.rendererArsenideBronze, 3).modId("arsenic").setType("arsenideBronze").setUnlocalizedName("arsenideBronzeBoots");
+        arsenideGoldSword = new ArsenicSwords(ArsenicAndLace.arsenideGoldSwordID, ArsenicAndLace.toolArsenideGold).modId("arsenic").setUnlocalizedName("arsenideGoldSword");
+        arsenideGoldShovel = new SimpleShovel(ArsenicAndLace.arsenideGoldShovelID, ArsenicAndLace.toolArsenideGold).modId("arsenic").setUnlocalizedName("arsenideGoldShovel");
+        arsenideGoldAxe = new SimpleAxe(ArsenicAndLace.arsenideGoldAxeID, ArsenicAndLace.toolArsenideGold).modId("arsenic").setUnlocalizedName("arsenideGoldAxe");
+        arsenideGoldPickaxe = new SimplePickaxe(ArsenicAndLace.arsenideGoldPickaxeID, ArsenicAndLace.toolArsenideGold).modId("arsenic").setUnlocalizedName("arsenideGoldPickaxe");
+        arsenideGoldHoe = new SimpleHoe(ArsenicAndLace.arsenideGoldHoeID, ArsenicAndLace.toolArsenideGold).modId("arsenic").setUnlocalizedName("arsenideGoldHoe");
+        arsenideGoldHelm = new SimpleArmor(ArsenicAndLace.arsenideGoldHelmID, ArsenicAndLace.armorArsenideGold, ArsenicAndLace.rendererArsenideGold, 0).modId("arsenic").setType("arsenideGold").setUnlocalizedName("arsenideGoldHelm");
+        arsenideGoldChest = new SimpleArmor(ArsenicAndLace.arsenideGoldChestID, ArsenicAndLace.armorArsenideGold, ArsenicAndLace.rendererArsenideGold, 1).modId("arsenic").setType("arsenideGold").setUnlocalizedName("arsenideGoldChest");
+        arsenideGoldLegs = new SimpleArmor(ArsenicAndLace.arsenideGoldLegsID, ArsenicAndLace.armorArsenideGold, ArsenicAndLace.rendererArsenideGold, 2).modId("arsenic").setType("arsenideGold").setUnlocalizedName("arsenideGoldLegs");
+        arsenideGoldBoots = new SimpleArmor(ArsenicAndLace.arsenideGoldBootsID, ArsenicAndLace.armorArsenideGold, ArsenicAndLace.rendererArsenideGold, 3).modId("arsenic").setType("arsenideGold").setUnlocalizedName("arsenideGoldBoots");
+        oldLaceChest = new SimpleArmor(ArsenicAndLace.oldLaceChestID, ArsenicAndLace.armorOldLace, ArsenicAndLace.rendererOldLace, 1).modId("arsenic").setType("oldLace").setUnlocalizedName("oldLaceChest");
+        tenebriumIngot = new SimpleIngot(tenebriumIngotID).modId("arsenic").setUnlocalizedName("tenebriumIngot");
+        smallTenebriumChunkItem = new SimpleIngot(smallTenebriumChunkItemID).modId("arsenic").setUnlocalizedName("smallTenebriumChunkItem");
+        mediumTenebriumChunkItem = new SimpleIngot(mediumTenebriumChunkItemID).modId("arsenic").setUnlocalizedName("mediumTenebriumChunkItem");
+        largeTenebriumChunkItem = new SimpleIngot(largeTenebriumChunkItemID).modId("arsenic").setUnlocalizedName("largeTenebriumChunkItem");
+        tenebriumSword = new SimpleSword(ArsenicAndLace.tenebriumSwordID, ArsenicAndLace.toolTenebrium).modId("arsenic").modId("arsenic").setUnlocalizedName("tenebriumSword");
+        tenebriumShovel = new SimpleShovel(ArsenicAndLace.tenebriumShovelID, ArsenicAndLace.toolTenebrium).modId("arsenic").setUnlocalizedName("tenebriumShovel");
+        tenebriumAxe = new SimpleAxe(ArsenicAndLace.tenebriumAxeID, ArsenicAndLace.toolTenebrium).modId("arsenic").setUnlocalizedName("tenebriumAxe");
+        tenebriumPickaxe = new SimplePickaxe(ArsenicAndLace.tenebriumPickaxeID, ArsenicAndLace.toolTenebrium).modId("arsenic").setUnlocalizedName("tenebriumPickaxe");
+        tenebriumHoe = new SimpleHoe(ArsenicAndLace.tenebriumHoeID, ArsenicAndLace.toolTenebrium).modId("arsenic").setUnlocalizedName("tenebriumHoe");
+        tenebriumHelm = new SimpleArmor(ArsenicAndLace.tenebriumHelmID, ArsenicAndLace.armorTenebrium, ArsenicAndLace.rendererTenebrium, 0).modId("arsenic").setType("tenebrium").setUnlocalizedName("tenebriumHelm");
+        tenebriumChest = new SimpleArmor(ArsenicAndLace.tenebriumChestID, ArsenicAndLace.armorTenebrium, ArsenicAndLace.rendererTenebrium, 1).modId("arsenic").setType("tenebrium").setUnlocalizedName("tenebriumChest");
+        tenebriumLegs = new SimpleArmor(ArsenicAndLace.tenebriumLegsID, ArsenicAndLace.armorTenebrium, ArsenicAndLace.rendererTenebrium, 2).modId("arsenic").setType("tenebrium").setUnlocalizedName("tenebriumLegs");
+        tenebriumBoots = new SimpleArmor(ArsenicAndLace.tenebriumBootsID, ArsenicAndLace.armorTenebrium, ArsenicAndLace.rendererTenebrium, 3).modId("arsenic").setType("tenebrium").setUnlocalizedName("tenebriumBoots");
         // define blocks
         blockArsenic = new SimpleOre(blockArsenicID, Material.iron).modId("arsenic")
         .setHardness(3.0F).setResistance(10.0F).setStepSound(Block.soundMetalFootstep)
-        .setUnlocalizedName("blockArsenic").setCreativeTab(ArsenicAndLace.tabAkkamaddiArsenic);
+        .setUnlocalizedName("blockArsenic");
         blockArsenideBronze = new SimpleOre(blockArsenideBronzeID, Material.iron).modId("arsenic")
         .setHardness(5.0F).setResistance(20.0F).setStepSound(Block.soundMetalFootstep)
-        .setUnlocalizedName("blockArsenideBronze").setCreativeTab(ArsenicAndLace.tabAkkamaddiArsenic);
+        .setUnlocalizedName("blockArsenideBronze");
         blockArsenideGold = new SimpleOre(blockArsenideGoldID, Material.iron).modId("arsenic")
         .setHardness(4.0F).setResistance(16.0F).setStepSound(Block.soundMetalFootstep)
-        .setUnlocalizedName("blockArsenideGold").setCreativeTab(ArsenicAndLace.tabAkkamaddiArsenic);
+        .setUnlocalizedName("blockArsenideGold");
         plateArsenic = (new ArsenicPlate(plateArsenicID, "plateArsenic", Material.wood,
                 EnumMobType.everything)).setHardness(0.5F).setStepSound(Block.soundMetalFootstep)
-                .setUnlocalizedName("plateArsenic").setCreativeTab(ArsenicAndLace.tabAkkamaddiArsenic);
+                .setUnlocalizedName("plateArsenic");
         blockTenebrium = new SimpleOre(blockTenebriumID, Material.iron).modId("arsenic")
         .setHardness(12.0F).setResistance(55.0F).setStepSound(Block.soundMetalFootstep)
-        .setUnlocalizedName("blockTenebrium").setCreativeTab(ArsenicAndLace.tabAkkamaddiArsenic);
+        .setUnlocalizedName("blockTenebrium");
         
         
         //registration
