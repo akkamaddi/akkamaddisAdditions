@@ -27,19 +27,19 @@ import net.minecraftforge.common.EnumHelper;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.Configuration;
 import net.minecraftforge.event.ForgeSubscribe;
-import alexndr.SimpleOres.api.SimpleIngot;
-import alexndr.SimpleOres.api.SimpleSword;
-import alexndr.SimpleOres.api.SimpleShovel;
-import alexndr.SimpleOres.api.SimpleAxe;
-import alexndr.SimpleOres.api.SimplePickaxe;
-import alexndr.SimpleOres.api.SimpleHoe;
-import alexndr.SimpleOres.api.SimpleArmor;
-import alexndr.SimpleOres.api.HandlerLoot;
-import alexndr.SimpleOres.api.SimpleOre;
-import alexndr.SimpleOres.api.SimpleTab;
+import alexndr.SimpleOres.api.content.SimpleIngot;
+import alexndr.SimpleOres.api.content.SimpleSword;
+import alexndr.SimpleOres.api.content.SimpleShovel;
+import alexndr.SimpleOres.api.content.SimpleAxe;
+import alexndr.SimpleOres.api.content.SimplePickaxe;
+import alexndr.SimpleOres.api.content.SimpleHoe;
+import alexndr.SimpleOres.api.content.SimpleArmor;
+import alexndr.SimpleOres.api.content.SimpleOre;
+import alexndr.SimpleOres.api.content.SimpleTab;
+import alexndr.SimpleOres.api.helpers.LootHelper;
 import akkamaddi.cthon.core.CthonOreBlock;
 
-@Mod(modid = "simplecthon", name = "Simple Cthon", version = "1.1.1", dependencies = "required-after:simpleores ; required-after:simpleoresfusion")
+@Mod(modid = "simplecthon", name = "Simple Cthon", version = "1.2.0", dependencies = "required-after:simpleores ; required-after:simpleoresfusion")
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
 
 public class SimpleCthonCore
@@ -212,12 +212,12 @@ public class SimpleCthonCore
         */
         
         // loot
-        HandlerLoot.addLoot("pyramidDesertyChest", new ItemStack(cthonIngot), 1, 1, 1);
-        HandlerLoot.addLoot("pyramidDesertyChest", new ItemStack(cthonPickaxe), 1, 1, 1);
-        HandlerLoot.addLoot("pyramidJungleChest", new ItemStack(cthonIngot), 1, 1, 1);
-        HandlerLoot.addLoot("pyramidJungleChest", new ItemStack(cthonPickaxe), 1, 1, 1);
-        HandlerLoot.addLoot("dungeonChest", new ItemStack(cthonIngot), 1, 1, 1);
-        HandlerLoot.addLoot("dungeonChest", new ItemStack(cthonShovel), 1, 1, 1);
+        LootHelper.addLoot("pyramidDesertyChest", new ItemStack(cthonIngot), 1, 1, 1);
+        LootHelper.addLoot("pyramidDesertyChest", new ItemStack(cthonPickaxe), 1, 1, 1);
+        LootHelper.addLoot("pyramidJungleChest", new ItemStack(cthonIngot), 1, 1, 1);
+        LootHelper.addLoot("pyramidJungleChest", new ItemStack(cthonPickaxe), 1, 1, 1);
+        LootHelper.addLoot("dungeonChest", new ItemStack(cthonIngot), 1, 1, 1);
+        LootHelper.addLoot("dungeonChest", new ItemStack(cthonShovel), 1, 1, 1);
         
         // run tab icon call
         setTabIcons();

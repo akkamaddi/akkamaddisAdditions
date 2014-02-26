@@ -6,8 +6,10 @@ import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.feature.WorldGenMinable;
 import cpw.mods.fml.common.IWorldGenerator;
+import net.minecraft.block.Block;
 
-import alexndr.SimpleOres.core.handlers.GenNetherrack;
+//import alexndr.SimpleOres.core.handlers.GenNetherrack;
+import alexndr.SimpleOres.api.helpers.WorldGenHelper;
 
 public class SimpleCthonGenerator implements IWorldGenerator
 {
@@ -45,7 +47,7 @@ public class SimpleCthonGenerator implements IWorldGenerator
             int randPosX = baseX + rand.nextInt(16);
             int randPosY = rand.nextInt(SimpleCthonCore.cthonSpawnHeight);
             int randPosZ = baseZ + rand.nextInt(16);
-            new GenNetherrack(SimpleCthonCore.oreCthon.blockID, SimpleCthonCore.cthonVeinSize).generate(world, rand, randPosX, randPosY, randPosZ);
+            new WorldGenHelper (SimpleCthonCore.oreCthon.blockID, SimpleCthonCore.cthonVeinSize, Block.netherrack).generate(world, rand, randPosX, randPosY, randPosZ);
         }
     }
 }

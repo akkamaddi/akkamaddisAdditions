@@ -15,7 +15,7 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
-import alexndr.SimpleOres.api.SimpleSword;
+import alexndr.SimpleOres.api.content.SimpleSword;
 
 public class HephaestanSword extends SimpleSword
 {

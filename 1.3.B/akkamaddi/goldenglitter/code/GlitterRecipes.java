@@ -9,7 +9,7 @@ import alexndr.SimpleOres.plugins.fusion.FusionRecipes;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import alexndr.SimpleOres.core.Items;
+import alexndr.SimpleOres.api.helpers.CoreHelper;
 
 public class GlitterRecipes
 {
@@ -140,7 +140,7 @@ public class GlitterRecipes
         GameRegistry.addSmelting(GoldenGlitterCore.largeScarlatiteGoldChunkItem.itemID, new ItemStack(GoldenGlitterCore.scarlatiteGoldIngot), 6.0F);
         GameRegistry.addSmelting(GoldenGlitterCore.largeHephaestanGoldChunkItem.itemID, new ItemStack(GoldenGlitterCore.hephaestanGoldIngot), 9.0F);
         // recipes: Fusion Furnace
-        FusionRecipes.smelting().addSmelting(new ItemStack(Items.copperIngot), new ItemStack(Item.goldNugget), new ItemStack(Item.dyePowder, 1, 1), new ItemStack(GoldenGlitterCore.largeRoseGoldChunkItem), 6.0F);
+        FusionRecipes.smelting().addSmelting(new ItemStack(CoreHelper.coreContent.copperIngot), new ItemStack(Item.goldNugget), new ItemStack(Item.dyePowder, 1, 1), new ItemStack(GoldenGlitterCore.largeRoseGoldChunkItem), 6.0F);
         FusionRecipes.smelting().addSmelting(new ItemStack(Item.redstone), new ItemStack(Item.redstone), new ItemStack(Item.ingotGold), new ItemStack(GoldenGlitterCore.largeErubescentGoldChunkItem), 12.0F);
         FusionRecipes.smelting().addSmelting(new ItemStack(Item.redstone), new ItemStack(Item.redstone), new ItemStack(GoldenGlitterCore.erubescentGoldIngot), new ItemStack(GoldenGlitterCore.largeScarlatiteGoldChunkItem), 20.0F);
         FusionRecipes.smelting().addSmelting(new ItemStack(Item.bucketLava), new ItemStack(Item.bucketLava), new ItemStack(GoldenGlitterCore.scarlatiteGoldIngot), new ItemStack(GoldenGlitterCore.largeHephaestanGoldChunkItem), 20.0F);

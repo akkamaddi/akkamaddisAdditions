@@ -25,17 +25,17 @@ import net.minecraftforge.common.EnumHelper;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.Configuration;
 import net.minecraftforge.event.ForgeSubscribe;
-import alexndr.SimpleOres.api.SimpleIngot;
-import alexndr.SimpleOres.api.SimpleSword;
-import alexndr.SimpleOres.api.SimpleShovel;
-import alexndr.SimpleOres.api.SimpleAxe;
-import alexndr.SimpleOres.api.SimplePickaxe;
-import alexndr.SimpleOres.api.SimpleHoe;
-import alexndr.SimpleOres.api.SimpleArmor;
-import alexndr.SimpleOres.api.HandlerLoot;
-import alexndr.SimpleOres.api.SimpleTab;
+import alexndr.SimpleOres.api.content.SimpleIngot;
+import alexndr.SimpleOres.api.content.SimpleSword;
+import alexndr.SimpleOres.api.content.SimpleShovel;
+import alexndr.SimpleOres.api.content.SimpleAxe;
+import alexndr.SimpleOres.api.content.SimplePickaxe;
+import alexndr.SimpleOres.api.content.SimpleHoe;
+import alexndr.SimpleOres.api.content.SimpleArmor;
+import alexndr.SimpleOres.api.content.SimpleTab;
+import alexndr.SimpleOres.api.helpers.LootHelper;;
 
-@Mod(modid = "goldenglitter", name = "Simple Golden Glitter, gold alloys", version = "1.2.1", dependencies = "required-after:simpleores ; required-after:simpleoresfusion")
+@Mod(modid = "goldenglitter", name = "Simple Golden Glitter, gold alloys", version = "1.3.0", dependencies = "required-after:simpleores ; required-after:simpleoresfusion")
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
 
 public class GoldenGlitterCore
@@ -344,47 +344,47 @@ public class GoldenGlitterCore
         */
         
         // loot
-        HandlerLoot.addLoot("villageBlacksmith", new ItemStack(roseGoldIngot), 2, 4, 4);
-        HandlerLoot.addLoot("villageBlacksmith", new ItemStack(largeRoseGoldChunkItem), 1, 2, 3);
-        HandlerLoot.addLoot("villageBlacksmith", new ItemStack(roseGoldSword), 2, 4, 1);
-        HandlerLoot.addLoot("villageBlacksmith", new ItemStack(roseGoldPickaxe), 2, 4, 1);
-        HandlerLoot.addLoot("villageBlacksmith", new ItemStack(roseGoldAxe), 1, 2, 1);
-        HandlerLoot.addLoot("villageBlacksmith", new ItemStack(roseGoldShovel), 1, 2, 1);
-        HandlerLoot.addLoot("villageBlacksmith", new ItemStack(roseGoldHelm), 1, 4, 1);
-        HandlerLoot.addLoot("villageBlacksmith", new ItemStack(roseGoldChest), 1, 4, 1);
-        HandlerLoot.addLoot("villageBlacksmith", new ItemStack(roseGoldLegs), 1, 4, 1);
-        HandlerLoot.addLoot("villageBlacksmith", new ItemStack(roseGoldBoots), 1, 4, 1);
-        HandlerLoot.addLoot("villageBlacksmith", new ItemStack(erubescentGoldPickaxe), 1, 3, 1);
-        HandlerLoot.addLoot("villageBlacksmith", new ItemStack(scarlatiteGoldPickaxe), 1, 2, 1);
-        HandlerLoot.addLoot("villageBlacksmith", new ItemStack(hephaestanGoldPickaxe), 1, 1, 1);
-        HandlerLoot.addLoot("dungeonChest", new ItemStack(roseGoldIngot), 2, 4, 6);
-        HandlerLoot.addLoot("dungeonChest", new ItemStack(roseGoldPickaxe), 2, 6, 1);
-        HandlerLoot.addLoot("dungeonChest", new ItemStack(erubescentGoldIngot), 1, 2, 2);
-        HandlerLoot.addLoot("dungeonChest", new ItemStack(scarlatiteGoldIngot), 1, 1, 1);
-        HandlerLoot.addLoot("dungeonChest", new ItemStack(erubescentGoldSword), 1, 3, 1);
-        HandlerLoot.addLoot("dungeonChest", new ItemStack(scarlatiteGoldSword), 1, 2, 1);
-        HandlerLoot.addLoot("dungeonChest", new ItemStack(hephaestanGoldSword), 1, 1, 1);
-        HandlerLoot.addLoot("mineshaftCorridor", new ItemStack(roseGoldSword), 1, 3, 1);
-        HandlerLoot.addLoot("mineshaftCorridor", new ItemStack(roseGoldPickaxe), 2, 4, 1);
-        HandlerLoot.addLoot("mineshaftCorridor", new ItemStack(roseGoldShovel), 1, 2, 1);
-        HandlerLoot.addLoot("mineshaftCorridor", new ItemStack(erubescentGoldPickaxe), 1, 3, 1);
-        HandlerLoot.addLoot("mineshaftCorridor", new ItemStack(scarlatiteGoldPickaxe), 1, 2, 1);
-        HandlerLoot.addLoot("mineshaftCorridor", new ItemStack(hephaestanGoldPickaxe), 1, 1, 1);
-        HandlerLoot.addLoot("mineshaftCorridor", new ItemStack(erubescentGoldShovel), 1, 3, 1);
-        HandlerLoot.addLoot("mineshaftCorridor", new ItemStack(scarlatiteGoldShovel), 1, 2, 1);
-        HandlerLoot.addLoot("mineshaftCorridor", new ItemStack(hephaestanGoldShovel), 1, 1, 1);
-        HandlerLoot.addLoot("pyramidDesertyChest", new ItemStack(erubescentGoldIngot), 1, 4, 4);
-        HandlerLoot.addLoot("pyramidDesertyChest", new ItemStack(scarlatiteGoldIngot), 1, 3, 3);
-        HandlerLoot.addLoot("pyramidDesertyChest", new ItemStack(hephaestanGoldIngot), 1, 2, 2);
-        HandlerLoot.addLoot("pyramidDesertyChest", new ItemStack(erubescentGoldSword), 1, 1, 1);
-        HandlerLoot.addLoot("pyramidDesertyChest", new ItemStack(scarlatiteGoldSword), 1, 2, 1);
-        HandlerLoot.addLoot("pyramidDesertyChest", new ItemStack(hephaestanGoldSword), 1, 3, 1);
-        HandlerLoot.addLoot("pyramidJungleChest", new ItemStack(erubescentGoldIngot), 1, 4, 4);
-        HandlerLoot.addLoot("pyramidJungleChest", new ItemStack(scarlatiteGoldIngot), 1, 3, 3);
-        HandlerLoot.addLoot("pyramidJungleChest", new ItemStack(hephaestanGoldIngot), 1, 2, 2);
-        HandlerLoot.addLoot("pyramidJungleChest", new ItemStack(erubescentGoldSword), 1, 1, 1);
-        HandlerLoot.addLoot("pyramidJungleChest", new ItemStack(scarlatiteGoldSword), 1, 2, 1);
-        HandlerLoot.addLoot("pyramidJungleChest", new ItemStack(hephaestanGoldSword), 1, 3, 1);
+        LootHelper.addLoot("villageBlacksmith", new ItemStack(roseGoldIngot), 2, 4, 4);
+        LootHelper.addLoot("villageBlacksmith", new ItemStack(largeRoseGoldChunkItem), 1, 2, 3);
+        LootHelper.addLoot("villageBlacksmith", new ItemStack(roseGoldSword), 2, 4, 1);
+        LootHelper.addLoot("villageBlacksmith", new ItemStack(roseGoldPickaxe), 2, 4, 1);
+        LootHelper.addLoot("villageBlacksmith", new ItemStack(roseGoldAxe), 1, 2, 1);
+        LootHelper.addLoot("villageBlacksmith", new ItemStack(roseGoldShovel), 1, 2, 1);
+        LootHelper.addLoot("villageBlacksmith", new ItemStack(roseGoldHelm), 1, 4, 1);
+        LootHelper.addLoot("villageBlacksmith", new ItemStack(roseGoldChest), 1, 4, 1);
+        LootHelper.addLoot("villageBlacksmith", new ItemStack(roseGoldLegs), 1, 4, 1);
+        LootHelper.addLoot("villageBlacksmith", new ItemStack(roseGoldBoots), 1, 4, 1);
+        LootHelper.addLoot("villageBlacksmith", new ItemStack(erubescentGoldPickaxe), 1, 3, 1);
+        LootHelper.addLoot("villageBlacksmith", new ItemStack(scarlatiteGoldPickaxe), 1, 2, 1);
+        LootHelper.addLoot("villageBlacksmith", new ItemStack(hephaestanGoldPickaxe), 1, 1, 1);
+        LootHelper.addLoot("dungeonChest", new ItemStack(roseGoldIngot), 2, 4, 6);
+        LootHelper.addLoot("dungeonChest", new ItemStack(roseGoldPickaxe), 2, 6, 1);
+        LootHelper.addLoot("dungeonChest", new ItemStack(erubescentGoldIngot), 1, 2, 2);
+        LootHelper.addLoot("dungeonChest", new ItemStack(scarlatiteGoldIngot), 1, 1, 1);
+        LootHelper.addLoot("dungeonChest", new ItemStack(erubescentGoldSword), 1, 3, 1);
+        LootHelper.addLoot("dungeonChest", new ItemStack(scarlatiteGoldSword), 1, 2, 1);
+        LootHelper.addLoot("dungeonChest", new ItemStack(hephaestanGoldSword), 1, 1, 1);
+        LootHelper.addLoot("mineshaftCorridor", new ItemStack(roseGoldSword), 1, 3, 1);
+        LootHelper.addLoot("mineshaftCorridor", new ItemStack(roseGoldPickaxe), 2, 4, 1);
+        LootHelper.addLoot("mineshaftCorridor", new ItemStack(roseGoldShovel), 1, 2, 1);
+        LootHelper.addLoot("mineshaftCorridor", new ItemStack(erubescentGoldPickaxe), 1, 3, 1);
+        LootHelper.addLoot("mineshaftCorridor", new ItemStack(scarlatiteGoldPickaxe), 1, 2, 1);
+        LootHelper.addLoot("mineshaftCorridor", new ItemStack(hephaestanGoldPickaxe), 1, 1, 1);
+        LootHelper.addLoot("mineshaftCorridor", new ItemStack(erubescentGoldShovel), 1, 3, 1);
+        LootHelper.addLoot("mineshaftCorridor", new ItemStack(scarlatiteGoldShovel), 1, 2, 1);
+        LootHelper.addLoot("mineshaftCorridor", new ItemStack(hephaestanGoldShovel), 1, 1, 1);
+        LootHelper.addLoot("pyramidDesertyChest", new ItemStack(erubescentGoldIngot), 1, 4, 4);
+        LootHelper.addLoot("pyramidDesertyChest", new ItemStack(scarlatiteGoldIngot), 1, 3, 3);
+        LootHelper.addLoot("pyramidDesertyChest", new ItemStack(hephaestanGoldIngot), 1, 2, 2);
+        LootHelper.addLoot("pyramidDesertyChest", new ItemStack(erubescentGoldSword), 1, 1, 1);
+        LootHelper.addLoot("pyramidDesertyChest", new ItemStack(scarlatiteGoldSword), 1, 2, 1);
+        LootHelper.addLoot("pyramidDesertyChest", new ItemStack(hephaestanGoldSword), 1, 3, 1);
+        LootHelper.addLoot("pyramidJungleChest", new ItemStack(erubescentGoldIngot), 1, 4, 4);
+        LootHelper.addLoot("pyramidJungleChest", new ItemStack(scarlatiteGoldIngot), 1, 3, 3);
+        LootHelper.addLoot("pyramidJungleChest", new ItemStack(hephaestanGoldIngot), 1, 2, 2);
+        LootHelper.addLoot("pyramidJungleChest", new ItemStack(erubescentGoldSword), 1, 1, 1);
+        LootHelper.addLoot("pyramidJungleChest", new ItemStack(scarlatiteGoldSword), 1, 2, 1);
+        LootHelper.addLoot("pyramidJungleChest", new ItemStack(hephaestanGoldSword), 1, 3, 1);
         
         if (GoldenGlitterCore.werewolfEffectiveness)
             try

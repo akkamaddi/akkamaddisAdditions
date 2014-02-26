@@ -21,7 +21,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.block.Block;
 import net.minecraftforge.oredict.OreDictionary;
 
-@Mod(modid = "SilverRecycle", name = "Recycle Your Silver Recipes", version = "1.0.2",  dependencies = "required-after:onlysilver; required-after:simpleoresfusion")
+@Mod(modid = "SilverRecycle", name = "Recycle Your Silver Recipes", version = "1.2.0",  dependencies = "required-after:onlysilver; required-after:simpleoresfusion")
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
 
 // dependencies = "required-after:onlysilver" --This is for soft dependencies.

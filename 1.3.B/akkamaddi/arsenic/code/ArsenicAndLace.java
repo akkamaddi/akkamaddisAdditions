@@ -22,18 +22,18 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraftforge.common.EnumHelper;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.Configuration;
-import alexndr.SimpleOres.api.SimpleSword;
-import alexndr.SimpleOres.api.SimpleShovel;
-import alexndr.SimpleOres.api.SimpleAxe;
-import alexndr.SimpleOres.api.SimplePickaxe;
-import alexndr.SimpleOres.api.SimpleHoe;
-import alexndr.SimpleOres.api.SimpleArmor;
-import alexndr.SimpleOres.api.HandlerLoot;
-import alexndr.SimpleOres.api.SimpleTab;
-import alexndr.SimpleOres.api.SimpleIngot;
-import alexndr.SimpleOres.api.SimpleOre;
+import alexndr.SimpleOres.api.content.SimpleSword;
+import alexndr.SimpleOres.api.content.SimpleShovel;
+import alexndr.SimpleOres.api.content.SimpleAxe;
+import alexndr.SimpleOres.api.content.SimplePickaxe;
+import alexndr.SimpleOres.api.content.SimpleHoe;
+import alexndr.SimpleOres.api.content.SimpleArmor;
+import alexndr.SimpleOres.api.content.SimpleTab;
+import alexndr.SimpleOres.api.content.SimpleIngot;
+import alexndr.SimpleOres.api.content.SimpleOre;
+import alexndr.SimpleOres.api.helpers.LootHelper;
 
-@Mod(modid = "SimpleArsenic", name = "Simple Arsenic, and Old Lace", version = "1.2.4", dependencies = "required-after:simpleoresfusion ; after:MoCreatures")
+@Mod(modid = "SimpleArsenic", name = "Simple Arsenic, and Old Lace", version = "1.3.0", dependencies = "required-after:simpleoresfusion ; after:MoCreatures")
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
 
 public class ArsenicAndLace
@@ -216,7 +216,7 @@ public class ArsenicAndLace
     // set tool properties
     // EnumToolMaterial. In form ("NAME", mining level, max uses, speed, damage to entity, enchantability)
     public static EnumToolMaterial toolArsenic = EnumHelper.addToolMaterial("ARSENIC", 1, 62, 2.0F, 2, 10);
-    public static EnumToolMaterial toolArsenideBronze = EnumHelper.addToolMaterial("ARSENIDEBRONZE", 2, 430, 7.0F, 2, 9);
+    public static EnumToolMaterial toolArsenideBronze = EnumHelper.addToolMaterial("ARSENIDEBRONZE", 2, 640, 9.5F, 2, 9);
     public static EnumToolMaterial toolArsenideGold = EnumHelper.addToolMaterial("ARSENIDEGOLD", 1, 56, 12.0F, 2, 20);
     public static EnumToolMaterial toolTenebrium = EnumHelper.addToolMaterial("TENEBRIUM", 4, 3820, 9.0F, 3, 17);
 
@@ -437,66 +437,66 @@ public class ArsenicAndLace
         
         
         //Loot
-        HandlerLoot.addLoot("villageBlacksmith", new ItemStack(arsenicIngot), 1, 2, 2);
-        HandlerLoot.addLoot("villageBlacksmith", new ItemStack(arsenideBronzeIngot), 1, 2, 5);
-        HandlerLoot.addLoot("villageBlacksmith", new ItemStack(arsenideGoldIngot), 1, 2, 4);
-        HandlerLoot.addLoot("villageBlacksmith", new ItemStack(arsenicSword), 1, 2, 1);
-        HandlerLoot.addLoot("villageBlacksmith", new ItemStack(arsenideBronzeSword), 2, 6, 1);
-        HandlerLoot.addLoot("villageBlacksmith", new ItemStack(arsenideGoldSword), 2, 4, 1);
-        HandlerLoot.addLoot("villageBlacksmith", new ItemStack(arsenicPickaxe), 1, 2, 1);
-        HandlerLoot.addLoot("villageBlacksmith", new ItemStack(arsenideBronzePickaxe), 2, 6, 1);
-        HandlerLoot.addLoot("villageBlacksmith", new ItemStack(arsenideGoldPickaxe), 2, 4, 1);
-        HandlerLoot.addLoot("villageBlacksmith", new ItemStack(arsenicAxe), 1, 1, 1);
-        HandlerLoot.addLoot("villageBlacksmith", new ItemStack(arsenideBronzeAxe), 1, 5, 1);
-        HandlerLoot.addLoot("villageBlacksmith", new ItemStack(arsenideGoldAxe), 1, 2, 1);
-        HandlerLoot.addLoot("villageBlacksmith", new ItemStack(arsenicShovel), 1, 1, 1);
-        HandlerLoot.addLoot("villageBlacksmith", new ItemStack(arsenideBronzeShovel), 1, 2, 1);
-        HandlerLoot.addLoot("villageBlacksmith", new ItemStack(arsenideGoldShovel), 1, 1, 1);
-        HandlerLoot.addLoot("villageBlacksmith", new ItemStack(tenebriumPickaxe), 1, 1, 1);
-        HandlerLoot.addLoot("villageBlacksmith", new ItemStack(tenebriumShovel), 1, 1, 1);
-        HandlerLoot.addLoot("dungeonChest", new ItemStack(arsenicIngot), 1, 2, 4);
-        HandlerLoot.addLoot("dungeonChest", new ItemStack(arsenideBronzeIngot), 1, 2, 5);
-        HandlerLoot.addLoot("dungeonChest", new ItemStack(arsenideGoldIngot), 1, 2, 4);
-        HandlerLoot.addLoot("dungeonChest", new ItemStack(arsenicSword), 3, 5, 1);
-        HandlerLoot.addLoot("dungeonChest", new ItemStack(arsenideBronzeSword), 2, 6, 1);
-        HandlerLoot.addLoot("dungeonChest", new ItemStack(arsenideGoldSword), 2, 4, 1);
-        HandlerLoot.addLoot("dungeonChest", new ItemStack(arsenicPickaxe), 1, 1, 1);
-        HandlerLoot.addLoot("dungeonChest", new ItemStack(arsenideBronzePickaxe), 1, 3, 1);
-        HandlerLoot.addLoot("dungeonChest", new ItemStack(arsenideGoldPickaxe), 1, 2, 1);
-        HandlerLoot.addLoot("dungeonChest", new ItemStack(oldLaceChest), 4, 8, 4);
-        HandlerLoot.addLoot("strongholdCorridor", new ItemStack(arsenicIngot), 1, 1, 1);
-        HandlerLoot.addLoot("strongholdCorridor", new ItemStack(arsenideBronzeIngot), 1, 1, 2);
-        HandlerLoot.addLoot("strongholdCorridor", new ItemStack(arsenideGoldIngot), 1, 1, 2);
-        HandlerLoot.addLoot("strongholdCrossing", new ItemStack(arsenicIngot), 1, 1, 4);
-        HandlerLoot.addLoot("strongholdCrossing", new ItemStack(arsenideBronzeIngot), 1, 1, 6);
-        HandlerLoot.addLoot("strongholdCrossing", new ItemStack(arsenideGoldIngot), 1, 1, 5);
-        HandlerLoot.addLoot("strongholdLibrary", new ItemStack(oldLaceChest), 1, 1, 2);
-        HandlerLoot.addLoot("strongholdLibrary", new ItemStack(tenebriumHelm), 1, 1, 1);
-        HandlerLoot.addLoot("strongholdLibrary", new ItemStack(tenebriumChest), 1, 1, 1);
-        HandlerLoot.addLoot("strongholdLibrary", new ItemStack(tenebriumLegs), 1, 1, 1);
-        HandlerLoot.addLoot("strongholdLibrary", new ItemStack(tenebriumBoots), 1, 1, 1);
-        HandlerLoot.addLoot("mineshaftCorridor", new ItemStack(oldLaceChest), 1, 2, 2);
-        HandlerLoot.addLoot("mineshaftCorridor", new ItemStack(arsenideBronzeSword), 1, 1, 1);
-        HandlerLoot.addLoot("mineshaftCorridor", new ItemStack(arsenideGoldSword), 1, 3, 1);
-        HandlerLoot.addLoot("mineshaftCorridor", new ItemStack(arsenicPickaxe), 1, 1, 1);
-        HandlerLoot.addLoot("mineshaftCorridor", new ItemStack(arsenideBronzePickaxe), 1, 3, 1);
-        HandlerLoot.addLoot("mineshaftCorridor", new ItemStack(arsenideGoldPickaxe), 1, 2, 1);
-        HandlerLoot.addLoot("mineshaftCorridor", new ItemStack(arsenicShovel), 1, 1, 1);
-        HandlerLoot.addLoot("mineshaftCorridor", new ItemStack(arsenideBronzeShovel), 1, 3, 1);
-        HandlerLoot.addLoot("mineshaftCorridor", new ItemStack(arsenideGoldShovel), 1, 2, 1);
-        HandlerLoot.addLoot("pyramidDesertyChest", new ItemStack(oldLaceChest), 3, 9, 3);
-        HandlerLoot.addLoot("pyramidDesertyChest", new ItemStack(arsenicShovel), 1, 2, 2);
-        HandlerLoot.addLoot("pyramidDesertyChest", new ItemStack(tenebriumSword), 1, 2, 1);
-        HandlerLoot.addLoot("pyramidDesertyChest", new ItemStack(tenebriumShovel), 1, 1, 1);
-        HandlerLoot.addLoot("pyramidDesertyChest", new ItemStack(arsenideGoldHelm), 1, 3, 1);
-        HandlerLoot.addLoot("pyramidDesertyChest", new ItemStack(arsenideGoldChest), 1, 3, 1);
-        HandlerLoot.addLoot("pyramidDesertyChest", new ItemStack(arsenideGoldLegs), 1, 3, 1);
-        HandlerLoot.addLoot("pyramidDesertyChest", new ItemStack(arsenideGoldBoots), 1, 3, 1);
-        HandlerLoot.addLoot("pyramidDesertyChest", new ItemStack(arsenideGoldSword), 2, 4, 1);
-        HandlerLoot.addLoot("pyramidJungleChest", new ItemStack(arsenideSaltItem), 2, 4, 6);
-        HandlerLoot.addLoot("pyramidJungleChest", new ItemStack(oldLaceChest), 1, 1, 2);
-        HandlerLoot.addLoot("pyramidJungleChest", new ItemStack(tenebriumSword), 1, 2, 1);
-        HandlerLoot.addLoot("pyramidJungleChest", new ItemStack(arsenicSword), 3, 5, 2);
+        LootHelper.addLoot("villageBlacksmith", new ItemStack(arsenicIngot), 1, 2, 2);
+        LootHelper.addLoot("villageBlacksmith", new ItemStack(arsenideBronzeIngot), 1, 2, 5);
+        LootHelper.addLoot("villageBlacksmith", new ItemStack(arsenideGoldIngot), 1, 2, 4);
+        LootHelper.addLoot("villageBlacksmith", new ItemStack(arsenicSword), 1, 2, 1);
+        LootHelper.addLoot("villageBlacksmith", new ItemStack(arsenideBronzeSword), 2, 6, 1);
+        LootHelper.addLoot("villageBlacksmith", new ItemStack(arsenideGoldSword), 2, 4, 1);
+        LootHelper.addLoot("villageBlacksmith", new ItemStack(arsenicPickaxe), 1, 2, 1);
+        LootHelper.addLoot("villageBlacksmith", new ItemStack(arsenideBronzePickaxe), 2, 6, 1);
+        LootHelper.addLoot("villageBlacksmith", new ItemStack(arsenideGoldPickaxe), 2, 4, 1);
+        LootHelper.addLoot("villageBlacksmith", new ItemStack(arsenicAxe), 1, 1, 1);
+        LootHelper.addLoot("villageBlacksmith", new ItemStack(arsenideBronzeAxe), 1, 5, 1);
+        LootHelper.addLoot("villageBlacksmith", new ItemStack(arsenideGoldAxe), 1, 2, 1);
+        LootHelper.addLoot("villageBlacksmith", new ItemStack(arsenicShovel), 1, 1, 1);
+        LootHelper.addLoot("villageBlacksmith", new ItemStack(arsenideBronzeShovel), 1, 2, 1);
+        LootHelper.addLoot("villageBlacksmith", new ItemStack(arsenideGoldShovel), 1, 1, 1);
+        LootHelper.addLoot("villageBlacksmith", new ItemStack(tenebriumPickaxe), 1, 1, 1);
+        LootHelper.addLoot("villageBlacksmith", new ItemStack(tenebriumShovel), 1, 1, 1);
+        LootHelper.addLoot("dungeonChest", new ItemStack(arsenicIngot), 1, 2, 4);
+        LootHelper.addLoot("dungeonChest", new ItemStack(arsenideBronzeIngot), 1, 2, 5);
+        LootHelper.addLoot("dungeonChest", new ItemStack(arsenideGoldIngot), 1, 2, 4);
+        LootHelper.addLoot("dungeonChest", new ItemStack(arsenicSword), 3, 5, 1);
+        LootHelper.addLoot("dungeonChest", new ItemStack(arsenideBronzeSword), 2, 6, 1);
+        LootHelper.addLoot("dungeonChest", new ItemStack(arsenideGoldSword), 2, 4, 1);
+        LootHelper.addLoot("dungeonChest", new ItemStack(arsenicPickaxe), 1, 1, 1);
+        LootHelper.addLoot("dungeonChest", new ItemStack(arsenideBronzePickaxe), 1, 3, 1);
+        LootHelper.addLoot("dungeonChest", new ItemStack(arsenideGoldPickaxe), 1, 2, 1);
+        LootHelper.addLoot("dungeonChest", new ItemStack(oldLaceChest), 4, 8, 4);
+        LootHelper.addLoot("strongholdCorridor", new ItemStack(arsenicIngot), 1, 1, 1);
+        LootHelper.addLoot("strongholdCorridor", new ItemStack(arsenideBronzeIngot), 1, 1, 2);
+        LootHelper.addLoot("strongholdCorridor", new ItemStack(arsenideGoldIngot), 1, 1, 2);
+        LootHelper.addLoot("strongholdCrossing", new ItemStack(arsenicIngot), 1, 1, 4);
+        LootHelper.addLoot("strongholdCrossing", new ItemStack(arsenideBronzeIngot), 1, 1, 6);
+        LootHelper.addLoot("strongholdCrossing", new ItemStack(arsenideGoldIngot), 1, 1, 5);
+        LootHelper.addLoot("strongholdLibrary", new ItemStack(oldLaceChest), 1, 1, 2);
+        LootHelper.addLoot("strongholdLibrary", new ItemStack(tenebriumHelm), 1, 1, 1);
+        LootHelper.addLoot("strongholdLibrary", new ItemStack(tenebriumChest), 1, 1, 1);
+        LootHelper.addLoot("strongholdLibrary", new ItemStack(tenebriumLegs), 1, 1, 1);
+        LootHelper.addLoot("strongholdLibrary", new ItemStack(tenebriumBoots), 1, 1, 1);
+        LootHelper.addLoot("mineshaftCorridor", new ItemStack(oldLaceChest), 1, 2, 2);
+        LootHelper.addLoot("mineshaftCorridor", new ItemStack(arsenideBronzeSword), 1, 1, 1);
+        LootHelper.addLoot("mineshaftCorridor", new ItemStack(arsenideGoldSword), 1, 3, 1);
+        LootHelper.addLoot("mineshaftCorridor", new ItemStack(arsenicPickaxe), 1, 1, 1);
+        LootHelper.addLoot("mineshaftCorridor", new ItemStack(arsenideBronzePickaxe), 1, 3, 1);
+        LootHelper.addLoot("mineshaftCorridor", new ItemStack(arsenideGoldPickaxe), 1, 2, 1);
+        LootHelper.addLoot("mineshaftCorridor", new ItemStack(arsenicShovel), 1, 1, 1);
+        LootHelper.addLoot("mineshaftCorridor", new ItemStack(arsenideBronzeShovel), 1, 3, 1);
+        LootHelper.addLoot("mineshaftCorridor", new ItemStack(arsenideGoldShovel), 1, 2, 1);
+        LootHelper.addLoot("pyramidDesertyChest", new ItemStack(oldLaceChest), 3, 9, 3);
+        LootHelper.addLoot("pyramidDesertyChest", new ItemStack(arsenicShovel), 1, 2, 2);
+        LootHelper.addLoot("pyramidDesertyChest", new ItemStack(tenebriumSword), 1, 2, 1);
+        LootHelper.addLoot("pyramidDesertyChest", new ItemStack(tenebriumShovel), 1, 1, 1);
+        LootHelper.addLoot("pyramidDesertyChest", new ItemStack(arsenideGoldHelm), 1, 3, 1);
+        LootHelper.addLoot("pyramidDesertyChest", new ItemStack(arsenideGoldChest), 1, 3, 1);
+        LootHelper.addLoot("pyramidDesertyChest", new ItemStack(arsenideGoldLegs), 1, 3, 1);
+        LootHelper.addLoot("pyramidDesertyChest", new ItemStack(arsenideGoldBoots), 1, 3, 1);
+        LootHelper.addLoot("pyramidDesertyChest", new ItemStack(arsenideGoldSword), 2, 4, 1);
+        LootHelper.addLoot("pyramidJungleChest", new ItemStack(arsenideSaltItem), 2, 4, 6);
+        LootHelper.addLoot("pyramidJungleChest", new ItemStack(oldLaceChest), 1, 1, 2);
+        LootHelper.addLoot("pyramidJungleChest", new ItemStack(tenebriumSword), 1, 2, 1);
+        LootHelper.addLoot("pyramidJungleChest", new ItemStack(arsenicSword), 3, 5, 2);
 
         if (ArsenicAndLace.werewolfEffectiveness)
             try

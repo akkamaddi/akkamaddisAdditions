@@ -10,7 +10,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import OnlySilver.code.api.OnlySilverAPI;
-import alexndr.SimpleOres.core.Items;
+import alexndr.SimpleOres.api.helpers.CoreHelper;
 
 public class SterlingRecipes
 {
@@ -177,9 +177,9 @@ public class SterlingRecipes
         FusionRecipes.smelting().addSmelting(new ItemStack(Item.ingotIron), new ItemStack(OnlySilverAPI.silverIngot.get()), new ItemStack(Item.dyePowder, 1, 4), new ItemStack(SterlingAndBlackCore.mediumSterlingSteelChunkItem), 8.0F);
         FusionRecipes.smelting().addSmelting(new ItemStack(Item.ingotIron), new ItemStack(OnlySilverAPI.silverIngot.get()), new ItemStack(Item.glowstone), new ItemStack(SterlingAndBlackCore.largeSterlingSteelChunkItem), 20.F);
         //Black Silver
-        FusionRecipes.smelting().addSmelting(new ItemStack(Items.onyxGem), new ItemStack(OnlySilverAPI.silverIngot.get()), new ItemStack(SterlingAndBlackCore.smallSterlingSteelChunkItem), new ItemStack(SterlingAndBlackCore.smallBlackSilverChunkItem), 9.0F);
-        FusionRecipes.smelting().addSmelting(new ItemStack(Items.onyxGem), new ItemStack(OnlySilverAPI.silverIngot.get()), new ItemStack(SterlingAndBlackCore.mediumSterlingSteelChunkItem), new ItemStack(SterlingAndBlackCore.mediumBlackSilverChunkItem), 12.0F);
-        FusionRecipes.smelting().addSmelting(new ItemStack(Items.onyxGem), new ItemStack(OnlySilverAPI.silverIngot.get()), new ItemStack(SterlingAndBlackCore.largeSterlingSteelChunkItem), new ItemStack(SterlingAndBlackCore.largeBlackSilverChunkItem), 30.F);
+        FusionRecipes.smelting().addSmelting(new ItemStack(CoreHelper.coreContent.onyxGem), new ItemStack(OnlySilverAPI.silverIngot.get()), new ItemStack(SterlingAndBlackCore.smallSterlingSteelChunkItem), new ItemStack(SterlingAndBlackCore.smallBlackSilverChunkItem), 9.0F);
+        FusionRecipes.smelting().addSmelting(new ItemStack(CoreHelper.coreContent.onyxGem), new ItemStack(OnlySilverAPI.silverIngot.get()), new ItemStack(SterlingAndBlackCore.mediumSterlingSteelChunkItem), new ItemStack(SterlingAndBlackCore.mediumBlackSilverChunkItem), 12.0F);
+        FusionRecipes.smelting().addSmelting(new ItemStack(CoreHelper.coreContent.onyxGem), new ItemStack(OnlySilverAPI.silverIngot.get()), new ItemStack(SterlingAndBlackCore.largeSterlingSteelChunkItem), new ItemStack(SterlingAndBlackCore.largeBlackSilverChunkItem), 30.F);
         
         if (SterlingAndBlackCore.enableRecycling) {
         	

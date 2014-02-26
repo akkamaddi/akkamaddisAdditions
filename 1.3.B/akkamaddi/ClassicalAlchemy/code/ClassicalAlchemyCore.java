@@ -38,7 +38,7 @@ import alexndr.SimpleOres.api.content.SimpleOre;
 import alexndr.SimpleOres.api.content.SimpleTab;
 import alexndr.SimpleOres.api.helpers.LootHelper;;
 
-@Mod(modid = "classicalalchemy", name = "Classical Alchemy", version = "1.0.0", dependencies = "required-after:simpleores ; required-after:simpleoresfusion")
+@Mod(modid = "classicalalchemy", name = "Classical Alchemy", version = "1.1.0", dependencies = "required-after:simpleores ; required-after:simpleoresfusion")
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
 
 public class ClassicalAlchemyCore
@@ -229,9 +229,9 @@ public class ClassicalAlchemyCore
     // EnumToolMaterial. In form ("NAME", mining level, max uses, speed, damage to entity, enchantability)
     public static EnumToolMaterial toolStannum = EnumHelper.addToolMaterial("STANNUM", 2, 380, 8.5F, 2, 10);
     public static EnumToolMaterial toolCuprum = EnumHelper.addToolMaterial("CUPRUM", 2, 345, 9.0F, 2, 10);
-    public static EnumToolMaterial toolPyropusBronze = EnumHelper.addToolMaterial("PYROPUSBRONZE", 2, 770, 9.5F, 3, 18);
+    public static EnumToolMaterial toolPyropusBronze = EnumHelper.addToolMaterial("PYROPUSBRONZE", 2, 840, 11.0F, 3, 18);
     public static EnumToolMaterial toolPulchrumBronze = EnumHelper.addToolMaterial("PULCHRUMBRONZE", 3, 336, 12.0F, 3, 22);
-    public static EnumToolMaterial toolTombBronze = EnumHelper.addToolMaterial("TOMBBRONZE", 3, 890, 13.5F, 3, 28);
+    public static EnumToolMaterial toolTombBronze = EnumHelper.addToolMaterial("TOMBBRONZE", 3, 920, 14.05F, 3, 28);
     
     /**
      * EnumArmorMaterial. In form ("NAME", max damage (like uses, multiply by pieces for their max damage), new int[] {helmet defense, chestplate defense, leggings defense, boots defense}, enchantability)

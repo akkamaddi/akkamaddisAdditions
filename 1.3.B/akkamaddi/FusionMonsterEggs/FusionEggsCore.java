@@ -16,7 +16,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 import alexndr.SimpleOres.plugins.fusion.FusionRecipes;
 
-@Mod(modid = "spawneggfusion", name = "Fusion recipes for spawn eggs of common mobs", version = "1.0.1", dependencies = "required-after:simpleoresfusion")
+@Mod(modid = "spawneggfusion", name = "Fusion recipes for spawn eggs of common mobs", version = "1.1.0", dependencies = "required-after:simpleoresfusion")
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
 
 public class FusionEggsCore

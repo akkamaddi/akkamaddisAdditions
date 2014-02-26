@@ -16,7 +16,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 import alexndr.SimpleOres.plugins.fusion.FusionRecipes;
 
-@Mod(modid = "ClayFusion", name = "Clay and Cobblestone Fusion Recipes", version = "1.0.3", dependencies = "required-after:simpleoresfusion")
+@Mod(modid = "ClayFusion", name = "Clay and Cobblestone Fusion Recipes", version = "1.1.0", dependencies = "required-after:simpleoresfusion")
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
 public class SimpleClay
 {

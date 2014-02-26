@@ -14,7 +14,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import alexndr.SimpleOres.plugins.fusion.FusionRecipes;
 
-@Mod(modid = "simplesaplings", name = "Simple Saplings", version = "1.0.1", dependencies = "required-after:simpleoresfusion")
+@Mod(modid = "simplesaplings", name = "Simple Saplings", version = "1.1.0", dependencies = "required-after:simpleoresfusion")
 @NetworkMod(clientSideRequired = true)
 
 public class FuseSaplings
