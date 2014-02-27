@@ -32,7 +32,6 @@ import alexndr.SimpleOres.api.content.SimpleTab;
 import alexndr.SimpleOres.api.content.SimpleIngot;
 import alexndr.SimpleOres.api.content.SimpleOre;
 import alexndr.SimpleOres.api.helpers.LootHelper;
-import net.minecraft.creativetab.CreativeTabs;
 
 @Mod(modid = "SimpleArsenic", name = "Simple Arsenic, and Old Lace", version = "1.3.0", dependencies = "required-after:simpleoresfusion ; after:MoCreatures")
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
@@ -194,7 +193,7 @@ public class ArsenicAndLace
     public static boolean enableRecycling;
 
     // tab
-    public static SimpleTab tabAkkamaddiArsenic = new SimpleTab("tabAkkamaddiArsenic");
+    //public static SimpleTab tabAkkamaddiArsenic = new SimpleTab("tabAkkamaddiArsenic");
 
     /**
      * EnumArmorMaterial. In form ("NAME", max damage (like uses, multiply by pieces for their max damage), new int[] {helmet defense, chestplate defense, leggings defense, boots defense}, enchantability)
@@ -221,15 +220,14 @@ public class ArsenicAndLace
     public static EnumToolMaterial toolArsenideGold = EnumHelper.addToolMaterial("ARSENIDEGOLD", 1, 56, 12.0F, 2, 20);
     public static EnumToolMaterial toolTenebrium = EnumHelper.addToolMaterial("TENEBRIUM", 4, 3820, 9.0F, 3, 17);
 
-    
     // Tab
-    public void setTabIcons()
-    {
+    //public void setTabIcons()
+    //{
         /**
          * Creating the custom tabs using the API class "SimpleTab" and setting their icon.
          */
-        tabAkkamaddiArsenic.setIcon(new ItemStack(ArsenicAndLace.blockArsenic));
-    }
+        //tabAkkamaddiArsenic.setIcon(new ItemStack(ArsenicAndLace.blockArsenic));
+    //}
 
     @EventHandler // used in 1.6.2
     public void preInit(FMLPreInitializationEvent event)
@@ -297,7 +295,7 @@ public class ArsenicAndLace
         werewolfEffectiveness = config.get(Configuration.CATEGORY_GENERAL, "Works on Mo'Creatures lycanthropes, true or false", true).getBoolean(true);
         enableRecycling = config.get(Configuration.CATEGORY_GENERAL, "Enable arsenide recycling recipes, false or true", false).getBoolean(false);
         config.save();
-        // define items .
+        // define items
         arsenicIngot = new SimpleIngot(arsenicIngotID).modId("arsenic").setUnlocalizedName("arsenicIngot");
         realgarItem = new SimpleIngot(realgarItemID).modId("arsenic").setUnlocalizedName("realgarItem");
         orpimentItem = new SimpleIngot(orpimentItemID).modId("arsenic").setUnlocalizedName("orpimentItem");
@@ -508,7 +506,7 @@ public class ArsenicAndLace
             catch (ClassNotFoundException ignored) {}
 
         // run tab icon call
-        setTabIcons();
+        //setTabIcons();
         
         // recipes
         ArsenicRecipes.doArsenicRecipes();
@@ -608,7 +606,7 @@ public class ArsenicAndLace
         MinecraftForge.setToolClass(tenebriumShovel, "shovel", 4);
         MinecraftForge.setToolClass(tenebriumAxe, "axe", 4);
         
-        LanguageRegistry.instance().addStringLocalization("itemGroup.tabAkkamaddiArsenic", "en_US", "akkamaddi's Simple Arsenic");
+        //LanguageRegistry.instance().addStringLocalization("itemGroup.tabAkkamaddiArsenic", "en_US", "akkamaddi's Simple Arsenic");
         
         toolArsenic.customCraftingMaterial = ArsenicAndLace.arsenicIngot;
         toolArsenideBronze.customCraftingMaterial = ArsenicAndLace.arsenideBronzeIngot;

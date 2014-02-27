@@ -8,17 +8,17 @@ public class SOChestGen {
 	
 	public static void doSOChestGen() {
 		
-		LootHelper.addLoot("bonusChest", new ItemStack(CoreHelper.coreContent.copperSword), 1, 2, 2);
-		LootHelper.addLoot("bonusChest", new ItemStack(CoreHelper.coreContent.copperAxe), 1, 2, 1);
-		LootHelper.addLoot("bonusChest", new ItemStack(CoreHelper.coreContent.copperPick), 1, 2, 1);
-		LootHelper.addLoot("bonusChest", new ItemStack(CoreHelper.coreContent.copperShovel), 1, 2, 1);
-		LootHelper.addLoot("bonusChest", new ItemStack(CoreHelper.coreContent.copperHoe), 1, 2, 1);
-		LootHelper.addLoot("bonusChest", new ItemStack(CoreHelper.coreContent.tinSword), 1, 2, 2);
-		LootHelper.addLoot("bonusChest", new ItemStack(CoreHelper.coreContent.tinAxe), 1, 2, 1);
-		LootHelper.addLoot("bonusChest", new ItemStack(CoreHelper.coreContent.tinPick), 1, 2, 1);
-		LootHelper.addLoot("bonusChest", new ItemStack(CoreHelper.coreContent.tinShovel), 1, 2, 1);
-		LootHelper.addLoot("bonusChest", new ItemStack(CoreHelper.coreContent.tinHoe), 1, 2, 1);
-		LootHelper.addLoot("bonusChest", new ItemStack(CoreHelper.coreContent.copperBucket), 1, 4, 1);
+		LootHelper.addLoot("bonusChest", new ItemStack(CoreHelper.coreContent.copperSword), 1, 1, 1);
+		LootHelper.addLoot("bonusChest", new ItemStack(CoreHelper.coreContent.copperAxe), 1, 1, 1);
+		LootHelper.addLoot("bonusChest", new ItemStack(CoreHelper.coreContent.copperPick), 1, 1, 1);
+		LootHelper.addLoot("bonusChest", new ItemStack(CoreHelper.coreContent.copperShovel), 1, 1, 1);
+		LootHelper.addLoot("bonusChest", new ItemStack(CoreHelper.coreContent.copperHoe), 1, 1, 1);
+		LootHelper.addLoot("bonusChest", new ItemStack(CoreHelper.coreContent.tinSword), 1, 1, 2);
+		LootHelper.addLoot("bonusChest", new ItemStack(CoreHelper.coreContent.tinAxe), 1, 1, 1);
+		LootHelper.addLoot("bonusChest", new ItemStack(CoreHelper.coreContent.tinPick), 1, 1, 1);
+		LootHelper.addLoot("bonusChest", new ItemStack(CoreHelper.coreContent.tinShovel), 1, 1, 1);
+		LootHelper.addLoot("bonusChest", new ItemStack(CoreHelper.coreContent.tinHoe), 1, 1, 1);
+		LootHelper.addLoot("bonusChest", new ItemStack(CoreHelper.coreContent.copperBucket), 1, 2, 1);
 		LootHelper.addLoot("bonusChest", new ItemStack(CoreHelper.coreContent.tinShears), 1, 1, 1);
 		
 		

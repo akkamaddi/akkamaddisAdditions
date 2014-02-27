@@ -13,8 +13,8 @@ import cpw.mods.fml.common.network.NetworkMod;
 import com.google.common.base.Optional;
 
 import net.minecraft.creativetab.CreativeTabs;
-import OnlySilver.code.api.OnlySilverAPI;
-import alexndr.SimpleOres.plugins.fusion.FusionRecipes;
+import zotmc.onlysilver.api.OnlySilverAPI;
+import alexndr.SimpleOres.plugins.fusion.FusionHelper;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
@@ -52,18 +52,18 @@ public class SilverFusionRecycle
         // Primary: helmet, chest, leggings, boots, sword, shovel, pickaxe, axe, hoe, ?horsearmor?, ?bow?
         // Secondary: Item.alpha, Block.alpha,
         // recycle your Silver
-        FusionRecipes.smelting().addSmelting(new ItemStack(OnlySilverAPI.silverHelm.get(), 1, WILDCARD_VALUE), new ItemStack(Block.gravel), new ItemStack(Item.coal, 1, WILDCARD_VALUE), new ItemStack(OnlySilverAPI.silverOre.get()), 10.0F);
-        FusionRecipes.smelting().addSmelting(new ItemStack(OnlySilverAPI.silverChest.get(), 1, WILDCARD_VALUE), new ItemStack(Block.gravel, 2, 0), new ItemStack(Item.coal, 2, WILDCARD_VALUE), new ItemStack(OnlySilverAPI.silverOre.get(), 2, 0), 20.0F);
-        FusionRecipes.smelting().addSmelting(new ItemStack(OnlySilverAPI.silverLegs.get(), 1, WILDCARD_VALUE), new ItemStack(Block.gravel, 2, 0), new ItemStack(Item.coal, 2, WILDCARD_VALUE), new ItemStack(OnlySilverAPI.silverOre.get(), 2, 0), 20.0F);
-        FusionRecipes.smelting().addSmelting(new ItemStack(OnlySilverAPI.silverBoots.get(), 1, WILDCARD_VALUE), new ItemStack(Block.gravel), new ItemStack(Item.coal, 1, WILDCARD_VALUE), new ItemStack(OnlySilverAPI.silverOre.get()), 10.0F);
-        FusionRecipes.smelting().addSmelting(new ItemStack(OnlySilverAPI.silverSword.get(), 1, WILDCARD_VALUE), new ItemStack(Block.gravel), new ItemStack(Item.coal, 1, WILDCARD_VALUE), new ItemStack(OnlySilverAPI.silverOre.get()), 10.0F);
-        FusionRecipes.smelting().addSmelting(new ItemStack(OnlySilverAPI.silverShovel.get(), 1, WILDCARD_VALUE), new ItemStack(Block.gravel), new ItemStack(Item.coal, 1, WILDCARD_VALUE), new ItemStack(OnlySilverAPI.silverOre.get()), 10.0F);
-        FusionRecipes.smelting().addSmelting(new ItemStack(OnlySilverAPI.silverPick.get(), 1, WILDCARD_VALUE), new ItemStack(Block.gravel), new ItemStack(Item.coal, 1, WILDCARD_VALUE), new ItemStack(OnlySilverAPI.silverOre.get()), 10.0F);
-        FusionRecipes.smelting().addSmelting(new ItemStack(OnlySilverAPI.silverAxe.get(), 1, WILDCARD_VALUE), new ItemStack(Block.gravel), new ItemStack(Item.coal, 1, WILDCARD_VALUE), new ItemStack(OnlySilverAPI.silverOre.get()), 10.0F);
-        FusionRecipes.smelting().addSmelting(new ItemStack(OnlySilverAPI.silverHoe.get(), 1, WILDCARD_VALUE), new ItemStack(Block.gravel), new ItemStack(Item.coal, 1, WILDCARD_VALUE), new ItemStack(OnlySilverAPI.silverOre.get()), 10.0F);
-        FusionRecipes.smelting().addSmelting(new ItemStack(OnlySilverAPI.silverBow.get(), 1, WILDCARD_VALUE), new ItemStack(Block.gravel), new ItemStack(Item.coal, 1, WILDCARD_VALUE), new ItemStack(OnlySilverAPI.silverOre.get()), 10.0F);
+        FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(OnlySilverAPI.silverHelm.get(), 1, WILDCARD_VALUE), new ItemStack(Block.gravel), new ItemStack(Item.coal, 1, WILDCARD_VALUE), new ItemStack(OnlySilverAPI.silverOre.get()), 10.0F);
+        FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(OnlySilverAPI.silverChest.get(), 1, WILDCARD_VALUE), new ItemStack(Block.gravel, 2, 0), new ItemStack(Item.coal, 2, WILDCARD_VALUE), new ItemStack(OnlySilverAPI.silverOre.get(), 2, 0), 20.0F);
+        FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(OnlySilverAPI.silverLegs.get(), 1, WILDCARD_VALUE), new ItemStack(Block.gravel, 2, 0), new ItemStack(Item.coal, 2, WILDCARD_VALUE), new ItemStack(OnlySilverAPI.silverOre.get(), 2, 0), 20.0F);
+        FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(OnlySilverAPI.silverBoots.get(), 1, WILDCARD_VALUE), new ItemStack(Block.gravel), new ItemStack(Item.coal, 1, WILDCARD_VALUE), new ItemStack(OnlySilverAPI.silverOre.get()), 10.0F);
+        FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(OnlySilverAPI.silverSword.get(), 1, WILDCARD_VALUE), new ItemStack(Block.gravel), new ItemStack(Item.coal, 1, WILDCARD_VALUE), new ItemStack(OnlySilverAPI.silverOre.get()), 10.0F);
+        FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(OnlySilverAPI.silverShovel.get(), 1, WILDCARD_VALUE), new ItemStack(Block.gravel), new ItemStack(Item.coal, 1, WILDCARD_VALUE), new ItemStack(OnlySilverAPI.silverOre.get()), 10.0F);
+        FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(OnlySilverAPI.silverPick.get(), 1, WILDCARD_VALUE), new ItemStack(Block.gravel), new ItemStack(Item.coal, 1, WILDCARD_VALUE), new ItemStack(OnlySilverAPI.silverOre.get()), 10.0F);
+        FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(OnlySilverAPI.silverAxe.get(), 1, WILDCARD_VALUE), new ItemStack(Block.gravel), new ItemStack(Item.coal, 1, WILDCARD_VALUE), new ItemStack(OnlySilverAPI.silverOre.get()), 10.0F);
+        FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(OnlySilverAPI.silverHoe.get(), 1, WILDCARD_VALUE), new ItemStack(Block.gravel), new ItemStack(Item.coal, 1, WILDCARD_VALUE), new ItemStack(OnlySilverAPI.silverOre.get()), 10.0F);
+        FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(OnlySilverAPI.silverBow.get(), 1, WILDCARD_VALUE), new ItemStack(Block.gravel), new ItemStack(Item.coal, 1, WILDCARD_VALUE), new ItemStack(OnlySilverAPI.silverOre.get()), 10.0F);
         // extra Silver recycling
-        FusionRecipes.smelting().addSmelting(new ItemStack(OnlySilverAPI.silverRod.get(), 1, WILDCARD_VALUE), new ItemStack(Block.gravel), new ItemStack(Item.coal, 1, WILDCARD_VALUE), new ItemStack(OnlySilverAPI.silverOre.get()), 10.0F);
+        FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(OnlySilverAPI.silverRod.get(), 1, WILDCARD_VALUE), new ItemStack(Block.gravel), new ItemStack(Item.coal, 1, WILDCARD_VALUE), new ItemStack(OnlySilverAPI.silverOre.get()), 10.0F);
     }
 
     @EventHandler // used in 1.6.2
