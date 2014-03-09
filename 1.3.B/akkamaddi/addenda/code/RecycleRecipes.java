@@ -9,17 +9,16 @@ import net.minecraftforge.oredict.OreDictionary;
 import alexndr.SimpleOres.api.helpers.CoreHelper;
 import alexndr.SimpleOres.plugins.fusion.Content;
 
-public class RecycleRecipes {
-	
-
+public class RecycleRecipes
+{
     // wildcard
     private static final int WILDCARD_VALUE = OreDictionary.WILDCARD_VALUE;
-    
 
     public static alexndr.SimpleOres.plugins.fusion.Content soAlloy;
 
-	public static void doRecycleRecipes(){
-		// The mass of recipes
+    public static void doRecycleRecipes()
+    {
+        // The mass of recipes
         // Primary: helmet, chest, leggings, boots, sword, shovel, pickaxe, axe, hoe, ?horsearmor?, ?bow?
         // Secondary: Item.alpha, Block.alpha,
         //
@@ -221,6 +220,5 @@ public class RecycleRecipes {
         FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(soAlloy.sinisiteBow, 1, WILDCARD_VALUE), new ItemStack(Block.netherrack), new ItemStack(Item.bucketLava), new ItemStack(soAlloy.largeSinisiteChunk), 20.0F);
         // extra Sinisite recycling
         FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(soAlloy.sinisiteRod), new ItemStack(Block.netherrack), new ItemStack(Item.bucketLava), new ItemStack(soAlloy.largeSinisiteChunk), 20.0F);
-	}
-
+    }
 }
