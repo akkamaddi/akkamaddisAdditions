@@ -48,7 +48,7 @@ public class akkamaddiaddenda
         File installDir = event.getModConfigurationDirectory();
         File configDir = new File(installDir, "akkamaddi");
         File configFile = new File(configDir, "akkamaddi_addenda.cfg");
-        Configuration config = new Configuration(configFile);
+        config = new Configuration(configFile);
         config.load();
         enableRecycling = config.get("1. Enable Simple Fusion Recycling recipes for Simple Ores, Fusion Furnace, and Minecraft materials", "Enable Recycling, false or true", false).getBoolean(false);
         enableSimpleOresMobEquips = config.get("2. Enable Simple Ores material equips on mobs", "SO mob equips, false or true", false).getBoolean(false);
@@ -70,7 +70,7 @@ public class akkamaddiaddenda
                 for (int i = 0; i < dimensionIDsArray.length; i++)
                 {
                 	config.get("Higher Dimension ID: " + dimensionIDsArray[i], "Onyx Spawn Rate", 5).getInt();
-                	config.get("Higher Dimension ID: " + dimensionIDsArray[i], "Onyx Maximum Spawn Height", 64).getInt();
+                	config.get("Higher Dimension ID: " + dimensionIDsArray[i], "Onyx Maximum Spawn Height", 256).getInt();
                 	config.get("Higher Dimension ID: " + dimensionIDsArray[i], "Onyx Minimum Spawn Height", 0).getInt();
                 	config.get("Higher Dimension ID: " + dimensionIDsArray[i], "Onyx Vein Size", 7).getInt();
                     System.out.println("Dimension ID in position " + i + " is " + dimensionIDsArray[i]);

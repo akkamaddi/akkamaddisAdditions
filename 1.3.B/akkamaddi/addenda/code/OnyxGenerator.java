@@ -47,14 +47,14 @@ public class OnyxGenerator implements IWorldGenerator {
 				
 				for(int x = 0; x < onyxRate; x++)
 				{
-					int maxHeight = akkamaddiaddenda.config.get("Higher Dimension ID: " + dimensionID, "Onyx Maximum Spawn Height", 64).getInt();
+					int maxHeight = akkamaddiaddenda.config.get("Higher Dimension ID: " + dimensionID, "Onyx Maximum Spawn Height", 256).getInt();
 					int minHeight = akkamaddiaddenda.config.get("Higher Dimension ID: " + dimensionID, "Onyx Minimum Spawn Height", 0).getInt();
 					int veinSize = akkamaddiaddenda.config.get("Higher Dimension ID: " + dimensionID, "Onyx Vein Size", 7).getInt();
 					
 				    int Xcoord = blockX + random.nextInt(16);
 				    int Ycoord = random.nextInt(maxHeight - minHeight);
 				    int Zcoord = blockZ + random.nextInt(16);
-				    new WorldGenHelper(CoreHelper.coreContent.onyxOre.blockID, veinSize, Block.stone).generate(world, random, Xcoord, Ycoord + minHeight, Zcoord);				    
+				    new WorldGenHelper(CoreHelper.coreContent.onyxOre.blockID, veinSize, Block.netherrack).generate(world, random, Xcoord, Ycoord + minHeight, Zcoord);				    
 				}
 				
 				
