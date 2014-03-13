@@ -19,18 +19,18 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.ForgeDirection;
 import net.minecraftforge.common.IPlantable;
 
-public class AshWheatCrop extends Block
+public class OssidRootCrop extends Block
 {
-    public static Icon ashenWheatIcon_00;
-    public static Icon ashenWheatIcon_01;
-    public static Icon ashenWheatIcon_02;
-    public static Icon ashenWheatIcon_03;
-    public static Icon ashenWheatIcon_04;
-    public static Icon ashenWheatIcon_05;
-    public static Icon ashenWheatIcon_06;
-    public static Icon ashenWheatIcon_07;
+    public static Icon ossidRootIcon_00;
+    public static Icon ossidRootIcon_01;
+    public static Icon ossidRootIcon_02;
+    public static Icon ossidRootIcon_03;
+    public static Icon ossidRootIcon_04;
+    public static Icon ossidRootIcon_05;
+    public static Icon ossidRootIcon_06;
+    public static Icon ossidRootIcon_07;
 
-    public AshWheatCrop(int id)
+    public OssidRootCrop(int id)
     {
         super(id, Material.plants);
         setTickRandomly(true);
@@ -58,55 +58,55 @@ public class AshWheatCrop extends Block
 
     public void registerIcons(IconRegister ir)
     {
-        ashenWheatIcon_00 = ir.registerIcon("ashenwheat:ashWheatCrop_00");
-        ashenWheatIcon_01 = ir.registerIcon("ashenwheat:ashWheatCrop_01");
-        ashenWheatIcon_02 = ir.registerIcon("ashenwheat:ashWheatCrop_02");
-        ashenWheatIcon_03 = ir.registerIcon("ashenwheat:ashWheatCrop_03");
-        ashenWheatIcon_04 = ir.registerIcon("ashenwheat:ashWheatCrop_04");
-        ashenWheatIcon_05 = ir.registerIcon("ashenwheat:ashWheatCrop_05");
-        ashenWheatIcon_06 = ir.registerIcon("ashenwheat:ashWheatCrop_06");
-        ashenWheatIcon_07 = ir.registerIcon("ashenwheat:ashWheatCrop_07");
+        ossidRootIcon_00 = ir.registerIcon("ashenwheat:ossidVine_00");
+        ossidRootIcon_01 = ir.registerIcon("ashenwheat:ossidVine_01");
+        ossidRootIcon_02 = ir.registerIcon("ashenwheat:ossidVine_02");
+        ossidRootIcon_03 = ir.registerIcon("ashenwheat:ossidVine_03");
+        ossidRootIcon_04 = ir.registerIcon("ashenwheat:ossidVine_04");
+        ossidRootIcon_05 = ir.registerIcon("ashenwheat:ossidVine_05");
+        ossidRootIcon_06 = ir.registerIcon("ashenwheat:ossidVine_06");
+        ossidRootIcon_07 = ir.registerIcon("ashenwheat:ossidVine_07");
     }
 
     public Icon getIcon(int side, int metadata)
     {
         if (metadata == 0)
         {
-            return ashenWheatIcon_00;
+            return ossidRootIcon_00;
         }
 
         if (metadata == 1)
         {
-            return ashenWheatIcon_01;
+            return ossidRootIcon_01;
         }
 
         if (metadata == 2)
         {
-            return ashenWheatIcon_02;
+            return ossidRootIcon_02;
         }
 
         if (metadata == 3)
         {
-            return ashenWheatIcon_03;
+            return ossidRootIcon_03;
         }
 
         if (metadata == 4)
         {
-            return ashenWheatIcon_04;
+            return ossidRootIcon_04;
         }
 
         if (metadata == 5)
         {
-            return ashenWheatIcon_05;
+            return ossidRootIcon_05;
         }
 
         if (metadata == 6)
         {
-            return ashenWheatIcon_06;
+            return ossidRootIcon_06;
         }
         else
         {
-            return ashenWheatIcon_07;
+            return ossidRootIcon_07;
         }
     }
 
@@ -122,7 +122,7 @@ public class AshWheatCrop extends Block
             return;
         }
 
-        if (random.nextInt(isFertile(world, x, y - 1, z) ? 4 : 8) != 1)
+        if (random.nextInt(isFertile(world, x, y - 1, z) ? 6 : 10) != 1)
         {
             return;
         }
@@ -199,7 +199,7 @@ public class AshWheatCrop extends Block
         Block soil = blocksList[world.getBlockId(x, y - 1, z)];
         return(world.getFullBlockLightValue(x, y, z) >= 8 ||
                world.canBlockSeeTheSky(x, y, z)) &&
-              (soil != null && soil.canSustainPlant(world, x, y, z, ForgeDirection.UP , (IPlantable)AshenWheatCore.ashSeeds));
+              (soil != null && soil.canSustainPlant(world, x, y, z, ForgeDirection.UP , (IPlantable)AshenWheatCore.ossidSeeds));
     }
 
     /**
@@ -207,7 +207,7 @@ public class AshWheatCrop extends Block
      */
     protected int getSeedItem()
     {
-        return AshenWheatCore.ashSeeds.itemID;
+        return AshenWheatCore.ossidSeeds.itemID;
     }
 
     /**
@@ -215,7 +215,7 @@ public class AshWheatCrop extends Block
      */
     protected int getCropItem()
     {
-        return AshenWheatCore.ashWheatItem.itemID;
+        return AshenWheatCore.ossidRoot.blockID;
     }
 
     /**
@@ -225,7 +225,7 @@ public class AshWheatCrop extends Block
     {
         super.dropBlockAsItemWithChance(par1World, par2, par3, par4, par5, par6, 0);
     }
-
+/*
     @Override
     public ArrayList<ItemStack> getBlockDropped(World world, int x, int y, int z, int metadata, int fortune)
     {
@@ -244,14 +244,16 @@ public class AshWheatCrop extends Block
 
         return ret;
     }
+    */
 
     /**
      * Returns the ID of the items to drop on destruction.
      */
     public int idDropped(int par1, Random par2Random, int par3)
     {
-        return par1 == 7 ? this.getCropItem() : this.getSeedItem();
+        //return par1 == 7 ? this.getCropItem() : this.getSeedItem();
         //return par1 == 7 ?  this.getCropItem() : this.getCropItem() ;
+    	return par1 <= 6 ? this.getSeedItem() : this.getCropItem();
     }
 
     /**
@@ -261,8 +263,6 @@ public class AshWheatCrop extends Block
     {
         return 1;
     }
-
-
 
     @SideOnly(Side.CLIENT)
 
@@ -277,14 +277,14 @@ public class AshWheatCrop extends Block
     @SideOnly(Side.CLIENT)
     public void randomDisplayTick(World world, int x, int y, int z, Random random)
     {
-        if (AshenWheatCore.MakeAshenwheatFlame == true)
+        if (AshenWheatCore.MakeOssidCropGloom == true)
         {
             float f1 = (float)x + 0.5F;
             float f2 = (float)y + 0.3F;
             float f3 = (float)z + 0.5F;
             float f4 = random.nextFloat() * 0.6F - 0.3F;
             float f5 = random.nextFloat() * -0.6F - -0.3F;
-            world.spawnParticle("flame", (double)(f1 + f4), (double)(f2 + f4 + f5) , (double)(f3 + f5), 0.0D, 0.0D, 0.0D);
+            world.spawnParticle("townaura", (double)(f1 + f4), (double)(f2 + f4 + f5) , (double)(f3 + f5), 0.0D, 0.0D, 0.0D);
             // world.spawnParticle("flame", (double)(f1+f4), (double)(f2+f4+f5) , (double)(f3+f5), 0.0D, 0.0D, 0.0D);
         }
         else
@@ -292,4 +292,5 @@ public class AshWheatCrop extends Block
             return;
         }
     }
+   
 }

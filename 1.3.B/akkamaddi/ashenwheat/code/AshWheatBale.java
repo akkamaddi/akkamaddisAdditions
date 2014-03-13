@@ -48,29 +48,24 @@ public class AshWheatBale extends BlockRotatedPillar
         this.field_111051_a = par1IconRegister.registerIcon("ashenwheat:ashWheatBale_top");
         this.blockIcon = par1IconRegister.registerIcon("ashenwheat:ashWheatBale_side");
     }
-    
+
     @SideOnly(Side.CLIENT)
     public void randomDisplayTick(World world, int x, int y, int z, Random random)
     {
-        if (AshenWheat.MakeBalesFlame == true)
+        if (AshenWheatCore.MakeAshenBalesFlame == true)
         {
-                float f1 = (float)x - 0.5F;
-                float f2 = (float)y - 0.5F;
-                float f3 = (float)z - 0.5F;
-                float f4 = random.nextFloat() * 2.0f;
-                float f5 = random.nextFloat() * 2.0f;
-                float f6 = random.nextFloat() * 2.0f;
-                world.spawnParticle("smoke", (double)(f1 + f4), (double)(f2 + f5) , (double)(f3 + f6), 0.0D, 0.0D, 0.0D);
-                world.spawnParticle("flame", (double)((f1 + 0.3) + (f6 * 0.7)), (double)((f2 + 0.3) + (f4 * 0.7)) , (double)((f3 + 0.3) + (f5 * 0.7)), 0.0D, 0.0D, 0.0D);
-         }
-         
+            float f1 = (float)x - 0.5F;
+            float f2 = (float)y - 0.5F;
+            float f3 = (float)z - 0.5F;
+            float f4 = random.nextFloat() * 2.0f;
+            float f5 = random.nextFloat() * 2.0f;
+            float f6 = random.nextFloat() * 2.0f;
+            world.spawnParticle("smoke", (double)(f1 + f4), (double)(f2 + f5) , (double)(f3 + f6), 0.0D, 0.0D, 0.0D);
+            world.spawnParticle("flame", (double)((f1 + 0.3) + (f6 * 0.7)), (double)((f2 + 0.3) + (f4 * 0.7)) , (double)((f3 + 0.3) + (f5 * 0.7)), 0.0D, 0.0D, 0.0D);
+        }
         else
-        
         {
-           	return;
+            return;
         }
     }
-    
 }
-
-        

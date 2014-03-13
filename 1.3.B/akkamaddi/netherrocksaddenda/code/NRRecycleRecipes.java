@@ -8,13 +8,13 @@ import net.minecraftforge.oredict.OreDictionary;
 import alexndr.SimpleOres.plugins.fusion.FusionHelper;
 import alexndr.SimpleOres.plugins.netherrocks.Content;
 
-public class NRRecycleRecipes {
-	
-	// wildcard
+public class NRRecycleRecipes
+{
+    // wildcard
     private static final int WILDCARD_VALUE = OreDictionary.WILDCARD_VALUE;
-    
-    public static void doRecycleRecipes(){
 
+    public static void doRecycleRecipes()
+    {
         // The mass of recipes
         //
         // recycle your Malachite
@@ -67,8 +67,5 @@ public class NRRecycleRecipes {
         FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(Content.illumeniteLegs, 1, WILDCARD_VALUE), new ItemStack(Block.netherrack, 2, 0), new ItemStack(Item.glowstone, 2), new ItemStack(Content.illumeniteOre, 2, 0), 20.0F);
         FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(Content.illumeniteBoots, 1, WILDCARD_VALUE), new ItemStack(Block.netherrack), new ItemStack(Item.glowstone), new ItemStack(Content.illumeniteOre), 10.0F);
         FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(Content.illumeniteSword, 1, WILDCARD_VALUE), new ItemStack(Block.netherrack), new ItemStack(Item.glowstone), new ItemStack(Content.illumeniteOre), 10.0F);
-         
-
     }
-
 }

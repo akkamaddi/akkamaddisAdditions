@@ -12,9 +12,9 @@ import net.minecraftforge.common.EnumPlantType;
 import net.minecraftforge.common.ForgeDirection;
 import net.minecraftforge.common.IPlantable;
 
-public class AshSeeds extends ItemSeeds implements IPlantable
+public class ThunderSeeds extends ItemSeeds implements IPlantable
 {
-    public AshSeeds(int id, int parentId, int soilId)
+    public ThunderSeeds(int id, int parentId, int soilId)
     {
         super(id, parentId, soilId);
         setMaxStackSize(64);
@@ -23,7 +23,7 @@ public class AshSeeds extends ItemSeeds implements IPlantable
 
     public void registerIcons(IconRegister ir)
     {
-        this.itemIcon = ir.registerIcon("ashenwheat:ashSeeds");
+        this.itemIcon = ir.registerIcon("ashenwheat:thunderSeeds");
     }
 
     public boolean onItemUse(ItemStack stack, EntityPlayer player, World world,
@@ -41,7 +41,7 @@ public class AshSeeds extends ItemSeeds implements IPlantable
             if (soil != null && soil.canSustainPlant(world, x, y, z, ForgeDirection.UP, this) &&
                     world.isAirBlock(x, y + 1, z))
             {
-                world.setBlock(x, y + 1, z, AshenWheatCore.ashWheatCrop.blockID);
+                world.setBlock(x, y + 1, z, AshenWheatCore.thunderGrassCrop.blockID);
                 --stack.stackSize;
                 return true;
             }
@@ -63,7 +63,7 @@ public class AshSeeds extends ItemSeeds implements IPlantable
 
     public int getPlantID(World world, int x, int y, int z)
     {
-        return AshenWheatCore.ashWheatCrop.blockID;
+        return AshenWheatCore.thunderGrassCrop.blockID;
     }
 
     public int getPlantMetadata(World world, int x, int y, int z)
