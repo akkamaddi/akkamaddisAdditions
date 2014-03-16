@@ -37,7 +37,6 @@ import alexndr.SimpleOres.api.content.SimpleArmor;
 import alexndr.SimpleOres.api.content.SimpleOre;
 import alexndr.SimpleOres.api.content.SimpleTab;
 import alexndr.SimpleOres.api.helpers.LootHelper;
-import akkamaddi.cthon.core.CthonOreBlock;
 
 @Mod(modid = "simplecthon", name = "Simple Cthon", version = "1.2.0", dependencies = "required-after:simpleores ; required-after:simpleoresfusion")
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
@@ -99,7 +98,7 @@ public class SimpleCthonCore
     public static int cthonSpawnRate;
     public static int cthonVeinSize;
     public static int cthonSpawnHeight;
-    
+
     // booleans
     public static boolean enableRecycling;
 
@@ -130,16 +129,11 @@ public class SimpleCthonCore
     @EventHandler // used in 1.6.2
     public void preInit(FMLPreInitializationEvent event)
     {
-        
-    	// Stub Method
-        
-    	MinecraftForge.EVENT_BUS.register(new HandlerArmor());
-        
-    	Configuration config = new Configuration(event.getSuggestedConfigurationFile());
-        
-    	config.load();
-        
-    	// Cthon
+        // Stub Method
+        MinecraftForge.EVENT_BUS.register(new HandlerArmor());
+        Configuration config = new Configuration(event.getSuggestedConfigurationFile());
+        config.load();
+        // Cthon
         cthonIngotID = config.getItem("01. Cthon Item", "Cthon Ingot", 12330).getInt();
         cthonElutriatedChunkID = config.getItem("01. Cthon Item", "Cthon Elutriated Chunk", 12331).getInt();
         cthonMephiticChunkID = config.getItem("01. Cthon Item", "Cthon Mephitic Chunk", 12332).getInt();
@@ -154,20 +148,15 @@ public class SimpleCthonCore
         cthonBootsID = config.getItem("03. Cthon Armor", "Cthon Boots", 12341).getInt();
         blockCthonID = config.getBlock("04. Cthon Block", "Cthon Storage Block", 1327).getInt();
         oreCthonID = config.getBlock("04. Cthon Block", "Cthon Ore", 1328).getInt();
-        
         //Adjustable Ore Spawn Rates
         cthonSpawnRate = config.get("05. Spawn Rate", "Cthon Spawn Rate", 4).getInt();
         cthonVeinSize = config.get("05. Vein Size", "Cthon Vein Size", 4).getInt();
         cthonSpawnHeight = config.get("05. Spawn Height", "Cthon Spawn Height", 256).getInt();
-        
         //Recycling
-        enableRecycling= config.get(Configuration.CATEGORY_GENERAL, "Enable Cthon item recycling recipes: false or true?", false).getBoolean(false);
-        
+        enableRecycling = config.get(Configuration.CATEGORY_GENERAL, "Enable Cthon item recycling recipes: false or true?", false).getBoolean(false);
         config.save();
-        
         // define items
         // Cthon
-        
         cthonIngot = new SimpleIngot(cthonIngotID).modId("simplecthon").setCreativeTab(SimpleCthonCore.tabAkkamaddiCthon).setUnlocalizedName("cthonIngot");
         cthonElutriatedChunk = new SimpleIngot(cthonElutriatedChunkID).modId("simplecthon").setCreativeTab(SimpleCthonCore.tabAkkamaddiCthon).setUnlocalizedName("cthonElutriatedChunk");
         cthonMephiticChunk = new SimpleIngot(cthonMephiticChunkID).modId("simplecthon").setCreativeTab(SimpleCthonCore.tabAkkamaddiCthon).setUnlocalizedName("cthonMephiticChunk");
@@ -180,18 +169,15 @@ public class SimpleCthonCore
         cthonChest = new SimpleArmor(cthonChestID, armorCthon, rendererCthon, 1).modId("simplecthon").setType("cthon").setCreativeTab(SimpleCthonCore.tabAkkamaddiCthon).setUnlocalizedName("cthonChest");
         cthonLegs = new SimpleArmor(cthonLegsID, armorCthon, rendererCthon, 2).modId("simplecthon").setType("cthon").setCreativeTab(SimpleCthonCore.tabAkkamaddiCthon).setUnlocalizedName("cthonLegs");
         cthonBoots = new SimpleArmor(cthonBootsID, armorCthon, rendererCthon, 3).modId("simplecthon").setType("cthon").setCreativeTab(SimpleCthonCore.tabAkkamaddiCthon).setUnlocalizedName("cthonBoots");
-        
-        // define blocks        
+        // define blocks
         blockCthon = new SimpleOre(blockCthonID, Material.iron).modId("simplecthon")
         .setHardness(16.0F).setResistance(42.0F).setStepSound(Block.soundMetalFootstep)
         .setCreativeTab(SimpleCthonCore.tabAkkamaddiCthon)
         .setUnlocalizedName("blockCthon");
-        
         oreCthon = new CthonOreBlock(oreCthonID, Material.iron, "simplecthon")
         .setHardness(14.0F).setResistance(14.0F).setStepSound(Block.soundStoneFootstep)
         .setCreativeTab(SimpleCthonCore.tabAkkamaddiCthon)
         .setUnlocalizedName("oreCthon");
-        
         // Register items
         GameRegistry.registerBlock(oreCthon, "oreCthon");
         /*
@@ -207,10 +193,9 @@ public class SimpleCthonCore
         GameRegistry.registerItem(cthonChest,"cthonChest");
         GameRegistry.registerItem(cthonLegs,"cthonLegs");
         GameRegistry.registerItem(cthonBoots,"cthonBoots");
-        
+
         GameRegistry.registerBlock(blockCthon, "blockCthon");
         */
-        
         // loot
         LootHelper.addLoot("pyramidDesertyChest", new ItemStack(cthonIngot), 1, 1, 1);
         LootHelper.addLoot("pyramidDesertyChest", new ItemStack(cthonPickaxe), 1, 1, 1);
@@ -218,27 +203,20 @@ public class SimpleCthonCore
         LootHelper.addLoot("pyramidJungleChest", new ItemStack(cthonPickaxe), 1, 1, 1);
         LootHelper.addLoot("dungeonChest", new ItemStack(cthonIngot), 1, 1, 1);
         LootHelper.addLoot("dungeonChest", new ItemStack(cthonShovel), 1, 1, 1);
-        
         // run tab icon call
         setTabIcons();
-        
         // recipes
         CthonRecipes.doCthonRecipes();
-        
     }
 
     @EventHandler // used in 1.6.2
     public void load(FMLInitializationEvent event)
     {
         proxy.registerRenderers();
-        
         GameRegistry.registerWorldGenerator(new SimpleCthonGenerator());
-        
         MinecraftForge.EVENT_BUS.register(new HandlerJoinWorld());
-                
         //Armor Renderers
         rendererCthon = proxy.addArmor("cthon");
-        
         // name stuff
         LanguageRegistry.addName(cthonIngot, "Cthon Ingot");
         LanguageRegistry.addName(cthonElutriatedChunk, "Elutriated Cthon Chunk");
@@ -252,23 +230,16 @@ public class SimpleCthonCore
         LanguageRegistry.addName(cthonChest, "Cthon Chestplate");
         LanguageRegistry.addName(cthonLegs, "Cthon Leggings");
         LanguageRegistry.addName(cthonBoots, "Cthon Boots");
-        
         LanguageRegistry.addName(blockCthon, "Cthon Block");
         MinecraftForge.setBlockHarvestLevel(blockCthon, "pickaxe", 0);
-        
         LanguageRegistry.addName(oreCthon, "Cthon Ore");
         MinecraftForge.setBlockHarvestLevel(oreCthon, "pickaxe", 4);
-        
         MinecraftForge.setToolClass(cthonPickaxe, "pickaxe", 5);
         MinecraftForge.setToolClass(cthonShovel, "shovel", 5);
         MinecraftForge.setToolClass(cthonAxe, "axe", 5);
-        
         LanguageRegistry.instance().addStringLocalization("itemGroup.tabAkkamaddiCthon", "en_US", "akkamaddi's Simple Cthon");
-        
         toolCthon.customCraftingMaterial = SimpleCthonCore.cthonIngot;
-        
         armorCthon.customCraftingMaterial = SimpleCthonCore.cthonIngot;
-        
     }
 
     @EventHandler // used in 1.6.2

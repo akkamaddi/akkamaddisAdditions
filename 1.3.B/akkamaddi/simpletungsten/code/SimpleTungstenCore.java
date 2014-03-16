@@ -38,7 +38,7 @@ import alexndr.SimpleOres.api.content.SimpleOre;
 import alexndr.SimpleOres.api.content.SimpleTab;
 import alexndr.SimpleOres.api.helpers.LootHelper;;
 
-@Mod(modid = "simpletungsten", name = "Simple Tungsten, and Tungsten alloys", version = "1.2.0", dependencies = "required-after:simpleores ; required-after:simpleoresfusion")
+@Mod(modid = "simpletungsten", name = "Simple Tungsten, and Tungsten alloys", version = "1.2.1", dependencies = "required-after:simpleores ; required-after:simpleoresfusion")
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
 
 public class SimpleTungstenCore
@@ -249,9 +249,8 @@ public class SimpleTungstenCore
 
     //boolean
     public static boolean enableRecycling;
-    
-    public static boolean enableHigherDimensionGen;
 
+    public static boolean enableHigherDimensionGen;
 
     //Higher Dimensions
     public static int[] dimensionIDsArray;
@@ -267,7 +266,7 @@ public class SimpleTungstenCore
     public static EnumArmorMaterial armorValfram = EnumHelper.addArmorMaterial("VALFRAM", 28, new int[] {4, 7, 6, 4}, 20);
     public static EnumArmorMaterial armorTungstenSteel = EnumHelper.addArmorMaterial("TUNGSTENSTEEL", 30, new int[] {4, 7, 6, 4}, 7);
     public static EnumArmorMaterial armorPrasinos = EnumHelper.addArmorMaterial("PRASINOS", 45, new int[] {5, 9, 7, 5}, 11);
-	
+
     /**
      * Creating the Armor Renderers. This is simply so you can see the armor texture when you wear it.
      */
@@ -298,123 +297,92 @@ public class SimpleTungstenCore
     public void preInit(FMLPreInitializationEvent event)
     {
         // Stub Method
-    	
-    	MinecraftForge.EVENT_BUS.register(new HandlerArmor());
-
+        MinecraftForge.EVENT_BUS.register(new HandlerArmor());
         config = new Configuration(event.getSuggestedConfigurationFile());
         config.load();
-        
         // Tungsten
         tungstenIngotID = config.getItem("01. Tungsten Item", "Tungsten Ingot", 12380).getInt();
-        
         tungstenSwordID = config.getItem("02. Tungsten Tool", "Tungsten Sword", 12381).getInt();
         tungstenShovelID = config.getItem("02. Tungsten Tool", "Tungsten Shovel", 12382).getInt();
         tungstenAxeID = config.getItem("02. Tungsten Tool", "Tungsten Axe", 12383).getInt();
         tungstenPickaxeID = config.getItem("02. Tungsten Tool", "Tungsten Pickaxe", 12384).getInt();
         tungstenHoeID = config.getItem("02. Tungsten Tool", "Tungsten Hoe", 12385).getInt();
-        
         tungstenHelmID = config.getItem("02. Tungsten Armor", "Tungsten Helm", 12386).getInt();
         tungstenChestID = config.getItem("02. Tungsten Armor", "Tungsten Chestplate", 12387).getInt();
         tungstenLegsID = config.getItem("02. Tungsten Armor", "Tungsten Leggings", 12388).getInt();
         tungstenBootsID = config.getItem("02. Tungsten Armor", "Tungsten Boots", 12389).getInt();
-        
         blockTungstenID = config.getBlock("03. Tungsten Block", "Tungsten Block", 1332).getInt();
         oreTungstenID = config.getBlock("03. Tungsten Ore", "Tungsten Ore", 1333).getInt();
-        
         // Tungsten Carbide
-        
         tungstenCarbideIngotID = config.getItem("04. Tungsten Carbide Item", "Tungsten Carbide Ingot", 12390).getInt();
         smallTungstenCarbideChunkItemID = config.getItem("04. Tungsten Carbide Item", "Tungsten Carbide Small Chunk", 12391).getInt();
         mediumTungstenCarbideChunkItemID = config.getItem("04. Tungsten Carbide Item", "Tungsten Carbide Medium Chunk", 12392).getInt();
         largeTungstenCarbideChunkItemID = config.getItem("04. Tungsten Carbide Item", "Tungsten Carbide Large Chunk", 12393).getInt();
-        
         tungstenCarbideSwordID = config.getItem("05. Tungsten Carbide Tool", "Tungsten Carbide Sword", 12394).getInt();
         tungstenCarbideShovelID = config.getItem("05. Tungsten Carbide Tool", "Tungsten Carbide Shovel", 12395).getInt();
         tungstenCarbideAxeID = config.getItem("05. Tungsten Carbide Tool", "Tungsten Carbide Axe", 12396).getInt();
         tungstenCarbidePickaxeID = config.getItem("05. Tungsten Carbide Tool", "Tungsten Carbide Pickaxe", 12397).getInt();
         tungstenCarbideHoeID = config.getItem("05. Tungsten Carbide Tool", "Tungsten Carbide Hoe", 12398).getInt();
-        
         tungstenCarbideHelmID = config.getItem("05. Tungsten Carbide Armor", "Tungsten Carbide Helm", 12399).getInt();
         tungstenCarbideChestID = config.getItem("05. Tungsten Carbide Armor", "Tungsten Carbide Chestplate", 12400).getInt();
         tungstenCarbideLegsID = config.getItem("05. Tungsten Carbide Armor", "Tungsten Carbide Leggings", 12401).getInt();
         tungstenCarbideBootsID = config.getItem("05. Tungsten Carbide Armor", "Tungsten Carbide Boots", 12402).getInt();
-        
         blockTungstenCarbideID = config.getBlock("06. Tungsten Carbide Block", "Tungsten Carbide Block", 1334).getInt();
-        
         // Valfram
-        
         valframIngotID = config.getItem("07. Valfram Item", "Valfram Ingot", 12403).getInt();
         smallValframChunkItemID = config.getItem("07. Valfram Item", "Valfram Small Chunk", 12404).getInt();
         mediumValframChunkItemID = config.getItem("07. Valfram Item", "Valfram Medium Chunk", 12405).getInt();
         largeValframChunkItemID = config.getItem("07. Valfram Item", "Valfram Large Chunk", 12406).getInt();
-        
         valframSwordID = config.getItem("08. Valfram Tool", "Valfram Sword", 12407).getInt();
         valframShovelID = config.getItem("08. Valfram Tool", "Valfram Shovel", 12408).getInt();
         valframAxeID = config.getItem("08. Valfram Tool", "Valfram Axe", 12409).getInt();
         valframPickaxeID = config.getItem("08. Valfram Tool", "Valfram Pickaxe", 12410).getInt();
         valframHoeID = config.getItem("08. Valfram Tool", "Valfram Hoe", 12411).getInt();
-        
         valframHelmID = config.getItem("09. Valfram Armor", "Valfram Helm", 12412).getInt();
         valframChestID = config.getItem("09. Valfram Armor", "Valfram Chestplate", 12413).getInt();
         valframLegsID = config.getItem("09. Valfram Armor", "Valfram Leggings", 12414).getInt();
         valframBootsID = config.getItem("09. Valfram Armor", "Valfram Boots", 12415).getInt();
-        
         blockValframID = config.getBlock("10. Valfram Block", "Valfram Block", 1335).getInt();
-        
         //Adjustable Ore Spawn Rates
-        
         tungstenSpawnRate = config.get("11. Tungsten Ore Worldgen", "Tungsten Spawn Rate", 5).getInt();
         tungstenVeinSize = config.get("11. Tungsten Ore Worldgen", "Tungsten Vein Size", 5).getInt();
         tungstenSpawnHeight = config.get("11. Tungsten Ore Worldgen", "Tungsten Maximum Spawn Height", 18).getInt();
         tungstenMinSpawnHeight = config.get("11. Tungsten Ore Worldgen", "Tungsten Minimum Spawn Height", 0).getInt();
-        
-        // recycle 
-    	enableRecycling= config.get("12. Enable Recycling", "Enable Tungsten & alloy recycling recipes: false or true?", false).getBoolean(false);
-        
+        // recycle
+        enableRecycling = config.get("12. Enable Recycling", "Enable Tungsten & alloy recycling recipes: false or true?", false).getBoolean(false);
         //higher dimension
-        
         enableHigherDimensionGen = config.get("13. Higher World Gen", "Spawn Tungsten in higher dimensions? (Advanced)", false).getBoolean(enableHigherDimensionGen);
-
         // Tungsten Steel
-        
         tungstenSteelIngotID = config.getItem("14. Tungsten Steel Item", "Tungsten Steel Ingot", 12416).getInt();
         largeTungstenSteelChunkItemID = config.getItem("14. Tungsten Steel Item", "Tungsten Steel Large Chunk", 12417).getInt();
-        
         tungstenSteelSwordID = config.getItem("15. Tungsten Steel Tool", "Tungsten Steel Sword", 12418).getInt();
         tungstenSteelShovelID = config.getItem("15. Tungsten Steel Tool", "Tungsten Steel Shovel", 12419).getInt();
         tungstenSteelAxeID = config.getItem("15. Tungsten Steel Tool", "Tungsten Steel Axe", 12420).getInt();
         tungstenSteelPickaxeID = config.getItem("15. Tungsten Steel Tool", "Tungsten Steel Pickaxe", 12421).getInt();
         tungstenSteelHoeID = config.getItem("15. Tungsten Steel Tool", "Tungsten Steel Hoe", 12422).getInt();
-        
         tungstenSteelHelmID = config.getItem("15. Tungsten Steel Armor", "Tungsten Steel Helm", 12423).getInt();
         tungstenSteelChestID = config.getItem("15. Tungsten Steel Armor", "Tungsten Steel Chestplate", 12424).getInt();
         tungstenSteelLegsID = config.getItem("15. Tungsten Steel Armor", "Tungsten Steel Leggings", 12425).getInt();
         tungstenSteelBootsID = config.getItem("15. Tungsten Steel Armor", "Tungsten Steel Boots", 12426).getInt();
-        
         blockTungstenSteelID = config.getBlock("16. Tungsten Steel Block", "Tungsten Steel Block", 1336).getInt();
-        
         // Prasinos
-        
         prasinosIngotID = config.getItem("17. Prasinos Item", "Prasinos Ingot", 12427).getInt();
         smallPrasinosChunkItemID = config.getItem("17. Prasinos Item", "Prasinos Small Chunk", 12428).getInt();
         mediumPrasinosChunkItemID = config.getItem("17. Prasinos Item", "Prasinos Medium Chunk", 12429).getInt();
         largePrasinosChunkItemID = config.getItem("17. Prasinos Item", "Prasinos Large Chunk", 12430).getInt();
-        
         prasinosSwordID = config.getItem("18. Prasinos Tool", "Prasinos Sword", 12431).getInt();
         prasinosShovelID = config.getItem("18. Prasinos Tool", "Prasinos Shovel", 12432).getInt();
         prasinosAxeID = config.getItem("18. Prasinos Tool", "Prasinos Axe", 12433).getInt();
         prasinosPickaxeID = config.getItem("18. Prasinos Tool", "Prasinos Pickaxe", 12434).getInt();
         prasinosHoeID = config.getItem("18. Prasinos Tool", "Prasinos Hoe", 12435).getInt();
-        
         prasinosHelmID = config.getItem("18. Prasinos Armor", "Prasinos Helm", 12436).getInt();
         prasinosChestID = config.getItem("18. Prasinos Armor", "Prasinos Chestplate", 12437).getInt();
         prasinosLegsID = config.getItem("18. Prasinos Armor", "Prasinos Leggings", 12438).getInt();
         prasinosBootsID = config.getItem("18. Prasinos Armor", "Prasinos Boots", 12439).getInt();
-        
         blockPrasinosID = config.getBlock("19. Prasinos Block", "Prasinos Block", 1337).getInt();
-        
+
         //Higher Dimensions
-        
+
         if (enableHigherDimensionGen)
         {
             dimensionIDsArray = config.get("Higher Dimensions", "Higher Dimensions ID List", new int[] {}).getIntList();
@@ -441,9 +409,7 @@ public class SimpleTungstenCore
         config.save();
 
         // define items
-        
         // Tungsten
-        
         tungstenIngot = new SimpleIngot(tungstenIngotID).modId("simpletungsten").setCreativeTab(SimpleTungstenCore.tabAkkamaddiTungsten).setUnlocalizedName("tungstenIngot");
 
         tungstenSword = new SimpleSword(tungstenSwordID, toolTungsten).modId("simpletungsten").setCreativeTab(SimpleTungstenCore.tabAkkamaddiTungsten).setUnlocalizedName("tungstenSword");
@@ -465,7 +431,6 @@ public class SimpleTungstenCore
         tungstenBoots = new SimpleArmor(tungstenBootsID, armorTungsten, rendererTungsten, 3).modId("simpletungsten").setType("tungsten").setCreativeTab(SimpleTungstenCore.tabAkkamaddiTungsten).setUnlocalizedName("tungstenBoots");
 
         // Tungsten Carbide
-        
         tungstenCarbideIngot = new SimpleIngot(tungstenCarbideIngotID).modId("simpletungsten").setCreativeTab(SimpleTungstenCore.tabAkkamaddiTungsten).setUnlocalizedName("tungstenCarbideIngot");
 
         smallTungstenCarbideChunkItem = new SimpleIngot(smallTungstenCarbideChunkItemID).modId("simpletungsten").setCreativeTab(SimpleTungstenCore.tabAkkamaddiTungsten).setUnlocalizedName("smallTungstenCarbideChunkItem");
@@ -493,7 +458,6 @@ public class SimpleTungstenCore
         tungstenCarbideBoots = new SimpleArmor(tungstenCarbideBootsID, armorTungstenCarbide, rendererTungsten, 3).modId("simpletungsten").setType("tungstencarbide").setCreativeTab(SimpleTungstenCore.tabAkkamaddiTungsten).setUnlocalizedName("tungstenCarbideBoots");
 
         // Valfram
-        
         valframIngot = new SimpleIngot(valframIngotID).modId("simpletungsten").setCreativeTab(SimpleTungstenCore.tabAkkamaddiTungsten).setUnlocalizedName("valframIngot");
 
         smallValframChunkItem = new SimpleIngot(smallValframChunkItemID).modId("simpletungsten").setCreativeTab(SimpleTungstenCore.tabAkkamaddiTungsten).setUnlocalizedName("smallValframChunkItem");
@@ -521,7 +485,6 @@ public class SimpleTungstenCore
         valframBoots = new SimpleArmor(valframBootsID, armorValfram, rendererValfram, 3).modId("simpletungsten").setType("valfram").setCreativeTab(SimpleTungstenCore.tabAkkamaddiTungsten).setUnlocalizedName("valframBoots");
 
         // Tungsten Steel
-        
         tungstenSteelIngot = new SimpleIngot(tungstenSteelIngotID).modId("simpletungsten").setCreativeTab(SimpleTungstenCore.tabAkkamaddiTungsten).setUnlocalizedName("tungstenSteelIngot");
 
         largeTungstenSteelChunkItem = new SimpleIngot(largeTungstenSteelChunkItemID).modId("simpletungsten").setCreativeTab(SimpleTungstenCore.tabAkkamaddiTungsten).setUnlocalizedName("largeTungstenSteelChunkItem");
@@ -545,7 +508,6 @@ public class SimpleTungstenCore
         tungstenSteelBoots = new SimpleArmor(tungstenSteelBootsID, armorTungstenSteel, rendererTungstenSteel, 3).modId("simpletungsten").setType("tungstensteel").setCreativeTab(SimpleTungstenCore.tabAkkamaddiTungsten).setUnlocalizedName("tungstenSteelBoots");
 
         // Prasinos
-        
         prasinosIngot = new SimpleIngot(prasinosIngotID).modId("simpletungsten").setCreativeTab(SimpleTungstenCore.tabAkkamaddiTungsten).setUnlocalizedName("prasinosIngot");
 
         smallPrasinosChunkItem = new SimpleIngot(smallPrasinosChunkItemID).modId("simpletungsten").setCreativeTab(SimpleTungstenCore.tabAkkamaddiTungsten).setUnlocalizedName("smallPrasinosChunkItem");
@@ -573,7 +535,6 @@ public class SimpleTungstenCore
         prasinosBoots = new SimpleArmor(prasinosBootsID, armorPrasinos, rendererPrasinos, 3).modId("simpletungsten").setType("prasinos").setCreativeTab(SimpleTungstenCore.tabAkkamaddiTungsten).setUnlocalizedName("prasinosBoots");
 
         // define blocks
-        
         blockTungsten = new SimpleOre(blockTungstenID, Material.iron)
         .modId("simpletungsten").setCreativeTab(SimpleTungstenCore.tabAkkamaddiTungsten)
         .setHardness(10.0F).setResistance(22.0F).setStepSound(Block.soundMetalFootstep)
@@ -593,7 +554,7 @@ public class SimpleTungstenCore
         .modId("simpletungsten").setCreativeTab(SimpleTungstenCore.tabAkkamaddiTungsten)
         .setHardness(10.0F).setResistance(22.0F).setStepSound(Block.soundMetalFootstep)
         .setUnlocalizedName("blockValfram");
-        
+
         blockTungstenSteel = new SimpleOre(blockTungstenSteelID, Material.iron)
         .modId("simpletungsten").setCreativeTab(SimpleTungstenCore.tabAkkamaddiTungsten)
         .setHardness(15.0F).setResistance(25.0F).setStepSound(Block.soundMetalFootstep)
@@ -603,11 +564,10 @@ public class SimpleTungstenCore
         .modId("simpletungsten").setCreativeTab(SimpleTungstenCore.tabAkkamaddiTungsten)
         .setHardness(18.0F).setResistance(32.0F).setStepSound(Block.soundMetalFootstep)
         .setUnlocalizedName("blockPrasinos");
-      
-        
+
         /*
         // Game Registries
-        
+
         GameRegistry.registerItem(tungstenIngot, "tungstenIngot");
         GameRegistry.registerItem(tungstenSword, "tungstenSword");
         GameRegistry.registerItem(tungstenShovel, "tungstenShovel");
@@ -646,93 +606,156 @@ public class SimpleTungstenCore
         GameRegistry.registerItem(valframChest, "valframChest");
         GameRegistry.registerItem(valframLegs, "valframLegs");
         GameRegistry.registerItem(valframBoots, "valframBoots");
-        
+
         GameRegistry.registerBlock(blockTungsten, "blockTungsten");
         GameRegistry.registerBlock(oreTungsten, "oreTungsten");
         GameRegistry.registerBlock(blockTungstenCarbide, "blockTungstenCarbide");
         GameRegistry.registerBlock(blockValfram, "blockValfram");
-		*/
-
+        */
         // loot
-
         LootHelper.addLoot("villageBlacksmith", new ItemStack(tungstenIngot), 1, 2, 2);
+
         LootHelper.addLoot("villageBlacksmith", new ItemStack(tungstenSword), 1, 1, 1);
+
         LootHelper.addLoot("villageBlacksmith", new ItemStack(tungstenPickaxe), 1, 1, 1);
+
         LootHelper.addLoot("villageBlacksmith", new ItemStack(tungstenAxe), 1, 1, 1);
+
         LootHelper.addLoot("villageBlacksmith", new ItemStack(tungstenShovel), 1, 1, 1);
+
         LootHelper.addLoot("villageBlacksmith", new ItemStack(tungstenCarbideIngot), 1, 2, 4);
+
         LootHelper.addLoot("villageBlacksmith", new ItemStack(tungstenCarbideSword), 1, 1, 1);
+
         LootHelper.addLoot("villageBlacksmith", new ItemStack(tungstenCarbidePickaxe), 1, 1, 1);
+
         LootHelper.addLoot("villageBlacksmith", new ItemStack(valframIngot), 1, 1, 2);
+
         LootHelper.addLoot("villageBlacksmith", new ItemStack(valframSword), 1, 1, 1);
+
         LootHelper.addLoot("villageBlacksmith", new ItemStack(valframPickaxe), 1, 1, 1);
+
         LootHelper.addLoot("villageBlacksmith", new ItemStack(tungstenSteelIngot), 1, 2, 4);
+
         LootHelper.addLoot("villageBlacksmith", new ItemStack(tungstenSteelSword), 1, 2, 1);
+
         LootHelper.addLoot("villageBlacksmith", new ItemStack(tungstenSteelPickaxe), 1, 2, 1);
+
         LootHelper.addLoot("villageBlacksmith", new ItemStack(prasinosIngot), 1, 1, 2);
+
         LootHelper.addLoot("villageBlacksmith", new ItemStack(prasinosSword), 1, 1, 1);
+
         LootHelper.addLoot("villageBlacksmith", new ItemStack(prasinosPickaxe), 1, 1, 1);
 
         LootHelper.addLoot("dungeonChest", new ItemStack(tungstenIngot), 1, 1, 1);
+
         LootHelper.addLoot("dungeonChest", new ItemStack(tungstenPickaxe), 1, 3, 1);
+
         LootHelper.addLoot("dungeonChest", new ItemStack(tungstenSword), 1, 7, 1);
+
         LootHelper.addLoot("dungeonChest", new ItemStack(tungstenCarbideSword), 1, 1, 1);
+
         LootHelper.addLoot("dungeonChest", new ItemStack(tungstenCarbidePickaxe), 1, 1, 1);
+
         LootHelper.addLoot("dungeonChest", new ItemStack(valframSword), 1, 1, 1);
+
         LootHelper.addLoot("dungeonChest", new ItemStack(tungstenSteelSword), 2, 3, 1);
+
         LootHelper.addLoot("dungeonChest", new ItemStack(tungstenSteelPickaxe), 1, 1, 1);
+
         LootHelper.addLoot("dungeonChest", new ItemStack(prasinosSword), 1, 1, 1);
 
         LootHelper.addLoot("mineshaftCorridor", new ItemStack(tungstenIngot), 1, 1, 1);
+
         LootHelper.addLoot("mineshaftCorridor", new ItemStack(tungstenPickaxe), 1, 4, 1);
+
         LootHelper.addLoot("mineshaftCorridor", new ItemStack(tungstenShovel), 1, 3, 1);
+
         LootHelper.addLoot("mineshaftCorridor", new ItemStack(tungstenCarbideIngot), 1, 1, 1);
+
         LootHelper.addLoot("mineshaftCorridor", new ItemStack(tungstenCarbidePickaxe), 1, 2, 1);
+
         LootHelper.addLoot("mineshaftCorridor", new ItemStack(tungstenCarbideShovel), 1, 2, 1);
+
         LootHelper.addLoot("mineshaftCorridor", new ItemStack(valframPickaxe), 1, 1, 1);
+
         LootHelper.addLoot("mineshaftCorridor", new ItemStack(tungstenSteelIngot), 1, 1, 1);
+
         LootHelper.addLoot("mineshaftCorridor", new ItemStack(tungstenSteelPickaxe), 1, 2, 1);
+
         LootHelper.addLoot("mineshaftCorridor", new ItemStack(tungstenSteelShovel), 1, 2, 1);
+
         LootHelper.addLoot("mineshaftCorridor", new ItemStack(prasinosPickaxe), 1, 1, 1);
-        
+
         LootHelper.addLoot("pyramidDesertyChest", new ItemStack(valframSword), 1, 4, 1);
+
         LootHelper.addLoot("pyramidDesertyChest", new ItemStack(valframHelm), 1, 3, 1);
+
         LootHelper.addLoot("pyramidDesertyChest", new ItemStack(valframChest), 1, 3, 1);
+
         LootHelper.addLoot("pyramidDesertyChest", new ItemStack(valframLegs), 1, 3, 1);
+
         LootHelper.addLoot("pyramidDesertyChest", new ItemStack(valframBoots), 1, 3, 1);
+
         LootHelper.addLoot("pyramidDesertyChest", new ItemStack(valframPickaxe), 1, 3, 1);
+
         LootHelper.addLoot("pyramidDesertyChest", new ItemStack(valframShovel), 1, 5, 1);
+
         LootHelper.addLoot("pyramidDesertyChest", new ItemStack(valframIngot), 3, 5, 3);
+
         LootHelper.addLoot("pyramidDesertyChest", new ItemStack(tungstenIngot), 3, 7, 5);
+
         LootHelper.addLoot("pyramidDesertyChest", new ItemStack(tungstenSteelSword), 1, 4, 1);
+
         LootHelper.addLoot("pyramidDesertyChest", new ItemStack(tungstenSteelHelm), 1, 3, 1);
+
         LootHelper.addLoot("pyramidDesertyChest", new ItemStack(tungstenSteelChest), 1, 3, 1);
+
         LootHelper.addLoot("pyramidDesertyChest", new ItemStack(tungstenSteelLegs), 1, 3, 1);
+
         LootHelper.addLoot("pyramidDesertyChest", new ItemStack(tungstenSteelBoots), 1, 3, 1);
+
         LootHelper.addLoot("pyramidDesertyChest", new ItemStack(tungstenSteelPickaxe), 1, 3, 1);
+
         LootHelper.addLoot("pyramidDesertyChest", new ItemStack(tungstenSteelShovel), 1, 5, 1);
+
         LootHelper.addLoot("pyramidDesertyChest", new ItemStack(tungstenSteelIngot), 3, 5, 4);
 
         LootHelper.addLoot("pyramidJungleChest", new ItemStack(tungstenCarbideSword), 1, 4, 1);
+
         LootHelper.addLoot("pyramidJungleChest", new ItemStack(tungstenCarbideHelm), 1, 3, 1);
+
         LootHelper.addLoot("pyramidJungleChest", new ItemStack(tungstenCarbideChest), 1, 3, 1);
+
         LootHelper.addLoot("pyramidJungleChest", new ItemStack(tungstenCarbideLegs), 1, 3, 1);
+
         LootHelper.addLoot("pyramidJungleChest", new ItemStack(tungstenCarbideBoots), 1, 3, 1);
+
         LootHelper.addLoot("pyramidJungleChest", new ItemStack(tungstenCarbidePickaxe), 1, 3, 1);
+
         LootHelper.addLoot("pyramidJungleChest", new ItemStack(tungstenCarbideShovel), 1, 5, 1);
+
         LootHelper.addLoot("pyramidJungleChest", new ItemStack(tungstenCarbideIngot), 3, 5, 3);
+
         LootHelper.addLoot("pyramidJungleChest", new ItemStack(prasinosSword), 1, 4, 1);
+
         LootHelper.addLoot("pyramidJungleChest", new ItemStack(prasinosHelm), 1, 3, 1);
+
         LootHelper.addLoot("pyramidJungleChest", new ItemStack(prasinosChest), 1, 3, 1);
+
         LootHelper.addLoot("pyramidJungleChest", new ItemStack(prasinosLegs), 1, 3, 1);
+
         LootHelper.addLoot("pyramidJungleChest", new ItemStack(prasinosBoots), 1, 3, 1);
+
         LootHelper.addLoot("pyramidJungleChest", new ItemStack(prasinosPickaxe), 1, 3, 1);
+
         LootHelper.addLoot("pyramidJungleChest", new ItemStack(prasinosAxe), 2, 8, 1);
+
         LootHelper.addLoot("pyramidJungleChest", new ItemStack(prasinosIngot), 3, 5, 4);
-        
+
         //recipes
         TungstenRecipes.doTungstenRecipes();
-        
+
         // run tab icon call
         setTabIcons();
     }
@@ -740,26 +763,18 @@ public class SimpleTungstenCore
     @EventHandler // used in 1.6.2
     public void load(FMLInitializationEvent event)
     {
-        
-    	proxy.registerRenderers();
-        
-    	GameRegistry.registerWorldGenerator(new SimpleTungstenGenerator());
-        
-    	MinecraftForge.EVENT_BUS.register(new HandlerJoinWorld());
-        
-    	
-    	//Armor Renderers
+        proxy.registerRenderers();
+        GameRegistry.registerWorldGenerator(new SimpleTungstenGenerator());
+        MinecraftForge.EVENT_BUS.register(new HandlerJoinWorld());
+        //Armor Renderers
         rendererTungsten = proxy.addArmor("tungsten");
         rendererTungstenCarbide = proxy.addArmor("tungstencarbide");
         rendererValfram = proxy.addArmor("valfram");
         rendererValfram = proxy.addArmor("valfram");
         rendererTungstenSteel = proxy.addArmor("tungstensteel");
         rendererPrasinos = proxy.addArmor("prasinos");
-        
         // name stuff
-        
         // name Tungsten
-        
         LanguageRegistry.addName(tungstenIngot, "Tungsten Ingot");
         LanguageRegistry.addName(tungstenSword, "Tungsten Sword");
         LanguageRegistry.addName(tungstenShovel, "Tungsten Shovel");
@@ -770,9 +785,7 @@ public class SimpleTungstenCore
         LanguageRegistry.addName(tungstenChest, "Tungsten Chestplate");
         LanguageRegistry.addName(tungstenLegs, "Tungsten Leggings");
         LanguageRegistry.addName(tungstenBoots, "Tungsten Boots");
-        
         // name Tungsten Carbide
-        
         LanguageRegistry.addName(tungstenCarbideIngot, "Tungsten Carbide Ingot");
         LanguageRegistry.addName(smallTungstenCarbideChunkItem, "Small Tungsten Carbide Chunk");
         LanguageRegistry.addName(mediumTungstenCarbideChunkItem, "Medium Tungsten Carbide Chunk");
@@ -786,9 +799,7 @@ public class SimpleTungstenCore
         LanguageRegistry.addName(tungstenCarbideChest, "Tungsten Carbide Chestplate");
         LanguageRegistry.addName(tungstenCarbideLegs, "Tungsten Carbide Leggings");
         LanguageRegistry.addName(tungstenCarbideBoots, "Tungsten Carbide Boots");
-        
         // name Valfram
-        
         LanguageRegistry.addName(valframIngot, "Valfram Ingot");
         LanguageRegistry.addName(smallValframChunkItem, "Small Valfram Chunk");
         LanguageRegistry.addName(mediumValframChunkItem, "Medium Valfram Chunk");
@@ -802,9 +813,7 @@ public class SimpleTungstenCore
         LanguageRegistry.addName(valframChest, "Valfram Chestplate");
         LanguageRegistry.addName(valframLegs, "Valfram Leggings");
         LanguageRegistry.addName(valframBoots, "Valfram Boots");
-        
         // name Tungsten Steel
-        
         LanguageRegistry.addName(tungstenSteelIngot, "Tungsten Steel Ingot");
         LanguageRegistry.addName(largeTungstenSteelChunkItem, "Large Tungsten Steel Chunk");
         LanguageRegistry.addName(tungstenSteelSword, "Tungsten Steel Sword");
@@ -816,9 +825,7 @@ public class SimpleTungstenCore
         LanguageRegistry.addName(tungstenSteelChest, "Tungsten Steel Chestplate");
         LanguageRegistry.addName(tungstenSteelLegs, "Tungsten Steel Leggings");
         LanguageRegistry.addName(tungstenSteelBoots, "Tungsten Steel Boots");
-        
         // name Prasinos
-        
         LanguageRegistry.addName(prasinosIngot, "Prasinos Ingot");
         LanguageRegistry.addName(smallPrasinosChunkItem, "Small Prasinos Chunk");
         LanguageRegistry.addName(mediumPrasinosChunkItem, "Medium Prasinos Chunk");
@@ -832,66 +839,46 @@ public class SimpleTungstenCore
         LanguageRegistry.addName(prasinosChest, "Prasinos Chestplate");
         LanguageRegistry.addName(prasinosLegs, "Prasinos Leggings");
         LanguageRegistry.addName(prasinosBoots, "Prasinos Boots");
-        
         //blocks
-        
         LanguageRegistry.addName(blockTungsten, "Tungsten Block");
         MinecraftForge.setBlockHarvestLevel(blockTungsten, "pickaxe", 0);
-        
         LanguageRegistry.addName(oreTungsten, "Tungsten Ore");
         MinecraftForge.setBlockHarvestLevel(oreTungsten, "pickaxe", 2);
-
         LanguageRegistry.addName(blockTungstenCarbide, "Tungsten Carbide Block");
         MinecraftForge.setBlockHarvestLevel(blockTungstenCarbide, "pickaxe", 0);
-        
         LanguageRegistry.addName(blockValfram, "Valfram Block");
         MinecraftForge.setBlockHarvestLevel(blockValfram, "pickaxe", 0);
-        
         LanguageRegistry.addName(blockTungstenSteel, "Tungsten Steel Block");
         MinecraftForge.setBlockHarvestLevel(blockTungstenSteel, "pickaxe", 0);
-        
         LanguageRegistry.addName(blockPrasinos, "Prasinos Block");
         MinecraftForge.setBlockHarvestLevel(blockPrasinos, "pickaxe", 0);
-        
         //tools registry
-        
         MinecraftForge.setToolClass(tungstenPickaxe, "pickaxe", 2);
         MinecraftForge.setToolClass(tungstenShovel, "shovel", 2);
         MinecraftForge.setToolClass(tungstenAxe, "axe", 2);
-        
         MinecraftForge.setToolClass(tungstenCarbidePickaxe, "pickaxe", 2);
         MinecraftForge.setToolClass(tungstenCarbideShovel, "shovel", 2);
         MinecraftForge.setToolClass(tungstenCarbideAxe, "axe", 2);
-        
         MinecraftForge.setToolClass(valframPickaxe, "pickaxe", 3);
         MinecraftForge.setToolClass(valframShovel, "shovel", 3);
         MinecraftForge.setToolClass(valframAxe, "axe", 3);
-        
         MinecraftForge.setToolClass(tungstenSteelPickaxe, "pickaxe", 2);
         MinecraftForge.setToolClass(tungstenSteelShovel, "shovel", 2);
         MinecraftForge.setToolClass(tungstenSteelAxe, "axe", 2);
-        
         MinecraftForge.setToolClass(prasinosPickaxe, "pickaxe", 3);
         MinecraftForge.setToolClass(prasinosShovel, "shovel", 3);
         MinecraftForge.setToolClass(prasinosAxe, "axe", 3);
-        
         LanguageRegistry.instance().addStringLocalization("itemGroup.tabAkkamaddiTungsten", "en_US", "akkamaddi's Simple Tungsten");
-        
-        
         armorTungsten.customCraftingMaterial = SimpleTungstenCore.tungstenIngot;
         armorTungstenCarbide.customCraftingMaterial = SimpleTungstenCore.tungstenCarbideIngot;
         armorValfram.customCraftingMaterial = SimpleTungstenCore.valframIngot;
         armorTungstenSteel.customCraftingMaterial = SimpleTungstenCore.tungstenSteelIngot;
         armorPrasinos.customCraftingMaterial = SimpleTungstenCore.prasinosIngot;
-        
-        
         toolTungsten.customCraftingMaterial = SimpleTungstenCore.tungstenIngot;
         toolTungstenCarbide.customCraftingMaterial = SimpleTungstenCore.tungstenCarbideIngot;
         toolValfram.customCraftingMaterial = SimpleTungstenCore.valframIngot;
         toolTungstenSteel.customCraftingMaterial = SimpleTungstenCore.tungstenSteelIngot;
         toolPrasinos.customCraftingMaterial = SimpleTungstenCore.prasinosIngot;
-        
-        
     }
 
     @EventHandler // used in 1.6.2

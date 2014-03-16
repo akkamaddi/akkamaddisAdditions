@@ -2,10 +2,12 @@ package akkamaddi.simpletungsten.code;
 
 import java.util.Random;
 
+import net.minecraft.block.Block;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.feature.WorldGenMinable;
 import cpw.mods.fml.common.IWorldGenerator;
+import alexndr.SimpleOres.api.helpers.WorldGenHelper;
 
 public class SimpleTungstenGenerator implements IWorldGenerator
 {
@@ -22,7 +24,7 @@ public class SimpleTungstenGenerator implements IWorldGenerator
         {
             generateSurface(world, random, chunkX * 16, chunkZ * 16);
         }
-        else if (SimpleTungstenCore.dimensionIDsArray.length >= 1)
+        else if (SimpleTungstenCore.enableHigherDimensionGen && SimpleTungstenCore.dimensionIDsArray.length >= 1)
         {
             for (int i = 0; i < SimpleTungstenCore.dimensionIDsArray.length; i++)
             {
@@ -52,7 +54,7 @@ public class SimpleTungstenGenerator implements IWorldGenerator
             int Xcoord = blockX + random.nextInt(16);
             int Ycoord = random.nextInt(SimpleTungstenCore.tungstenSpawnHeight - SimpleTungstenCore.tungstenMinSpawnHeight);
             int Zcoord = blockZ + random.nextInt(16);
-            new WorldGenMinable(SimpleTungstenCore.oreTungsten.blockID, SimpleTungstenCore.tungstenVeinSize).generate(world, random, Xcoord, Ycoord + SimpleTungstenCore.tungstenMinSpawnHeight , Zcoord);
+            new WorldGenHelper(SimpleTungstenCore.oreTungsten.blockID, SimpleTungstenCore.tungstenVeinSize, Block.stone).generate(world, random, Xcoord, Ycoord + SimpleTungstenCore.tungstenMinSpawnHeight , Zcoord);
         }
     }
 
@@ -79,7 +81,7 @@ public class SimpleTungstenGenerator implements IWorldGenerator
                     int Xcoord = blockX + random.nextInt(16);
                     int Ycoord = random.nextInt(maxHeight - minHeight);
                     int Zcoord = blockZ + random.nextInt(16);
-                    new WorldGenMinable(SimpleTungstenCore.oreTungsten.blockID, veinSize).generate(world, random, Xcoord, Ycoord + minHeight, Zcoord);
+                    new WorldGenHelper(SimpleTungstenCore.oreTungsten.blockID, veinSize, Block.stone).generate(world, random, Xcoord, Ycoord + minHeight, Zcoord);
                 }
             }
         }

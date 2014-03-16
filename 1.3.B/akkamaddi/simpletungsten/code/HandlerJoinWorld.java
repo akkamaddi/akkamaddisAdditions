@@ -1,6 +1,8 @@
 package akkamaddi.simpletungsten.code;
 
 import java.util.Random;
+
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.monster.EntitySkeleton;
 import net.minecraft.entity.monster.EntityZombie;
@@ -15,6 +17,8 @@ public class HandlerJoinWorld
 
     public static RandomRange random = new RandomRange();
 
+    public static final String HANDLED_KEY = "simpletungsten.spawn.handled";
+
     /**
      * This class allows zombies and skeletons to spawn holding/wearing SimpleOres items.
      */
@@ -23,8 +27,20 @@ public class HandlerJoinWorld
     {
         rand = Math.random();
         range = random.nextInt(1, 89);
+        
+    if (event.world.isRemote)
+            return;
+    
+    Entity entity = event.entity;
+    
+    if (!(entity.getClass() == EntitySkeleton.class && ((EntitySkeleton) entity).getSkeletonType() == 0
+            || entity.getClass() == EntityZombie.class)
+            || entity.getEntityData().getBoolean(HANDLED_KEY))
+    return;
 
-        if ((rand <= 0.02D) && ((event.entity instanceof EntityLiving)) && ((event.entity instanceof EntitySkeleton | event.entity instanceof EntityZombie)))
+    event.entity.getEntityData().setBoolean(HANDLED_KEY, true);
+
+        if (rand <= 0.02D)
         {
             EntityLiving living = (EntityLiving)event.entity;
 
@@ -247,9 +263,8 @@ public class HandlerJoinWorld
             {
                 living.setCurrentItemOrArmor(0, new ItemStack(SimpleTungstenCore.valframHoe));
             }
-            
-			
-			if (range == 41)
+
+            if (range == 41)
             {
                 living.setCurrentItemOrArmor(4, new ItemStack(SimpleTungstenCore.tungstenHelm));
                 living.setCurrentItemOrArmor(3, new ItemStack(SimpleTungstenCore.tungstenChest));
@@ -257,36 +272,36 @@ public class HandlerJoinWorld
                 living.setCurrentItemOrArmor(1, new ItemStack(SimpleTungstenCore.tungstenBoots));
                 living.setCurrentItemOrArmor(0, new ItemStack(SimpleTungstenCore.tungstenSword));
             }
-						
-			if (range == 42)
+
+            if (range == 42)
             {
                 living.setCurrentItemOrArmor(4, new ItemStack(SimpleTungstenCore.tungstenHelm));
                 living.setCurrentItemOrArmor(1, new ItemStack(SimpleTungstenCore.tungstenBoots));
                 living.setCurrentItemOrArmor(0, new ItemStack(SimpleTungstenCore.tungstenPickaxe));
             }
-			
-			if (range == 43)
+
+            if (range == 43)
             {
                 living.setCurrentItemOrArmor(4, new ItemStack(SimpleTungstenCore.tungstenHelm));
                 living.setCurrentItemOrArmor(3, new ItemStack(SimpleTungstenCore.tungstenChest));
                 living.setCurrentItemOrArmor(0, new ItemStack(SimpleTungstenCore.tungstenAxe));
             }
-			
-			if (range == 44)
+
+            if (range == 44)
             {
                 living.setCurrentItemOrArmor(2, new ItemStack(SimpleTungstenCore.tungstenLegs));
                 living.setCurrentItemOrArmor(1, new ItemStack(SimpleTungstenCore.tungstenBoots));
                 living.setCurrentItemOrArmor(0, new ItemStack(SimpleTungstenCore.tungstenShovel));
             }
-			
-			if (range == 45)
+
+            if (range == 45)
             {
                 living.setCurrentItemOrArmor(4, new ItemStack(SimpleTungstenCore.tungstenHelm));
                 living.setCurrentItemOrArmor(1, new ItemStack(SimpleTungstenCore.tungstenBoots));
                 living.setCurrentItemOrArmor(0, new ItemStack(SimpleTungstenCore.tungstenHoe));
             }
 
-			if (range == 46)
+            if (range == 46)
             {
                 living.setCurrentItemOrArmor(4, new ItemStack(SimpleTungstenCore.tungstenCarbideHelm));
                 living.setCurrentItemOrArmor(3, new ItemStack(SimpleTungstenCore.tungstenCarbideChest));
@@ -294,36 +309,36 @@ public class HandlerJoinWorld
                 living.setCurrentItemOrArmor(1, new ItemStack(SimpleTungstenCore.tungstenCarbideBoots));
                 living.setCurrentItemOrArmor(0, new ItemStack(SimpleTungstenCore.tungstenCarbideSword));
             }
-			
-			if (range == 47)
+
+            if (range == 47)
             {
                 living.setCurrentItemOrArmor(4, new ItemStack(SimpleTungstenCore.tungstenCarbideHelm));
                 living.setCurrentItemOrArmor(1, new ItemStack(SimpleTungstenCore.tungstenCarbideBoots));
                 living.setCurrentItemOrArmor(0, new ItemStack(SimpleTungstenCore.tungstenCarbidePickaxe));
             }
 
-			if (range == 48)
+            if (range == 48)
             {
                 living.setCurrentItemOrArmor(4, new ItemStack(SimpleTungstenCore.tungstenCarbideHelm));
                 living.setCurrentItemOrArmor(3, new ItemStack(SimpleTungstenCore.tungstenCarbideChest));
                 living.setCurrentItemOrArmor(0, new ItemStack(SimpleTungstenCore.tungstenCarbideAxe));
             }
 
-			if (range == 49)
+            if (range == 49)
             {
                 living.setCurrentItemOrArmor(2, new ItemStack(SimpleTungstenCore.tungstenCarbideLegs));
                 living.setCurrentItemOrArmor(1, new ItemStack(SimpleTungstenCore.tungstenCarbideBoots));
                 living.setCurrentItemOrArmor(0, new ItemStack(SimpleTungstenCore.tungstenCarbideShovel));
             }
 
-			if (range == 50)
+            if (range == 50)
             {
                 living.setCurrentItemOrArmor(4, new ItemStack(SimpleTungstenCore.tungstenCarbideHelm));
                 living.setCurrentItemOrArmor(1, new ItemStack(SimpleTungstenCore.tungstenCarbideBoots));
                 living.setCurrentItemOrArmor(0, new ItemStack(SimpleTungstenCore.tungstenCarbideHoe));
             }
 
-			if (range == 51)
+            if (range == 51)
             {
                 living.setCurrentItemOrArmor(4, new ItemStack(SimpleTungstenCore.valframHelm));
                 living.setCurrentItemOrArmor(3, new ItemStack(SimpleTungstenCore.valframChest));
@@ -331,36 +346,36 @@ public class HandlerJoinWorld
                 living.setCurrentItemOrArmor(1, new ItemStack(SimpleTungstenCore.valframBoots));
                 living.setCurrentItemOrArmor(0, new ItemStack(SimpleTungstenCore.valframSword));
             }
-			
-			if (range == 52)
+
+            if (range == 52)
             {
                 living.setCurrentItemOrArmor(4, new ItemStack(SimpleTungstenCore.valframHelm));
                 living.setCurrentItemOrArmor(1, new ItemStack(SimpleTungstenCore.valframBoots));
                 living.setCurrentItemOrArmor(0, new ItemStack(SimpleTungstenCore.valframPickaxe));
             }
 
-			if (range == 53)
+            if (range == 53)
             {
                 living.setCurrentItemOrArmor(4, new ItemStack(SimpleTungstenCore.valframHelm));
                 living.setCurrentItemOrArmor(3, new ItemStack(SimpleTungstenCore.valframChest));
                 living.setCurrentItemOrArmor(0, new ItemStack(SimpleTungstenCore.valframAxe));
             }
 
-			if (range == 54)
+            if (range == 54)
             {
                 living.setCurrentItemOrArmor(2, new ItemStack(SimpleTungstenCore.valframLegs));
                 living.setCurrentItemOrArmor(1, new ItemStack(SimpleTungstenCore.valframBoots));
                 living.setCurrentItemOrArmor(0, new ItemStack(SimpleTungstenCore.valframShovel));
             }
 
-			if (range == 55)
+            if (range == 55)
             {
                 living.setCurrentItemOrArmor(4, new ItemStack(SimpleTungstenCore.valframHelm));
                 living.setCurrentItemOrArmor(1, new ItemStack(SimpleTungstenCore.valframBoots));
                 living.setCurrentItemOrArmor(0, new ItemStack(SimpleTungstenCore.valframHoe));
             }
-						
-			if (range == 56)
+
+            if (range == 56)
             {
                 living.setCurrentItemOrArmor(4, new ItemStack(SimpleTungstenCore.tungstenHelm));
                 living.setCurrentItemOrArmor(3, new ItemStack(SimpleTungstenCore.tungstenChest));
@@ -368,8 +383,8 @@ public class HandlerJoinWorld
                 living.setCurrentItemOrArmor(1, new ItemStack(SimpleTungstenCore.tungstenBoots));
                 living.setCurrentItemOrArmor(0, new ItemStack(SimpleTungstenCore.tungstenCarbideSword));
             }
-			
-			if (range == 57)
+
+            if (range == 57)
             {
                 living.setCurrentItemOrArmor(4, new ItemStack(SimpleTungstenCore.tungstenHelm));
                 living.setCurrentItemOrArmor(3, new ItemStack(SimpleTungstenCore.tungstenChest));
@@ -377,7 +392,7 @@ public class HandlerJoinWorld
                 living.setCurrentItemOrArmor(1, new ItemStack(SimpleTungstenCore.tungstenBoots));
                 living.setCurrentItemOrArmor(0, new ItemStack(SimpleTungstenCore.valframSword));
             }
-			
+
             if (range == 58)
             {
                 living.setCurrentItemOrArmor(4, new ItemStack(SimpleTungstenCore.tungstenSteelHelm));
@@ -485,8 +500,8 @@ public class HandlerJoinWorld
             {
                 living.setCurrentItemOrArmor(0, new ItemStack(SimpleTungstenCore.prasinosHoe));
             }
-            
-			if (range == 78)
+
+            if (range == 78)
             {
                 living.setCurrentItemOrArmor(4, new ItemStack(SimpleTungstenCore.tungstenSteelHelm));
                 living.setCurrentItemOrArmor(3, new ItemStack(SimpleTungstenCore.tungstenSteelChest));
@@ -494,36 +509,36 @@ public class HandlerJoinWorld
                 living.setCurrentItemOrArmor(1, new ItemStack(SimpleTungstenCore.tungstenSteelBoots));
                 living.setCurrentItemOrArmor(0, new ItemStack(SimpleTungstenCore.tungstenSteelSword));
             }
-			
-			if (range == 79)
+
+            if (range == 79)
             {
                 living.setCurrentItemOrArmor(4, new ItemStack(SimpleTungstenCore.tungstenSteelHelm));
                 living.setCurrentItemOrArmor(1, new ItemStack(SimpleTungstenCore.tungstenSteelBoots));
                 living.setCurrentItemOrArmor(0, new ItemStack(SimpleTungstenCore.tungstenSteelPickaxe));
             }
 
-			if (range == 80)
+            if (range == 80)
             {
                 living.setCurrentItemOrArmor(4, new ItemStack(SimpleTungstenCore.tungstenSteelHelm));
                 living.setCurrentItemOrArmor(3, new ItemStack(SimpleTungstenCore.tungstenSteelChest));
                 living.setCurrentItemOrArmor(0, new ItemStack(SimpleTungstenCore.tungstenSteelAxe));
             }
 
-			if (range == 81)
+            if (range == 81)
             {
                 living.setCurrentItemOrArmor(2, new ItemStack(SimpleTungstenCore.tungstenSteelLegs));
                 living.setCurrentItemOrArmor(1, new ItemStack(SimpleTungstenCore.tungstenSteelBoots));
                 living.setCurrentItemOrArmor(0, new ItemStack(SimpleTungstenCore.tungstenSteelShovel));
             }
 
-			if (range == 82)
+            if (range == 82)
             {
                 living.setCurrentItemOrArmor(4, new ItemStack(SimpleTungstenCore.tungstenSteelHelm));
                 living.setCurrentItemOrArmor(1, new ItemStack(SimpleTungstenCore.tungstenSteelBoots));
                 living.setCurrentItemOrArmor(0, new ItemStack(SimpleTungstenCore.tungstenSteelHoe));
             }
 
-			if (range == 83)
+            if (range == 83)
             {
                 living.setCurrentItemOrArmor(4, new ItemStack(SimpleTungstenCore.prasinosHelm));
                 living.setCurrentItemOrArmor(3, new ItemStack(SimpleTungstenCore.prasinosChest));
@@ -531,36 +546,36 @@ public class HandlerJoinWorld
                 living.setCurrentItemOrArmor(1, new ItemStack(SimpleTungstenCore.prasinosBoots));
                 living.setCurrentItemOrArmor(0, new ItemStack(SimpleTungstenCore.prasinosSword));
             }
-			
-			if (range == 84)
+
+            if (range == 84)
             {
                 living.setCurrentItemOrArmor(4, new ItemStack(SimpleTungstenCore.prasinosHelm));
                 living.setCurrentItemOrArmor(1, new ItemStack(SimpleTungstenCore.prasinosBoots));
                 living.setCurrentItemOrArmor(0, new ItemStack(SimpleTungstenCore.prasinosPickaxe));
             }
 
-			if (range == 85)
+            if (range == 85)
             {
                 living.setCurrentItemOrArmor(4, new ItemStack(SimpleTungstenCore.prasinosHelm));
                 living.setCurrentItemOrArmor(3, new ItemStack(SimpleTungstenCore.prasinosChest));
                 living.setCurrentItemOrArmor(0, new ItemStack(SimpleTungstenCore.prasinosAxe));
             }
 
-			if (range == 86)
+            if (range == 86)
             {
                 living.setCurrentItemOrArmor(2, new ItemStack(SimpleTungstenCore.prasinosLegs));
                 living.setCurrentItemOrArmor(1, new ItemStack(SimpleTungstenCore.prasinosBoots));
                 living.setCurrentItemOrArmor(0, new ItemStack(SimpleTungstenCore.prasinosShovel));
             }
 
-			if (range == 87)
+            if (range == 87)
             {
                 living.setCurrentItemOrArmor(4, new ItemStack(SimpleTungstenCore.prasinosHelm));
                 living.setCurrentItemOrArmor(1, new ItemStack(SimpleTungstenCore.prasinosBoots));
                 living.setCurrentItemOrArmor(0, new ItemStack(SimpleTungstenCore.prasinosHoe));
             }
-						
-			if (range == 88)
+
+            if (range == 88)
             {
                 living.setCurrentItemOrArmor(4, new ItemStack(SimpleTungstenCore.tungstenHelm));
                 living.setCurrentItemOrArmor(3, new ItemStack(SimpleTungstenCore.tungstenChest));
@@ -568,8 +583,8 @@ public class HandlerJoinWorld
                 living.setCurrentItemOrArmor(1, new ItemStack(SimpleTungstenCore.tungstenBoots));
                 living.setCurrentItemOrArmor(0, new ItemStack(SimpleTungstenCore.tungstenSteelSword));
             }
-			
-			if (range == 89)
+
+            if (range == 89)
             {
                 living.setCurrentItemOrArmor(4, new ItemStack(SimpleTungstenCore.tungstenHelm));
                 living.setCurrentItemOrArmor(3, new ItemStack(SimpleTungstenCore.tungstenChest));
@@ -577,15 +592,14 @@ public class HandlerJoinWorld
                 living.setCurrentItemOrArmor(1, new ItemStack(SimpleTungstenCore.tungstenBoots));
                 living.setCurrentItemOrArmor(0, new ItemStack(SimpleTungstenCore.prasinosSword));
             }
-			
         }
     }
 }
 
 class RandomRange extends Random
 {
-	public int nextInt(int min, int max)
-	{
-		return nextInt(max - min + 1) + min;
-	}
+    public int nextInt(int min, int max)
+    {
+        return nextInt(max - min + 1) + min;
+    }
 }

@@ -144,23 +144,19 @@ public class GlitterRecipes
         FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(Item.redstone), new ItemStack(Item.redstone), new ItemStack(Item.ingotGold), new ItemStack(GoldenGlitterCore.largeErubescentGoldChunkItem), 12.0F);
         FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(Item.redstone), new ItemStack(Item.redstone), new ItemStack(GoldenGlitterCore.erubescentGoldIngot), new ItemStack(GoldenGlitterCore.largeScarlatiteGoldChunkItem), 20.0F);
         FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(Item.bucketLava), new ItemStack(Item.bucketLava), new ItemStack(GoldenGlitterCore.scarlatiteGoldIngot), new ItemStack(GoldenGlitterCore.largeHephaestanGoldChunkItem), 20.0F);
-        
         // Red Gold Rail
-
         GameRegistry.addShapelessRecipe(new ItemStack(GoldenGlitterCore.redGoldRail, 3), new Object[]
-                {
-                GoldenGlitterCore.erubescentGoldIngot, Block.rail, Block.rail, Block.rail
-                });
-        
+                                        {
+                                            GoldenGlitterCore.erubescentGoldIngot, Block.rail, Block.rail, Block.rail
+                                        });
         GameRegistry.addShapelessRecipe(new ItemStack(GoldenGlitterCore.redGoldRail, 8), new Object[]
-                {
-                GoldenGlitterCore.scarlatiteGoldIngot, Block.rail, Block.rail, Block.rail, Block.rail, Block.rail, Block.rail, Block.rail, Block.rail
-                });
+                                        {
+                                            GoldenGlitterCore.scarlatiteGoldIngot, Block.rail, Block.rail, Block.rail, Block.rail, Block.rail, Block.rail, Block.rail, Block.rail
+                                        });
 
-                
-        
-        if (GoldenGlitterCore.enableRecycling) {
-        	// rose gold
+        if (GoldenGlitterCore.enableRecycling)
+        {
+            // rose gold
             FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(GoldenGlitterCore.roseGoldHelm, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Block.gravel), new ItemStack(Item.coal, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(GoldenGlitterCore.largeRoseGoldChunkItem), 10.0F);
             FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(GoldenGlitterCore.roseGoldChest, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Block.gravel, 2, 0), new ItemStack(Item.coal, 2, OreDictionary.WILDCARD_VALUE), new ItemStack(GoldenGlitterCore.largeRoseGoldChunkItem, 2, 0), 20.0F);
             FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(GoldenGlitterCore.roseGoldLegs, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Block.gravel, 2, 0), new ItemStack(Item.coal, 2, OreDictionary.WILDCARD_VALUE), new ItemStack(GoldenGlitterCore.largeRoseGoldChunkItem, 2, 0), 20.0F);
@@ -185,8 +181,6 @@ public class GlitterRecipes
             FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(GoldenGlitterCore.hephaestanGoldShovel, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Block.gravel), new ItemStack(Item.bucketLava), new ItemStack(GoldenGlitterCore.largeHephaestanGoldChunkItem), 25.0F);
             FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(GoldenGlitterCore.hephaestanGoldAxe, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Block.gravel), new ItemStack(Item.bucketLava), new ItemStack(GoldenGlitterCore.largeHephaestanGoldChunkItem), 25.0F);
             FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(GoldenGlitterCore.hephaestanGoldPickaxe, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Block.gravel), new ItemStack(Item.bucketLava), new ItemStack(GoldenGlitterCore.largeHephaestanGoldChunkItem), 25.0F);
-
         }
-        
     }
 }

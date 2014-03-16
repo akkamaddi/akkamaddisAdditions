@@ -14,23 +14,18 @@ public class CobaltRecipes
 {
     public static void doCobaltRecipes()
     {
-        
-    	// Ore Dictionary
+        // Ore Dictionary
         OreDictionary.registerOre("ingotCobalt", new ItemStack(SimpleCobaltCore.cobaltIngot));
         OreDictionary.registerOre("oreCobalt", new ItemStack(SimpleCobaltCore.oreCobalt));
         OreDictionary.registerOre("ingotBlueDriftSteel", new ItemStack(SimpleCobaltCore.blueDriftSteelIngot));
         OreDictionary.registerOre("ingotBlueCeladon", new ItemStack(SimpleCobaltCore.blueCeladonIngot));
         OreDictionary.registerOre("ingotGreenCeladon", new ItemStack(SimpleCobaltCore.greenCeladonIngot));
-        
         // recipes: Crafting
-        
         //Storage Block
-        
         GameRegistry.addRecipe(new ItemStack(SimpleCobaltCore.blockCobalt, 1), new Object[] {"AAA", "AAA", "AAA", 'A', SimpleCobaltCore.cobaltIngot});
         GameRegistry.addRecipe(new ItemStack(SimpleCobaltCore.blockBlueDriftSteel, 1), new Object[] {"AAA", "AAA", "AAA", 'A', SimpleCobaltCore.blueDriftSteelIngot});
         GameRegistry.addRecipe(new ItemStack(SimpleCobaltCore.blockBlueCeladon, 1), new Object[] {"AAA", "AAA", "AAA", 'A', SimpleCobaltCore.blueCeladonIngot});
         GameRegistry.addRecipe(new ItemStack(SimpleCobaltCore.blockGreenCeladon, 1), new Object[] {"AAA", "AAA", "AAA", 'A', SimpleCobaltCore.greenCeladonIngot});
-        
         //Ingot Recipe
         GameRegistry.addShapelessRecipe(new ItemStack(SimpleCobaltCore.cobaltIngot, 9), new Object[]
                                         {
@@ -48,9 +43,7 @@ public class CobaltRecipes
                                         {
                                             SimpleCobaltCore.blockGreenCeladon
                                         });
-        
         //Chunk Recipes
-        
         //Blue Drift Steel Chunks
         GameRegistry.addShapelessRecipe(new ItemStack(SimpleCobaltCore.largeBlueDriftSteelChunkItem, 1), new Object[]
                                         {
@@ -76,7 +69,6 @@ public class CobaltRecipes
                                         {
                                             SimpleCobaltCore.mediumBlueDriftSteelChunkItem
                                         });
-        
         // Blue Celadon Chunks
         GameRegistry.addShapelessRecipe(new ItemStack(SimpleCobaltCore.largeBlueCeladonChunkItem, 1), new Object[]
                                         {
@@ -102,7 +94,6 @@ public class CobaltRecipes
                                         {
                                             SimpleCobaltCore.mediumBlueCeladonChunkItem
                                         });
-        
         // Green Celadon Chunks
         GameRegistry.addShapelessRecipe(new ItemStack(SimpleCobaltCore.largeGreenCeladonChunkItem, 1), new Object[]
                                         {
@@ -128,9 +119,7 @@ public class CobaltRecipes
                                         {
                                             SimpleCobaltCore.mediumGreenCeladonChunkItem
                                         });
-        
         // Cobalt
-        
         //Cobalt Tool Recipes
         CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(SimpleCobaltCore.cobaltPickaxe, true, new Object[]
                 {
@@ -152,7 +141,6 @@ public class CobaltRecipes
                 {
                     "XX ", " Y ", " Y ", 'X', "ingotCobalt", 'Y', "stickWood"
                 }));
-        
         //Cobalt Armor
         CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(SimpleCobaltCore.cobaltHelm, true, new Object[]
                 {
@@ -170,9 +158,7 @@ public class CobaltRecipes
                 {
                     "X X", "X X", 'X', "ingotCobalt"
                 }));
-        
         // Blue Drift Steel
-        
         //Blue Drift Steel Tool Recipes
         CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(SimpleCobaltCore.blueDriftSteelPickaxe, true, new Object[]
                 {
@@ -194,7 +180,6 @@ public class CobaltRecipes
                 {
                     "XX ", " Y ", " Y ", 'X', "ingotBlueDriftSteel", 'Y', "stickWood"
                 }));
-        
         //Blue Drift Steel Armor
         CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(SimpleCobaltCore.blueDriftSteelHelm, true, new Object[]
                 {
@@ -212,9 +197,7 @@ public class CobaltRecipes
                 {
                     "X X", "X X", 'X', "ingotBlueDriftSteel"
                 }));
-        
         // Blue Celadon
-        
         //Blue Celadon Tool Recipes
         CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(SimpleCobaltCore.blueCeladonPickaxe, true, new Object[]
                 {
@@ -236,7 +219,6 @@ public class CobaltRecipes
                 {
                     "XX ", " Y ", " Y ", 'X', "ingotBlueCeladon", 'Y', "stickWood"
                 }));
-        
         //Blue Celadon Armor
         CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(SimpleCobaltCore.blueCeladonHelm, true, new Object[]
                 {
@@ -254,9 +236,7 @@ public class CobaltRecipes
                 {
                     "X X", "X X", 'X', "ingotBlueCeladon"
                 }));
-        
         // Green Celadon
-        
         //Green Celadon Tool Recipes
         CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(SimpleCobaltCore.greenCeladonPickaxe, true, new Object[]
                 {
@@ -278,7 +258,6 @@ public class CobaltRecipes
                 {
                     "XX ", " Y ", " Y ", 'X', "ingotGreenCeladon", 'Y', "stickWood"
                 }));
-        
         //green Celadon Armor
         CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(SimpleCobaltCore.greenCeladonHelm, true, new Object[]
                 {
@@ -296,44 +275,37 @@ public class CobaltRecipes
                 {
                     "X X", "X X", 'X', "ingotGreenCeladon"
                 }));
-        
         //Rails
         CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(new ItemStack(Block.rail, 24, 0), true, new Object[]
                 {
                     "X X", "XYX", "X X", 'X', "ingotCobalt", 'Y', "stickWood"
                 }));
-        
-		CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(new ItemStack(Block.rail, 44, 0), true, new Object[]
+        CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(new ItemStack(Block.rail, 44, 0), true, new Object[]
                 {
                     "X X", "XYX", "X X", 'X', "ingotBlueDriftSteel", 'Y', "stickWood"
                 }));
-        
         // recipes: Smelting
         GameRegistry.addSmelting(SimpleCobaltCore.oreCobalt.blockID, new ItemStack(SimpleCobaltCore.cobaltIngot), 0.8F);
         GameRegistry.addSmelting(SimpleCobaltCore.largeBlueDriftSteelChunkItem.itemID, new ItemStack(SimpleCobaltCore.blueDriftSteelIngot), 0.9F);
         GameRegistry.addSmelting(SimpleCobaltCore.largeBlueCeladonChunkItem.itemID, new ItemStack(SimpleCobaltCore.blueCeladonIngot), 1.0F);
         GameRegistry.addSmelting(SimpleCobaltCore.largeGreenCeladonChunkItem.itemID, new ItemStack(SimpleCobaltCore.greenCeladonIngot), 1.4F);
-        
         //Fusion Furnace Recipes
-        
         // Blue Drift Steel
         FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(SimpleCobaltCore.cobaltIngot), new ItemStack(Item.ingotIron), new ItemStack(Item.coal, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(SimpleCobaltCore.smallBlueDriftSteelChunkItem), 6.0F);
         FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(SimpleCobaltCore.cobaltIngot), new ItemStack(Item.ingotIron), new ItemStack(Item.gunpowder), new ItemStack(SimpleCobaltCore.mediumBlueDriftSteelChunkItem), 8.0F);
         FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(SimpleCobaltCore.cobaltIngot), new ItemStack(Item.ingotIron), new ItemStack(Item.dyePowder, 1, 4), new ItemStack(SimpleCobaltCore.largeBlueDriftSteelChunkItem), 20.F);
-        
         //Blue Celadon
         FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(SimpleCobaltCore.cobaltIngot), new ItemStack(CoreHelper.coreContent.mythrilIngot), new ItemStack(Item.redstone), new ItemStack(SimpleCobaltCore.smallBlueCeladonChunkItem), 8.0F);
         FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(SimpleCobaltCore.cobaltIngot), new ItemStack(CoreHelper.coreContent.mythrilIngot), new ItemStack(Item.dyePowder, 1, 4), new ItemStack(SimpleCobaltCore.mediumBlueCeladonChunkItem), 10.0F);
         FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(SimpleCobaltCore.cobaltIngot), new ItemStack(CoreHelper.coreContent.mythrilIngot), new ItemStack(Item.glowstone), new ItemStack(SimpleCobaltCore.largeBlueCeladonChunkItem), 26.F);
-        
         //Green Celadon
         FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(SimpleCobaltCore.cobaltIngot), new ItemStack(CoreHelper.coreContent.adamantiumIngot), new ItemStack(Item.dyePowder, 1, 4), new ItemStack(SimpleCobaltCore.smallGreenCeladonChunkItem), 10.0F);
         FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(SimpleCobaltCore.cobaltIngot), new ItemStack(CoreHelper.coreContent.adamantiumIngot), new ItemStack(Item.glowstone), new ItemStack(SimpleCobaltCore.mediumGreenCeladonChunkItem), 12.0F);
         FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(SimpleCobaltCore.cobaltIngot), new ItemStack(CoreHelper.coreContent.adamantiumIngot), new ItemStack(Item.emerald), new ItemStack(SimpleCobaltCore.largeGreenCeladonChunkItem), 36.F);
-        
-        if (SimpleCobaltCore.enableRecycling) {
-        	
-        	// Cobalt
+
+        if (SimpleCobaltCore.enableRecycling)
+        {
+            // Cobalt
             FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(SimpleCobaltCore.cobaltHelm, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Block.gravel), new ItemStack(Item.coal, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(SimpleCobaltCore.oreCobalt), 15.0F);
             FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(SimpleCobaltCore.cobaltChest, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Block.gravel, 2, 0), new ItemStack(Item.coal, 2, OreDictionary.WILDCARD_VALUE), new ItemStack(SimpleCobaltCore.oreCobalt, 2, 0), 30.0F);
             FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(SimpleCobaltCore.cobaltLegs, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Block.gravel, 2, 0), new ItemStack(Item.coal, 2, OreDictionary.WILDCARD_VALUE), new ItemStack(SimpleCobaltCore.oreCobalt, 2, 0), 30.0F);
@@ -343,7 +315,6 @@ public class CobaltRecipes
             FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(SimpleCobaltCore.cobaltPickaxe, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Block.gravel), new ItemStack(Item.coal, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(SimpleCobaltCore.oreCobalt), 15.0F);
             FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(SimpleCobaltCore.cobaltAxe, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Block.gravel), new ItemStack(Item.coal, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(SimpleCobaltCore.oreCobalt), 15.0F);
             FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(SimpleCobaltCore.cobaltHoe, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Block.gravel), new ItemStack(Item.coal, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(SimpleCobaltCore.oreCobalt), 15.0F);
-            
             // Blue Drift Steel
             FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(SimpleCobaltCore.blueDriftSteelHelm, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Block.gravel), new ItemStack(Item.coal, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(SimpleCobaltCore.largeBlueDriftSteelChunkItem), 15.0F);
             FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(SimpleCobaltCore.blueDriftSteelChest, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Block.gravel, 2, 0), new ItemStack(Item.coal, 2, OreDictionary.WILDCARD_VALUE), new ItemStack(SimpleCobaltCore.largeBlueDriftSteelChunkItem, 2, 0), 30.0F);
@@ -354,7 +325,6 @@ public class CobaltRecipes
             FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(SimpleCobaltCore.blueDriftSteelPickaxe, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Block.gravel), new ItemStack(Item.coal, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(SimpleCobaltCore.largeBlueDriftSteelChunkItem), 15.0F);
             FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(SimpleCobaltCore.blueDriftSteelAxe, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Block.gravel), new ItemStack(Item.coal, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(SimpleCobaltCore.largeBlueDriftSteelChunkItem), 15.0F);
             FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(SimpleCobaltCore.blueDriftSteelHoe, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Block.gravel), new ItemStack(Item.coal, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(SimpleCobaltCore.largeBlueDriftSteelChunkItem), 15.0F);
-            
             // Blue Celadon
             FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(SimpleCobaltCore.blueCeladonHelm, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Block.gravel), new ItemStack(Item.bucketLava), new ItemStack(SimpleCobaltCore.largeBlueCeladonChunkItem), 20.0F);
             FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(SimpleCobaltCore.blueCeladonChest, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Block.gravel, 2, 0), new ItemStack(Item.bucketLava), new ItemStack(SimpleCobaltCore.largeBlueCeladonChunkItem, 2, 0), 40.0F);
@@ -365,7 +335,6 @@ public class CobaltRecipes
             FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(SimpleCobaltCore.blueCeladonPickaxe, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Block.gravel), new ItemStack(Item.bucketLava), new ItemStack(SimpleCobaltCore.largeBlueCeladonChunkItem), 20.0F);
             FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(SimpleCobaltCore.blueCeladonAxe, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Block.gravel), new ItemStack(Item.bucketLava), new ItemStack(SimpleCobaltCore.largeBlueCeladonChunkItem), 20.0F);
             FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(SimpleCobaltCore.blueCeladonHoe, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Block.gravel), new ItemStack(Item.bucketLava), new ItemStack(SimpleCobaltCore.largeBlueCeladonChunkItem), 20.0F);
-            
             // Green Celadon
             FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(SimpleCobaltCore.greenCeladonHelm, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Block.gravel), new ItemStack(Item.bucketLava), new ItemStack(SimpleCobaltCore.largeGreenCeladonChunkItem), 20.0F);
             FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(SimpleCobaltCore.greenCeladonChest, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Block.gravel, 2, 0), new ItemStack(Item.bucketLava), new ItemStack(SimpleCobaltCore.largeGreenCeladonChunkItem, 2, 0), 40.0F);
@@ -376,10 +345,6 @@ public class CobaltRecipes
             FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(SimpleCobaltCore.greenCeladonPickaxe, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Block.gravel), new ItemStack(Item.bucketLava), new ItemStack(SimpleCobaltCore.largeGreenCeladonChunkItem), 20.0F);
             FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(SimpleCobaltCore.greenCeladonAxe, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Block.gravel), new ItemStack(Item.bucketLava), new ItemStack(SimpleCobaltCore.largeGreenCeladonChunkItem), 20.0F);
             FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(SimpleCobaltCore.greenCeladonHoe, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Block.gravel), new ItemStack(Item.bucketLava), new ItemStack(SimpleCobaltCore.largeGreenCeladonChunkItem), 20.0F);
-
-        	
         }
-        
-        
     }
 }

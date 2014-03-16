@@ -53,35 +53,34 @@ public class SteelyGlintCore
 
     // set item ID, to-from config file
 
-    
     //Carbonized Iron
     public static int carbonizedIronIngotID;
     public static int largeCarbonizedIronChunkItemID;
-	public static int mediumCarbonizedIronChunkItemID;
+    public static int mediumCarbonizedIronChunkItemID;
     public static int blockCarbonizedIronID;
 
     public static int carbonizedIronSwordID;
     public static int carbonizedIronShovelID;
     public static int carbonizedIronAxeID;
     public static int carbonizedIronPickaxeID;
-	public static int carbonizedIronHoeID;
+    public static int carbonizedIronHoeID;
 
     //Refined Iron
     public static int refinedIronIngotID;
     public static int largeRefinedIronChunkItemID;
-	public static int mediumRefinedIronChunkItemID;
+    public static int mediumRefinedIronChunkItemID;
     public static int blockRefinedIronID;
 
     public static int refinedIronSwordID;
     public static int refinedIronShovelID;
     public static int refinedIronAxeID;
     public static int refinedIronPickaxeID;
-	public static int refinedIronHoeID;
-	
-	//Low Steel
+    public static int refinedIronHoeID;
+
+    //Low Steel
     public static int lowSteelIngotID;
     public static int largeLowSteelChunkItemID;
-    public static int mediumLowSteelChunkItemID;
+    //public static int mediumLowSteelChunkItemID;
     public static int blockLowSteelID;
 
     public static int lowSteelSwordID;
@@ -94,11 +93,11 @@ public class SteelyGlintCore
     public static int lowSteelChestID;
     public static int lowSteelLegsID;
     public static int lowSteelBootsID;
-	
-	//High Steel
+
+    //High Steel
     public static int highSteelIngotID;
     public static int largeHighSteelChunkItemID;
-    public static int mediumHighSteelChunkItemID;
+    //public static int mediumHighSteelChunkItemID;
     public static int blockHighSteelID;
 
     public static int highSteelSwordID;
@@ -111,38 +110,38 @@ public class SteelyGlintCore
     public static int highSteelChestID;
     public static int highSteelLegsID;
     public static int highSteelBootsID;
-
-
     
-    // set actual item names
+    //other
+    public static int grittySootID;
 
+    // set actual item names
 
     //Carbonized Iron
     public static Item carbonizedIronIngot;
     public static Item largeCarbonizedIronChunkItem;
-	public static Item mediumCarbonizedIronChunkItem;
+    public static Item mediumCarbonizedIronChunkItem;
 
     public static Item carbonizedIronSword;
     public static Item carbonizedIronShovel;
     public static Item carbonizedIronAxe;
     public static Item carbonizedIronPickaxe;
-	public static Item carbonizedIronHoe;
+    public static Item carbonizedIronHoe;
 
     //Refined Iron
     public static Item refinedIronIngot;
     public static Item largeRefinedIronChunkItem;
-	public static Item mediumRefinedIronChunkItem;
+    public static Item mediumRefinedIronChunkItem;
 
     public static Item refinedIronSword;
     public static Item refinedIronShovel;
     public static Item refinedIronAxe;
     public static Item refinedIronPickaxe;
-	public static Item refinedIronHoe;
+    public static Item refinedIronHoe;
 
     //Low Steel
     public static Item lowSteelIngot;
     public static Item largeLowSteelChunkItem;
-	public static Item mediumLowSteelChunkItem;
+    public static Item mediumLowSteelChunkItem;
 
     public static Item lowSteelSword;
     public static Item lowSteelShovel;
@@ -154,11 +153,11 @@ public class SteelyGlintCore
     public static Item lowSteelChest;
     public static Item lowSteelLegs;
     public static Item lowSteelBoots;
-	
+
     //High Steel
     public static Item highSteelIngot;
     public static Item largeHighSteelChunkItem;
-	public static Item mediumHighSteelChunkItem;
+    public static Item mediumHighSteelChunkItem;
 
     public static Item highSteelSword;
     public static Item highSteelShovel;
@@ -170,8 +169,9 @@ public class SteelyGlintCore
     public static Item highSteelChest;
     public static Item highSteelLegs;
     public static Item highSteelBoots;
-	
-
+    
+    // other
+    public static Item grittySoot;
 
     // set block names
     public static Block blockCarbonizedIron;
@@ -215,15 +215,12 @@ public class SteelyGlintCore
     @EventHandler // used in 1.6.2
     public void preInit(FMLPreInitializationEvent event)
     {
-        
-    	File installDir = event.getModConfigurationDirectory();
-		File configDir = new File(installDir, "akkamaddi");
-		File configFile = new File(configDir, "SteelyGlint.cfg");
-    	Configuration config = new Configuration(configFile);
-    	
+        File installDir = event.getModConfigurationDirectory();
+        File configDir = new File(installDir, "akkamaddi");
+        File configFile = new File(configDir, "SteelyGlint.cfg");
+        Configuration config = new Configuration(configFile);
         config.load();
-		
-		// Carbonized Iron 
+        // Carbonized Iron
         carbonizedIronIngotID = config.getItem("01 Carbonized Iron", "Carbonized Iron Ingot", 12520).getInt();
         largeCarbonizedIronChunkItemID = config.getItem("01 Carbonized Iron", "Large Carbonized Iron Chunk", 12521).getInt();
         mediumCarbonizedIronChunkItemID = config.getItem("01 Carbonized Iron", "Medium Carbonized Iron Chunk", 12522).getInt();
@@ -233,7 +230,6 @@ public class SteelyGlintCore
         carbonizedIronPickaxeID = config.getItem("01 Carbonized Iron", "Carbonized Iron Pickaxe", 12526).getInt();
         carbonizedIronHoeID = config.getItem("01 Carbonized Iron", "Carbonized Iron Hoe", 12527).getInt();
         blockCarbonizedIronID = config.getBlock("01 Carbonized Iron", "Carbonized Iron Block", 1347).getInt();
-		
         //Refined Iron
         refinedIronIngotID = config.getItem("02 Refined Iron", "Refined Iron Ingot", 12528).getInt();
         largeRefinedIronChunkItemID = config.getItem("02 Refined Iron", "Large Refined Iron Chunk", 12529).getInt();
@@ -244,45 +240,42 @@ public class SteelyGlintCore
         refinedIronPickaxeID = config.getItem("02 Refined Iron", "Refined Iron Pickaxe", 12534).getInt();
         refinedIronHoeID = config.getItem("02 Refined Iron", "Refined Iron Hoe", 12535).getInt();
         blockRefinedIronID = config.getBlock("02 Refined Iron", "Refined Iron Block", 1348).getInt();
-		
         // Low Steel
         lowSteelIngotID = config.getItem("03 Low Steel", "Low Steel Ingot", 12536).getInt();
         largeLowSteelChunkItemID = config.getItem("03 Low Steel", "Large Low Steel Chunk", 12537).getInt();
-        mediumLowSteelChunkItemID = config.getItem("03 Low Steel", "Medium Low Steel Chunk", 12538).getInt();
-        lowSteelSwordID = config.getItem("03 Low Steel", "Low Steel Sword", 12539).getInt();
-        lowSteelShovelID = config.getItem("03 Low Steel", "Low Steel Shovel", 12540).getInt();
-        lowSteelAxeID = config.getItem("03 Low Steel", "Low Steel Axe", 12541).getInt();
-        lowSteelPickaxeID = config.getItem("03 Low Steel", "Low Steel Pickaxe", 12542).getInt();
-        lowSteelHoeID = config.getItem("03 Low Steel", "Low Steel Hoe", 12543).getInt();
-        lowSteelHelmID = config.getItem("03 Low Steel", "Low Steel Helm", 12544).getInt();
-        lowSteelChestID = config.getItem("03 Low Steel", "Low Steel Chest", 12545).getInt();
-        lowSteelLegsID = config.getItem("03 Low Steel", "Low Steel Legs", 12546).getInt();
-        lowSteelBootsID = config.getItem("03 Low Steel", "Low Steel Boots", 12547).getInt();
+        //mediumLowSteelChunkItemID = config.getItem("03 Low Steel", "Medium Low Steel Chunk", 12538).getInt();
+        lowSteelSwordID = config.getItem("03 Low Steel", "Low Steel Sword", 12538).getInt();
+        lowSteelShovelID = config.getItem("03 Low Steel", "Low Steel Shovel", 12539).getInt();
+        lowSteelAxeID = config.getItem("03 Low Steel", "Low Steel Axe", 12540).getInt();
+        lowSteelPickaxeID = config.getItem("03 Low Steel", "Low Steel Pickaxe", 12541).getInt();
+        lowSteelHoeID = config.getItem("03 Low Steel", "Low Steel Hoe", 12542).getInt();
+        lowSteelHelmID = config.getItem("03 Low Steel", "Low Steel Helm", 12543).getInt();
+        lowSteelChestID = config.getItem("03 Low Steel", "Low Steel Chest", 12544).getInt();
+        lowSteelLegsID = config.getItem("03 Low Steel", "Low Steel Legs", 12545).getInt();
+        lowSteelBootsID = config.getItem("03 Low Steel", "Low Steel Boots", 12546).getInt();
         blockLowSteelID = config.getBlock("03 Low Steel", "Low Steel Block", 1349).getInt();
-		
         // High Steel
-        highSteelIngotID = config.getItem("04 High Steel", "High Steel Ingot", 12548).getInt();
-        largeHighSteelChunkItemID = config.getItem("04 High Steel", "Large High Steel Chunk", 12549).getInt();
-        mediumHighSteelChunkItemID = config.getItem("04 High Steel", "Medium High Steel Chunk", 12550).getInt();
-        highSteelSwordID = config.getItem("04 High Steel", "High Steel Sword", 12551).getInt();
-        highSteelShovelID = config.getItem("04 High Steel", "High Steel Shovel", 12552).getInt();
-        highSteelAxeID = config.getItem("04 High Steel", "High Steel Axe", 12553).getInt();
-        highSteelPickaxeID = config.getItem("04 High Steel", "High Steel Pickaxe", 12554).getInt();
-        highSteelHoeID = config.getItem("04 High Steel", "High Steel Hoe", 12555).getInt();
-        highSteelHelmID = config.getItem("04 High Steel", "High Steel Helm", 12556).getInt();
-        highSteelChestID = config.getItem("04 High Steel", "High Steel Chest", 12557).getInt();
-        highSteelLegsID = config.getItem("04 High Steel", "High Steel Legs", 12558).getInt();
-        highSteelBootsID = config.getItem("04 High Steel", "High Steel Boots", 12559).getInt();
+        highSteelIngotID = config.getItem("04 High Steel", "High Steel Ingot", 12547).getInt();
+        largeHighSteelChunkItemID = config.getItem("04 High Steel", "Large High Steel Chunk", 12548).getInt();
+        //mediumHighSteelChunkItemID = config.getItem("04 High Steel", "Medium High Steel Chunk", 12550).getInt();
+        highSteelSwordID = config.getItem("04 High Steel", "High Steel Sword", 12549).getInt();
+        highSteelShovelID = config.getItem("04 High Steel", "High Steel Shovel", 12550).getInt();
+        highSteelAxeID = config.getItem("04 High Steel", "High Steel Axe", 12551).getInt();
+        highSteelPickaxeID = config.getItem("04 High Steel", "High Steel Pickaxe", 12552).getInt();
+        highSteelHoeID = config.getItem("04 High Steel", "High Steel Hoe", 12553).getInt();
+        highSteelHelmID = config.getItem("04 High Steel", "High Steel Helm", 12554).getInt();
+        highSteelChestID = config.getItem("04 High Steel", "High Steel Chest", 12555).getInt();
+        highSteelLegsID = config.getItem("04 High Steel", "High Steel Legs", 12556).getInt();
+        highSteelBootsID = config.getItem("04 High Steel", "High Steel Boots", 12557).getInt();
         blockHighSteelID = config.getBlock("04 High Steel", "High Steel Block", 1350).getInt();
+        // Other
+        grittySootID = config.getItem("Miscellaneous", "Gritty Soot", 12558).getInt();
         
-	
         //booleans
-        enableRecycling= config.get(Configuration.CATEGORY_GENERAL, "Enable Golden item recycling recipes: false or true?", false).getBoolean(false);
-        
-
+        enableRecycling = config.get(Configuration.CATEGORY_GENERAL, "Enable Steely Glint item recycling recipes: false or true?", false).getBoolean(false);
         config.save();
         // define items
-		// Carbonized Iron
+        // Carbonized Iron
         carbonizedIronIngot = new SimpleIngot(carbonizedIronIngotID).modId("steelyglint").setCreativeTab(SteelyGlintCore.tabAkkamaddiSteely).setUnlocalizedName("carbonizedIronIngot");
         largeCarbonizedIronChunkItem = new SimpleIngot(largeCarbonizedIronChunkItemID).modId("steelyglint").setCreativeTab(SteelyGlintCore.tabAkkamaddiSteely).setUnlocalizedName("largeCarbonizedIronChunkItem");
         mediumCarbonizedIronChunkItem = new SimpleIngot(mediumCarbonizedIronChunkItemID).modId("steelyglint").setCreativeTab(SteelyGlintCore.tabAkkamaddiSteely).setUnlocalizedName("mediumCarbonizedIronChunkItem");
@@ -303,7 +296,7 @@ public class SteelyGlintCore
         // Low Steel
         lowSteelIngot = new SimpleIngot(lowSteelIngotID).modId("steelyglint").setCreativeTab(SteelyGlintCore.tabAkkamaddiSteely).setUnlocalizedName("lowSteelIngot");
         largeLowSteelChunkItem = new SimpleIngot(largeLowSteelChunkItemID).modId("steelyglint").setCreativeTab(SteelyGlintCore.tabAkkamaddiSteely).setUnlocalizedName("largeLowSteelChunkItem");
-        mediumLowSteelChunkItem = new SimpleIngot(mediumLowSteelChunkItemID).modId("steelyglint").setCreativeTab(SteelyGlintCore.tabAkkamaddiSteely).setUnlocalizedName("mediumLowSteelChunkItem");
+        //mediumLowSteelChunkItem = new SimpleIngot(mediumLowSteelChunkItemID).modId("steelyglint").setCreativeTab(SteelyGlintCore.tabAkkamaddiSteely).setUnlocalizedName("mediumLowSteelChunkItem");
         lowSteelSword = new SimpleSword(lowSteelSwordID, toolLowSteel).modId("steelyglint").setCreativeTab(SteelyGlintCore.tabAkkamaddiSteely).setUnlocalizedName("lowSteelSword");
         lowSteelShovel = new SimpleShovel(lowSteelShovelID, toolLowSteel).modId("steelyglint").setCreativeTab(SteelyGlintCore.tabAkkamaddiSteely).setUnlocalizedName("lowSteelShovel");
         lowSteelAxe = new SimpleAxe(lowSteelAxeID, toolLowSteel).modId("steelyglint").setCreativeTab(SteelyGlintCore.tabAkkamaddiSteely).setUnlocalizedName("lowSteelAxe");
@@ -316,7 +309,7 @@ public class SteelyGlintCore
         // High Steel
         highSteelIngot = new SimpleIngot(highSteelIngotID).modId("steelyglint").setCreativeTab(SteelyGlintCore.tabAkkamaddiSteely).setUnlocalizedName("highSteelIngot");
         largeHighSteelChunkItem = new SimpleIngot(largeHighSteelChunkItemID).modId("steelyglint").setCreativeTab(SteelyGlintCore.tabAkkamaddiSteely).setUnlocalizedName("largeHighSteelChunkItem");
-        mediumHighSteelChunkItem = new SimpleIngot(mediumHighSteelChunkItemID).modId("steelyglint").setCreativeTab(SteelyGlintCore.tabAkkamaddiSteely).setUnlocalizedName("mediumHighSteelChunkItem");
+        //mediumHighSteelChunkItem = new SimpleIngot(mediumHighSteelChunkItemID).modId("steelyglint").setCreativeTab(SteelyGlintCore.tabAkkamaddiSteely).setUnlocalizedName("mediumHighSteelChunkItem");
         highSteelSword = new SimpleSword(highSteelSwordID, toolHighSteel).modId("steelyglint").setCreativeTab(SteelyGlintCore.tabAkkamaddiSteely).setUnlocalizedName("highSteelSword");
         highSteelShovel = new SimpleShovel(highSteelShovelID, toolHighSteel).modId("steelyglint").setCreativeTab(SteelyGlintCore.tabAkkamaddiSteely).setUnlocalizedName("highSteelShovel");
         highSteelAxe = new SimpleAxe(highSteelAxeID, toolHighSteel).modId("steelyglint").setCreativeTab(SteelyGlintCore.tabAkkamaddiSteely).setUnlocalizedName("highSteelAxe");
@@ -326,6 +319,8 @@ public class SteelyGlintCore
         highSteelChest = new SimpleArmor(highSteelChestID, armorHighSteel, rendererHighSteel, 1).modId("steelyglint").setType("highSteel").setCreativeTab(SteelyGlintCore.tabAkkamaddiSteely).setUnlocalizedName("highSteelChest");
         highSteelLegs = new SimpleArmor(highSteelLegsID, armorHighSteel, rendererHighSteel, 2).modId("steelyglint").setType("highSteel").setCreativeTab(SteelyGlintCore.tabAkkamaddiSteely).setUnlocalizedName("highSteelLegs");
         highSteelBoots = new SimpleArmor(highSteelBootsID, armorHighSteel, rendererHighSteel, 3).modId("steelyglint").setType("highSteel").setCreativeTab(SteelyGlintCore.tabAkkamaddiSteely).setUnlocalizedName("highSteelBoots");
+        // Other
+        grittySoot = new SimpleIngot(grittySootID).modId("steelyglint").setCreativeTab(SteelyGlintCore.tabAkkamaddiSteely).setUnlocalizedName("grittySoot");
         // define blocks
         blockCarbonizedIron = new SimpleOre(blockCarbonizedIronID, Material.iron).modId("steelyglint")
         .setHardness(10.0F).setResistance(16.0F).setStepSound(Block.soundMetalFootstep)
@@ -339,22 +334,14 @@ public class SteelyGlintCore
         blockHighSteel = new SimpleOre(blockHighSteelID, Material.iron).modId("steelyglint")
         .setHardness(16.0F).setResistance(24.0F).setStepSound(Block.soundMetalFootstep)
         .setUnlocalizedName("blockHighSteel").setCreativeTab(SteelyGlintCore.tabAkkamaddiSteely);
-        
-        
-        
         // loot
         //LootHelper.addLoot("villageBlacksmith", new ItemStack(lowSteelIngot), 2, 4, 4);
         //LootHelper.addLoot("dungeonChest", new ItemStack(lowSteelIngot), 2, 4, 6);
         //LootHelper.addLoot("mineshaftCorridor", new ItemStack(lowSteelSword), 1, 3, 1);
         //LootHelper.addLoot("pyramidDesertyChest", new ItemStack(hephaestanGoldSword), 1, 3, 1);
         //LootHelper.addLoot("pyramidJungleChest", new ItemStack(carbonizedIronIngot), 1, 4, 4);
-        
-
-
-                
         // run tab icon call
         setTabIcons();
-        
         //recipes
         SteelyRecipes.doSteelyRecipes();
     }
@@ -364,12 +351,10 @@ public class SteelyGlintCore
     {
         proxy.registerRenderers();
         MinecraftForge.EVENT_BUS.register(new HandlerJoinWorld());
-
         //Armor Renderers
         rendererLowSteel = proxy.addArmor("lowSteel");
         rendererHighSteel = proxy.addArmor("highSteel");
         // name stuff
-		
         LanguageRegistry.addName(carbonizedIronIngot, "Carbonized Iron Ingot");
         LanguageRegistry.addName(largeCarbonizedIronChunkItem, "Large Carbonized Iron Chunk");
         LanguageRegistry.addName(mediumCarbonizedIronChunkItem, "Medium Carbonized Iron Chunk");
@@ -378,7 +363,6 @@ public class SteelyGlintCore
         LanguageRegistry.addName(carbonizedIronAxe, "Carbonized Iron Axe");
         LanguageRegistry.addName(carbonizedIronPickaxe, "Carbonized Iron Pickaxe");
         LanguageRegistry.addName(carbonizedIronHoe, "Carbonized Iron Hoe");
-		
         LanguageRegistry.addName(refinedIronIngot, "Refined Iron Ingot");
         LanguageRegistry.addName(largeRefinedIronChunkItem, "Large Refined Iron Chunk");
         LanguageRegistry.addName(mediumRefinedIronChunkItem, "Medium Refined Iron Chunk");
@@ -387,10 +371,9 @@ public class SteelyGlintCore
         LanguageRegistry.addName(refinedIronAxe, "Refined Iron Axe");
         LanguageRegistry.addName(refinedIronPickaxe, "Refined Iron Pickaxe");
         LanguageRegistry.addName(refinedIronHoe, "Refined Iron Hoe");
-		
         LanguageRegistry.addName(lowSteelIngot, "Low Steel Ingot");
         LanguageRegistry.addName(largeLowSteelChunkItem, "Large Low Steel Chunk");
-        LanguageRegistry.addName(mediumLowSteelChunkItem, "Medium Low Steel Chunk");
+        //LanguageRegistry.addName(mediumLowSteelChunkItem, "Medium Low Steel Chunk");
         LanguageRegistry.addName(lowSteelSword, "Low Steel Sword");
         LanguageRegistry.addName(lowSteelShovel, "Low Steel Shovel");
         LanguageRegistry.addName(lowSteelAxe, "Low Steel Axe");
@@ -400,10 +383,9 @@ public class SteelyGlintCore
         LanguageRegistry.addName(lowSteelChest, "Low Steel Chestplate");
         LanguageRegistry.addName(lowSteelLegs, "Low Steel Leggings");
         LanguageRegistry.addName(lowSteelBoots, "Low Steel Boots");
-		
         LanguageRegistry.addName(highSteelIngot, "High Steel Ingot");
         LanguageRegistry.addName(largeHighSteelChunkItem, "Large High Steel Chunk");
-        LanguageRegistry.addName(mediumHighSteelChunkItem, "Medium High Steel Chunk");
+        //LanguageRegistry.addName(mediumHighSteelChunkItem, "Medium High Steel Chunk");
         LanguageRegistry.addName(highSteelSword, "High Steel Sword");
         LanguageRegistry.addName(highSteelShovel, "High Steel Shovel");
         LanguageRegistry.addName(highSteelAxe, "High Steel Axe");
@@ -413,22 +395,18 @@ public class SteelyGlintCore
         LanguageRegistry.addName(highSteelChest, "High Steel Chestplate");
         LanguageRegistry.addName(highSteelLegs, "High Steel Leggings");
         LanguageRegistry.addName(highSteelBoots, "High Steel Boots");
-		
+        LanguageRegistry.addName(grittySoot, "Gritty Soot Clump");
+        
+        
         LanguageRegistry.instance().addStringLocalization("itemGroup.tabAkkamaddiSteely", "en_US", "akkamaddi's Steely Glint");
-        
-        
         LanguageRegistry.addName(blockCarbonizedIron, "Carbonized Iron Block");
         MinecraftForge.setBlockHarvestLevel(blockCarbonizedIron, "pickaxe", 0);
-        
         LanguageRegistry.addName(blockRefinedIron, "Refined Iron Block");
         MinecraftForge.setBlockHarvestLevel(blockRefinedIron, "pickaxe", 0);
-        
         LanguageRegistry.addName(blockLowSteel, "Low Steel Block");
         MinecraftForge.setBlockHarvestLevel(blockLowSteel, "pickaxe", 0);
-		
-		LanguageRegistry.addName(blockHighSteel, "High Steel Block");
+        LanguageRegistry.addName(blockHighSteel, "High Steel Block");
         MinecraftForge.setBlockHarvestLevel(blockHighSteel, "pickaxe", 0);
-        
         MinecraftForge.setToolClass(carbonizedIronPickaxe, "pickaxe", 3);
         MinecraftForge.setToolClass(carbonizedIronShovel, "shovel", 3);
         MinecraftForge.setToolClass(carbonizedIronAxe, "axe", 3);
@@ -441,14 +419,12 @@ public class SteelyGlintCore
         MinecraftForge.setToolClass(highSteelPickaxe, "pickaxe", 1);
         MinecraftForge.setToolClass(highSteelShovel, "shovel", 1);
         MinecraftForge.setToolClass(highSteelAxe, "axe", 1);
-		
         toolCarbonizedIron.customCraftingMaterial = SteelyGlintCore.carbonizedIronIngot;
         toolRefinedIron.customCraftingMaterial = SteelyGlintCore.refinedIronIngot;
-		toolLowSteel.customCraftingMaterial = SteelyGlintCore.lowSteelIngot;
+        toolLowSteel.customCraftingMaterial = SteelyGlintCore.lowSteelIngot;
         armorLowSteel.customCraftingMaterial = SteelyGlintCore.lowSteelIngot;
         toolHighSteel.customCraftingMaterial = SteelyGlintCore.highSteelIngot;
         armorHighSteel.customCraftingMaterial = SteelyGlintCore.highSteelIngot;
-        
     }
 
     @EventHandler // used in 1.6.2

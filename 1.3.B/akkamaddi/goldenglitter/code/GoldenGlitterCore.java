@@ -95,7 +95,7 @@ public class GoldenGlitterCore
     public static int hephaestanGoldShovelID;
     public static int hephaestanGoldAxeID;
     public static int hephaestanGoldPickaxeID;
-    
+
     // rail
     public static int redGoldRailID;
 
@@ -151,7 +151,6 @@ public class GoldenGlitterCore
     public static Block blockScarlatiteGold;
     public static Block blockHephaestanGold;
     public static Block redGoldRail;
-    
 
     public static boolean MakeRoseHideous;
     public static boolean MakeErubescentSparkle;
@@ -238,13 +237,12 @@ public class GoldenGlitterCore
         hephaestanGoldPickaxeID = config.getItem("12. Hephaestan Gold Tool", "Hephaestan Gold Pickaxe", 12258).getInt();
         blockHephaestanGoldID = config.getBlock("13. Hephaestan Gold Block", "Hephaestan Gold Block", 1320).getInt();
         //powered rail
-        redGoldRailID=config.getBlock("14. Red Gold Powered Rail", "Powered Rail Block", 1321).getInt();
+        redGoldRailID = config.getBlock("14. Red Gold Powered Rail", "Powered Rail Block", 1321).getInt();
         //booleans
         MakeHephaestanSparkle = config.get(Configuration.CATEGORY_GENERAL, "Make Hephaestan Gold Blocks sparkle, true or false", true).getBoolean(true);
         werewolfEffectiveness = config.get(Configuration.CATEGORY_GENERAL, "Works on Mo'Creatures lycanthropes, true or false", true).getBoolean(true);
-        enableRecycling= config.get(Configuration.CATEGORY_GENERAL, "Enable Golden item recycling recipes: false or true?", false).getBoolean(false);
-        MakeRedGoldRailSparkle=config.get(Configuration.CATEGORY_GENERAL, "Make Red Gold Rails sparkle: true or false?", true).getBoolean(true);
-
+        enableRecycling = config.get(Configuration.CATEGORY_GENERAL, "Enable Golden item recycling recipes: false or true?", false).getBoolean(false);
+        MakeRedGoldRailSparkle = config.get(Configuration.CATEGORY_GENERAL, "Make Red Gold Rails sparkle: true or false?", true).getBoolean(true);
         config.save();
         // define items
         // Rose Gold
@@ -300,14 +298,12 @@ public class GoldenGlitterCore
         .setHardness(1.0F).setResistance(1.0F).setStepSound(Block.soundMetalFootstep)
         .setUnlocalizedName("redGoldRail").setCreativeTab(GoldenGlitterCore.tabAkkamaddiGolden)
         .setLightValue(1.0F).setTextureName("redGoldRail");
-        
         // registration
         GameRegistry.registerBlock(blockRoseGold, "blockRoseGold");
         GameRegistry.registerBlock(blockErubescentGold, "blockErubescentGold");
         GameRegistry.registerBlock(blockScarlatiteGold, "blockScarlatiteGold");
         GameRegistry.registerBlock(blockHephaestanGold, "blockHephaestanGold");
         GameRegistry.registerBlock(redGoldRail, "redGoldRail");
-        
         /*
         GameRegistry.registerItem(roseGoldIngot,"roseGoldIngot");
         GameRegistry.registerItem(largeRoseGoldChunkItem,"largeRoseGoldChunkItem");
@@ -342,7 +338,6 @@ public class GoldenGlitterCore
         GameRegistry.registerItem(hephaestanGoldAxe,"hephaestanGoldAxe");
         GameRegistry.registerItem(hephaestanGoldPickaxe,"hephaestanGoldPickaxe");
         */
-        
         // loot
         LootHelper.addLoot("villageBlacksmith", new ItemStack(roseGoldIngot), 2, 4, 4);
         LootHelper.addLoot("villageBlacksmith", new ItemStack(largeRoseGoldChunkItem), 1, 2, 3);
@@ -385,7 +380,7 @@ public class GoldenGlitterCore
         LootHelper.addLoot("pyramidJungleChest", new ItemStack(erubescentGoldSword), 1, 1, 1);
         LootHelper.addLoot("pyramidJungleChest", new ItemStack(scarlatiteGoldSword), 1, 2, 1);
         LootHelper.addLoot("pyramidJungleChest", new ItemStack(hephaestanGoldSword), 1, 3, 1);
-        
+
         if (GoldenGlitterCore.werewolfEffectiveness)
             try
             {
@@ -393,10 +388,8 @@ public class GoldenGlitterCore
             }
             catch (ClassNotFoundException ignored) {}
 
-                
         // run tab icon call
         setTabIcons();
-        
         //recipes
         GlitterRecipes.doGlitterRecipes();
     }
@@ -406,7 +399,6 @@ public class GoldenGlitterCore
     {
         proxy.registerRenderers();
         MinecraftForge.EVENT_BUS.register(new HandlerJoinWorld());
-
         //Armor Renderers
         rendererRoseGold = proxy.addArmor("roseGold");
         // name stuff
@@ -440,22 +432,16 @@ public class GoldenGlitterCore
         LanguageRegistry.addName(hephaestanGoldAxe, "Hephaestan Gold Axe");
         LanguageRegistry.addName(hephaestanGoldPickaxe, "Hephaestan Gold Pickaxe");
         LanguageRegistry.instance().addStringLocalization("itemGroup.tabAkkamaddiGolden", "en_US", "akkamaddi's Golden Glitter");
-        
         LanguageRegistry.addName(blockRoseGold, "Rose Gold Block");
         MinecraftForge.setBlockHarvestLevel(blockRoseGold, "pickaxe", 0);
-        
         LanguageRegistry.addName(blockErubescentGold, "Erubescent Gold Block");
         MinecraftForge.setBlockHarvestLevel(blockErubescentGold, "pickaxe", 0);
-        
         LanguageRegistry.addName(blockScarlatiteGold, "Scarlatite Gold Block");
         MinecraftForge.setBlockHarvestLevel(blockScarlatiteGold, "pickaxe", 0);
-        
         LanguageRegistry.addName(blockHephaestanGold, "Hephaestan Gold Block");
         MinecraftForge.setBlockHarvestLevel(blockHephaestanGold, "pickaxe", 0);
-        
         LanguageRegistry.addName(redGoldRail, "Red Gold Power Rail");
         MinecraftForge.setBlockHarvestLevel(redGoldRail, "pickaxe", 0);
-        
         MinecraftForge.setToolClass(roseGoldPickaxe, "pickaxe", 1);
         MinecraftForge.setToolClass(roseGoldShovel, "shovel", 1);
         MinecraftForge.setToolClass(roseGoldAxe, "axe", 1);

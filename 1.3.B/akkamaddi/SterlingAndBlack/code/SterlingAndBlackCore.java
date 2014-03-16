@@ -34,11 +34,10 @@ import alexndr.SimpleOres.api.content.SimpleAxe;
 import alexndr.SimpleOres.api.content.SimplePickaxe;
 import alexndr.SimpleOres.api.content.SimpleHoe;
 import alexndr.SimpleOres.api.content.SimpleArmor;
-import OnlySilver.code.api.OnlySilverAPI;
 import alexndr.SimpleOres.api.helpers.LootHelper;
 import alexndr.SimpleOres.api.content.SimpleTab;
 
-@Mod(modid = "sterlingandblack", name = "Sterling & Black", version = "1.3.0", dependencies = "required-after:simpleores ; required-after:simpleoresfusion ; required-after:onlysilver")
+@Mod(modid = "sterlingandblack", name = "Sterling & Black", version = "1.3.1", dependencies = "required-after:simpleores ; required-after:simpleoresfusion ; required-after:onlysilver")
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
 
 public class SterlingAndBlackCore
@@ -126,7 +125,7 @@ public class SterlingAndBlackCore
     public static boolean MakeMeSparkle;
 
     public static boolean werewolfEffectiveness;
-    
+
     public static boolean enableRecycling;
 
     // tab
@@ -196,10 +195,8 @@ public class SterlingAndBlackCore
         blockBlackSilverID = config.getBlock("8. Black Silver Block", "Black Silver Block", 1311).getInt();
         MakeMeSparkle = config.get(Configuration.CATEGORY_GENERAL, "Make Me Sparkle, false or true", false).getBoolean(false);
         werewolfEffectiveness = config.get(Configuration.CATEGORY_GENERAL, "Works on Mo'Creatures lycanthropes, true or false", true).getBoolean(true);
-        enableRecycling= config.get(Configuration.CATEGORY_GENERAL, "Enable Sterling & Black item recycling recipes: false or true?", false).getBoolean(false);
-        
+        enableRecycling = config.get(Configuration.CATEGORY_GENERAL, "Enable Sterling & Black item recycling recipes: false or true?", false).getBoolean(false);
         config.save();
-        
         // define items
         sterlingSteelIngot = new SimpleIngot(sterlingSteelIngotID).modId("sterlingandblack").setCreativeTab(SterlingAndBlackCore.tabAkkamaddiSterling).setUnlocalizedName("sterlingSteelIngot");
         smallSterlingSteelChunkItem = new SimpleIngot(smallSterlingSteelChunkItemID).modId("sterlingandblack").setCreativeTab(SterlingAndBlackCore.tabAkkamaddiSterling).setUnlocalizedName("smallSterlingSteelChunkItem");
@@ -235,13 +232,9 @@ public class SterlingAndBlackCore
         blockBlackSilver = new BlackStorageBlock(blockBlackSilverID, Material.iron, "sterlingandblack")
         .setHardness(12.0F).setResistance(26.0F).setStepSound(Block.soundMetalFootstep)
         .setUnlocalizedName("blockBlackSilver").setCreativeTab(SterlingAndBlackCore.tabAkkamaddiSterling);
-        
-        
         // Registry
-                
         GameRegistry.registerBlock(blockSterlingSteel, "blockSterlingSteel");
         GameRegistry.registerBlock(blockBlackSilver, "blockBlackSilver");
-        
         /*
         GameRegistry.registerItem(sterlingSteelIngot,"sterlingSteelIngot");
         GameRegistry.registerItem(smallSterlingSteelChunkItem,"smallSterlingSteelChunkItem");
@@ -271,7 +264,6 @@ public class SterlingAndBlackCore
         GameRegistry.registerItem(blackSilverLegs,"blackSilverLegs");
         GameRegistry.registerItem(blackSilverBoots,"blackSilverBoots");
         */
-       
         // loot
         LootHelper.addLoot("villageBlacksmith", new ItemStack(sterlingSteelIngot), 1, 2, 2);
         LootHelper.addLoot("villageBlacksmith", new ItemStack(largeSterlingSteelChunkItem), 1, 2, 3);
@@ -310,13 +302,11 @@ public class SterlingAndBlackCore
                 MinecraftForge.EVENT_BUS.register(new WerewolfHandler());
             }
             catch (ClassNotFoundException ignored) {}
-        
+
         //recipes
         SterlingRecipes.doSterlingRecipes();
-
         // run tab icon call
         setTabIcons();
-        
     }
 
     @EventHandler // used in 1.6.2
@@ -354,15 +344,11 @@ public class SterlingAndBlackCore
         LanguageRegistry.addName(blackSilverChest, "Black Silver Chestplate");
         LanguageRegistry.addName(blackSilverLegs, "Black Silver Leggings");
         LanguageRegistry.addName(blackSilverBoots, "Black Silver Boots");
-        
         LanguageRegistry.addName(blockSterlingSteel, "Sterling Steel Block");
         MinecraftForge.setBlockHarvestLevel(blockSterlingSteel, "pickaxe", 0);
-        
         LanguageRegistry.addName(blockBlackSilver, "Black Silver Block");
         MinecraftForge.setBlockHarvestLevel(blockBlackSilver, "pickaxe", 0);
-        
         LanguageRegistry.instance().addStringLocalization("itemGroup.tabAkkamaddiSterling", "en_US", "akkamaddi's Sterling & Black");
-        
         MinecraftForge.setToolClass(sterlingSteelPickaxe, "pickaxe", 3);
         MinecraftForge.setToolClass(sterlingSteelShovel, "shovel", 3);
         MinecraftForge.setToolClass(sterlingSteelAxe, "axe", 3);

@@ -47,7 +47,26 @@ public class SteelyRecipes
                                             SteelyGlintCore.blockHighSteel
                                         });
         // Items
-		
+        // Chunk Recipes
+       GameRegistry.addShapelessRecipe(new ItemStack(SteelyGlintCore.mediumCarbonizedIronChunkItem, 2), new Object[]
+              {SteelyGlintCore.largeCarbonizedIronChunkItem });
+       GameRegistry.addShapelessRecipe(new ItemStack(SteelyGlintCore.mediumRefinedIronChunkItem, 2), new Object[]
+              {SteelyGlintCore.largeRefinedIronChunkItem });
+       
+       GameRegistry.addShapelessRecipe(new ItemStack(SteelyGlintCore.largeCarbonizedIronChunkItem), new Object[]
+              {SteelyGlintCore.mediumCarbonizedIronChunkItem , SteelyGlintCore.mediumCarbonizedIronChunkItem, SteelyGlintCore.mediumCarbonizedIronChunkItem, new ItemStack(Item.coal, 1, OreDictionary.WILDCARD_VALUE) });
+       GameRegistry.addShapelessRecipe(new ItemStack(SteelyGlintCore.largeRefinedIronChunkItem), new Object[]
+              {SteelyGlintCore.mediumRefinedIronChunkItem, SteelyGlintCore.mediumRefinedIronChunkItem, SteelyGlintCore.mediumRefinedIronChunkItem, new ItemStack(Item.dyePowder, 1, 15) });
+       
+       GameRegistry.addShapelessRecipe(new ItemStack(SteelyGlintCore.largeLowSteelChunkItem), new Object[]
+              {SteelyGlintCore.mediumCarbonizedIronChunkItem , SteelyGlintCore.mediumCarbonizedIronChunkItem, SteelyGlintCore.mediumRefinedIronChunkItem, 
+    	      new ItemStack(Item.coal, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Item.coal, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Item.dyePowder, 1, 15),
+              Item.gunpowder, new ItemStack(Item.coal, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Item.coal, 1, OreDictionary.WILDCARD_VALUE) });
+       GameRegistry.addShapelessRecipe(new ItemStack(SteelyGlintCore.largeHighSteelChunkItem), new Object[]
+              {SteelyGlintCore.mediumRefinedIronChunkItem, SteelyGlintCore.mediumRefinedIronChunkItem, SteelyGlintCore.mediumCarbonizedIronChunkItem, 
+    	      new ItemStack(Item.dyePowder, 1, 15), new ItemStack(Item.dyePowder, 1, 15), new ItemStack(Item.coal, 1, OreDictionary.WILDCARD_VALUE),
+    	      Item.redstone, new ItemStack(Item.coal, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Item.coal, 1, OreDictionary.WILDCARD_VALUE)});
+      
         
         //Carbonized Iron Tools
         CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(SteelyGlintCore.carbonizedIronPickaxe, true, new Object[]
@@ -70,8 +89,7 @@ public class SteelyRecipes
                 {
                     "XX ", " Y ", " Y ", 'X', "ingotCarbonizedIron", 'Y', "stickWood"
                 }));
-        
-		//Refined Iron Tools
+        //Refined Iron Tools
         CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(SteelyGlintCore.refinedIronPickaxe, true, new Object[]
                 {
                     "XXX", " Y ", " Y ", 'X', "ingotRefinedIron", 'Y', "stickWood"
@@ -92,8 +110,7 @@ public class SteelyRecipes
                 {
                     "XX ", " Y ", " Y ", 'X', "ingotRefinedIron", 'Y', "stickWood"
                 }));
-		
-		//Low Steel Tool Recipes
+        //Low Steel Tool Recipes
         CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(SteelyGlintCore.lowSteelPickaxe, true, new Object[]
                 {
                     "XXX", " Y ", " Y ", 'X', "ingotLowSteel", 'Y', "stickWood"
@@ -135,9 +152,7 @@ public class SteelyRecipes
                 {
                     "X X", "X X", 'X', "ingotLowSteel"
                 }));
-				
-		
-		//High Steel Tool Recipes
+        //High Steel Tool Recipes
         CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(SteelyGlintCore.highSteelPickaxe, true, new Object[]
                 {
                     "XXX", " Y ", " Y ", 'X', "ingotHighSteel", 'Y', "stickWood"
@@ -179,24 +194,21 @@ public class SteelyRecipes
                 {
                     "X X", "X X", 'X', "ingotHighSteel"
                 }));
-				
-                
         // recipes: Smelting
         GameRegistry.addSmelting(SteelyGlintCore.largeCarbonizedIronChunkItem.itemID, new ItemStack(SteelyGlintCore.carbonizedIronIngot), 0.8F);
         GameRegistry.addSmelting(SteelyGlintCore.largeRefinedIronChunkItem.itemID, new ItemStack(SteelyGlintCore.refinedIronIngot), 0.8F);
         GameRegistry.addSmelting(SteelyGlintCore.largeLowSteelChunkItem.itemID, new ItemStack(SteelyGlintCore.lowSteelIngot), 1.2F);
         GameRegistry.addSmelting(SteelyGlintCore.largeHighSteelChunkItem.itemID, new ItemStack(SteelyGlintCore.highSteelIngot), 1.4F);
+        GameRegistry.addSmelting(SteelyGlintCore.grittySoot.itemID, new ItemStack(Item.gunpowder), 0.2F);
         // recipes: Fusion Furnace
-        FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(Item.ingotIron), new ItemStack(Item.coal, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Item.gunpowder), new ItemStack(SteelyGlintCore.largeCarbonizedIronChunkItem), 2.0F);
-        FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(Item.ingotIron), new ItemStack(Item.dyePowder, 1, 15), new ItemStack(Item.gunpowder), new ItemStack(SteelyGlintCore.largeRefinedIronChunkItem), 2.0F);
-        
+        FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(Item.ingotIron), new ItemStack(Item.coal, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Item.gunpowder), new ItemStack(SteelyGlintCore.mediumCarbonizedIronChunkItem), 2.0F);
+        FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(Item.ingotIron), new ItemStack(Item.dyePowder, 1, 15), new ItemStack(Item.gunpowder), new ItemStack(SteelyGlintCore.mediumRefinedIronChunkItem), 2.0F);
         // make gunpowder
-        FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(Item.sugar, 4, 0), new ItemStack(Item.coal, 4, OreDictionary.WILDCARD_VALUE), new ItemStack(Item.flint, 2, 0), new ItemStack(Item.gunpowder), 1.0F);
-        
-                
-        
-        if (SteelyGlintCore.enableRecycling) {
-        	// Carbonized Iron
+        FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(Item.sugar, 4, 0), new ItemStack(Item.coal, 4, OreDictionary.WILDCARD_VALUE), new ItemStack(Item.flint, 2, 0), new ItemStack(SteelyGlintCore.grittySoot), 0.4F);
+
+        if (SteelyGlintCore.enableRecycling)
+        {
+            // Carbonized Iron
             FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(SteelyGlintCore.carbonizedIronSword, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Block.gravel), new ItemStack(Item.coal, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(SteelyGlintCore.largeCarbonizedIronChunkItem), 5.0F);
             FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(SteelyGlintCore.carbonizedIronShovel, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Block.gravel), new ItemStack(Item.coal, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(SteelyGlintCore.largeCarbonizedIronChunkItem), 5.0F);
             FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(SteelyGlintCore.carbonizedIronAxe, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Block.gravel), new ItemStack(Item.coal, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(SteelyGlintCore.largeCarbonizedIronChunkItem), 5.0F);
@@ -208,7 +220,7 @@ public class SteelyRecipes
             FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(SteelyGlintCore.refinedIronAxe, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Block.gravel), new ItemStack(Item.coal, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(SteelyGlintCore.largeRefinedIronChunkItem), 5.0F);
             FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(SteelyGlintCore.refinedIronPickaxe, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Block.gravel), new ItemStack(Item.coal, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(SteelyGlintCore.largeRefinedIronChunkItem), 5.0F);
             FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(SteelyGlintCore.refinedIronHoe, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Block.gravel), new ItemStack(Item.coal, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(SteelyGlintCore.largeRefinedIronChunkItem), 5.0F);
-            // Low Steel 
+            // Low Steel
             FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(SteelyGlintCore.lowSteelHelm, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Block.gravel), new ItemStack(Item.coal, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(SteelyGlintCore.largeLowSteelChunkItem), 10.0F);
             FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(SteelyGlintCore.lowSteelChest, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Block.gravel, 2, 0), new ItemStack(Item.coal, 2, OreDictionary.WILDCARD_VALUE), new ItemStack(SteelyGlintCore.largeLowSteelChunkItem, 2, 0), 20.0F);
             FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(SteelyGlintCore.lowSteelLegs, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Block.gravel, 2, 0), new ItemStack(Item.coal, 2, OreDictionary.WILDCARD_VALUE), new ItemStack(SteelyGlintCore.largeLowSteelChunkItem, 2, 0), 20.0F);
@@ -218,7 +230,7 @@ public class SteelyRecipes
             FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(SteelyGlintCore.lowSteelPickaxe, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Block.gravel), new ItemStack(Item.coal, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(SteelyGlintCore.largeLowSteelChunkItem), 10.0F);
             FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(SteelyGlintCore.lowSteelAxe, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Block.gravel), new ItemStack(Item.coal, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(SteelyGlintCore.largeLowSteelChunkItem), 10.0F);
             FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(SteelyGlintCore.lowSteelHoe, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Block.gravel), new ItemStack(Item.coal, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(SteelyGlintCore.largeLowSteelChunkItem), 10.0F);
-            // High Steel 
+            // High Steel
             FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(SteelyGlintCore.highSteelHelm, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Block.gravel), new ItemStack(Item.coal, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(SteelyGlintCore.largeHighSteelChunkItem), 10.0F);
             FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(SteelyGlintCore.highSteelChest, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Block.gravel, 2, 0), new ItemStack(Item.coal, 2, OreDictionary.WILDCARD_VALUE), new ItemStack(SteelyGlintCore.largeHighSteelChunkItem, 2, 0), 20.0F);
             FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(SteelyGlintCore.highSteelLegs, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Block.gravel, 2, 0), new ItemStack(Item.coal, 2, OreDictionary.WILDCARD_VALUE), new ItemStack(SteelyGlintCore.largeHighSteelChunkItem, 2, 0), 20.0F);
@@ -228,9 +240,6 @@ public class SteelyRecipes
             FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(SteelyGlintCore.highSteelPickaxe, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Block.gravel), new ItemStack(Item.coal, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(SteelyGlintCore.largeHighSteelChunkItem), 10.0F);
             FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(SteelyGlintCore.highSteelAxe, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Block.gravel), new ItemStack(Item.coal, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(SteelyGlintCore.largeHighSteelChunkItem), 10.0F);
             FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(SteelyGlintCore.highSteelHoe, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Block.gravel), new ItemStack(Item.coal, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(SteelyGlintCore.largeHighSteelChunkItem), 10.0F);
-            
-			
         }
-        
     }
 }

@@ -13,9 +13,6 @@ import alexndr.SimpleOres.api.helpers.CoreHelper;
 
 public class HaditeRecipes
 {
-	
-	
-    
     public static void doHaditeRecipes()
     {
         // Ore Dictionary registry
@@ -92,9 +89,10 @@ public class HaditeRecipes
         // alloys
         FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(Item.ingotIron), new ItemStack(HaditeCoalCore.haditeCoalIngot), new ItemStack(Item.gunpowder), new ItemStack(HaditeCoalCore.largeHaditeSteelChunkItem), 6.0F);
         FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(CoreHelper.coreContent.tinIngot), new ItemStack(HaditeCoalCore.haditeCoalIngot), new ItemStack(Item.coal, 1, WILDCARD_VALUE), new ItemStack(HaditeCoalCore.largeGestankenzinnChunkItem), 5.0F);
- 
-        if (HaditeCoalCore.enableRecycling) {
-        	//Hadite Steel
+
+        if (HaditeCoalCore.enableRecycling)
+        {
+            //Hadite Steel
             FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(HaditeCoalCore.haditeSteelSword, 1, WILDCARD_VALUE), new ItemStack(Block.gravel), new ItemStack(Item.coal, 1, WILDCARD_VALUE), new ItemStack(HaditeCoalCore.largeHaditeSteelChunkItem), 15.0F);
             FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(HaditeCoalCore.haditeSteelShovel, 1, WILDCARD_VALUE), new ItemStack(Block.gravel), new ItemStack(Item.coal, 1, WILDCARD_VALUE), new ItemStack(HaditeCoalCore.largeHaditeSteelChunkItem), 15.0F);
             FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(HaditeCoalCore.haditeSteelAxe, 1, WILDCARD_VALUE), new ItemStack(Block.gravel), new ItemStack(Item.coal, 1, WILDCARD_VALUE), new ItemStack(HaditeCoalCore.largeHaditeSteelChunkItem), 15.0F);

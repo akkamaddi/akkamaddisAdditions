@@ -67,10 +67,10 @@ public class CthonRecipes
         GameRegistry.addSmelting(SimpleCthonCore.cthonElutriatedChunk.itemID, new ItemStack(SimpleCthonCore.cthonIngot), 2.0F);
         // Fusion Furnace
         FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(SimpleCthonCore.cthonMephiticChunk), new ItemStack(Block.ice), new ItemStack(Item.goldNugget), new ItemStack(SimpleCthonCore.cthonElutriatedChunk), 1.0F);
-        
-        if (SimpleCthonCore.enableRecycling) {
-        	
-        	// Cthon
+
+        if (SimpleCthonCore.enableRecycling)
+        {
+            // Cthon
             FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(SimpleCthonCore.cthonHelm, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Block.netherrack), new ItemStack(Item.ingotGold), new ItemStack(SimpleCthonCore.cthonElutriatedChunk), 20.0F);
             FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(SimpleCthonCore.cthonChest, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Block.netherrack, 2, 0), new ItemStack(Item.ingotGold, 2, 0), new ItemStack(SimpleCthonCore.cthonElutriatedChunk, 2, 0), 40.0F);
             FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(SimpleCthonCore.cthonLegs, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Block.netherrack, 2, 0), new ItemStack(Item.ingotGold, 2, 0), new ItemStack(SimpleCthonCore.cthonElutriatedChunk, 2, 0), 40.0F);
@@ -80,9 +80,6 @@ public class CthonRecipes
             FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(SimpleCthonCore.cthonPickaxe, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Block.netherrack), new ItemStack(Item.ingotGold), new ItemStack(SimpleCthonCore.cthonElutriatedChunk), 20.0F);
             FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(SimpleCthonCore.cthonAxe, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Block.netherrack), new ItemStack(Item.ingotGold), new ItemStack(SimpleCthonCore.cthonElutriatedChunk), 20.0F);
             FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(SimpleCthonCore.cthonHoe, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Block.netherrack), new ItemStack(Item.ingotGold), new ItemStack(SimpleCthonCore.cthonElutriatedChunk), 20.0F);
-
-        	
         }
-        
     }
 }

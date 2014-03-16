@@ -19,18 +19,18 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.ForgeDirection;
 import net.minecraftforge.common.IPlantable;
 
-public class OssidRootCrop extends Block
+public class ScintillaWheatCrop extends Block
 {
-    public static Icon ossidRootIcon_00;
-    public static Icon ossidRootIcon_01;
-    public static Icon ossidRootIcon_02;
-    public static Icon ossidRootIcon_03;
-    public static Icon ossidRootIcon_04;
-    public static Icon ossidRootIcon_05;
-    public static Icon ossidRootIcon_06;
-    public static Icon ossidRootIcon_07;
+    public static Icon scintillaWheatIcon_00;
+    public static Icon scintillaWheatIcon_01;
+    public static Icon scintillaWheatIcon_02;
+    public static Icon scintillaWheatIcon_03;
+    public static Icon scintillaWheatIcon_04;
+    public static Icon scintillaWheatIcon_05;
+    public static Icon scintillaWheatIcon_06;
+    public static Icon scintillaWheatIcon_07;
 
-    public OssidRootCrop(int id)
+    public ScintillaWheatCrop(int id)
     {
         super(id, Material.plants);
         setTickRandomly(true);
@@ -58,55 +58,55 @@ public class OssidRootCrop extends Block
 
     public void registerIcons(IconRegister ir)
     {
-        ossidRootIcon_00 = ir.registerIcon("ashenwheat:ossidVine_00");
-        ossidRootIcon_01 = ir.registerIcon("ashenwheat:ossidVine_01");
-        ossidRootIcon_02 = ir.registerIcon("ashenwheat:ossidVine_02");
-        ossidRootIcon_03 = ir.registerIcon("ashenwheat:ossidVine_03");
-        ossidRootIcon_04 = ir.registerIcon("ashenwheat:ossidVine_04");
-        ossidRootIcon_05 = ir.registerIcon("ashenwheat:ossidVine_05");
-        ossidRootIcon_06 = ir.registerIcon("ashenwheat:ossidVine_06");
-        ossidRootIcon_07 = ir.registerIcon("ashenwheat:ossidVine_07");
+        scintillaWheatIcon_00 = ir.registerIcon("ashenwheat:scintillaWheatCrop_00");
+        scintillaWheatIcon_01 = ir.registerIcon("ashenwheat:scintillaWheatCrop_01");
+        scintillaWheatIcon_02 = ir.registerIcon("ashenwheat:scintillaWheatCrop_02");
+        scintillaWheatIcon_03 = ir.registerIcon("ashenwheat:scintillaWheatCrop_03");
+        scintillaWheatIcon_04 = ir.registerIcon("ashenwheat:scintillaWheatCrop_04");
+        scintillaWheatIcon_05 = ir.registerIcon("ashenwheat:scintillaWheatCrop_05");
+        scintillaWheatIcon_06 = ir.registerIcon("ashenwheat:scintillaWheatCrop_06");
+        scintillaWheatIcon_07 = ir.registerIcon("ashenwheat:scintillaWheatCrop_07");
     }
 
     public Icon getIcon(int side, int metadata)
     {
         if (metadata == 0)
         {
-            return ossidRootIcon_00;
+            return scintillaWheatIcon_00;
         }
 
         if (metadata == 1)
         {
-            return ossidRootIcon_01;
+            return scintillaWheatIcon_01;
         }
 
         if (metadata == 2)
         {
-            return ossidRootIcon_02;
+            return scintillaWheatIcon_02;
         }
 
         if (metadata == 3)
         {
-            return ossidRootIcon_03;
+            return scintillaWheatIcon_03;
         }
 
         if (metadata == 4)
         {
-            return ossidRootIcon_04;
+            return scintillaWheatIcon_04;
         }
 
         if (metadata == 5)
         {
-            return ossidRootIcon_05;
+            return scintillaWheatIcon_05;
         }
 
         if (metadata == 6)
         {
-            return ossidRootIcon_06;
+            return scintillaWheatIcon_06;
         }
         else
         {
-            return ossidRootIcon_07;
+            return scintillaWheatIcon_07;
         }
     }
 
@@ -122,7 +122,7 @@ public class OssidRootCrop extends Block
             return;
         }
 
-        if (random.nextInt(isFertile(world, x, y - 1, z) ? 8 : 12) != 1)
+        if (random.nextInt(isFertile(world, x, y - 1, z) ? 9 : 13) != 1)
         {
             return;
         }
@@ -199,7 +199,7 @@ public class OssidRootCrop extends Block
         Block soil = blocksList[world.getBlockId(x, y - 1, z)];
         return(world.getFullBlockLightValue(x, y, z) >= 8 ||
                world.canBlockSeeTheSky(x, y, z)) &&
-              (soil != null && soil.canSustainPlant(world, x, y, z, ForgeDirection.UP , (IPlantable)AshenWheatCore.ossidSeeds));
+              (soil != null && soil.canSustainPlant(world, x, y, z, ForgeDirection.UP , (IPlantable)AshenWheatCore.scintillaSeeds));
     }
 
     /**
@@ -207,7 +207,7 @@ public class OssidRootCrop extends Block
      */
     protected int getSeedItem()
     {
-        return AshenWheatCore.ossidSeeds.itemID;
+        return AshenWheatCore.scintillaSeeds.itemID;
     }
 
     /**
@@ -215,7 +215,7 @@ public class OssidRootCrop extends Block
      */
     protected int getCropItem()
     {
-        return AshenWheatCore.ossidRoot.blockID;
+        return AshenWheatCore.scintillaWheatSheaf.itemID;
     }
 
     /**
@@ -225,7 +225,7 @@ public class OssidRootCrop extends Block
     {
         super.dropBlockAsItemWithChance(par1World, par2, par3, par4, par5, par6, 0);
     }
-/*
+
     @Override
     public ArrayList<ItemStack> getBlockDropped(World world, int x, int y, int z, int metadata, int fortune)
     {
@@ -244,16 +244,14 @@ public class OssidRootCrop extends Block
 
         return ret;
     }
-    */
 
     /**
      * Returns the ID of the items to drop on destruction.
      */
     public int idDropped(int par1, Random par2Random, int par3)
     {
-        //return par1 == 7 ? this.getCropItem() : this.getSeedItem();
+        return par1 == 7 ? this.getCropItem() : this.getSeedItem();
         //return par1 == 7 ?  this.getCropItem() : this.getCropItem() ;
-    	return par1 <= 6 ? this.getSeedItem() : this.getCropItem();
     }
 
     /**
@@ -263,6 +261,8 @@ public class OssidRootCrop extends Block
     {
         return 1;
     }
+
+
 
     @SideOnly(Side.CLIENT)
 
@@ -277,20 +277,18 @@ public class OssidRootCrop extends Block
     @SideOnly(Side.CLIENT)
     public void randomDisplayTick(World world, int x, int y, int z, Random random)
     {
-        if (AshenWheatCore.MakeOssidCropGloom == true)
+        if (AshenWheatCore.MakeScintillawheatScintillate == true)
         {
             float f1 = (float)x + 0.5F;
             float f2 = (float)y + 0.3F;
             float f3 = (float)z + 0.5F;
             float f4 = random.nextFloat() * 0.6F - 0.3F;
             float f5 = random.nextFloat() * -0.6F - -0.3F;
-            world.spawnParticle("townaura", (double)(f1 + f4), (double)(f2 + f4 + f5) , (double)(f3 + f5), 0.0D, 0.0D, 0.0D);
-            // world.spawnParticle("flame", (double)(f1+f4), (double)(f2+f4+f5) , (double)(f3+f5), 0.0D, 0.0D, 0.0D);
+            world.spawnParticle("instantSpell", (double)(f1 + f4), (double)(f2 + f4 + f5) , (double)(f3 + f5), 0.0D, 0.0D, 0.0D);
         }
         else
         {
             return;
         }
     }
-   
 }

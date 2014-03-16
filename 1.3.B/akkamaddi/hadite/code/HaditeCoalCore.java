@@ -74,7 +74,7 @@ public class HaditeCoalCore
     public static int gestankenzinnPickaxeID;
 
     // set names
-    
+
     // Hadite
     public static Item haditeCoalIngot;
 
@@ -164,7 +164,7 @@ public class HaditeCoalCore
         gestankenzinnPickaxeID = config.getItem("6. Gestankenzinn Item", "Gestankenzinn Pickaxe", 12228).getInt();
         blockGestankenzinnID = config.getBlock("7. Gestankenzinn Block", "Gestankenzinn Block", 1316).getInt();
         //Recycling
-        enableRecycling= config.get(Configuration.CATEGORY_GENERAL, "Enable Hadite Steel & Gestankenzinn item recycling recipes: false or true?", false).getBoolean(false);
+        enableRecycling = config.get(Configuration.CATEGORY_GENERAL, "Enable Hadite Steel & Gestankenzinn item recycling recipes: false or true?", false).getBoolean(false);
         //
         // end config
         config.save();
@@ -200,11 +200,9 @@ public class HaditeCoalCore
         blockGestankenzinn = new SimpleOre(blockGestankenzinnID, Material.iron).modId("haditecoal").setCreativeTab(HaditeCoalCore.tabAkkamaddiHadite)
         .setHardness(12.0F).setResistance(20.0F).setStepSound(Block.soundMetalFootstep)
         .setUnlocalizedName("blockGestankenzinn").setCreativeTab(HaditeCoalCore.tabAkkamaddiHadite);
-        
         //Registrations
         GameRegistry.registerBlock(blockHaditeCoalOre, "blockHaditeCoalOre");
         GameRegistry.registerBlock(blockHaditeCoalBlock, "blockHaditeCoalBlock");
-        
         /*
         GameRegistry.registerItem(haditeCoalIngot,"haditeCoalIngot");
         GameRegistry.registerItem(haditeSteelIngot,"haditeSteelIngot");
@@ -219,11 +217,10 @@ public class HaditeCoalCore
         GameRegistry.registerItem(gestankenzinnShovel,"gestankenzinnShovel");
         GameRegistry.registerItem(gestankenzinnAxe,"gestankenzinnAxe");
         GameRegistry.registerItem(gestankenzinnPickaxe,"gestankenzinnPickaxe");
-        
+
         GameRegistry.registerBlock(blockHaditeSteel, "blockHaditeSteel");
         GameRegistry.registerBlock(blockGestankenzinn, "blockGestankenzinn");
         */
-        
         // loot
         LootHelper.addLoot("villageBlacksmith", new ItemStack(haditeCoalIngot), 3, 5, 7);
         LootHelper.addLoot("villageBlacksmith", new ItemStack(gestankenzinnIngot), 2, 3, 2);
@@ -251,13 +248,10 @@ public class HaditeCoalCore
         LootHelper.addLoot("mineshaftCorridor", new ItemStack(haditeSteelPickaxe), 1, 2, 1);
         LootHelper.addLoot("mineshaftCorridor", new ItemStack(gestankenzinnShovel), 1, 2, 1);
         LootHelper.addLoot("mineshaftCorridor", new ItemStack(haditeSteelShovel), 1, 2, 1);
-        
         // run tab icon call
         setTabIcons();
-        
         // Recipes
         HaditeRecipes.doHaditeRecipes();
-        
     }
 
     @EventHandler
@@ -284,19 +278,14 @@ public class HaditeCoalCore
         LanguageRegistry.addName(gestankenzinnShovel, "Gestankenzinn Shovel");
         LanguageRegistry.addName(gestankenzinnAxe, "Gestankenzinn Axe");
         LanguageRegistry.addName(gestankenzinnPickaxe, "Gestankenzinn Pickaxe");
-        
         LanguageRegistry.addName(blockHaditeCoalOre, "Hadite Coal Ore");
         MinecraftForge.setBlockHarvestLevel(blockHaditeCoalOre, "pickaxe", 1);
-        
         LanguageRegistry.addName(blockHaditeCoalBlock, "Hadite Coal Block");
         MinecraftForge.setBlockHarvestLevel(blockHaditeCoalBlock, "pickaxe", 0);
-        
         LanguageRegistry.addName(blockHaditeSteel, "Hadite Steel Block");
         MinecraftForge.setBlockHarvestLevel(blockHaditeSteel, "pickaxe", 0);
-        
         LanguageRegistry.addName(blockGestankenzinn, "Gestankenzinn Block");
         MinecraftForge.setBlockHarvestLevel(blockGestankenzinn, "pickaxe", 0);
-        
         MinecraftForge.setToolClass(haditeSteelPickaxe, "pickaxe", 3);
         MinecraftForge.setToolClass(haditeSteelShovel, "shovel", 3);
         MinecraftForge.setToolClass(haditeSteelAxe, "axe", 3);

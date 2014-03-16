@@ -8,7 +8,7 @@ public class AshenwheatFuel implements IFuelHandler
     @Override
     public int getBurnTime(ItemStack fuel)
     {
-        if (fuel.itemID == AshenWheatCore.ashWheatItem.itemID)
+        if (fuel.itemID == AshenWheatCore.ashWheatSheaf.itemID)
         {
             return 100;
         }
@@ -21,6 +21,11 @@ public class AshenwheatFuel implements IFuelHandler
         if (fuel.itemID == AshenWheatCore.ashCookie.itemID)
         {
             return 50;
+        }
+
+        if (fuel.itemID == AshenWheatCore.ashSeeds.itemID)
+        {
+            return 25;
         }
 
         if (fuel.itemID == AshenWheatCore.ashWheatBale.blockID)

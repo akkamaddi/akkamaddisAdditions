@@ -38,7 +38,7 @@ import alexndr.SimpleOres.api.content.SimpleOre;
 import alexndr.SimpleOres.api.content.SimpleTab;
 import alexndr.SimpleOres.api.helpers.LootHelper;;
 
-@Mod(modid = "simplecobalt", name = "Simple Cobalt, and Cobalt alloys", version = "1.2.0", dependencies = "required-after:simpleores ; required-after:simpleoresfusion")
+@Mod(modid = "simplecobalt", name = "Simple Cobalt, and Cobalt alloys", version = "1.2.1", dependencies = "required-after:simpleores ; required-after:simpleoresfusion")
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
 
 public class SimpleCobaltCore
@@ -259,13 +259,9 @@ public class SimpleCobaltCore
     public void preInit(FMLPreInitializationEvent event)
     {
         // Stub Method
-    	
         MinecraftForge.EVENT_BUS.register(new HandlerArmor());
-        
         config = new Configuration(event.getSuggestedConfigurationFile());
-        
         config.load();
-        
         // Cobalt
         cobaltIngotID = config.getItem("01. Cobalt Item", "Cobalt Ingot", 12270).getInt();
         cobaltSwordID = config.getItem("02. Cobalt Tool", "Cobalt Sword", 12271).getInt();
@@ -279,7 +275,6 @@ public class SimpleCobaltCore
         cobaltBootsID = config.getItem("02. Cobalt Armor", "Cobalt Boots", 12279).getInt();
         blockCobaltID = config.getBlock("03. Cobalt Block", "Cobalt Block", 1322).getInt();
         oreCobaltID = config.getBlock("03. Cobalt Ore", "Cobalt Ore", 1323).getInt();
-        
         // Blue Drift Steel
         blueDriftSteelIngotID = config.getItem("04. Blue Drift Steel Item", "Blue Drift Steel Ingot", 12280).getInt();
         smallBlueDriftSteelChunkItemID = config.getItem("04. Blue Drift Steel Item", "Blue Drift Steel Small Chunk", 12281).getInt();
@@ -295,7 +290,6 @@ public class SimpleCobaltCore
         blueDriftSteelLegsID = config.getItem("05. Blue Drift Steel Armor", "Blue Drift Steel Leggings", 12291).getInt();
         blueDriftSteelBootsID = config.getItem("05. Blue Drift Steel Armor", "Blue Drift Steel Boots", 12292).getInt();
         blockBlueDriftSteelID = config.getBlock("06. Blue Drift Steel Block", "Blue Drift Steel Block", 1324).getInt();
-        
         // Blue Celadon
         blueCeladonIngotID = config.getItem("07. Blue Celadon Item", "Blue Celadon Ingot", 12293).getInt();
         smallBlueCeladonChunkItemID = config.getItem("07. Blue Celadon Item", "Blue Celadon Small Chunk", 12294).getInt();
@@ -311,7 +305,6 @@ public class SimpleCobaltCore
         blueCeladonLegsID = config.getItem("08. Blue Celadon Armor", "Blue Celadon Leggings", 12304).getInt();
         blueCeladonBootsID = config.getItem("08. Blue Celadon Armor", "Blue Celadon Boots", 12305).getInt();
         blockBlueCeladonID = config.getBlock("09. Blue Celadon Block", "Blue Celadon Block", 1325).getInt();
-        
         // Green Celadon
         greenCeladonIngotID = config.getItem("10. Green Celadon Item", "Green Celadon Ingot", 12306).getInt();
         smallGreenCeladonChunkItemID = config.getItem("10. Green Celadon Item", "Green Celadon Small Chunk", 12307).getInt();
@@ -327,18 +320,15 @@ public class SimpleCobaltCore
         greenCeladonLegsID = config.getItem("11. Green Celadon Armor", "Green Celadon Leggings", 12317).getInt();
         greenCeladonBootsID = config.getItem("11. Green Celadon Armor", "Green Celadon Boots", 12318).getInt();
         blockGreenCeladonID = config.getBlock("12. Green Celadon Block", "Green Celadon Block", 1326).getInt();
-        
         //Adjustable Ore Spawn Rates
         cobaltSpawnRate = config.get("13. Cobalt Ore Worldgen", "Cobalt Spawn Rate", 6).getInt();
         cobaltVeinSize = config.get("13. Cobalt Ore Worldgen", "Cobalt Vein Size", 6).getInt();
         cobaltSpawnHeight = config.get("13. Cobalt Ore Worldgen", "Cobalt Maximum Spawn Height", 32).getInt();
         cobaltMinSpawnHeight = config.get("13. Cobalt Ore Worldgen", "Cobalt Minimum Spawn Height", 0).getInt();
-        
         //higher dimension
         enableHigherDimensionGen = config.get("14. Higher World Gen", "Spawn Cobalt in higher dimensions? (Advanced)", false).getBoolean(enableHigherDimensionGen);
-        
         // Recycling
-        enableRecycling= config.get("15. Enable Cobalt Recycling", "Enable Simple Cobalt item recycling recipes: false or true?", false).getBoolean(false);
+        enableRecycling = config.get("15. Enable Cobalt Recycling", "Enable Simple Cobalt item recycling recipes: false or true?", false).getBoolean(false);
 
         //Higher Dimensions
         if (enableHigherDimensionGen)
@@ -494,7 +484,7 @@ public class SimpleCobaltCore
         .modId("simplecobalt").setCreativeTab(SimpleCobaltCore.tabAkkamaddiCobalt)
         .setHardness(10.0F).setResistance(22.0F).setStepSound(Block.soundMetalFootstep)
         .setUnlocalizedName("blockGreenCeladon");
-        
+
         /*
         // Game Registration
         GameRegistry.registerItem(cobaltIngot,"cobaltIngot");
@@ -556,66 +546,106 @@ public class SimpleCobaltCore
         GameRegistry.registerBlock(blockBlueCeladon, "blockBlueCeladon");
         GameRegistry.registerBlock(blockGreenCeladon, "blockGreenCeladon");
         */
-
         // loot
         LootHelper.addLoot("villageBlacksmith", new ItemStack(cobaltIngot), 2, 4, 6);
+
         LootHelper.addLoot("villageBlacksmith", new ItemStack(cobaltSword), 2, 3, 1);
+
         LootHelper.addLoot("villageBlacksmith", new ItemStack(cobaltPickaxe), 2, 3, 1);
+
         LootHelper.addLoot("villageBlacksmith", new ItemStack(cobaltAxe), 2, 3, 1);
+
         LootHelper.addLoot("villageBlacksmith", new ItemStack(cobaltShovel), 2, 3, 1);
+
         LootHelper.addLoot("villageBlacksmith", new ItemStack(blueDriftSteelIngot), 2, 3, 4);
+
         LootHelper.addLoot("villageBlacksmith", new ItemStack(blueCeladonIngot), 2, 3, 3);
+
         LootHelper.addLoot("villageBlacksmith", new ItemStack(greenCeladonIngot), 1, 2, 2);
+
         LootHelper.addLoot("villageBlacksmith", new ItemStack(blueDriftSteelSword), 1, 2, 1);
+
         LootHelper.addLoot("villageBlacksmith", new ItemStack(blueCeladonSword), 1, 2, 1);
+
         LootHelper.addLoot("villageBlacksmith", new ItemStack(greenCeladonSword), 1, 1, 1);
 
         LootHelper.addLoot("dungeonChest", new ItemStack(blueDriftSteelSword), 1, 2, 1);
+
         LootHelper.addLoot("dungeonChest", new ItemStack(blueDriftSteelPickaxe), 1, 2, 1);
+
         LootHelper.addLoot("dungeonChest", new ItemStack(blueCeladonPickaxe), 1, 2, 1);
+
         LootHelper.addLoot("dungeonChest", new ItemStack(greenCeladonPickaxe), 1, 1, 1);
+
         LootHelper.addLoot("dungeonChest", new ItemStack(blueCeladonSword), 1, 2, 1);
+
         LootHelper.addLoot("dungeonChest", new ItemStack(greenCeladonSword), 1, 1, 1);
-        
 
         LootHelper.addLoot("mineshaftCorridor", new ItemStack(cobaltIngot), 2, 3, 3);
+
         LootHelper.addLoot("mineshaftCorridor", new ItemStack(cobaltSword), 1, 2, 1);
+
         LootHelper.addLoot("mineshaftCorridor", new ItemStack(cobaltPickaxe), 2, 3, 2);
+
         LootHelper.addLoot("mineshaftCorridor", new ItemStack(cobaltShovel), 2, 3, 2);
+
         LootHelper.addLoot("mineshaftCorridor", new ItemStack(blueDriftSteelPickaxe), 2, 3, 1);
+
         LootHelper.addLoot("mineshaftCorridor", new ItemStack(blueDriftSteelShovel), 1, 1, 1);
+
         LootHelper.addLoot("mineshaftCorridor", new ItemStack(blueCeladonPickaxe), 1, 1, 1);
+
         LootHelper.addLoot("mineshaftCorridor", new ItemStack(blueCeladonShovel), 1, 1, 1);
+
         LootHelper.addLoot("mineshaftCorridor", new ItemStack(greenCeladonPickaxe), 1, 1, 1);
+
         LootHelper.addLoot("mineshaftCorridor", new ItemStack(greenCeladonShovel), 1, 1, 1);
-        
+
         LootHelper.addLoot("pyramidDesertyChest", new ItemStack(blueDriftSteelIngot), 1, 2, 3);
+
         LootHelper.addLoot("pyramidDesertyChest", new ItemStack(blueCeladonIngot), 1, 1, 1);
+
         LootHelper.addLoot("pyramidDesertyChest", new ItemStack(greenCeladonIngot), 1, 1, 1);
+
         LootHelper.addLoot("pyramidDesertyChest", new ItemStack(blueDriftSteelSword), 2, 4, 1);
+
         LootHelper.addLoot("pyramidDesertyChest", new ItemStack(blueCeladonSword), 1, 1, 1);
+
         LootHelper.addLoot("pyramidDesertyChest", new ItemStack(greenCeladonSword), 1, 1, 1);
+
         LootHelper.addLoot("pyramidDesertyChest", new ItemStack(cobaltSword), 1, 5, 1);
+
         LootHelper.addLoot("pyramidDesertyChest", new ItemStack(cobaltHelm), 1, 5, 1);
+
         LootHelper.addLoot("pyramidDesertyChest", new ItemStack(cobaltChest), 1, 5, 1);
+
         LootHelper.addLoot("pyramidDesertyChest", new ItemStack(cobaltLegs), 1, 5, 1);
+
         LootHelper.addLoot("pyramidDesertyChest", new ItemStack(cobaltBoots), 1, 5, 1);
 
         LootHelper.addLoot("pyramidJungleChest", new ItemStack(blueDriftSteelIngot), 1, 1, 1);
+
         LootHelper.addLoot("pyramidJungleChest", new ItemStack(blueCeladonIngot), 1, 1, 1);
+
         LootHelper.addLoot("pyramidJungleChest", new ItemStack(greenCeladonIngot), 1, 2, 4);
+
         LootHelper.addLoot("pyramidJungleChest", new ItemStack(blueDriftSteelSword), 1, 1, 1);
+
         LootHelper.addLoot("pyramidJungleChest", new ItemStack(blueCeladonSword), 1, 1, 1);
+
         LootHelper.addLoot("pyramidJungleChest", new ItemStack(greenCeladonSword), 1, 5, 1);
+
         LootHelper.addLoot("pyramidJungleChest", new ItemStack(greenCeladonHelm), 1, 5, 1);
+
         LootHelper.addLoot("pyramidJungleChest", new ItemStack(greenCeladonChest), 1, 5, 1);
+
         LootHelper.addLoot("pyramidJungleChest", new ItemStack(greenCeladonLegs), 1, 5, 1);
+
         LootHelper.addLoot("pyramidJungleChest", new ItemStack(greenCeladonBoots), 1, 5, 1);
 
-        
         //recipes
         CobaltRecipes.doCobaltRecipes();
-        
+
         // run tab icon call
         setTabIcons();
     }
@@ -623,21 +653,15 @@ public class SimpleCobaltCore
     @EventHandler // used in 1.6.2
     public void load(FMLInitializationEvent event)
     {
-    	
         proxy.registerRenderers();
-        
         GameRegistry.registerWorldGenerator(new SimpleCobaltGenerator());
-        
         MinecraftForge.EVENT_BUS.register(new HandlerJoinWorld());
-        
         //Armor Renderers
         rendererCobalt = proxy.addArmor("cobalt");
         rendererBlueDriftSteel = proxy.addArmor("bluedriftsteel");
         rendererBlueCeladon = proxy.addArmor("blueceladon");
         rendererGreenCeladon = proxy.addArmor("greenceladon");
-        
         // name stuff
-        
         // name Cobalt
         LanguageRegistry.addName(cobaltIngot, "Cobalt Ingot");
         LanguageRegistry.addName(cobaltSword, "Cobalt Sword");
@@ -649,7 +673,6 @@ public class SimpleCobaltCore
         LanguageRegistry.addName(cobaltChest, "Cobalt Chestplate");
         LanguageRegistry.addName(cobaltLegs, "Cobalt Leggings");
         LanguageRegistry.addName(cobaltBoots, "Cobalt Boots");
-        
         // name Blue Drift Steel
         LanguageRegistry.addName(blueDriftSteelIngot, "Blue Drift Steel Ingot");
         LanguageRegistry.addName(smallBlueDriftSteelChunkItem, "Small Blue Drift Steel Chunk");
@@ -664,7 +687,6 @@ public class SimpleCobaltCore
         LanguageRegistry.addName(blueDriftSteelChest, "Blue Drift Steel Chestplate");
         LanguageRegistry.addName(blueDriftSteelLegs, "Blue Drift Steel Leggings");
         LanguageRegistry.addName(blueDriftSteelBoots, "Blue Drift Steel Boots");
-        
         // name Blue Celadon
         LanguageRegistry.addName(blueCeladonIngot, "Blue Celadon Ingot");
         LanguageRegistry.addName(smallBlueCeladonChunkItem, "Small Blue Celadon Chunk");
@@ -679,7 +701,6 @@ public class SimpleCobaltCore
         LanguageRegistry.addName(blueCeladonChest, "Blue Celadon Chestplate");
         LanguageRegistry.addName(blueCeladonLegs, "Blue Celadon Leggings");
         LanguageRegistry.addName(blueCeladonBoots, "Blue Celadon Boots");
-        
         // name Green Celadon
         LanguageRegistry.addName(greenCeladonIngot, "Green Celadon Ingot");
         LanguageRegistry.addName(smallGreenCeladonChunkItem, "Small Green Celadon Chunk");
@@ -694,52 +715,39 @@ public class SimpleCobaltCore
         LanguageRegistry.addName(greenCeladonChest, "Green Celadon Chestplate");
         LanguageRegistry.addName(greenCeladonLegs, "Green Celadon Leggings");
         LanguageRegistry.addName(greenCeladonBoots, "Green Celadon Boots");
-        
         //blocks
         LanguageRegistry.addName(blockCobalt, "Cobalt Block");
         MinecraftForge.setBlockHarvestLevel(blockCobalt, "pickaxe", 0);
-        
         LanguageRegistry.addName(oreCobalt, "Cobalt Ore");
         MinecraftForge.setBlockHarvestLevel(oreCobalt, "pickaxe", 2);
-        
         LanguageRegistry.addName(blockBlueDriftSteel, "Blue Drift Steel Block");
         MinecraftForge.setBlockHarvestLevel(blockBlueDriftSteel, "pickaxe", 0);
-        
         LanguageRegistry.addName(blockBlueCeladon, "Blue Celadon Block");
         MinecraftForge.setBlockHarvestLevel(blockBlueDriftSteel, "pickaxe", 0);
-        
         LanguageRegistry.addName(blockGreenCeladon, "Green Celadon Block");
         MinecraftForge.setBlockHarvestLevel(blockGreenCeladon, "pickaxe", 0);
-        
         //tools registry
         MinecraftForge.setToolClass(cobaltPickaxe, "pickaxe", 2);
         MinecraftForge.setToolClass(cobaltShovel, "shovel", 2);
         MinecraftForge.setToolClass(cobaltAxe, "axe", 2);
-        
         MinecraftForge.setToolClass(blueDriftSteelPickaxe, "pickaxe", 2);
         MinecraftForge.setToolClass(blueDriftSteelShovel, "shovel", 2);
         MinecraftForge.setToolClass(blueDriftSteelAxe, "axe", 2);
-        
         MinecraftForge.setToolClass(blueCeladonPickaxe, "pickaxe", 3);
         MinecraftForge.setToolClass(blueCeladonShovel, "shovel", 3);
         MinecraftForge.setToolClass(blueCeladonAxe, "axe", 3);
-        
         MinecraftForge.setToolClass(greenCeladonPickaxe, "pickaxe", 4);
         MinecraftForge.setToolClass(greenCeladonShovel, "shovel", 4);
         MinecraftForge.setToolClass(greenCeladonAxe, "axe", 4);
-        
         LanguageRegistry.instance().addStringLocalization("itemGroup.tabAkkamaddiCobalt", "en_US", "akkamaddi's Simple Cobalt");
-        
         armorCobalt.customCraftingMaterial = SimpleCobaltCore.cobaltIngot;
         armorBlueDriftSteel.customCraftingMaterial = SimpleCobaltCore.blueDriftSteelIngot;
         armorBlueCeladon.customCraftingMaterial = SimpleCobaltCore.blueCeladonIngot;
         armorGreenCeladon.customCraftingMaterial = SimpleCobaltCore.greenCeladonIngot;
-        
         toolCobalt.customCraftingMaterial = SimpleCobaltCore.cobaltIngot;
         toolBlueDriftSteel.customCraftingMaterial = SimpleCobaltCore.blueDriftSteelIngot;
         toolBlueCeladon.customCraftingMaterial = SimpleCobaltCore.blueCeladonIngot;
         toolGreenCeladon.customCraftingMaterial = SimpleCobaltCore.greenCeladonIngot;
-        
     }
 
     @EventHandler // used in 1.6.2

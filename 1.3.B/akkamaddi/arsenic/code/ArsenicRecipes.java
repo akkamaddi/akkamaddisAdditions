@@ -290,7 +290,6 @@ public class ArsenicRecipes
                 }));
         //Lace breakdown
         GameRegistry.addShapelessRecipe(new ItemStack(Item.silk, 4), new Object[] { ArsenicAndLace.oldLaceChest });
-        
         // recipes: Smelting
         GameRegistry.addSmelting(ArsenicAndLace.realgarItem.itemID, new ItemStack(ArsenicAndLace.smallArsenicChunkItem), 2.0F);
         GameRegistry.addSmelting(ArsenicAndLace.orpimentItem.itemID, new ItemStack(ArsenicAndLace.smallArsenicChunkItem), 2.0F);
@@ -299,7 +298,6 @@ public class ArsenicRecipes
         GameRegistry.addSmelting(ArsenicAndLace.largeArsenideBronzeChunkItem.itemID, new ItemStack(ArsenicAndLace.arsenideBronzeIngot), 5.0F);
         GameRegistry.addSmelting(ArsenicAndLace.largeArsenideGoldChunkItem.itemID, new ItemStack(ArsenicAndLace.arsenideGoldIngot), 6.0F);
         GameRegistry.addSmelting(ArsenicAndLace.largeTenebriumChunkItem.itemID, new ItemStack(ArsenicAndLace.tenebriumIngot), 6.0F);
-        
         // recipes: Fusion Furnace
         FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(Item.rottenFlesh), new ItemStack(Item.rottenFlesh), new ItemStack(Item.bone), new ItemStack(ArsenicAndLace.realgarItem), 2.0F);
         FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(Item.rottenFlesh), new ItemStack(Item.rottenFlesh), new ItemStack(Item.slimeBall), new ItemStack(ArsenicAndLace.orpimentItem), 2.0F);
@@ -319,10 +317,11 @@ public class ArsenicRecipes
         FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(Item.dyePowder, 1, 2), new ItemStack(Block.leaves, 1, 1), new ItemStack(Item.rottenFlesh), new ItemStack(Item.slimeBall), 2.0F);
         FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(Item.dyePowder, 1, 2), new ItemStack(Block.leaves, 1, 2), new ItemStack(Item.rottenFlesh), new ItemStack(Item.slimeBall), 2.0F);
         FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(Item.dyePowder, 1, 2), new ItemStack(Block.leaves, 1, 3), new ItemStack(Item.rottenFlesh), new ItemStack(Item.slimeBall), 2.0F);
-        
+
         //recycling
-        
-        if (ArsenicAndLace.enableRecycling) {
+
+        if (ArsenicAndLace.enableRecycling)
+        {
             // Arsenic tools
             FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(ArsenicAndLace.arsenicSword, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Block.gravel), new ItemStack(Item.rottenFlesh), new ItemStack(ArsenicAndLace.largeArsenicChunkItem), 10.0F);
             FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(ArsenicAndLace.arsenicShovel, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Block.gravel), new ItemStack(Item.rottenFlesh), new ItemStack(ArsenicAndLace.largeArsenicChunkItem), 10.0F);
@@ -363,9 +362,6 @@ public class ArsenicRecipes
             FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(ArsenicAndLace.tenebriumHoe, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Item.netherQuartz), new ItemStack(Item.rottenFlesh), new ItemStack(ArsenicAndLace.largeTenebriumChunkItem), 20.0F);
             // Shrouds
             FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(ArsenicAndLace.oldLaceChest, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Block.gravel), new ItemStack(Item.coal, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Block.oreCoal), 15.0F);
-        
         }
-        
-        
     }
 }

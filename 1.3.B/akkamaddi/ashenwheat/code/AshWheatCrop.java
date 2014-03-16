@@ -122,7 +122,7 @@ public class AshWheatCrop extends Block
             return;
         }
 
-        if (random.nextInt(isFertile(world, x, y - 1, z) ? 4 : 8) != 1)
+        if (random.nextInt(isFertile(world, x, y - 1, z) ? 6 : 10) != 1)
         {
             return;
         }
@@ -215,7 +215,7 @@ public class AshWheatCrop extends Block
      */
     protected int getCropItem()
     {
-        return AshenWheatCore.ashWheatItem.itemID;
+        return AshenWheatCore.ashWheatSheaf.itemID;
     }
 
     /**

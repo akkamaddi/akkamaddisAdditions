@@ -94,17 +94,17 @@ public class HandlerJoinWorld
             {
                 living.setCurrentItemOrArmor(0, new ItemStack(GoldenGlitterCore.erubescentGoldAxe));
             }
-			
+
             if (range == 14)
             {
                 living.setCurrentItemOrArmor(0, new ItemStack(GoldenGlitterCore.erubescentGoldShovel));
             }
-			
+
             if (range == 15)
             {
                 living.setCurrentItemOrArmor(0, new ItemStack(GoldenGlitterCore.scarlatiteGoldSword));
             }
-			
+
             if (range == 16)
             {
                 living.setCurrentItemOrArmor(0, new ItemStack(GoldenGlitterCore.scarlatiteGoldSword));
@@ -124,12 +124,12 @@ public class HandlerJoinWorld
             {
                 living.setCurrentItemOrArmor(0, new ItemStack(GoldenGlitterCore.scarlatiteGoldShovel));
             }
-			
+
             if (range == 20)
             {
                 living.setCurrentItemOrArmor(0, new ItemStack(GoldenGlitterCore.hephaestanGoldSword));
             }
-			
+
             if (range == 21)
             {
                 living.setCurrentItemOrArmor(0, new ItemStack(GoldenGlitterCore.hephaestanGoldSword));
@@ -149,8 +149,8 @@ public class HandlerJoinWorld
             {
                 living.setCurrentItemOrArmor(0, new ItemStack(GoldenGlitterCore.hephaestanGoldShovel));
             }
-			
-			if (range == 25)
+
+            if (range == 25)
             {
                 living.setCurrentItemOrArmor(4, new ItemStack(GoldenGlitterCore.roseGoldHelm));
                 living.setCurrentItemOrArmor(3, new ItemStack(GoldenGlitterCore.roseGoldChest));
@@ -159,7 +159,7 @@ public class HandlerJoinWorld
                 living.setCurrentItemOrArmor(0, new ItemStack(GoldenGlitterCore.roseGoldSword));
             }
 
-			if (range == 26)
+            if (range == 26)
             {
                 living.setCurrentItemOrArmor(4, new ItemStack(GoldenGlitterCore.roseGoldHelm));
                 living.setCurrentItemOrArmor(3, new ItemStack(GoldenGlitterCore.roseGoldChest));
@@ -168,35 +168,35 @@ public class HandlerJoinWorld
                 living.setCurrentItemOrArmor(0, new ItemStack(GoldenGlitterCore.roseGoldSword));
             }
 
-			if (range == 27)
+            if (range == 27)
             {
                 living.setCurrentItemOrArmor(4, new ItemStack(GoldenGlitterCore.roseGoldHelm));
                 living.setCurrentItemOrArmor(1, new ItemStack(GoldenGlitterCore.roseGoldBoots));
                 living.setCurrentItemOrArmor(0, new ItemStack(GoldenGlitterCore.roseGoldPickaxe));
             }
 
-			if (range == 28)
+            if (range == 28)
             {
                 living.setCurrentItemOrArmor(4, new ItemStack(GoldenGlitterCore.roseGoldHelm));
                 living.setCurrentItemOrArmor(3, new ItemStack(GoldenGlitterCore.roseGoldChest));
                 living.setCurrentItemOrArmor(0, new ItemStack(GoldenGlitterCore.roseGoldAxe));
             }
 
-			if (range == 29)
+            if (range == 29)
             {
                 living.setCurrentItemOrArmor(2, new ItemStack(GoldenGlitterCore.roseGoldLegs));
                 living.setCurrentItemOrArmor(1, new ItemStack(GoldenGlitterCore.roseGoldBoots));
                 living.setCurrentItemOrArmor(0, new ItemStack(GoldenGlitterCore.roseGoldShovel));
             }
 
-			if (range == 30)
+            if (range == 30)
             {
                 living.setCurrentItemOrArmor(4, new ItemStack(GoldenGlitterCore.roseGoldHelm));
                 living.setCurrentItemOrArmor(1, new ItemStack(GoldenGlitterCore.roseGoldBoots));
                 living.setCurrentItemOrArmor(0, new ItemStack(GoldenGlitterCore.roseGoldHoe));
             }
 
-			if (range == 31)
+            if (range == 31)
             {
                 living.setCurrentItemOrArmor(4, new ItemStack(GoldenGlitterCore.roseGoldHelm));
                 living.setCurrentItemOrArmor(3, new ItemStack(GoldenGlitterCore.roseGoldChest));
@@ -205,7 +205,7 @@ public class HandlerJoinWorld
                 living.setCurrentItemOrArmor(0, new ItemStack(GoldenGlitterCore.erubescentGoldSword));
             }
 
-			if (range == 32)
+            if (range == 32)
             {
                 living.setCurrentItemOrArmor(4, new ItemStack(Item.helmetGold));
                 living.setCurrentItemOrArmor(3, new ItemStack(Item.plateGold));
@@ -214,7 +214,7 @@ public class HandlerJoinWorld
                 living.setCurrentItemOrArmor(0, new ItemStack(GoldenGlitterCore.erubescentGoldSword));
             }
 
-			if (range == 33)
+            if (range == 33)
             {
                 living.setCurrentItemOrArmor(4, new ItemStack(GoldenGlitterCore.roseGoldHelm));
                 living.setCurrentItemOrArmor(3, new ItemStack(GoldenGlitterCore.roseGoldChest));
@@ -223,7 +223,7 @@ public class HandlerJoinWorld
                 living.setCurrentItemOrArmor(0, new ItemStack(GoldenGlitterCore.scarlatiteGoldSword));
             }
 
-			if (range == 34)
+            if (range == 34)
             {
                 living.setCurrentItemOrArmor(4, new ItemStack(Item.helmetGold));
                 living.setCurrentItemOrArmor(3, new ItemStack(Item.plateGold));
@@ -232,7 +232,7 @@ public class HandlerJoinWorld
                 living.setCurrentItemOrArmor(0, new ItemStack(GoldenGlitterCore.scarlatiteGoldSword));
             }
 
-			if (range == 35)
+            if (range == 35)
             {
                 living.setCurrentItemOrArmor(4, new ItemStack(GoldenGlitterCore.roseGoldHelm));
                 living.setCurrentItemOrArmor(3, new ItemStack(GoldenGlitterCore.roseGoldChest));
@@ -241,7 +241,7 @@ public class HandlerJoinWorld
                 living.setCurrentItemOrArmor(0, new ItemStack(GoldenGlitterCore.hephaestanGoldSword));
             }
 
-			if (range == 36)
+            if (range == 36)
             {
                 living.setCurrentItemOrArmor(4, new ItemStack(Item.helmetGold));
                 living.setCurrentItemOrArmor(3, new ItemStack(Item.plateGold));
@@ -255,8 +255,8 @@ public class HandlerJoinWorld
 
 class RandomRange extends Random
 {
-	public int nextInt(int min, int max)
-	{
-		return nextInt(max - min + 1) + min;
-	}
+    public int nextInt(int min, int max)
+    {
+        return nextInt(max - min + 1) + min;
+    }
 }

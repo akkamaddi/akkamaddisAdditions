@@ -12,12 +12,12 @@ import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 
 public class HandlerJoinWorld
 {
-	  public static double rand;
-	  public static int range;
+    public static double rand;
+    public static int range;
 
-	  public static RandomRange random = new RandomRange();
-	  
-	  public static final String HANDLED_KEY = "simpleores.spawn.handled";
+    public static RandomRange random = new RandomRange();
+
+    public static final String HANDLED_KEY = "simpleores.spawn.handled";
 
     /**
      * This class allows zombies and skeletons to spawn holding/wearing Arsenic items.
@@ -27,7 +27,6 @@ public class HandlerJoinWorld
     {
         rand = Math.random();
         range = random.nextInt(1, 70);
-        
 
         if ((rand <= 0.03D) && ((event.entity instanceof EntityLiving)) && ((event.entity instanceof EntitySkeleton | event.entity instanceof EntityZombie)))
         {
@@ -217,258 +216,255 @@ public class HandlerJoinWorld
             {
                 living.setCurrentItemOrArmor(1, new ItemStack(ArsenicAndLace.tenebriumBoots));
             }
+
             if (range == 38)
             {
-            living.setCurrentItemOrArmor(4, new ItemStack(ArsenicAndLace.arsenideBronzeHelm));
-            living.setCurrentItemOrArmor(3, new ItemStack(ArsenicAndLace.arsenideBronzeChest));
-            living.setCurrentItemOrArmor(2, new ItemStack(ArsenicAndLace.arsenideBronzeLegs));
-            living.setCurrentItemOrArmor(1, new ItemStack(ArsenicAndLace.arsenideBronzeBoots));
-            living.setCurrentItemOrArmor(0, new ItemStack(ArsenicAndLace.arsenideBronzeSword));
+                living.setCurrentItemOrArmor(4, new ItemStack(ArsenicAndLace.arsenideBronzeHelm));
+                living.setCurrentItemOrArmor(3, new ItemStack(ArsenicAndLace.arsenideBronzeChest));
+                living.setCurrentItemOrArmor(2, new ItemStack(ArsenicAndLace.arsenideBronzeLegs));
+                living.setCurrentItemOrArmor(1, new ItemStack(ArsenicAndLace.arsenideBronzeBoots));
+                living.setCurrentItemOrArmor(0, new ItemStack(ArsenicAndLace.arsenideBronzeSword));
             }
 
             if (range == 39)
             {
-            living.setCurrentItemOrArmor(4, new ItemStack(ArsenicAndLace.arsenideBronzeHelm));
-            living.setCurrentItemOrArmor(3, new ItemStack(ArsenicAndLace.arsenideBronzeChest));
-            living.setCurrentItemOrArmor(2, new ItemStack(ArsenicAndLace.arsenideBronzeLegs));
-            living.setCurrentItemOrArmor(1, new ItemStack(ArsenicAndLace.arsenideBronzeBoots));
-            living.setCurrentItemOrArmor(0, new ItemStack(ArsenicAndLace.arsenideBronzeSword));
+                living.setCurrentItemOrArmor(4, new ItemStack(ArsenicAndLace.arsenideBronzeHelm));
+                living.setCurrentItemOrArmor(3, new ItemStack(ArsenicAndLace.arsenideBronzeChest));
+                living.setCurrentItemOrArmor(2, new ItemStack(ArsenicAndLace.arsenideBronzeLegs));
+                living.setCurrentItemOrArmor(1, new ItemStack(ArsenicAndLace.arsenideBronzeBoots));
+                living.setCurrentItemOrArmor(0, new ItemStack(ArsenicAndLace.arsenideBronzeSword));
             }
 
             if (range == 40)
             {
-            living.setCurrentItemOrArmor(4, new ItemStack(ArsenicAndLace.arsenideBronzeHelm));
-            living.setCurrentItemOrArmor(1, new ItemStack(ArsenicAndLace.arsenideBronzeBoots));
-            living.setCurrentItemOrArmor(0, new ItemStack(ArsenicAndLace.arsenideBronzePickaxe));
+                living.setCurrentItemOrArmor(4, new ItemStack(ArsenicAndLace.arsenideBronzeHelm));
+                living.setCurrentItemOrArmor(1, new ItemStack(ArsenicAndLace.arsenideBronzeBoots));
+                living.setCurrentItemOrArmor(0, new ItemStack(ArsenicAndLace.arsenideBronzePickaxe));
             }
 
             if (range == 41)
             {
-            living.setCurrentItemOrArmor(4, new ItemStack(ArsenicAndLace.arsenideBronzeHelm));
-            living.setCurrentItemOrArmor(3, new ItemStack(ArsenicAndLace.arsenideBronzeChest));
-            living.setCurrentItemOrArmor(0, new ItemStack(ArsenicAndLace.arsenideBronzeAxe));
+                living.setCurrentItemOrArmor(4, new ItemStack(ArsenicAndLace.arsenideBronzeHelm));
+                living.setCurrentItemOrArmor(3, new ItemStack(ArsenicAndLace.arsenideBronzeChest));
+                living.setCurrentItemOrArmor(0, new ItemStack(ArsenicAndLace.arsenideBronzeAxe));
             }
 
             if (range == 42)
             {
-            living.setCurrentItemOrArmor(2, new ItemStack(ArsenicAndLace.arsenideBronzeLegs));
-            living.setCurrentItemOrArmor(1, new ItemStack(ArsenicAndLace.arsenideBronzeBoots));
-            living.setCurrentItemOrArmor(0, new ItemStack(ArsenicAndLace.arsenideBronzeShovel));
+                living.setCurrentItemOrArmor(2, new ItemStack(ArsenicAndLace.arsenideBronzeLegs));
+                living.setCurrentItemOrArmor(1, new ItemStack(ArsenicAndLace.arsenideBronzeBoots));
+                living.setCurrentItemOrArmor(0, new ItemStack(ArsenicAndLace.arsenideBronzeShovel));
             }
 
             if (range == 43)
             {
-            living.setCurrentItemOrArmor(4, new ItemStack(ArsenicAndLace.arsenideBronzeHelm));
-            living.setCurrentItemOrArmor(1, new ItemStack(ArsenicAndLace.arsenideBronzeBoots));
-            living.setCurrentItemOrArmor(0, new ItemStack(ArsenicAndLace.arsenideBronzeHoe));
+                living.setCurrentItemOrArmor(4, new ItemStack(ArsenicAndLace.arsenideBronzeHelm));
+                living.setCurrentItemOrArmor(1, new ItemStack(ArsenicAndLace.arsenideBronzeBoots));
+                living.setCurrentItemOrArmor(0, new ItemStack(ArsenicAndLace.arsenideBronzeHoe));
             }
 
             if (range == 44)
             {
-            living.setCurrentItemOrArmor(4, new ItemStack(ArsenicAndLace.arsenideGoldHelm));
-            living.setCurrentItemOrArmor(3, new ItemStack(ArsenicAndLace.arsenideGoldChest));
-            living.setCurrentItemOrArmor(2, new ItemStack(ArsenicAndLace.arsenideGoldLegs));
-            living.setCurrentItemOrArmor(1, new ItemStack(ArsenicAndLace.arsenideGoldBoots));
-            living.setCurrentItemOrArmor(0, new ItemStack(ArsenicAndLace.arsenideGoldSword));
+                living.setCurrentItemOrArmor(4, new ItemStack(ArsenicAndLace.arsenideGoldHelm));
+                living.setCurrentItemOrArmor(3, new ItemStack(ArsenicAndLace.arsenideGoldChest));
+                living.setCurrentItemOrArmor(2, new ItemStack(ArsenicAndLace.arsenideGoldLegs));
+                living.setCurrentItemOrArmor(1, new ItemStack(ArsenicAndLace.arsenideGoldBoots));
+                living.setCurrentItemOrArmor(0, new ItemStack(ArsenicAndLace.arsenideGoldSword));
             }
 
             if (range == 45)
             {
-            living.setCurrentItemOrArmor(4, new ItemStack(ArsenicAndLace.arsenideGoldHelm));
-            living.setCurrentItemOrArmor(3, new ItemStack(ArsenicAndLace.arsenideGoldChest));
-            living.setCurrentItemOrArmor(2, new ItemStack(ArsenicAndLace.arsenideGoldLegs));
-            living.setCurrentItemOrArmor(1, new ItemStack(ArsenicAndLace.arsenideGoldBoots));
-            living.setCurrentItemOrArmor(0, new ItemStack(ArsenicAndLace.arsenideGoldSword));
+                living.setCurrentItemOrArmor(4, new ItemStack(ArsenicAndLace.arsenideGoldHelm));
+                living.setCurrentItemOrArmor(3, new ItemStack(ArsenicAndLace.arsenideGoldChest));
+                living.setCurrentItemOrArmor(2, new ItemStack(ArsenicAndLace.arsenideGoldLegs));
+                living.setCurrentItemOrArmor(1, new ItemStack(ArsenicAndLace.arsenideGoldBoots));
+                living.setCurrentItemOrArmor(0, new ItemStack(ArsenicAndLace.arsenideGoldSword));
             }
 
             if (range == 46)
             {
-            living.setCurrentItemOrArmor(4, new ItemStack(ArsenicAndLace.arsenideGoldHelm));
-            living.setCurrentItemOrArmor(1, new ItemStack(ArsenicAndLace.arsenideGoldBoots));
-            living.setCurrentItemOrArmor(0, new ItemStack(ArsenicAndLace.arsenideGoldPickaxe));
+                living.setCurrentItemOrArmor(4, new ItemStack(ArsenicAndLace.arsenideGoldHelm));
+                living.setCurrentItemOrArmor(1, new ItemStack(ArsenicAndLace.arsenideGoldBoots));
+                living.setCurrentItemOrArmor(0, new ItemStack(ArsenicAndLace.arsenideGoldPickaxe));
             }
 
             if (range == 47)
             {
-            living.setCurrentItemOrArmor(4, new ItemStack(ArsenicAndLace.arsenideGoldHelm));
-            living.setCurrentItemOrArmor(3, new ItemStack(ArsenicAndLace.arsenideGoldChest));
-            living.setCurrentItemOrArmor(0, new ItemStack(ArsenicAndLace.arsenideGoldAxe));
+                living.setCurrentItemOrArmor(4, new ItemStack(ArsenicAndLace.arsenideGoldHelm));
+                living.setCurrentItemOrArmor(3, new ItemStack(ArsenicAndLace.arsenideGoldChest));
+                living.setCurrentItemOrArmor(0, new ItemStack(ArsenicAndLace.arsenideGoldAxe));
             }
 
             if (range == 48)
             {
-            living.setCurrentItemOrArmor(2, new ItemStack(ArsenicAndLace.arsenideGoldLegs));
-            living.setCurrentItemOrArmor(1, new ItemStack(ArsenicAndLace.arsenideGoldBoots));
-            living.setCurrentItemOrArmor(0, new ItemStack(ArsenicAndLace.arsenideGoldShovel));
+                living.setCurrentItemOrArmor(2, new ItemStack(ArsenicAndLace.arsenideGoldLegs));
+                living.setCurrentItemOrArmor(1, new ItemStack(ArsenicAndLace.arsenideGoldBoots));
+                living.setCurrentItemOrArmor(0, new ItemStack(ArsenicAndLace.arsenideGoldShovel));
             }
 
             if (range == 49)
             {
-            living.setCurrentItemOrArmor(4, new ItemStack(ArsenicAndLace.arsenideGoldHelm));
-            living.setCurrentItemOrArmor(1, new ItemStack(ArsenicAndLace.arsenideGoldBoots));
-            living.setCurrentItemOrArmor(0, new ItemStack(ArsenicAndLace.arsenideGoldHoe));
+                living.setCurrentItemOrArmor(4, new ItemStack(ArsenicAndLace.arsenideGoldHelm));
+                living.setCurrentItemOrArmor(1, new ItemStack(ArsenicAndLace.arsenideGoldBoots));
+                living.setCurrentItemOrArmor(0, new ItemStack(ArsenicAndLace.arsenideGoldHoe));
             }
 
             if (range == 50)
             {
-            living.setCurrentItemOrArmor(4, new ItemStack(ArsenicAndLace.tenebriumHelm));
-            living.setCurrentItemOrArmor(3, new ItemStack(ArsenicAndLace.tenebriumChest));
-            living.setCurrentItemOrArmor(2, new ItemStack(ArsenicAndLace.tenebriumLegs));
-            living.setCurrentItemOrArmor(1, new ItemStack(ArsenicAndLace.tenebriumBoots));
-            living.setCurrentItemOrArmor(0, new ItemStack(ArsenicAndLace.tenebriumSword));
+                living.setCurrentItemOrArmor(4, new ItemStack(ArsenicAndLace.tenebriumHelm));
+                living.setCurrentItemOrArmor(3, new ItemStack(ArsenicAndLace.tenebriumChest));
+                living.setCurrentItemOrArmor(2, new ItemStack(ArsenicAndLace.tenebriumLegs));
+                living.setCurrentItemOrArmor(1, new ItemStack(ArsenicAndLace.tenebriumBoots));
+                living.setCurrentItemOrArmor(0, new ItemStack(ArsenicAndLace.tenebriumSword));
             }
 
             if (range == 51)
             {
-            living.setCurrentItemOrArmor(4, new ItemStack(ArsenicAndLace.tenebriumHelm));
-            living.setCurrentItemOrArmor(3, new ItemStack(ArsenicAndLace.tenebriumChest));
-            living.setCurrentItemOrArmor(2, new ItemStack(ArsenicAndLace.tenebriumLegs));
-            living.setCurrentItemOrArmor(1, new ItemStack(ArsenicAndLace.tenebriumBoots));
-            living.setCurrentItemOrArmor(0, new ItemStack(ArsenicAndLace.tenebriumSword));
+                living.setCurrentItemOrArmor(4, new ItemStack(ArsenicAndLace.tenebriumHelm));
+                living.setCurrentItemOrArmor(3, new ItemStack(ArsenicAndLace.tenebriumChest));
+                living.setCurrentItemOrArmor(2, new ItemStack(ArsenicAndLace.tenebriumLegs));
+                living.setCurrentItemOrArmor(1, new ItemStack(ArsenicAndLace.tenebriumBoots));
+                living.setCurrentItemOrArmor(0, new ItemStack(ArsenicAndLace.tenebriumSword));
             }
 
             if (range == 52)
             {
-            living.setCurrentItemOrArmor(4, new ItemStack(ArsenicAndLace.tenebriumHelm));
-            living.setCurrentItemOrArmor(1, new ItemStack(ArsenicAndLace.tenebriumBoots));
-            living.setCurrentItemOrArmor(0, new ItemStack(ArsenicAndLace.tenebriumPickaxe));
+                living.setCurrentItemOrArmor(4, new ItemStack(ArsenicAndLace.tenebriumHelm));
+                living.setCurrentItemOrArmor(1, new ItemStack(ArsenicAndLace.tenebriumBoots));
+                living.setCurrentItemOrArmor(0, new ItemStack(ArsenicAndLace.tenebriumPickaxe));
             }
 
             if (range == 53)
             {
-            living.setCurrentItemOrArmor(4, new ItemStack(ArsenicAndLace.tenebriumHelm));
-            living.setCurrentItemOrArmor(3, new ItemStack(ArsenicAndLace.tenebriumChest));
-            living.setCurrentItemOrArmor(0, new ItemStack(ArsenicAndLace.tenebriumAxe));
+                living.setCurrentItemOrArmor(4, new ItemStack(ArsenicAndLace.tenebriumHelm));
+                living.setCurrentItemOrArmor(3, new ItemStack(ArsenicAndLace.tenebriumChest));
+                living.setCurrentItemOrArmor(0, new ItemStack(ArsenicAndLace.tenebriumAxe));
             }
 
             if (range == 54)
             {
-            living.setCurrentItemOrArmor(2, new ItemStack(ArsenicAndLace.tenebriumLegs));
-            living.setCurrentItemOrArmor(1, new ItemStack(ArsenicAndLace.tenebriumBoots));
-            living.setCurrentItemOrArmor(0, new ItemStack(ArsenicAndLace.tenebriumShovel));
+                living.setCurrentItemOrArmor(2, new ItemStack(ArsenicAndLace.tenebriumLegs));
+                living.setCurrentItemOrArmor(1, new ItemStack(ArsenicAndLace.tenebriumBoots));
+                living.setCurrentItemOrArmor(0, new ItemStack(ArsenicAndLace.tenebriumShovel));
             }
 
             if (range == 55)
             {
-            living.setCurrentItemOrArmor(4, new ItemStack(ArsenicAndLace.tenebriumHelm));
-            living.setCurrentItemOrArmor(1, new ItemStack(ArsenicAndLace.tenebriumBoots));
-            living.setCurrentItemOrArmor(0, new ItemStack(ArsenicAndLace.tenebriumHoe));
+                living.setCurrentItemOrArmor(4, new ItemStack(ArsenicAndLace.tenebriumHelm));
+                living.setCurrentItemOrArmor(1, new ItemStack(ArsenicAndLace.tenebriumBoots));
+                living.setCurrentItemOrArmor(0, new ItemStack(ArsenicAndLace.tenebriumHoe));
             }
+
             if (range == 56)
             {
-            living.setCurrentItemOrArmor(4, new ItemStack(ArsenicAndLace.arsenideBronzeHelm));
-            living.setCurrentItemOrArmor(3, new ItemStack(ArsenicAndLace.arsenideBronzeChest));
-            living.setCurrentItemOrArmor(2, new ItemStack(ArsenicAndLace.arsenideBronzeLegs));
-            living.setCurrentItemOrArmor(1, new ItemStack(ArsenicAndLace.arsenideBronzeBoots));
-            living.setCurrentItemOrArmor(0, new ItemStack(ArsenicAndLace.arsenicSword));
+                living.setCurrentItemOrArmor(4, new ItemStack(ArsenicAndLace.arsenideBronzeHelm));
+                living.setCurrentItemOrArmor(3, new ItemStack(ArsenicAndLace.arsenideBronzeChest));
+                living.setCurrentItemOrArmor(2, new ItemStack(ArsenicAndLace.arsenideBronzeLegs));
+                living.setCurrentItemOrArmor(1, new ItemStack(ArsenicAndLace.arsenideBronzeBoots));
+                living.setCurrentItemOrArmor(0, new ItemStack(ArsenicAndLace.arsenicSword));
             }
 
             if (range == 57)
             {
-            living.setCurrentItemOrArmor(4, new ItemStack(ArsenicAndLace.arsenideGoldHelm));
-            living.setCurrentItemOrArmor(3, new ItemStack(ArsenicAndLace.arsenideGoldChest));
-            living.setCurrentItemOrArmor(2, new ItemStack(ArsenicAndLace.arsenideGoldLegs));
-            living.setCurrentItemOrArmor(1, new ItemStack(ArsenicAndLace.arsenideGoldBoots));
-            living.setCurrentItemOrArmor(0, new ItemStack(ArsenicAndLace.arsenicSword));
+                living.setCurrentItemOrArmor(4, new ItemStack(ArsenicAndLace.arsenideGoldHelm));
+                living.setCurrentItemOrArmor(3, new ItemStack(ArsenicAndLace.arsenideGoldChest));
+                living.setCurrentItemOrArmor(2, new ItemStack(ArsenicAndLace.arsenideGoldLegs));
+                living.setCurrentItemOrArmor(1, new ItemStack(ArsenicAndLace.arsenideGoldBoots));
+                living.setCurrentItemOrArmor(0, new ItemStack(ArsenicAndLace.arsenicSword));
             }
 
             if (range == 58)
             {
-            living.setCurrentItemOrArmor(4, new ItemStack(Item.helmetLeather));
-            living.setCurrentItemOrArmor(3, new ItemStack(Item.plateLeather));
-            living.setCurrentItemOrArmor(2, new ItemStack(Item.legsLeather));
-            living.setCurrentItemOrArmor(1, new ItemStack(Item.bootsLeather));
-            living.setCurrentItemOrArmor(0, new ItemStack(ArsenicAndLace.arsenicSword));
+                living.setCurrentItemOrArmor(4, new ItemStack(Item.helmetLeather));
+                living.setCurrentItemOrArmor(3, new ItemStack(Item.plateLeather));
+                living.setCurrentItemOrArmor(2, new ItemStack(Item.legsLeather));
+                living.setCurrentItemOrArmor(1, new ItemStack(Item.bootsLeather));
+                living.setCurrentItemOrArmor(0, new ItemStack(ArsenicAndLace.arsenicSword));
             }
 
             if (range == 59)
             {
-            living.setCurrentItemOrArmor(4, new ItemStack(Item.helmetLeather));
-            living.setCurrentItemOrArmor(1, new ItemStack(Item.bootsLeather));
-            living.setCurrentItemOrArmor(0, new ItemStack(ArsenicAndLace.arsenicPickaxe));
+                living.setCurrentItemOrArmor(4, new ItemStack(Item.helmetLeather));
+                living.setCurrentItemOrArmor(1, new ItemStack(Item.bootsLeather));
+                living.setCurrentItemOrArmor(0, new ItemStack(ArsenicAndLace.arsenicPickaxe));
             }
 
             if (range == 60)
             {
-            living.setCurrentItemOrArmor(4, new ItemStack(Item.helmetLeather));
-            living.setCurrentItemOrArmor(3, new ItemStack(Item.plateLeather));
-            living.setCurrentItemOrArmor(0, new ItemStack(ArsenicAndLace.arsenicAxe));
+                living.setCurrentItemOrArmor(4, new ItemStack(Item.helmetLeather));
+                living.setCurrentItemOrArmor(3, new ItemStack(Item.plateLeather));
+                living.setCurrentItemOrArmor(0, new ItemStack(ArsenicAndLace.arsenicAxe));
             }
 
             if (range == 61)
             {
-            living.setCurrentItemOrArmor(2, new ItemStack(Item.legsLeather));
-            living.setCurrentItemOrArmor(1, new ItemStack(Item.bootsLeather));
-            living.setCurrentItemOrArmor(0, new ItemStack(ArsenicAndLace.arsenicShovel));
+                living.setCurrentItemOrArmor(2, new ItemStack(Item.legsLeather));
+                living.setCurrentItemOrArmor(1, new ItemStack(Item.bootsLeather));
+                living.setCurrentItemOrArmor(0, new ItemStack(ArsenicAndLace.arsenicShovel));
             }
 
             if (range == 62)
             {
-            living.setCurrentItemOrArmor(4, new ItemStack(Item.helmetLeather));
-            living.setCurrentItemOrArmor(1, new ItemStack(Item.bootsLeather));
-            living.setCurrentItemOrArmor(0, new ItemStack(ArsenicAndLace.arsenicHoe));
+                living.setCurrentItemOrArmor(4, new ItemStack(Item.helmetLeather));
+                living.setCurrentItemOrArmor(1, new ItemStack(Item.bootsLeather));
+                living.setCurrentItemOrArmor(0, new ItemStack(ArsenicAndLace.arsenicHoe));
             }
-            
+
             if (range == 63)
             {
-            living.setCurrentItemOrArmor(3, new ItemStack(ArsenicAndLace.oldLaceChest));
-            living.setCurrentItemOrArmor(0, new ItemStack(ArsenicAndLace.arsenicSword));
+                living.setCurrentItemOrArmor(3, new ItemStack(ArsenicAndLace.oldLaceChest));
+                living.setCurrentItemOrArmor(0, new ItemStack(ArsenicAndLace.arsenicSword));
             }
 
             if (range == 64)
             {
-            living.setCurrentItemOrArmor(3, new ItemStack(ArsenicAndLace.oldLaceChest));
-            living.setCurrentItemOrArmor(0, new ItemStack(ArsenicAndLace.arsenicPickaxe));
+                living.setCurrentItemOrArmor(3, new ItemStack(ArsenicAndLace.oldLaceChest));
+                living.setCurrentItemOrArmor(0, new ItemStack(ArsenicAndLace.arsenicPickaxe));
             }
 
             if (range == 65)
             {
-            living.setCurrentItemOrArmor(3, new ItemStack(ArsenicAndLace.oldLaceChest));
-            living.setCurrentItemOrArmor(0, new ItemStack(ArsenicAndLace.arsenicAxe));
+                living.setCurrentItemOrArmor(3, new ItemStack(ArsenicAndLace.oldLaceChest));
+                living.setCurrentItemOrArmor(0, new ItemStack(ArsenicAndLace.arsenicAxe));
             }
 
             if (range == 66)
             {
-            living.setCurrentItemOrArmor(3, new ItemStack(ArsenicAndLace.oldLaceChest));
-            living.setCurrentItemOrArmor(0, new ItemStack(ArsenicAndLace.arsenicShovel));
+                living.setCurrentItemOrArmor(3, new ItemStack(ArsenicAndLace.oldLaceChest));
+                living.setCurrentItemOrArmor(0, new ItemStack(ArsenicAndLace.arsenicShovel));
             }
 
             if (range == 67)
             {
-            living.setCurrentItemOrArmor(3, new ItemStack(ArsenicAndLace.oldLaceChest));
-            living.setCurrentItemOrArmor(0, new ItemStack(ArsenicAndLace.arsenicHoe));
+                living.setCurrentItemOrArmor(3, new ItemStack(ArsenicAndLace.oldLaceChest));
+                living.setCurrentItemOrArmor(0, new ItemStack(ArsenicAndLace.arsenicHoe));
             }
 
             if (range == 68)
             {
-            living.setCurrentItemOrArmor(3, new ItemStack(ArsenicAndLace.oldLaceChest));
-            living.setCurrentItemOrArmor(0, new ItemStack(ArsenicAndLace.arsenicSword));
+                living.setCurrentItemOrArmor(3, new ItemStack(ArsenicAndLace.oldLaceChest));
+                living.setCurrentItemOrArmor(0, new ItemStack(ArsenicAndLace.arsenicSword));
             }
 
             if (range == 69)
             {
-            living.setCurrentItemOrArmor(3, new ItemStack(ArsenicAndLace.oldLaceChest));
-            living.setCurrentItemOrArmor(0, new ItemStack(ArsenicAndLace.arsenideBronzeSword));
+                living.setCurrentItemOrArmor(3, new ItemStack(ArsenicAndLace.oldLaceChest));
+                living.setCurrentItemOrArmor(0, new ItemStack(ArsenicAndLace.arsenideBronzeSword));
             }
 
             if (range == 70)
             {
-            living.setCurrentItemOrArmor(3, new ItemStack(ArsenicAndLace.oldLaceChest));
-            living.setCurrentItemOrArmor(0, new ItemStack(ArsenicAndLace.arsenideGoldSword));
+                living.setCurrentItemOrArmor(3, new ItemStack(ArsenicAndLace.oldLaceChest));
+                living.setCurrentItemOrArmor(0, new ItemStack(ArsenicAndLace.arsenideGoldSword));
             }
-
-
-
-
         }
     }
 }
 
-
 class RandomRange extends Random
 {
-	public int nextInt(int min, int max)
-	{
-		return nextInt(max - min + 1) + min;
-	}
+    public int nextInt(int min, int max)
+    {
+        return nextInt(max - min + 1) + min;
+    }
 }

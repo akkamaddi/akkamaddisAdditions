@@ -12,290 +12,198 @@ import alexndr.SimpleOres.api.helpers.CoreHelper;
 
 public class ClassicalAlchemyRecipes
 {
-	
-	public static final SimpleArsenicContents SA = new SimpleArsenicContents();
-	
+    public static final SimpleArsenicContents SA = new SimpleArsenicContents();
+
     public static void doCARecipes()
     {
-        
-    	// Ore Dictionary
-        
-    	OreDictionary.registerOre("ingotStannum", new ItemStack(ClassicalAlchemyCore.stannumIngot));
-    	OreDictionary.registerOre("ingotCuprum", new ItemStack(ClassicalAlchemyCore.cuprumIngot));
-    	OreDictionary.registerOre("ingotPyropusBronze", new ItemStack(ClassicalAlchemyCore.pyropusBronzeIngot));
-    	OreDictionary.registerOre("ingotPulchrumBronze", new ItemStack(ClassicalAlchemyCore.pulchrumBronzeIngot));
-    	OreDictionary.registerOre("ingotTombBronze", new ItemStack(ClassicalAlchemyCore.tombBronzeIngot));
-        
-    	// recipes: Crafting
-        
-    	//Storage Block
-        
-    	GameRegistry.addRecipe(new ItemStack(ClassicalAlchemyCore.blockStannum, 1), new Object[] {"AAA", "AAA", "AAA", 'A', ClassicalAlchemyCore.stannumIngot});
-    	GameRegistry.addRecipe(new ItemStack(ClassicalAlchemyCore.blockCuprum, 1), new Object[] {"AAA", "AAA", "AAA", 'A', ClassicalAlchemyCore.cuprumIngot});
-    	GameRegistry.addRecipe(new ItemStack(ClassicalAlchemyCore.blockPyropusBronze, 1), new Object[] {"AAA", "AAA", "AAA", 'A', ClassicalAlchemyCore.pyropusBronzeIngot});
-    	GameRegistry.addRecipe(new ItemStack(ClassicalAlchemyCore.blockPulchrumBronze, 1), new Object[] {"AAA", "AAA", "AAA", 'A', ClassicalAlchemyCore.pulchrumBronzeIngot});
-    	GameRegistry.addRecipe(new ItemStack(ClassicalAlchemyCore.blockTombBronze, 1), new Object[] {"AAA", "AAA", "AAA", 'A', ClassicalAlchemyCore.tombBronzeIngot});
-    	
-    	//Item Recipe
-        
-    	//Ingot Recipe
-        
-    	GameRegistry.addShapelessRecipe(new ItemStack(ClassicalAlchemyCore.stannumIngot, 9), new Object[]
-            {ClassicalAlchemyCore.blockStannum });
-    	GameRegistry.addShapelessRecipe(new ItemStack(ClassicalAlchemyCore.cuprumIngot, 9), new Object[]
-                {ClassicalAlchemyCore.blockCuprum });
-    	GameRegistry.addShapelessRecipe(new ItemStack(ClassicalAlchemyCore.pyropusBronzeIngot, 9), new Object[]
-                {ClassicalAlchemyCore.blockPyropusBronze });
-    	GameRegistry.addShapelessRecipe(new ItemStack(ClassicalAlchemyCore.pulchrumBronzeIngot, 9), new Object[]
-                {ClassicalAlchemyCore.blockPulchrumBronze });
-    	GameRegistry.addShapelessRecipe(new ItemStack(ClassicalAlchemyCore.tombBronzeIngot, 9), new Object[]
-                {ClassicalAlchemyCore.blockTombBronze });
-        
-    	// Tools
-        
-    	//Stannum Tool Recipes
-        
-    	CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(ClassicalAlchemyCore.stannumPickaxe, true, new Object[]
+        // Ore Dictionary
+        OreDictionary.registerOre("ingotStannum", new ItemStack(ClassicalAlchemyCore.stannumIngot));
+        OreDictionary.registerOre("ingotCuprum", new ItemStack(ClassicalAlchemyCore.cuprumIngot));
+        OreDictionary.registerOre("ingotPyropusBronze", new ItemStack(ClassicalAlchemyCore.pyropusBronzeIngot));
+        OreDictionary.registerOre("ingotPulchrumBronze", new ItemStack(ClassicalAlchemyCore.pulchrumBronzeIngot));
+        OreDictionary.registerOre("ingotTombBronze", new ItemStack(ClassicalAlchemyCore.tombBronzeIngot));
+        // recipes: Crafting
+        //Storage Block
+        GameRegistry.addRecipe(new ItemStack(ClassicalAlchemyCore.blockStannum, 1), new Object[] {"AAA", "AAA", "AAA", 'A', ClassicalAlchemyCore.stannumIngot});
+        GameRegistry.addRecipe(new ItemStack(ClassicalAlchemyCore.blockCuprum, 1), new Object[] {"AAA", "AAA", "AAA", 'A', ClassicalAlchemyCore.cuprumIngot});
+        GameRegistry.addRecipe(new ItemStack(ClassicalAlchemyCore.blockPyropusBronze, 1), new Object[] {"AAA", "AAA", "AAA", 'A', ClassicalAlchemyCore.pyropusBronzeIngot});
+        GameRegistry.addRecipe(new ItemStack(ClassicalAlchemyCore.blockPulchrumBronze, 1), new Object[] {"AAA", "AAA", "AAA", 'A', ClassicalAlchemyCore.pulchrumBronzeIngot});
+        GameRegistry.addRecipe(new ItemStack(ClassicalAlchemyCore.blockTombBronze, 1), new Object[] {"AAA", "AAA", "AAA", 'A', ClassicalAlchemyCore.tombBronzeIngot});
+        //Item Recipe
+        //Ingot Recipe
+        GameRegistry.addShapelessRecipe(new ItemStack(ClassicalAlchemyCore.stannumIngot, 9), new Object[]
+                                        {ClassicalAlchemyCore.blockStannum });
+        GameRegistry.addShapelessRecipe(new ItemStack(ClassicalAlchemyCore.cuprumIngot, 9), new Object[]
+                                        {ClassicalAlchemyCore.blockCuprum });
+        GameRegistry.addShapelessRecipe(new ItemStack(ClassicalAlchemyCore.pyropusBronzeIngot, 9), new Object[]
+                                        {ClassicalAlchemyCore.blockPyropusBronze });
+        GameRegistry.addShapelessRecipe(new ItemStack(ClassicalAlchemyCore.pulchrumBronzeIngot, 9), new Object[]
+                                        {ClassicalAlchemyCore.blockPulchrumBronze });
+        GameRegistry.addShapelessRecipe(new ItemStack(ClassicalAlchemyCore.tombBronzeIngot, 9), new Object[]
+                                        {ClassicalAlchemyCore.blockTombBronze });
+        // Tools
+        //Stannum Tool Recipes
+        CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(ClassicalAlchemyCore.stannumPickaxe, true, new Object[]
                 { "XXX", " Y ", " Y ", 'X', "ingotStannum", 'Y', "stickWood" }));
-        
-    	CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(ClassicalAlchemyCore.stannumAxe, true, new Object[]
+        CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(ClassicalAlchemyCore.stannumAxe, true, new Object[]
                 { "XX ", "XY ", " Y ", 'X', "ingotStannum", 'Y', "stickWood" }));
-        
-    	CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(ClassicalAlchemyCore.stannumShovel, true, new Object[]
+        CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(ClassicalAlchemyCore.stannumShovel, true, new Object[]
                 { "X", "Y", "Y", 'X', "ingotStannum", 'Y', "stickWood" }));
-        
-    	CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(ClassicalAlchemyCore.stannumSword, true, new Object[]
+        CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(ClassicalAlchemyCore.stannumSword, true, new Object[]
                 { "X", "X", "Y", 'X', "ingotStannum", 'Y', "stickWood" }));
-        
         CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(ClassicalAlchemyCore.stannumHoe, true, new Object[]
                 { "XX ", " Y ", " Y ", 'X', "ingotStannum", 'Y', "stickWood" }));
-        
         //Stannum Armor
-        
         CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(ClassicalAlchemyCore.stannumHelm, true, new Object[]
                 { "XXX", "X X", 'X', "ingotStannum" }));
-        
         CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(ClassicalAlchemyCore.stannumChest, true, new Object[]
                 { "X X", "XXX", "XXX", 'X', "ingotStannum" }));
-        
         CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(ClassicalAlchemyCore.stannumLegs, true, new Object[]
                 { "XXX", "X X", "X X", 'X', "ingotStannum" }));
-        
         CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(ClassicalAlchemyCore.stannumBoots, true, new Object[]
                 { "X X", "X X", 'X', "ingotStannum" }));
-        
         //Stannum chunks
-		
         GameRegistry.addShapelessRecipe(new ItemStack(ClassicalAlchemyCore.largeStannumChunkItem, 1), new Object[]
-                { ClassicalAlchemyCore.smallStannumChunkItem, ClassicalAlchemyCore.smallStannumChunkItem, ClassicalAlchemyCore.smallStannumChunkItem, ClassicalAlchemyCore.smallStannumChunkItem, ClassicalAlchemyCore.smallStannumChunkItem });
-        
+                                        { ClassicalAlchemyCore.smallStannumChunkItem, ClassicalAlchemyCore.smallStannumChunkItem, ClassicalAlchemyCore.smallStannumChunkItem, ClassicalAlchemyCore.smallStannumChunkItem, ClassicalAlchemyCore.smallStannumChunkItem });
         GameRegistry.addShapelessRecipe(new ItemStack(ClassicalAlchemyCore.largeStannumChunkItem, 1), new Object[]
-                { ClassicalAlchemyCore.mediumStannumChunkItem, ClassicalAlchemyCore.mediumStannumChunkItem, ClassicalAlchemyCore.mediumStannumChunkItem });
-        
+                                        { ClassicalAlchemyCore.mediumStannumChunkItem, ClassicalAlchemyCore.mediumStannumChunkItem, ClassicalAlchemyCore.mediumStannumChunkItem });
         GameRegistry.addShapelessRecipe(new ItemStack(ClassicalAlchemyCore.largeStannumChunkItem, 1), new Object[]
-                { ClassicalAlchemyCore.mediumStannumChunkItem, ClassicalAlchemyCore.mediumStannumChunkItem, ClassicalAlchemyCore.smallStannumChunkItem, ClassicalAlchemyCore.smallStannumChunkItem });
-        
+                                        { ClassicalAlchemyCore.mediumStannumChunkItem, ClassicalAlchemyCore.mediumStannumChunkItem, ClassicalAlchemyCore.smallStannumChunkItem, ClassicalAlchemyCore.smallStannumChunkItem });
         GameRegistry.addShapelessRecipe(new ItemStack(ClassicalAlchemyCore.mediumStannumChunkItem, 1), new Object[]
-                { ClassicalAlchemyCore.smallStannumChunkItem, ClassicalAlchemyCore.smallStannumChunkItem, ClassicalAlchemyCore.smallStannumChunkItem });
-        
+                                        { ClassicalAlchemyCore.smallStannumChunkItem, ClassicalAlchemyCore.smallStannumChunkItem, ClassicalAlchemyCore.smallStannumChunkItem });
         GameRegistry.addShapelessRecipe(new ItemStack(ClassicalAlchemyCore.mediumStannumChunkItem, 2), new Object[]
-                { ClassicalAlchemyCore.largeStannumChunkItem });
-        
+                                        { ClassicalAlchemyCore.largeStannumChunkItem });
         GameRegistry.addShapelessRecipe(new ItemStack(ClassicalAlchemyCore.smallStannumChunkItem, 2), new Object[]
-                { ClassicalAlchemyCore.mediumStannumChunkItem });
-        
-    	//Cuprum Tool Recipes
-        
-    	CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(ClassicalAlchemyCore.cuprumPickaxe, true, new Object[]
+                                        { ClassicalAlchemyCore.mediumStannumChunkItem });
+        //Cuprum Tool Recipes
+        CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(ClassicalAlchemyCore.cuprumPickaxe, true, new Object[]
                 { "XXX", " Y ", " Y ", 'X', "ingotCuprum", 'Y', "stickWood" }));
-        
-    	CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(ClassicalAlchemyCore.cuprumAxe, true, new Object[]
+        CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(ClassicalAlchemyCore.cuprumAxe, true, new Object[]
                 { "XX ", "XY ", " Y ", 'X', "ingotCuprum", 'Y', "stickWood" }));
-        
-    	CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(ClassicalAlchemyCore.cuprumShovel, true, new Object[]
+        CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(ClassicalAlchemyCore.cuprumShovel, true, new Object[]
                 { "X", "Y", "Y", 'X', "ingotCuprum", 'Y', "stickWood" }));
-        
-    	CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(ClassicalAlchemyCore.cuprumSword, true, new Object[]
+        CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(ClassicalAlchemyCore.cuprumSword, true, new Object[]
                 { "X", "X", "Y", 'X', "ingotCuprum", 'Y', "stickWood" }));
-        
         CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(ClassicalAlchemyCore.cuprumHoe, true, new Object[]
                 { "XX ", " Y ", " Y ", 'X', "ingotCuprum", 'Y', "stickWood" }));
-        
         //Cuprum Armor
-        
         CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(ClassicalAlchemyCore.cuprumHelm, true, new Object[]
                 { "XXX", "X X", 'X', "ingotCuprum" }));
-        
         CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(ClassicalAlchemyCore.cuprumChest, true, new Object[]
                 { "X X", "XXX", "XXX", 'X', "ingotCuprum" }));
-        
         CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(ClassicalAlchemyCore.cuprumLegs, true, new Object[]
                 { "XXX", "X X", "X X", 'X', "ingotCuprum" }));
-        
         CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(ClassicalAlchemyCore.cuprumBoots, true, new Object[]
                 { "X X", "X X", 'X', "ingotCuprum" }));
-		
         //Cuprum chunks
-		
         GameRegistry.addShapelessRecipe(new ItemStack(ClassicalAlchemyCore.largeCuprumChunkItem, 1), new Object[]
-                { ClassicalAlchemyCore.smallCuprumChunkItem, ClassicalAlchemyCore.smallCuprumChunkItem, ClassicalAlchemyCore.smallCuprumChunkItem, ClassicalAlchemyCore.smallCuprumChunkItem, ClassicalAlchemyCore.smallCuprumChunkItem });
-        
+                                        { ClassicalAlchemyCore.smallCuprumChunkItem, ClassicalAlchemyCore.smallCuprumChunkItem, ClassicalAlchemyCore.smallCuprumChunkItem, ClassicalAlchemyCore.smallCuprumChunkItem, ClassicalAlchemyCore.smallCuprumChunkItem });
         GameRegistry.addShapelessRecipe(new ItemStack(ClassicalAlchemyCore.largeCuprumChunkItem, 1), new Object[]
-                { ClassicalAlchemyCore.mediumCuprumChunkItem, ClassicalAlchemyCore.mediumCuprumChunkItem, ClassicalAlchemyCore.mediumCuprumChunkItem });
-        
+                                        { ClassicalAlchemyCore.mediumCuprumChunkItem, ClassicalAlchemyCore.mediumCuprumChunkItem, ClassicalAlchemyCore.mediumCuprumChunkItem });
         GameRegistry.addShapelessRecipe(new ItemStack(ClassicalAlchemyCore.largeCuprumChunkItem, 1), new Object[]
-                { ClassicalAlchemyCore.mediumCuprumChunkItem, ClassicalAlchemyCore.mediumCuprumChunkItem, ClassicalAlchemyCore.smallCuprumChunkItem, ClassicalAlchemyCore.smallCuprumChunkItem });
-        
+                                        { ClassicalAlchemyCore.mediumCuprumChunkItem, ClassicalAlchemyCore.mediumCuprumChunkItem, ClassicalAlchemyCore.smallCuprumChunkItem, ClassicalAlchemyCore.smallCuprumChunkItem });
         GameRegistry.addShapelessRecipe(new ItemStack(ClassicalAlchemyCore.mediumCuprumChunkItem, 1), new Object[]
-                { ClassicalAlchemyCore.smallCuprumChunkItem, ClassicalAlchemyCore.smallCuprumChunkItem, ClassicalAlchemyCore.smallCuprumChunkItem });
-        
+                                        { ClassicalAlchemyCore.smallCuprumChunkItem, ClassicalAlchemyCore.smallCuprumChunkItem, ClassicalAlchemyCore.smallCuprumChunkItem });
         GameRegistry.addShapelessRecipe(new ItemStack(ClassicalAlchemyCore.mediumCuprumChunkItem, 2), new Object[]
-                { ClassicalAlchemyCore.largeCuprumChunkItem });
-        
+                                        { ClassicalAlchemyCore.largeCuprumChunkItem });
         GameRegistry.addShapelessRecipe(new ItemStack(ClassicalAlchemyCore.smallCuprumChunkItem, 2), new Object[]
-                { ClassicalAlchemyCore.mediumCuprumChunkItem });
-        
-    	//Pyropus Bronze Tool Recipes
-        
-    	CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(ClassicalAlchemyCore.pyropusBronzePickaxe, true, new Object[]
+                                        { ClassicalAlchemyCore.mediumCuprumChunkItem });
+        //Pyropus Bronze Tool Recipes
+        CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(ClassicalAlchemyCore.pyropusBronzePickaxe, true, new Object[]
                 { "XXX", " Y ", " Y ", 'X', "ingotPyropusBronze", 'Y', "stickWood" }));
-        
-    	CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(ClassicalAlchemyCore.pyropusBronzeAxe, true, new Object[]
+        CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(ClassicalAlchemyCore.pyropusBronzeAxe, true, new Object[]
                 { "XX ", "XY ", " Y ", 'X', "ingotPyropusBronze", 'Y', "stickWood" }));
-        
-    	CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(ClassicalAlchemyCore.pyropusBronzeShovel, true, new Object[]
+        CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(ClassicalAlchemyCore.pyropusBronzeShovel, true, new Object[]
                 { "X", "Y", "Y", 'X', "ingotPyropusBronze", 'Y', "stickWood" }));
-        
-    	CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(ClassicalAlchemyCore.pyropusBronzeSword, true, new Object[]
+        CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(ClassicalAlchemyCore.pyropusBronzeSword, true, new Object[]
                 { "X", "X", "Y", 'X', "ingotPyropusBronze", 'Y', "stickWood" }));
-        
         CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(ClassicalAlchemyCore.pyropusBronzeHoe, true, new Object[]
                 { "XX ", " Y ", " Y ", 'X', "ingotPyropusBronze", 'Y', "stickWood" }));
-        
         //PyropusBronze Armor
-        
         CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(ClassicalAlchemyCore.pyropusBronzeHelm, true, new Object[]
                 { "XXX", "X X", 'X', "ingotPyropusBronze" }));
-        
         CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(ClassicalAlchemyCore.pyropusBronzeChest, true, new Object[]
                 { "X X", "XXX", "XXX", 'X', "ingotPyropusBronze" }));
-        
         CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(ClassicalAlchemyCore.pyropusBronzeLegs, true, new Object[]
                 { "XXX", "X X", "X X", 'X', "ingotPyropusBronze" }));
-        
         CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(ClassicalAlchemyCore.pyropusBronzeBoots, true, new Object[]
                 { "X X", "X X", 'X', "ingotPyropusBronze" }));
-		
         //PyropusBronze chunks
-		
         GameRegistry.addShapelessRecipe(new ItemStack(ClassicalAlchemyCore.largePyropusBronzeChunkItem, 1), new Object[]
-                { ClassicalAlchemyCore.smallPyropusBronzeChunkItem, ClassicalAlchemyCore.smallPyropusBronzeChunkItem, ClassicalAlchemyCore.smallPyropusBronzeChunkItem, ClassicalAlchemyCore.smallPyropusBronzeChunkItem, ClassicalAlchemyCore.smallPyropusBronzeChunkItem });
-        
+                                        { ClassicalAlchemyCore.smallPyropusBronzeChunkItem, ClassicalAlchemyCore.smallPyropusBronzeChunkItem, ClassicalAlchemyCore.smallPyropusBronzeChunkItem, ClassicalAlchemyCore.smallPyropusBronzeChunkItem, ClassicalAlchemyCore.smallPyropusBronzeChunkItem });
         GameRegistry.addShapelessRecipe(new ItemStack(ClassicalAlchemyCore.largePyropusBronzeChunkItem, 1), new Object[]
-                { ClassicalAlchemyCore.mediumPyropusBronzeChunkItem, ClassicalAlchemyCore.mediumPyropusBronzeChunkItem, ClassicalAlchemyCore.mediumPyropusBronzeChunkItem });
-        
+                                        { ClassicalAlchemyCore.mediumPyropusBronzeChunkItem, ClassicalAlchemyCore.mediumPyropusBronzeChunkItem, ClassicalAlchemyCore.mediumPyropusBronzeChunkItem });
         GameRegistry.addShapelessRecipe(new ItemStack(ClassicalAlchemyCore.largePyropusBronzeChunkItem, 1), new Object[]
-                { ClassicalAlchemyCore.mediumPyropusBronzeChunkItem, ClassicalAlchemyCore.mediumPyropusBronzeChunkItem, ClassicalAlchemyCore.smallPyropusBronzeChunkItem, ClassicalAlchemyCore.smallPyropusBronzeChunkItem });
-        
+                                        { ClassicalAlchemyCore.mediumPyropusBronzeChunkItem, ClassicalAlchemyCore.mediumPyropusBronzeChunkItem, ClassicalAlchemyCore.smallPyropusBronzeChunkItem, ClassicalAlchemyCore.smallPyropusBronzeChunkItem });
         GameRegistry.addShapelessRecipe(new ItemStack(ClassicalAlchemyCore.mediumPyropusBronzeChunkItem, 1), new Object[]
-                { ClassicalAlchemyCore.smallPyropusBronzeChunkItem, ClassicalAlchemyCore.smallPyropusBronzeChunkItem, ClassicalAlchemyCore.smallPyropusBronzeChunkItem });
-        
+                                        { ClassicalAlchemyCore.smallPyropusBronzeChunkItem, ClassicalAlchemyCore.smallPyropusBronzeChunkItem, ClassicalAlchemyCore.smallPyropusBronzeChunkItem });
         GameRegistry.addShapelessRecipe(new ItemStack(ClassicalAlchemyCore.mediumPyropusBronzeChunkItem, 2), new Object[]
-                { ClassicalAlchemyCore.largePyropusBronzeChunkItem });
-        
+                                        { ClassicalAlchemyCore.largePyropusBronzeChunkItem });
         GameRegistry.addShapelessRecipe(new ItemStack(ClassicalAlchemyCore.smallPyropusBronzeChunkItem, 2), new Object[]
-                { ClassicalAlchemyCore.mediumPyropusBronzeChunkItem });
-        
-    	//Pulchrum Bronze Tool Recipes
-        
-    	CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(ClassicalAlchemyCore.pulchrumBronzePickaxe, true, new Object[]
+                                        { ClassicalAlchemyCore.mediumPyropusBronzeChunkItem });
+        //Pulchrum Bronze Tool Recipes
+        CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(ClassicalAlchemyCore.pulchrumBronzePickaxe, true, new Object[]
                 { "XXX", " Y ", " Y ", 'X', "ingotPulchrumBronze", 'Y', "stickWood" }));
-        
-    	CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(ClassicalAlchemyCore.pulchrumBronzeAxe, true, new Object[]
+        CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(ClassicalAlchemyCore.pulchrumBronzeAxe, true, new Object[]
                 { "XX ", "XY ", " Y ", 'X', "ingotPulchrumBronze", 'Y', "stickWood" }));
-        
-    	CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(ClassicalAlchemyCore.pulchrumBronzeShovel, true, new Object[]
+        CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(ClassicalAlchemyCore.pulchrumBronzeShovel, true, new Object[]
                 { "X", "Y", "Y", 'X', "ingotPulchrumBronze", 'Y', "stickWood" }));
-        
-    	CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(ClassicalAlchemyCore.pulchrumBronzeSword, true, new Object[]
+        CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(ClassicalAlchemyCore.pulchrumBronzeSword, true, new Object[]
                 { "X", "X", "Y", 'X', "ingotPulchrumBronze", 'Y', "stickWood" }));
-        
-    	//Tomb Bronze Tool Recipes
-        
-    	CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(ClassicalAlchemyCore.tombBronzePickaxe, true, new Object[]
+        //Tomb Bronze Tool Recipes
+        CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(ClassicalAlchemyCore.tombBronzePickaxe, true, new Object[]
                 { "XXX", " Y ", " Y ", 'X', "ingotTombBronze", 'Y', "stickWood" }));
-        
-    	CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(ClassicalAlchemyCore.tombBronzeAxe, true, new Object[]
+        CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(ClassicalAlchemyCore.tombBronzeAxe, true, new Object[]
                 { "XX ", "XY ", " Y ", 'X', "ingotTombBronze", 'Y', "stickWood" }));
-        
-    	CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(ClassicalAlchemyCore.tombBronzeShovel, true, new Object[]
+        CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(ClassicalAlchemyCore.tombBronzeShovel, true, new Object[]
                 { "X", "Y", "Y", 'X', "ingotTombBronze", 'Y', "stickWood" }));
-        
-    	CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(ClassicalAlchemyCore.tombBronzeSword, true, new Object[]
+        CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(ClassicalAlchemyCore.tombBronzeSword, true, new Object[]
                 { "X", "X", "Y", 'X', "ingotTombBronze", 'Y', "stickWood" }));
-    	
         //TombBronze Armor
-        
         CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(ClassicalAlchemyCore.tombBronzeHelm, true, new Object[]
                 { "XXX", "X X", 'X', "ingotTombBronze" }));
-        
         CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(ClassicalAlchemyCore.tombBronzeChest, true, new Object[]
                 { "X X", "XXX", "XXX", 'X', "ingotTombBronze" }));
-        
         CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(ClassicalAlchemyCore.tombBronzeLegs, true, new Object[]
                 { "XXX", "X X", "X X", 'X', "ingotTombBronze" }));
-        
         CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(ClassicalAlchemyCore.tombBronzeBoots, true, new Object[]
                 { "X X", "X X", 'X', "ingotTombBronze" }));
-		
         //TombBronze chunks
-		
         GameRegistry.addShapelessRecipe(new ItemStack(ClassicalAlchemyCore.largeTombBronzeChunkItem, 1), new Object[]
-                { ClassicalAlchemyCore.smallTombBronzeChunkItem, ClassicalAlchemyCore.smallTombBronzeChunkItem, ClassicalAlchemyCore.smallTombBronzeChunkItem, ClassicalAlchemyCore.smallTombBronzeChunkItem, ClassicalAlchemyCore.smallTombBronzeChunkItem });
-        
+                                        { ClassicalAlchemyCore.smallTombBronzeChunkItem, ClassicalAlchemyCore.smallTombBronzeChunkItem, ClassicalAlchemyCore.smallTombBronzeChunkItem, ClassicalAlchemyCore.smallTombBronzeChunkItem, ClassicalAlchemyCore.smallTombBronzeChunkItem });
         GameRegistry.addShapelessRecipe(new ItemStack(ClassicalAlchemyCore.largeTombBronzeChunkItem, 1), new Object[]
-                { ClassicalAlchemyCore.mediumTombBronzeChunkItem, ClassicalAlchemyCore.mediumTombBronzeChunkItem, ClassicalAlchemyCore.mediumTombBronzeChunkItem });
-        
+                                        { ClassicalAlchemyCore.mediumTombBronzeChunkItem, ClassicalAlchemyCore.mediumTombBronzeChunkItem, ClassicalAlchemyCore.mediumTombBronzeChunkItem });
         GameRegistry.addShapelessRecipe(new ItemStack(ClassicalAlchemyCore.largeTombBronzeChunkItem, 1), new Object[]
-                { ClassicalAlchemyCore.mediumTombBronzeChunkItem, ClassicalAlchemyCore.mediumTombBronzeChunkItem, ClassicalAlchemyCore.smallTombBronzeChunkItem, ClassicalAlchemyCore.smallTombBronzeChunkItem });
-        
+                                        { ClassicalAlchemyCore.mediumTombBronzeChunkItem, ClassicalAlchemyCore.mediumTombBronzeChunkItem, ClassicalAlchemyCore.smallTombBronzeChunkItem, ClassicalAlchemyCore.smallTombBronzeChunkItem });
         GameRegistry.addShapelessRecipe(new ItemStack(ClassicalAlchemyCore.mediumTombBronzeChunkItem, 1), new Object[]
-                { ClassicalAlchemyCore.smallTombBronzeChunkItem, ClassicalAlchemyCore.smallTombBronzeChunkItem, ClassicalAlchemyCore.smallTombBronzeChunkItem });
-        
+                                        { ClassicalAlchemyCore.smallTombBronzeChunkItem, ClassicalAlchemyCore.smallTombBronzeChunkItem, ClassicalAlchemyCore.smallTombBronzeChunkItem });
         GameRegistry.addShapelessRecipe(new ItemStack(ClassicalAlchemyCore.mediumTombBronzeChunkItem, 2), new Object[]
-                { ClassicalAlchemyCore.largeTombBronzeChunkItem });
-        
+                                        { ClassicalAlchemyCore.largeTombBronzeChunkItem });
         GameRegistry.addShapelessRecipe(new ItemStack(ClassicalAlchemyCore.smallTombBronzeChunkItem, 2), new Object[]
-                { ClassicalAlchemyCore.mediumTombBronzeChunkItem });
-  
+                                        { ClassicalAlchemyCore.mediumTombBronzeChunkItem });
         // recipes: Smelting
-        
         GameRegistry.addSmelting(ClassicalAlchemyCore.largeStannumChunkItem.itemID, new ItemStack(ClassicalAlchemyCore.stannumIngot), 1.0F);
         GameRegistry.addSmelting(ClassicalAlchemyCore.largeCuprumChunkItem.itemID, new ItemStack(ClassicalAlchemyCore.cuprumIngot), 1.0F);
         GameRegistry.addSmelting(ClassicalAlchemyCore.largePyropusBronzeChunkItem.itemID, new ItemStack(ClassicalAlchemyCore.pyropusBronzeIngot), 1.4F);
         GameRegistry.addSmelting(ClassicalAlchemyCore.largePulchrumBronzeChunkItem.itemID, new ItemStack(ClassicalAlchemyCore.pulchrumBronzeIngot), 2.0F);
         GameRegistry.addSmelting(ClassicalAlchemyCore.largeTombBronzeChunkItem.itemID, new ItemStack(ClassicalAlchemyCore.tombBronzeIngot), 3.0F);
-        
         // Fusion Furnace
-
         FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(CoreHelper.coreContent.tinIngot), new ItemStack(CoreHelper.coreContent.tinIngot), new ItemStack(Item.coal, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(ClassicalAlchemyCore.smallStannumChunkItem), 0.4F);
         FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(CoreHelper.coreContent.tinIngot), new ItemStack(CoreHelper.coreContent.tinIngot), new ItemStack(Item.dyePowder, 1, 15), new ItemStack(ClassicalAlchemyCore.mediumStannumChunkItem), 0.8F);
         FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(CoreHelper.coreContent.tinIngot), new ItemStack(CoreHelper.coreContent.tinIngot), new ItemStack(Item.gunpowder), new ItemStack(ClassicalAlchemyCore.largeStannumChunkItem), 1.2F);
-        
         FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(CoreHelper.coreContent.copperIngot), new ItemStack(CoreHelper.coreContent.copperIngot), new ItemStack(Item.coal, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(ClassicalAlchemyCore.smallCuprumChunkItem), 1.0F);
         FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(CoreHelper.coreContent.copperIngot), new ItemStack(CoreHelper.coreContent.copperIngot), new ItemStack(Item.dyePowder, 1, 15), new ItemStack(ClassicalAlchemyCore.mediumCuprumChunkItem), 2.0F);
         FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(CoreHelper.coreContent.copperIngot), new ItemStack(CoreHelper.coreContent.copperIngot), new ItemStack(Item.gunpowder), new ItemStack(ClassicalAlchemyCore.largeCuprumChunkItem), 5.0F);
-
         FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(ClassicalAlchemyCore.stannumIngot), new ItemStack(ClassicalAlchemyCore.cuprumIngot), new ItemStack(Item.dyePowder, 1, 15), new ItemStack(ClassicalAlchemyCore.smallPyropusBronzeChunkItem), 3.0F);
         FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(ClassicalAlchemyCore.stannumIngot), new ItemStack(ClassicalAlchemyCore.cuprumIngot), new ItemStack(Item.gunpowder), new ItemStack(ClassicalAlchemyCore.mediumPyropusBronzeChunkItem), 5.0F);
         FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(ClassicalAlchemyCore.stannumIngot), new ItemStack(ClassicalAlchemyCore.cuprumIngot), new ItemStack(Item.redstone), new ItemStack(ClassicalAlchemyCore.largePyropusBronzeChunkItem), 16.0F);
-        
         FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(ClassicalAlchemyCore.pyropusBronzeIngot), new ItemStack(Item.ingotGold), new ItemStack(Item.redstone), new ItemStack(ClassicalAlchemyCore.largePulchrumBronzeChunkItem), 16.0F);
-        
+
         // Recycling
-        
-        if (ClassicalAlchemyCore.enableRecycling) {
-        	 // Stannum
+
+        if (ClassicalAlchemyCore.enableRecycling)
+        {
+            // Stannum
             FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(ClassicalAlchemyCore.stannumHelm, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Block.gravel), new ItemStack(Item.coal, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(ClassicalAlchemyCore.largeStannumChunkItem), 7.0F);
             FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(ClassicalAlchemyCore.stannumChest, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Block.gravel, 2, 0), new ItemStack(Item.coal, 2, OreDictionary.WILDCARD_VALUE), new ItemStack(ClassicalAlchemyCore.largeStannumChunkItem, 2, 0), 14.0F);
             FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(ClassicalAlchemyCore.stannumLegs, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Block.gravel, 2, 0), new ItemStack(Item.coal, 2, OreDictionary.WILDCARD_VALUE), new ItemStack(ClassicalAlchemyCore.largeStannumChunkItem, 2, 0), 14.0F);
@@ -339,24 +247,18 @@ public class ClassicalAlchemyRecipes
             FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(ClassicalAlchemyCore.tombBronzeShovel, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Block.gravel), new ItemStack(Item.rottenFlesh), new ItemStack(ClassicalAlchemyCore.largeTombBronzeChunkItem), 15.0F);
             FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(ClassicalAlchemyCore.tombBronzePickaxe, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Block.gravel), new ItemStack(Item.rottenFlesh), new ItemStack(ClassicalAlchemyCore.largeTombBronzeChunkItem), 15.0F);
             FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(ClassicalAlchemyCore.tombBronzeAxe, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(Block.gravel), new ItemStack(Item.rottenFlesh), new ItemStack(ClassicalAlchemyCore.largeTombBronzeChunkItem), 15.0F);
-            
         }
-        
-        
     }
-	
-	
-    public static void craftTombBronze() {
-		if (SA.isModLoaded()) {
-			//	new ItemStack(SA.arsenicIngot.get())
-			FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(ClassicalAlchemyCore.pyropusBronzeIngot), new ItemStack(SA.arsenideBronzeIngot.get()), new ItemStack(Item.rottenFlesh), new ItemStack(ClassicalAlchemyCore.smallTombBronzeChunkItem), 6.0F);
-			FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(ClassicalAlchemyCore.pyropusBronzeIngot), new ItemStack(SA.arsenideBronzeIngot.get()), new ItemStack(Item.redstone), new ItemStack(ClassicalAlchemyCore.mediumTombBronzeChunkItem), 12.0F);
-			FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(ClassicalAlchemyCore.pyropusBronzeIngot), new ItemStack(SA.arsenideBronzeIngot.get()), new ItemStack(Item.glowstone), new ItemStack(ClassicalAlchemyCore.largeTombBronzeChunkItem), 20.0F);
-			FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(ClassicalAlchemyCore.pyropusBronzeIngot), new ItemStack(SA.arsenideBronzeIngot.get()), new ItemStack(SA.oldLaceChest.get()), new ItemStack(ClassicalAlchemyCore.largeTombBronzeChunkItem), 20.0F);
-	        
-		}
+
+    public static void craftTombBronze()
+    {
+        if (SA.isModLoaded())
+        {
+            //	new ItemStack(SA.arsenicIngot.get())
+            FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(ClassicalAlchemyCore.pyropusBronzeIngot), new ItemStack(SA.arsenideBronzeIngot.get()), new ItemStack(Item.rottenFlesh), new ItemStack(ClassicalAlchemyCore.smallTombBronzeChunkItem), 6.0F);
+            FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(ClassicalAlchemyCore.pyropusBronzeIngot), new ItemStack(SA.arsenideBronzeIngot.get()), new ItemStack(Item.redstone), new ItemStack(ClassicalAlchemyCore.mediumTombBronzeChunkItem), 12.0F);
+            FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(ClassicalAlchemyCore.pyropusBronzeIngot), new ItemStack(SA.arsenideBronzeIngot.get()), new ItemStack(Item.glowstone), new ItemStack(ClassicalAlchemyCore.largeTombBronzeChunkItem), 20.0F);
+            FusionHelper.fusionFurnaceRecipes.smelting().addSmelting(new ItemStack(ClassicalAlchemyCore.pyropusBronzeIngot), new ItemStack(SA.arsenideBronzeIngot.get()), new ItemStack(SA.oldLaceChest.get()), new ItemStack(ClassicalAlchemyCore.largeTombBronzeChunkItem), 20.0F);
+        }
     }
-		
-	
-	
 }

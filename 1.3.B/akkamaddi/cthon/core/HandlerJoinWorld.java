@@ -82,7 +82,7 @@ public class HandlerJoinWorld
             {
                 living.setCurrentItemOrArmor(0, new ItemStack(SimpleCthonCore.cthonHoe));
             }
-            
+
             if (range == 11)
             {
                 living.setCurrentItemOrArmor(4, new ItemStack(SimpleCthonCore.cthonHelm));
@@ -91,41 +91,42 @@ public class HandlerJoinWorld
                 living.setCurrentItemOrArmor(1, new ItemStack(SimpleCthonCore.cthonBoots));
                 living.setCurrentItemOrArmor(0, new ItemStack(SimpleCthonCore.cthonSword));
             }
+
             if (range == 12)
             {
                 living.setCurrentItemOrArmor(4, new ItemStack(SimpleCthonCore.cthonHelm));
                 living.setCurrentItemOrArmor(1, new ItemStack(SimpleCthonCore.cthonBoots));
                 living.setCurrentItemOrArmor(0, new ItemStack(SimpleCthonCore.cthonPickaxe));
             }
+
             if (range == 13)
             {
                 living.setCurrentItemOrArmor(4, new ItemStack(SimpleCthonCore.cthonHelm));
                 living.setCurrentItemOrArmor(3, new ItemStack(SimpleCthonCore.cthonChest));
                 living.setCurrentItemOrArmor(0, new ItemStack(SimpleCthonCore.cthonAxe));
             }
+
             if (range == 14)
             {
-                 living.setCurrentItemOrArmor(2, new ItemStack(SimpleCthonCore.cthonLegs));
+                living.setCurrentItemOrArmor(2, new ItemStack(SimpleCthonCore.cthonLegs));
                 living.setCurrentItemOrArmor(1, new ItemStack(SimpleCthonCore.cthonBoots));
                 living.setCurrentItemOrArmor(0, new ItemStack(SimpleCthonCore.cthonShovel));
             }
+
             if (range == 15)
             {
                 living.setCurrentItemOrArmor(4, new ItemStack(SimpleCthonCore.cthonHelm));
                 living.setCurrentItemOrArmor(1, new ItemStack(SimpleCthonCore.cthonBoots));
                 living.setCurrentItemOrArmor(0, new ItemStack(SimpleCthonCore.cthonHoe));
             }
-
-            
         }
     }
 }
 
-
 class RandomRange extends Random
 {
-	public int nextInt(int min, int max)
-	{
-		return nextInt(max - min + 1) + min;
-	}
+    public int nextInt(int min, int max)
+    {
+        return nextInt(max - min + 1) + min;
+    }
 }

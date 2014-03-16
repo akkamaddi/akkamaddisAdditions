@@ -9,8 +9,8 @@ import net.minecraft.world.World;
 import net.minecraftforge.event.ForgeSubscribe;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
 
-public class HandlerArmor {
-	
+public class HandlerArmor
+{
     //effects
     @ForgeSubscribe
     public void onFallDamage(LivingAttackEvent event)
@@ -40,8 +40,7 @@ public class HandlerArmor {
                 }
             }
         }
-		
-		
+
         if (event.entity instanceof EntityPlayer)
         {
             EntityPlayer player = (EntityPlayer)event.entity;
@@ -67,7 +66,5 @@ public class HandlerArmor {
                 }
             }
         }
-		
     }
-
 }

@@ -14,17 +14,15 @@ public class HandlerJoinWorld
     public static double rand;
     public static int range;
     public static RandomRange random = new RandomRange();
-	  
+
     /**
      * This class allows zombies and skeletons to spawn holding/wearing SimpleOres items.
      */
     @ForgeSubscribe
     public void EntityJoinWorldEvent(EntityJoinWorldEvent event)
     {
-
         rand = Math.random();
         range = random.nextInt(1, 81);
-        
 
         if ((rand <= 0.02D) && ((event.entity instanceof EntityLiving)) && ((event.entity instanceof EntitySkeleton | event.entity instanceof EntityZombie)))
         {
@@ -83,7 +81,7 @@ public class HandlerJoinWorld
             {
                 living.setCurrentItemOrArmor(0, new ItemStack(ClassicalAlchemyCore.stannumHoe));
             }
-            
+
             if (range == 11)
             {
                 living.setCurrentItemOrArmor(4, new ItemStack(ClassicalAlchemyCore.stannumHelm));
@@ -120,7 +118,7 @@ public class HandlerJoinWorld
                 living.setCurrentItemOrArmor(1, new ItemStack(ClassicalAlchemyCore.stannumBoots));
                 living.setCurrentItemOrArmor(0, new ItemStack(ClassicalAlchemyCore.stannumHoe));
             }
-            
+
             if (range == 16)
             {
                 living.setCurrentItemOrArmor(4, new ItemStack(ClassicalAlchemyCore.cuprumHelm));
@@ -174,7 +172,7 @@ public class HandlerJoinWorld
             {
                 living.setCurrentItemOrArmor(0, new ItemStack(ClassicalAlchemyCore.cuprumHoe));
             }
-            
+
             if (range == 26)
             {
                 living.setCurrentItemOrArmor(4, new ItemStack(ClassicalAlchemyCore.cuprumHelm));
@@ -265,7 +263,7 @@ public class HandlerJoinWorld
             {
                 living.setCurrentItemOrArmor(0, new ItemStack(ClassicalAlchemyCore.pyropusBronzeHoe));
             }
-            
+
             if (range == 41)
             {
                 living.setCurrentItemOrArmor(4, new ItemStack(ClassicalAlchemyCore.pyropusBronzeHelm));
@@ -302,7 +300,7 @@ public class HandlerJoinWorld
                 living.setCurrentItemOrArmor(1, new ItemStack(ClassicalAlchemyCore.pyropusBronzeBoots));
                 living.setCurrentItemOrArmor(0, new ItemStack(ClassicalAlchemyCore.pyropusBronzeHoe));
             }
-            
+
             if (range == 46)
             {
                 living.setCurrentItemOrArmor(4, new ItemStack(ClassicalAlchemyCore.pyropusBronzeHelm));
@@ -361,9 +359,8 @@ public class HandlerJoinWorld
                 living.setCurrentItemOrArmor(1, new ItemStack(ClassicalAlchemyCore.pyropusBronzeBoots));
                 living.setCurrentItemOrArmor(0, new ItemStack(ClassicalAlchemyCore.pulchrumBronzeShovel));
             }
-            
 
-            if (range == 55 ||range == 56 || range == 57)
+            if (range == 55 || range == 56 || range == 57)
             {
                 living.setCurrentItemOrArmor(4, new ItemStack(ClassicalAlchemyCore.tombBronzeHelm));
                 living.setCurrentItemOrArmor(3, new ItemStack(ClassicalAlchemyCore.tombBronzeChest));
@@ -441,15 +438,14 @@ public class HandlerJoinWorld
                 living.setCurrentItemOrArmor(1, new ItemStack(ClassicalAlchemyCore.tombBronzeBoots));
                 living.setCurrentItemOrArmor(0, new ItemStack(ClassicalAlchemyCore.tombBronzeShovel));
             }
-            
-         }
+        }
     }
 }
 
 class RandomRange extends Random
 {
-	public int nextInt(int min, int max)
-	{
-		return nextInt(max - min + 1) + min;
-	}
+    public int nextInt(int min, int max)
+    {
+        return nextInt(max - min + 1) + min;
+    }
 }

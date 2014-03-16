@@ -135,7 +135,7 @@ public class HandlerJoinWorld
                 living.setCurrentItemOrArmor(1, new ItemStack(SterlingAndBlackCore.blackSilverBoots));
                 living.setCurrentItemOrArmor(0, new ItemStack(SterlingAndBlackCore.blackSilverSword));
             }
-            
+
             if (range == 21)
             {
                 living.setCurrentItemOrArmor(4, new ItemStack(SterlingAndBlackCore.sterlingSteelHelm));
@@ -153,8 +153,8 @@ public class HandlerJoinWorld
                 living.setCurrentItemOrArmor(1, new ItemStack(SterlingAndBlackCore.blackSilverBoots));
                 living.setCurrentItemOrArmor(0, new ItemStack(SterlingAndBlackCore.blackSilverSword));
             }
-			
-			if (range == 23)
+
+            if (range == 23)
             {
                 living.setCurrentItemOrArmor(4, new ItemStack(SterlingAndBlackCore.sterlingSteelHelm));
                 living.setCurrentItemOrArmor(1, new ItemStack(SterlingAndBlackCore.sterlingSteelBoots));
@@ -181,8 +181,8 @@ public class HandlerJoinWorld
                 living.setCurrentItemOrArmor(3, new ItemStack(SterlingAndBlackCore.blackSilverChest));
                 living.setCurrentItemOrArmor(0, new ItemStack(SterlingAndBlackCore.blackSilverAxe));
             }
-			
-			if (range == 27)
+
+            if (range == 27)
             {
                 living.setCurrentItemOrArmor(2, new ItemStack(SterlingAndBlackCore.sterlingSteelLegs));
                 living.setCurrentItemOrArmor(1, new ItemStack(SterlingAndBlackCore.sterlingSteelBoots));
@@ -195,8 +195,8 @@ public class HandlerJoinWorld
                 living.setCurrentItemOrArmor(1, new ItemStack(SterlingAndBlackCore.blackSilverBoots));
                 living.setCurrentItemOrArmor(0, new ItemStack(SterlingAndBlackCore.blackSilverShovel));
             }
-			
-			if (range == 29)
+
+            if (range == 29)
             {
                 living.setCurrentItemOrArmor(4, new ItemStack(SterlingAndBlackCore.sterlingSteelHelm));
                 living.setCurrentItemOrArmor(1, new ItemStack(SterlingAndBlackCore.sterlingSteelBoots));
@@ -209,16 +209,14 @@ public class HandlerJoinWorld
                 living.setCurrentItemOrArmor(1, new ItemStack(SterlingAndBlackCore.blackSilverBoots));
                 living.setCurrentItemOrArmor(0, new ItemStack(SterlingAndBlackCore.blackSilverHoe));
             }
-
         }
     }
 }
 
-
 class RandomRange extends Random
 {
-	public int nextInt(int min, int max)
-	{
-		return nextInt(max - min + 1) + min;
-	}
+    public int nextInt(int min, int max)
+    {
+        return nextInt(max - min + 1) + min;
+    }
 }

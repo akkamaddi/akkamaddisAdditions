@@ -7,10 +7,8 @@ import net.minecraft.entity.monster.EntityZombie;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.event.ForgeSubscribe;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
-import akkamaddi.hadite.code.HaditeCoalCore;
 import alexndr.SimpleOres.api.helpers.CoreHelper;
 import net.minecraft.item.Item;
-
 
 public class HandlerJoinWorld
 {
@@ -71,96 +69,92 @@ public class HandlerJoinWorld
             {
                 living.setCurrentItemOrArmor(0, new ItemStack(HaditeCoalCore.gestankenzinnShovel));
             }
-            
+
             if (range == 9)
             {
-            living.setCurrentItemOrArmor(4, new ItemStack(Item.helmetIron));
-            living.setCurrentItemOrArmor(3, new ItemStack(Item.plateIron));
-            living.setCurrentItemOrArmor(2, new ItemStack(Item.legsIron));
-            living.setCurrentItemOrArmor(1, new ItemStack(Item.bootsIron));
-            living.setCurrentItemOrArmor(0, new ItemStack(HaditeCoalCore.haditeSteelSword));
+                living.setCurrentItemOrArmor(4, new ItemStack(Item.helmetIron));
+                living.setCurrentItemOrArmor(3, new ItemStack(Item.plateIron));
+                living.setCurrentItemOrArmor(2, new ItemStack(Item.legsIron));
+                living.setCurrentItemOrArmor(1, new ItemStack(Item.bootsIron));
+                living.setCurrentItemOrArmor(0, new ItemStack(HaditeCoalCore.haditeSteelSword));
             }
 
             if (range == 10)
             {
-            living.setCurrentItemOrArmor(4, new ItemStack(Item.helmetIron));
-            living.setCurrentItemOrArmor(3, new ItemStack(Item.plateIron));
-            living.setCurrentItemOrArmor(2, new ItemStack(Item.legsIron));
-            living.setCurrentItemOrArmor(1, new ItemStack(Item.bootsIron));
-            living.setCurrentItemOrArmor(0, new ItemStack(HaditeCoalCore.haditeSteelSword));
+                living.setCurrentItemOrArmor(4, new ItemStack(Item.helmetIron));
+                living.setCurrentItemOrArmor(3, new ItemStack(Item.plateIron));
+                living.setCurrentItemOrArmor(2, new ItemStack(Item.legsIron));
+                living.setCurrentItemOrArmor(1, new ItemStack(Item.bootsIron));
+                living.setCurrentItemOrArmor(0, new ItemStack(HaditeCoalCore.haditeSteelSword));
             }
 
             if (range == 11)
             {
-            living.setCurrentItemOrArmor(4, new ItemStack(Item.helmetIron));
-            living.setCurrentItemOrArmor(1, new ItemStack(Item.bootsIron));
-            living.setCurrentItemOrArmor(0, new ItemStack(HaditeCoalCore.haditeSteelPickaxe));
+                living.setCurrentItemOrArmor(4, new ItemStack(Item.helmetIron));
+                living.setCurrentItemOrArmor(1, new ItemStack(Item.bootsIron));
+                living.setCurrentItemOrArmor(0, new ItemStack(HaditeCoalCore.haditeSteelPickaxe));
             }
 
             if (range == 12)
             {
-            living.setCurrentItemOrArmor(4, new ItemStack(Item.helmetIron));
-            living.setCurrentItemOrArmor(3, new ItemStack(Item.plateIron));
-            living.setCurrentItemOrArmor(0, new ItemStack(HaditeCoalCore.haditeSteelAxe));
+                living.setCurrentItemOrArmor(4, new ItemStack(Item.helmetIron));
+                living.setCurrentItemOrArmor(3, new ItemStack(Item.plateIron));
+                living.setCurrentItemOrArmor(0, new ItemStack(HaditeCoalCore.haditeSteelAxe));
             }
 
             if (range == 13)
             {
-            living.setCurrentItemOrArmor(4, new ItemStack(Item.helmetIron));
-            living.setCurrentItemOrArmor(1, new ItemStack(Item.bootsIron));
-            living.setCurrentItemOrArmor(0, new ItemStack(HaditeCoalCore.haditeSteelShovel));
+                living.setCurrentItemOrArmor(4, new ItemStack(Item.helmetIron));
+                living.setCurrentItemOrArmor(1, new ItemStack(Item.bootsIron));
+                living.setCurrentItemOrArmor(0, new ItemStack(HaditeCoalCore.haditeSteelShovel));
             }
-
 
             if (range == 14)
             {
-            living.setCurrentItemOrArmor(4, new ItemStack(Item.helmetIron));
-            living.setCurrentItemOrArmor(3, new ItemStack(Item.plateIron));
-            living.setCurrentItemOrArmor(2, new ItemStack(Item.legsIron));
-            living.setCurrentItemOrArmor(1, new ItemStack(Item.bootsIron));
-            living.setCurrentItemOrArmor(0, new ItemStack(HaditeCoalCore.gestankenzinnSword));
+                living.setCurrentItemOrArmor(4, new ItemStack(Item.helmetIron));
+                living.setCurrentItemOrArmor(3, new ItemStack(Item.plateIron));
+                living.setCurrentItemOrArmor(2, new ItemStack(Item.legsIron));
+                living.setCurrentItemOrArmor(1, new ItemStack(Item.bootsIron));
+                living.setCurrentItemOrArmor(0, new ItemStack(HaditeCoalCore.gestankenzinnSword));
             }
 
             if (range == 15)
             {
-            living.setCurrentItemOrArmor(4, new ItemStack(CoreHelper.coreContent.tinHelm));
-            living.setCurrentItemOrArmor(3, new ItemStack(CoreHelper.coreContent.tinChest));
-            living.setCurrentItemOrArmor(2, new ItemStack(CoreHelper.coreContent.tinLegs));
-            living.setCurrentItemOrArmor(1, new ItemStack(CoreHelper.coreContent.tinBoots));
-            living.setCurrentItemOrArmor(0, new ItemStack(HaditeCoalCore.gestankenzinnSword));
+                living.setCurrentItemOrArmor(4, new ItemStack(CoreHelper.coreContent.tinHelm));
+                living.setCurrentItemOrArmor(3, new ItemStack(CoreHelper.coreContent.tinChest));
+                living.setCurrentItemOrArmor(2, new ItemStack(CoreHelper.coreContent.tinLegs));
+                living.setCurrentItemOrArmor(1, new ItemStack(CoreHelper.coreContent.tinBoots));
+                living.setCurrentItemOrArmor(0, new ItemStack(HaditeCoalCore.gestankenzinnSword));
             }
 
             if (range == 16)
             {
-            living.setCurrentItemOrArmor(4, new ItemStack(CoreHelper.coreContent.tinHelm));
-            living.setCurrentItemOrArmor(1, new ItemStack(CoreHelper.coreContent.tinBoots));
-            living.setCurrentItemOrArmor(0, new ItemStack(HaditeCoalCore.gestankenzinnPickaxe));
+                living.setCurrentItemOrArmor(4, new ItemStack(CoreHelper.coreContent.tinHelm));
+                living.setCurrentItemOrArmor(1, new ItemStack(CoreHelper.coreContent.tinBoots));
+                living.setCurrentItemOrArmor(0, new ItemStack(HaditeCoalCore.gestankenzinnPickaxe));
             }
 
             if (range == 17)
             {
-            living.setCurrentItemOrArmor(4, new ItemStack(CoreHelper.coreContent.tinHelm));
-            living.setCurrentItemOrArmor(3, new ItemStack(CoreHelper.coreContent.tinChest));
-            living.setCurrentItemOrArmor(0, new ItemStack(HaditeCoalCore.gestankenzinnAxe));
+                living.setCurrentItemOrArmor(4, new ItemStack(CoreHelper.coreContent.tinHelm));
+                living.setCurrentItemOrArmor(3, new ItemStack(CoreHelper.coreContent.tinChest));
+                living.setCurrentItemOrArmor(0, new ItemStack(HaditeCoalCore.gestankenzinnAxe));
             }
 
             if (range == 18)
             {
-            living.setCurrentItemOrArmor(4, new ItemStack(CoreHelper.coreContent.tinHelm));
-            living.setCurrentItemOrArmor(1, new ItemStack(CoreHelper.coreContent.tinBoots));
-            living.setCurrentItemOrArmor(0, new ItemStack(HaditeCoalCore.gestankenzinnShovel));
+                living.setCurrentItemOrArmor(4, new ItemStack(CoreHelper.coreContent.tinHelm));
+                living.setCurrentItemOrArmor(1, new ItemStack(CoreHelper.coreContent.tinBoots));
+                living.setCurrentItemOrArmor(0, new ItemStack(HaditeCoalCore.gestankenzinnShovel));
             }
-
-
-            
         }
     }
 }
 
 class RandomRange extends Random
 {
-	public int nextInt(int min, int max)
-	{
-		return nextInt(max - min + 1) + min;
-	}
+    public int nextInt(int min, int max)
+    {
+        return nextInt(max - min + 1) + min;
+    }
 }

@@ -47,7 +47,7 @@ public class SimpleCthonGenerator implements IWorldGenerator
             int randPosX = baseX + rand.nextInt(16);
             int randPosY = rand.nextInt(SimpleCthonCore.cthonSpawnHeight);
             int randPosZ = baseZ + rand.nextInt(16);
-            new WorldGenHelper (SimpleCthonCore.oreCthon.blockID, SimpleCthonCore.cthonVeinSize, Block.netherrack).generate(world, rand, randPosX, randPosY, randPosZ);
+            new WorldGenHelper(SimpleCthonCore.oreCthon.blockID, SimpleCthonCore.cthonVeinSize, Block.netherrack).generate(world, rand, randPosX, randPosY, randPosZ);
         }
     }
 }

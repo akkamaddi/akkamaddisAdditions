@@ -122,7 +122,7 @@ public class ThunderGrassCrop extends Block
             return;
         }
 
-        if (random.nextInt(isFertile(world, x, y - 1, z) ? 4 : 8) != 1)
+        if (random.nextInt(isFertile(world, x, y - 1, z) ? 7 : 11) != 1)
         {
             return;
         }

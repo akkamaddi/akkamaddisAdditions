@@ -1,6 +1,8 @@
 package akkamaddi.simplecobalt.code;
 
 import java.util.Random;
+
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.monster.EntitySkeleton;
 import net.minecraft.entity.monster.EntityZombie;
@@ -12,9 +14,10 @@ public class HandlerJoinWorld
 {
     public static double rand;
     public static int range;
-    public static RandomRange rnd;
 
     public static RandomRange random = new RandomRange();
+    
+    public static final String HANDLED_KEY = "simplecobalt.spawn.handled";
 
     /**
      * This class allows zombies and skeletons to spawn holding/wearing SimpleOres items.
@@ -24,8 +27,20 @@ public class HandlerJoinWorld
     {
         rand = Math.random();
         range = random.nextInt(1, 73);
+        
+        if (event.world.isRemote)
+                return;
+        
+        Entity entity = event.entity;
+        
+        if (!(entity.getClass() == EntitySkeleton.class && ((EntitySkeleton) entity).getSkeletonType() == 0
+                || entity.getClass() == EntityZombie.class)
+                || entity.getEntityData().getBoolean(HANDLED_KEY))
+        return;
 
-        if ((rand <= 0.02D) && ((event.entity instanceof EntityLiving)) && ((event.entity instanceof EntitySkeleton | event.entity instanceof EntityZombie)))
+        event.entity.getEntityData().setBoolean(HANDLED_KEY, true);
+        
+    	if (rand <= 0.02D)
         {
             EntityLiving living = (EntityLiving)event.entity;
 
@@ -244,7 +259,7 @@ public class HandlerJoinWorld
             {
                 living.setCurrentItemOrArmor(0, new ItemStack(SimpleCobaltCore.greenCeladonHoe));
             }
-            
+
             if (range == 41)
             {
                 living.setCurrentItemOrArmor(4, new ItemStack(SimpleCobaltCore.blueDriftSteelHelm));
@@ -292,14 +307,14 @@ public class HandlerJoinWorld
 
             if (range == 50)
             {
-            	living.setCurrentItemOrArmor(4, new ItemStack(SimpleCobaltCore.blueDriftSteelHelm));
-            	living.setCurrentItemOrArmor(3, new ItemStack(SimpleCobaltCore.blueDriftSteelChest));
+                living.setCurrentItemOrArmor(4, new ItemStack(SimpleCobaltCore.blueDriftSteelHelm));
+                living.setCurrentItemOrArmor(3, new ItemStack(SimpleCobaltCore.blueDriftSteelChest));
                 living.setCurrentItemOrArmor(2, new ItemStack(SimpleCobaltCore.blueDriftSteelLegs));
                 living.setCurrentItemOrArmor(1, new ItemStack(SimpleCobaltCore.blueDriftSteelBoots));
                 living.setCurrentItemOrArmor(0, new ItemStack(SimpleCobaltCore.blueDriftSteelSword));
             }
-            
-			if (range == 51)
+
+            if (range == 51)
             {
                 living.setCurrentItemOrArmor(4, new ItemStack(SimpleCobaltCore.cobaltHelm));
                 living.setCurrentItemOrArmor(3, new ItemStack(SimpleCobaltCore.cobaltChest));
@@ -307,72 +322,72 @@ public class HandlerJoinWorld
                 living.setCurrentItemOrArmor(1, new ItemStack(SimpleCobaltCore.cobaltBoots));
                 living.setCurrentItemOrArmor(0, new ItemStack(SimpleCobaltCore.cobaltSword));
             }
-						
-			if (range == 52)
+
+            if (range == 52)
             {
                 living.setCurrentItemOrArmor(4, new ItemStack(SimpleCobaltCore.cobaltHelm));
                 living.setCurrentItemOrArmor(1, new ItemStack(SimpleCobaltCore.cobaltBoots));
                 living.setCurrentItemOrArmor(0, new ItemStack(SimpleCobaltCore.cobaltPickaxe));
             }
-			
-			if (range == 53)
+
+            if (range == 53)
             {
                 living.setCurrentItemOrArmor(4, new ItemStack(SimpleCobaltCore.cobaltHelm));
                 living.setCurrentItemOrArmor(3, new ItemStack(SimpleCobaltCore.cobaltChest));
                 living.setCurrentItemOrArmor(0, new ItemStack(SimpleCobaltCore.cobaltAxe));
             }
-			
-			if (range == 54)
+
+            if (range == 54)
             {
                 living.setCurrentItemOrArmor(2, new ItemStack(SimpleCobaltCore.cobaltLegs));
                 living.setCurrentItemOrArmor(1, new ItemStack(SimpleCobaltCore.cobaltBoots));
                 living.setCurrentItemOrArmor(0, new ItemStack(SimpleCobaltCore.cobaltShovel));
             }
-			
-			if (range == 55)
+
+            if (range == 55)
             {
                 living.setCurrentItemOrArmor(4, new ItemStack(SimpleCobaltCore.cobaltHelm));
                 living.setCurrentItemOrArmor(1, new ItemStack(SimpleCobaltCore.cobaltBoots));
                 living.setCurrentItemOrArmor(0, new ItemStack(SimpleCobaltCore.cobaltHoe));
             }
-			
+
             if (range == 56)
             {
-            	living.setCurrentItemOrArmor(4, new ItemStack(SimpleCobaltCore.blueDriftSteelHelm));
-            	living.setCurrentItemOrArmor(3, new ItemStack(SimpleCobaltCore.blueDriftSteelChest));
+                living.setCurrentItemOrArmor(4, new ItemStack(SimpleCobaltCore.blueDriftSteelHelm));
+                living.setCurrentItemOrArmor(3, new ItemStack(SimpleCobaltCore.blueDriftSteelChest));
                 living.setCurrentItemOrArmor(2, new ItemStack(SimpleCobaltCore.blueDriftSteelLegs));
                 living.setCurrentItemOrArmor(1, new ItemStack(SimpleCobaltCore.blueDriftSteelBoots));
                 living.setCurrentItemOrArmor(0, new ItemStack(SimpleCobaltCore.blueDriftSteelSword));
             }
-			
+
             if (range == 57)
             {
-            	living.setCurrentItemOrArmor(4, new ItemStack(SimpleCobaltCore.blueDriftSteelHelm));
+                living.setCurrentItemOrArmor(4, new ItemStack(SimpleCobaltCore.blueDriftSteelHelm));
                 living.setCurrentItemOrArmor(1, new ItemStack(SimpleCobaltCore.blueDriftSteelBoots));
                 living.setCurrentItemOrArmor(0, new ItemStack(SimpleCobaltCore.blueDriftSteelPickaxe));
             }
-			
+
             if (range == 58)
             {
-            	living.setCurrentItemOrArmor(4, new ItemStack(SimpleCobaltCore.blueDriftSteelHelm));
-            	living.setCurrentItemOrArmor(3, new ItemStack(SimpleCobaltCore.blueDriftSteelChest));
+                living.setCurrentItemOrArmor(4, new ItemStack(SimpleCobaltCore.blueDriftSteelHelm));
+                living.setCurrentItemOrArmor(3, new ItemStack(SimpleCobaltCore.blueDriftSteelChest));
                 living.setCurrentItemOrArmor(0, new ItemStack(SimpleCobaltCore.blueDriftSteelAxe));
             }
-			
+
             if (range == 59)
             {
-            	living.setCurrentItemOrArmor(2, new ItemStack(SimpleCobaltCore.blueDriftSteelLegs));
+                living.setCurrentItemOrArmor(2, new ItemStack(SimpleCobaltCore.blueDriftSteelLegs));
                 living.setCurrentItemOrArmor(1, new ItemStack(SimpleCobaltCore.blueDriftSteelBoots));
                 living.setCurrentItemOrArmor(0, new ItemStack(SimpleCobaltCore.blueDriftSteelShovel));
             }
-			
+
             if (range == 60)
             {
-            	living.setCurrentItemOrArmor(4, new ItemStack(SimpleCobaltCore.blueDriftSteelHelm));
+                living.setCurrentItemOrArmor(4, new ItemStack(SimpleCobaltCore.blueDriftSteelHelm));
                 living.setCurrentItemOrArmor(1, new ItemStack(SimpleCobaltCore.blueDriftSteelBoots));
                 living.setCurrentItemOrArmor(0, new ItemStack(SimpleCobaltCore.blueDriftSteelHoe));
             }
-			
+
             if (range == 61)
             {
                 living.setCurrentItemOrArmor(4, new ItemStack(SimpleCobaltCore.blueCeladonHelm));
@@ -418,36 +433,36 @@ public class HandlerJoinWorld
                 living.setCurrentItemOrArmor(1, new ItemStack(SimpleCobaltCore.greenCeladonBoots));
                 living.setCurrentItemOrArmor(0, new ItemStack(SimpleCobaltCore.greenCeladonSword));
             }
-			
+
             if (range == 67)
             {
                 living.setCurrentItemOrArmor(4, new ItemStack(SimpleCobaltCore.greenCeladonHelm));
                 living.setCurrentItemOrArmor(1, new ItemStack(SimpleCobaltCore.greenCeladonBoots));
                 living.setCurrentItemOrArmor(0, new ItemStack(SimpleCobaltCore.greenCeladonPickaxe));
             }
-			
+
             if (range == 68)
             {
                 living.setCurrentItemOrArmor(4, new ItemStack(SimpleCobaltCore.greenCeladonHelm));
                 living.setCurrentItemOrArmor(3, new ItemStack(SimpleCobaltCore.greenCeladonChest));
                 living.setCurrentItemOrArmor(0, new ItemStack(SimpleCobaltCore.greenCeladonAxe));
             }
-			
+
             if (range == 69)
             {
                 living.setCurrentItemOrArmor(2, new ItemStack(SimpleCobaltCore.greenCeladonLegs));
                 living.setCurrentItemOrArmor(1, new ItemStack(SimpleCobaltCore.greenCeladonBoots));
                 living.setCurrentItemOrArmor(0, new ItemStack(SimpleCobaltCore.greenCeladonShovel));
             }
-			
+
             if (range == 70)
             {
                 living.setCurrentItemOrArmor(4, new ItemStack(SimpleCobaltCore.greenCeladonHelm));
                 living.setCurrentItemOrArmor(1, new ItemStack(SimpleCobaltCore.greenCeladonBoots));
                 living.setCurrentItemOrArmor(0, new ItemStack(SimpleCobaltCore.greenCeladonHoe));
             }
-			
-			if (range == 71)
+
+            if (range == 71)
             {
                 living.setCurrentItemOrArmor(4, new ItemStack(SimpleCobaltCore.cobaltHelm));
                 living.setCurrentItemOrArmor(3, new ItemStack(SimpleCobaltCore.cobaltChest));
@@ -455,8 +470,8 @@ public class HandlerJoinWorld
                 living.setCurrentItemOrArmor(1, new ItemStack(SimpleCobaltCore.cobaltBoots));
                 living.setCurrentItemOrArmor(0, new ItemStack(SimpleCobaltCore.blueDriftSteelSword));
             }
-			
-			if (range == 72)
+
+            if (range == 72)
             {
                 living.setCurrentItemOrArmor(4, new ItemStack(SimpleCobaltCore.cobaltHelm));
                 living.setCurrentItemOrArmor(3, new ItemStack(SimpleCobaltCore.cobaltChest));
@@ -464,8 +479,8 @@ public class HandlerJoinWorld
                 living.setCurrentItemOrArmor(1, new ItemStack(SimpleCobaltCore.cobaltBoots));
                 living.setCurrentItemOrArmor(0, new ItemStack(SimpleCobaltCore.blueCeladonSword));
             }
-			
-			if (range == 73)
+
+            if (range == 73)
             {
                 living.setCurrentItemOrArmor(4, new ItemStack(SimpleCobaltCore.cobaltHelm));
                 living.setCurrentItemOrArmor(3, new ItemStack(SimpleCobaltCore.cobaltChest));
@@ -473,16 +488,14 @@ public class HandlerJoinWorld
                 living.setCurrentItemOrArmor(1, new ItemStack(SimpleCobaltCore.cobaltBoots));
                 living.setCurrentItemOrArmor(0, new ItemStack(SimpleCobaltCore.greenCeladonSword));
             }
-
-            
         }
     }
 }
 
 class RandomRange extends Random
 {
-	public int nextInt(int min, int max)
-	{
-		return nextInt(max - min + 1) + min;
-	}
+    public int nextInt(int min, int max)
+    {
+        return nextInt(max - min + 1) + min;
+    }
 }
