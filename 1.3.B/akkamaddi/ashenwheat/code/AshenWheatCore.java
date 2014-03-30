@@ -272,7 +272,12 @@ public class AshenWheatCore
         ChestGenHooks.getInfo(ChestGenHooks.MINESHAFT_CORRIDOR).addItem(new WeightedRandomChestContent(new ItemStack(AshenWheatCore.ossidSeeds),1,3,2));
         ChestGenHooks.getInfo(ChestGenHooks.MINESHAFT_CORRIDOR).addItem(new WeightedRandomChestContent(new ItemStack(AshenWheatCore.thunderSeeds),1,3,2));
         }
-        
+
+        FMLInterModComms.sendMessage("Forestry", "add-farmable-crop", "farmWheat@" + ashSeeds.itemID + ".0." + ashWheatCrop.blockID + ".7");
+        FMLInterModComms.sendMessage("Forestry", "add-farmable-crop", "farmWheat@" + thunderSeeds.itemID + ".0." + thunderGrassCrop.blockID + ".7");
+        FMLInterModComms.sendMessage("Forestry", "add-farmable-crop", "farmWheat@" + ossidSeeds.itemID + ".0." + ossidRootCrop.blockID + ".7");
+        FMLInterModComms.sendMessage("Forestry", "add-farmable-crop", "farmWheat@" + scintillaSeeds.itemID + ".0." + scintillaWheatCrop.blockID + ".7");
+
     }
 
     @EventHandler // used in 1.6.2
